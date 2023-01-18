@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginChooseActivity">
+
+<!--    logo-->
+    <FrameLayout
+        android:id="@+id/frmLayoutLogoImgLoginChoose"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLogoSplashScreen"
+            app:srcCompat="@drawable/ic_c"
+            android:scaleType="centerCrop"
+            android:layout_width="@dimen/width_logo_splashscreen"
+            android:layout_height="@dimen/height_logo_splashscreen"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_baseline_local_movies_24"
+            app:tint="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVerifylbl"
+        android:text="@string/lbl_verify_your_phone_number"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_22sp"
+        android:layout_below="@id/frmLayoutLogoImgLoginChoose"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVerifyInfo"
+        android:text="@string/lbl_verify_info"
+        android:textColor="@color/colorPrimaryLight"
+        android:layout_below="@id/tvVerifylbl"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    
+<!--    country code-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCountryCodeLbl"
+        android:text="@string/lbl_country_code"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="@dimen/text_small"
+        android:layout_below="@id/tvVerifyInfo"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="@dimen/margin_medium_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <FrameLayout
+        android:id="@+id/flSpinnerCountryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvCountryCodeLbl"
+        android:layout_marginLeft="@dimen/margin_medium_3"
+        android:backgroundTint="@color/colorPrimaryLight">
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinnerCountryCode"
+            android:backgroundTint="@color/colorPrimaryLight"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/countryCodeList"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_gravity="end|center_vertical"
+            app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_white_24dp"
+            android:background="@color/colorPrimary"
+            app:tint="@color/colorPrimaryLight"
+            android:layout_marginEnd="10dp"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+<!--    style="@style/Widget.AppCompat.Spinner.Underlined"-->
+<!--    <androidx.appcompat.widget.AppCompatSpinner-->
+<!--        android:id="@+id/spinnerCountryCode"-->
+<!--        android:layout_below="@id/tvCountryCodeLbl"-->
+<!--        android:layout_marginLeft="@dimen/margin_33dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/margin_medium_2"-->
+<!--        android:layout_marginStart="@dimen/margin_medium"-->
+<!--        android:backgroundTint="@color/colorPrimaryLight"-->
+<!--        style="@style/mySpinnerItemStyle"-->
+<!--        android:entries="@array/countryCodeList"-->
+<!--        />-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtvMobileNum"
+        android:hint="Mobile Number"
+        android:textSize="16sp"
+        android:inputType="number"
+        android:textColor="@color/colorPrimaryLight"
+        android:backgroundTint="@color/colorPrimaryLight"
+        android:textColorHint="@color/colorPrimaryLight"
+        android:layout_alignBottom="@id/flSpinnerCountryCode"
+        android:layout_marginLeft="@dimen/margin_medium_3"
+        android:layout_toEndOf="@id/flSpinnerCountryCode"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"/>
+    
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerifyPhNo"
+        android:text="@string/lbl_verify_your_phone_number"
+        android:textSize="@dimen/text_regular_2x"
+        android:textColor="@color/black"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_marginLeft="@dimen/margin_medium_3"
+        android:layout_below="@id/flSpinnerCountryCode"
+        android:layout_marginTop="@dimen/margin_30dp"
+        app:cornerRadius="8dp"
+        android:layout_width="@dimen/width_verify_btn"
+        android:layout_height="@dimen/height_verify_btn_loginscrn"/>
+
+<!--    line spearator-->
+    <LinearLayout
+        android:id="@+id/llSpearater"
+        android:layout_below="@id/btnVerifyPhNo"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_width="350dp"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:background="@drawable/separator_line_bg"
+            android:layout_gravity="center_vertical"
+            android:layout_width="150dp"
+            android:layout_height="2dp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="or"
+            android:textColor="@color/colorPrimaryLight"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/separator_line_bg"
+            android:layout_width="150dp"
+            android:layout_height="2dp"/>
+    </LinearLayout>
+
+<!--   singin google-->
+    <RelativeLayout
+        android:id="@+id/btnGoogleSignIn"
+        android:layout_below="@id/llSpearater"
+        android:background="@drawable/bg_google_singin"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_width="@dimen/width_verify_btn"
+        android:layout_height="40dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGoogle"
+            app:srcCompat="@drawable/ic_google"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/dimen_80dp"
+            android:layout_centerVertical="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+           android:layout_marginStart="@dimen/margin_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_regular_2x"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/ivGoogle"
+            android:text="@string/lbl_continue_with_google"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTermsAndPolicy"
+        android:textColor="@color/colorPrimaryLight"
+        android:textSize="@dimen/text_small"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/lbl_privacy_plolicy"
+        android:layout_marginBottom="@dimen/margin_30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

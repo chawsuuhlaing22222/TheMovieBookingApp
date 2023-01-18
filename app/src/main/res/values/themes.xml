@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TheMovieApplication" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondaryText</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="Theme.TheMovieApplication.StatusBar" parent="Theme.TheMovieApplication">
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/colorPrimary</item>        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="TextShadowStyle">
+        <item name="android:shadowColor">@color/colorAccent</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">40</item>
+    </style>
+
+   <!-- <style name="mySpinnerItemStyle" parent="Widget.AppCompat.Spinner.Underlined">
+        <<item name="android:textColor">@color/colorPrimaryLight</item>>
+    </style>-->
+</resources>

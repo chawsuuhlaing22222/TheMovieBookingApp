@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="countryCodeList">
+        <item>+95</item>
+        <item>+956</item>
+        <item>+200</item>
+    </string-array>
+    <string-array name="cities">
+        <item> </item>
+        <item>Yangon</item>
+        <item>Mandalay</item>
+        <item>NayPyiDaw</item>
+    </string-array>
+</resources>

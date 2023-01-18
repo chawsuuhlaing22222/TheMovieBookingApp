@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize">
+   <androidx.appcompat.widget.AppCompatImageView
+       android:id="@+id/ivLocation"
+       android:layout_marginLeft="@dimen/margin_medium_2"
+       app:srcCompat="@drawable/ic_location_white"
+      android:layout_centerVertical="true"
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSelectedCity"
+        android:textColor="@color/white"
+        android:text="Yangon"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/ivLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivQRScan"
+       android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        app:srcCompat="@drawable/ic_scan"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivNoti"
+       android:layout_toStartOf="@id/ivQRScan"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        app:srcCompat="@drawable/ic_baseline_notifications_white_24dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSearch"
+        android:layout_toStartOf="@id/ivNoti"
+        android:layout_marginRight="@dimen/margin_medium_2"
+        app:srcCompat="@drawable/ic_baseline_search_white_24dp"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+</RelativeLayout>

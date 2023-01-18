@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">TheMovieApplication</string>
+    <string name="lbl_c_cinema_splashscrn"><font color="#00ff6a">C</font> <font color="#666666">cinema</font></string>
+    <string name="lbl_verify_your_phone_number">Verify Your Phone Number</string>
+    <string name="lbl_verify_info">We will send 6-digit sms code \n to verify your phone number</string>
+    <string name="lbl_country_code">Country Code</string>
+    <string name="lbl_continue_with_google">Continue With Google</string>
+    <string name="lbl_privacy_plolicy"><![CDATA[By clicking, I accept the Terms & Conditions & Privacy Plolicy]]></string>
+    <string name="lbl_sent_otp_code">We’ve sent OTP Code</string>
+    <string name="lbl_please_enter_otp_code">Please enter 6-digit OTP code \n that sent to your phone number.</string>
+    <string name="lbl_enter_otp_code">Enter OTP Code</string>
+    <string name="lbl_don_t_receive_otp">Don’t receive OTP?</string>
+    <string name="lbl_resend_code"><font color="#00ff6a"> Resend Code</font></string>
+    <string name="lbl_comfirm_otp">Comfirm OTP</string>
+    <string name="lbl_pick_region">Pick Region</string>
+    <string name="title_nav_movies">Movies</string>
+    <string name="title_nav_cinema">Cinema</string>
+    <string name="title_nav_ticket">Ticket</string>
+    <string name="title_nav_profile">Profile</string>
+    <string name="lbl_banner_price"><b>10%</b> <font size="10">off \n with KBZ debit card</font></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lbl_now_showing">Now Showing</string>
+    <string name="lbl_comming_soon">Comming Soon</string>
+</resources>
