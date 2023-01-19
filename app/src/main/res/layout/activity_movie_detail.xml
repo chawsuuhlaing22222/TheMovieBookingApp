@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MovieDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/black"
+            app:collapsedTitleTextColor="@color/white"
+            app:expandedTitleTextColor="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBarMovieDetail"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+
+            <RelativeLayout
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+<!--              <androidx.appcompat.widget.AppCompatImageView-->
+<!--                  android:id="@+id/vvMovie"-->
+<!--                  app:srcCompat="@drawable/placeholder_cast_img"-->
+<!--                  android:layout_width="match_parent"-->
+<!--                  android:layout_height="200dp"/>-->
+             <FrameLayout
+                 android:id="@+id/vvMovieFrame"
+                 android:layout_width="match_parent"
+                 android:layout_height="200dp">
+                 <VideoView
+                     android:id="@+id/vvMovie"
+                     android:layout_width="match_parent"
+                     android:layout_height="180dp"/>
+                     />
+             </FrameLayout>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivVideoCover"
+                    app:srcCompat="@drawable/venom"
+                    android:scaleType="centerCrop"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_below="@id/vvMovieFrame"
+                    android:layout_marginTop="-30dp"
+                    android:layout_width="140dp"
+                    android:layout_height="180dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMovieNameDetailScrn"
+                    android:text="Black Widow"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:layout_below="@id/vvMovieFrame"
+                    android:layout_toEndOf="@id/ivVideoCover"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivIBMMovieDetail"
+                    android:layout_marginEnd="5dp"
+                    app:srcCompat="@drawable/ic_imdb"
+                    android:elevation="4dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignBottom="@id/tvMovieNameDetailScrn"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:layout_marginStart="@dimen/margin_10dp"
+                    android:scaleType="centerCrop"
+                    android:layout_toEndOf="@id/tvMovieNameDetailScrn"
+                    android:layout_below="@id/vvMovieFrame"
+                    android:layout_width="@dimen/margin_50dp"
+                    android:layout_height="@dimen/margin_30dp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPointMovieDetailScrn"
+                   android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@id/ivIBMMovieDetail"
+                    android:layout_below="@id/vvMovieFrame"
+                    android:elevation="4dp"
+                    android:text="9.0"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textColor="@color/white"
+                    android:textStyle="bold|italic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMovieViewTypeDetailScrn"
+                    android:layout_marginTop="15dp"
+                   android:layout_below="@id/tvMovieNameDetailScrn"
+                    android:layout_toEndOf="@id/ivVideoCover"
+                    android:layout_alignStart="@id/tvMovieNameDetailScrn"
+                    android:text="2D, 3D, 3D IMAX"
+                    android:elevation="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMovieGenreDetailScrn"
+                    android:layout_marginEnd="@dimen/margin_10dp"
+                    android:layout_below="@id/tvMovieViewTypeDetailScrn"
+                    android:layout_toEndOf="@id/ivVideoCover"
+                    android:layout_alignStart="@id/tvMovieViewTypeDetailScrn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"/>
+
+<!--                    tools:listitem="@layout/view_holder_movie_genre"-->
+<!--                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+<!--                    app:spanCount="3"-->
+<!--                    tools:itemCount="4"-->
+
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            censor rating-->
+            <LinearLayout
+                android:id="@+id/llCensorRating"
+                android:orientation="vertical"
+                android:background="@drawable/gradient_censor_rating_bg"
+                android:gravity="center"
+                android:elevation="4dp"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_width="100dp"
+                android:layout_height="60dp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCensorRatinglbl"
+                    android:text="@string/lbl_censor_rating"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCensorRating"
+                    android:text="U/A"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <!--           release date-->
+            <LinearLayout
+                android:id="@+id/llReleaseDate"
+                android:orientation="vertical"
+                android:background="@drawable/gradient_censor_rating_bg"
+                android:gravity="center"
+                android:elevation="4dp"
+                android:layout_marginLeft="@dimen/margin_30dp"
+                android:layout_toEndOf="@id/llCensorRating"
+                android:layout_width="100dp"
+                android:layout_height="60dp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReleaseDatelbl"
+                    android:text="@string/lbl_release_date"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReleaseDate"
+                    android:text="May 8th,2022"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <!--           duration-->
+            <LinearLayout
+                android:id="@+id/llDuration"
+                android:orientation="vertical"
+                android:background="@drawable/gradient_censor_rating_bg"
+                android:gravity="center"
+                android:elevation="4dp"
+                android:layout_marginLeft="@dimen/margin_30dp"
+                android:layout_toEndOf="@id/llReleaseDate"
+                android:layout_width="100dp"
+                android:layout_height="60dp">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDurationlbl"
+                    android:text="@string/lbl_duration"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDuration"
+                    android:text="2hr 23min"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+<!--            card view-->
+
+            <RelativeLayout
+                android:id="@+id/rlNotiCard"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@id/llDuration"
+          android:layout_margin="@dimen/margin_medium_2"
+                android:background="@drawable/gradient_noti_movie_release_bg">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvReleaseDateNoti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginTop="18dp"
+                    android:text="Releasing in 5days"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_regular_2x"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBookingNoti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvReleaseDateNoti"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/lbl_booing_noti"
+                    android:textColor="#c8c8c8"
+                    android:textSize="@dimen/text_regular"
+                    android:textStyle="bold" />
+
+                <FrameLayout
+                    android:id="@+id/flSendNoti"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/tvBookingNoti"
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_send_noti_btn">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivNoti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        app:srcCompat="@drawable/ic_baseline_notifications_white_24dp"
+                        app:tint="@color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSendNotiLbl"
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvReleaseDateNoti"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="@dimen/margin_10dp"
+                        android:text="@string/lbl_send_notification"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_regular" />
+
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:layout_marginEnd="@dimen/margin_medium_2"
+                    android:layout_marginBottom="@dimen/margin_medium_2"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_man_sending_msg" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStoryLineLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlNotiCard"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="10dp"
+                android:text="@string/lbl_story_line"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_regular"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStoryLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvStoryLineLbl"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="10dp"
+                android:text="In the 1970s, young Gru tries to join a group of supervillains called the Vicious 6 after they oust their leader -- the legendary fighter Wild Knuckles. When the interview turns disastrous, Gru and his Minions go on the run with the Vicious 6 hot on their tails. Luckily, he finds an unlikely source for guidance -- Wild Knuckles himself -- and soon discovers that even bad guys need a little help from their friends."
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_regular"
+                 />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCastLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvStoryLine"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="10dp"
+                android:text="@string/lbl_cast"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_regular"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCastPersonList"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:layout_below="@id/tvCastLbl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+   <RelativeLayout
+       android:id="@+id/llBooking"
+
+       android:background="@drawable/gradient_movie_item"
+       android:layout_gravity="bottom"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:id="@+id/btnBooking"
+           android:layout_marginBottom="20dp"
+           android:layout_centerHorizontal="true"
+           android:text="Booking"
+           android:textColor="@color/black"
+           android:textAllCaps="false"
+           android:background="@drawable/bg_booking"
+           android:layout_width="150dp"
+           android:layout_height="50dp"/>
+   </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

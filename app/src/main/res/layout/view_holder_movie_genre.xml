@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_comming_date"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="@dimen/margin_10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                    <TextView
+                        android:id="@+id/btnAction"
+                        android:text="Adventure"
+                        android:padding="5dp"
+                        android:textSize="@dimen/text_small"
+                        android:textStyle="bold"
+                        android:textColor="#111111"
+                        android:backgroundTint="@color/colorAccent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+</RelativeLayout>

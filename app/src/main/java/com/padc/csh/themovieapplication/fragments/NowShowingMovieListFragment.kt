@@ -1,11 +1,14 @@
 package com.padc.csh.themovieapplication.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.activities.MovieDetailActivity
+import com.padc.csh.themovieapplication.activities.VideoPlayActivity
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
 import com.padc.csh.themovieapplication.viewpods.MovieListViewPod
 import kotlinx.android.synthetic.main.fragment_now_showing_movie_list.*
@@ -28,11 +31,12 @@ class NowShowingMovieListFragment : Fragment(),MovieListDelegate {
 
     private fun setUpViewPod() {
         mMovieListViewPod= viewPodMovieList as MovieListViewPod
-        mMovieListViewPod.setUpViewPod(this)
+        mMovieListViewPod.setUpViewPod(this,"now")
     }
 
     override fun onTapMovie() {
-
+          startActivity(Intent(context,MovieDetailActivity::class.java))
+        //startActivity(Intent(context,VideoPlayActivity::class.java))
     }
 
 }

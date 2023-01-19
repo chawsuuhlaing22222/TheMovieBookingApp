@@ -2,10 +2,12 @@ package com.padc.csh.themovieapplication.viewpods
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.widget.RelativeLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import com.padc.csh.themovieapplication.adapters.MovieListAdapter
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
+import kotlinx.android.synthetic.main.view_holder_movie_item.view.*
 import kotlinx.android.synthetic.main.view_pod_movie_list.view.*
 
 class MovieListViewPod @JvmOverloads constructor(
@@ -20,17 +22,20 @@ class MovieListViewPod @JvmOverloads constructor(
         super.onFinishInflate()
     }
 
-    public fun setUpViewPod(delegate: MovieListDelegate) {
+    public fun setUpViewPod(delegate: MovieListDelegate,flag:String) {
         setUpDelegate(delegate)
-        setUpRecyclerAdapter()
+        setUpRecyclerAdapter(flag)
+
     }
+
+
 
     private fun setUpDelegate(delegate: MovieListDelegate) {
         mDelegate = delegate
     }
 
-    private fun setUpRecyclerAdapter() {
-        mAdapter = MovieListAdapter(mDelegate)
+    private fun setUpRecyclerAdapter(flag: String) {
+        mAdapter = MovieListAdapter(mDelegate,flag)
         rvMovieListViewPod.adapter = mAdapter
         rvMovieListViewPod.layoutManager = GridLayoutManager(context, 2)
     }

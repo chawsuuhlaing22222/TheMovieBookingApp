@@ -1,11 +1,13 @@
 package com.padc.csh.themovieapplication.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.activities.MovieDetailActivity
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
 import com.padc.csh.themovieapplication.viewpods.MovieListViewPod
 import kotlinx.android.synthetic.main.fragment_comming_soon_movie_list.*
@@ -28,11 +30,11 @@ class CommingSoonMovieListFragment : Fragment(),MovieListDelegate {
 
     private fun setUpViewPod() {
         mMovieListViewPod= viewPodCommingSoonMovieList as MovieListViewPod
-        mMovieListViewPod.setUpViewPod(this)
+        mMovieListViewPod.setUpViewPod(this,"comming")
     }
 
     override fun onTapMovie() {
-
+        startActivity(Intent(context, MovieDetailActivity::class.java))
     }
 
 }

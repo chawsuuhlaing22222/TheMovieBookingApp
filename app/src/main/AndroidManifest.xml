@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,26 +15,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TheMovieApplication"
         tools:targetApi="31">
-
         <activity
-            android:name=".activities.ChooseLocationActivity"
-            android:theme="@style/Theme.TheMovieApplication"
+            android:name=".activities.VideoPlayActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
-            android:name=".activities.GetOtpActivity"
-            android:exported="false"
-            android:theme="@style/Theme.TheMovieApplication.StatusBar"
-           >
+            android:name=".activities.MovieDetailActivity"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
+        <activity
+            android:name=".activities.ChooseLocationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TheMovieApplication">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activities.GetOtpActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TheMovieApplication.StatusBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activities.LoginChooseActivity"
             android:exported="true"
@@ -40,7 +53,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".activities.SplashScreenActivity"
             android:exported="true"
@@ -48,23 +60,21 @@
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-
-
         </activity>
-
         <activity
             android:name=".activities.MainActivity"
-            android:theme="@style/Theme.TheMovieApplication"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.TheMovieApplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
     </application>
 
 </manifest>

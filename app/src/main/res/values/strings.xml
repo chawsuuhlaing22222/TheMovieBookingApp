@@ -22,4 +22,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lbl_now_showing">Now Showing</string>
     <string name="lbl_comming_soon">Comming Soon</string>
+    <string name="lbl_censor_rating">Censor Rating</string>
+    <string name="lbl_release_date">Release Date</string>
+    <string name="lbl_duration">Duration</string>
+    <string name="lbl_booing_noti">Get notify as soon as movie \nbooking opens up in your city!</string>
+    <string name="lbl_send_notification">Send Notification</string>
+    <string name="lbl_story_line">Story Line</string>
+    <string name="lbl_cast">Cast</string>
 </resources>
