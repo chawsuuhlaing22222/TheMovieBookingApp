@@ -1,43 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginStart="@dimen/margin_medium_2"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
+    android:paddingTop="@dimen/margin_medium_3"
+    android:paddingBottom="@dimen/margin_medium_3">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCinemaName"
-       android:textSize="@dimen/text_regular_2x"
-        android:text="JCGV : Junction City"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:text="JCGV : Junction City"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_regular_2x" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvSeeDetails"
-        android:textSize="@dimen/text_regular_2x"
-        android:layout_marginEnd="@dimen/margin_medium_2"
-        android:layout_alignParentEnd="true"
-        android:text="@string/lbl_see_details"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:text="@string/lbl_see_details"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_regular_2x" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivParking"
-        app:srcCompat="@drawable/ic_parking"
-        android:layout_below="@id/tvCinemaName"
-        android:layout_marginTop="20dp"
         android:layout_width="18dp"
-        android:layout_height="18dp"/>
+        android:layout_height="18dp"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/ic_parking" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvParking"
-       android:text="Parking"
-        android:layout_marginStart="10dp"
-        android:layout_toEndOf="@id/ivParking"
-        android:textSize="@dimen/text_regular"
-        android:layout_below="@id/tvCinemaName"
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/ivParking"
+        android:text="@string/lbl_parking"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOnlineFood"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/tvParking"
+        app:srcCompat="@drawable/ic_online_food" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOnlineFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/ivOnlineFood"
+        android:text="@string/lbl_online_food"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivWheelChair"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/tvOnlineFood"
+        app:srcCompat="@drawable/ic_wheel_chair" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWheelChiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/ivWheelChair"
+        android:text="@string/lbl_wheel_chiar"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMovieAvailableTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvParking"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginBottom="@dimen/margin_medium_3"
+        android:clipToPadding="false"
+        android:paddingEnd="@dimen/margin_medium_2" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBookingInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvMovieAvailableTime"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        app:srcCompat="@drawable/ic_baseline_info_grey_24dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvBookingSeatingInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rvMovieAvailableTime"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_toEndOf="@id/ivBookingInfo"
+        android:text="@string/lbl_booking_info"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/tvBookingSeatingInfo"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:background="@color/colorPrimaryLight" />
+
 
 </RelativeLayout>

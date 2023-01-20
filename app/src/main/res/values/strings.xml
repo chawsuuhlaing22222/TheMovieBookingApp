@@ -30,4 +30,8 @@
     <string name="lbl_story_line">Story Line</string>
     <string name="lbl_cast">Cast</string>
     <string name="lbl_see_details"><u>See Details</u></string>
+    <string name="lbl_parking">Parking</string>
+    <string name="lbl_online_food">Online Food</string>
+    <string name="lbl_wheel_chiar">Wheel Chiar</string>
+    <string name="lbl_booking_info">Long press on show timing to see seat class!</string>
 </resources>

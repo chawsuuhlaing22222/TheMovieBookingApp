@@ -11,22 +11,23 @@
     android:id="@+id/tvDayName"
     android:layout_marginTop="@dimen/margin_medium_2"
     android:text="Today"
+
     android:layout_gravity="center|center_horizontal"
-    android:textColor="@color/black"
+    android:textColor="@color/white"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"/>
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMonthName"
         android:text="May"
         android:layout_gravity="center|center_horizontal"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvDayValue"
         android:text="1"
         android:layout_gravity="center|center_horizontal"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

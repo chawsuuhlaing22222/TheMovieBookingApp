@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_avialable_cinema_seat_condition"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAvailableTime"
+        android:text="9:30Am"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMovieViewType"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvAvailableTime"
+        android:text="3D"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvScreenNo"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvMovieViewType"
+        android:text="Screen 1"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAvaliableSeatCount"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvScreenNo"
+        android:text="21 Available"
+        android:textColor="@color/colorSecondaryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
