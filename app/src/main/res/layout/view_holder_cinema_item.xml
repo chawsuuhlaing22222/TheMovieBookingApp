@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/margin_medium_2"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCinemaName"
+       android:textSize="@dimen/text_regular_2x"
+        android:text="JCGV : Junction City"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSeeDetails"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_alignParentEnd="true"
+        android:text="@string/lbl_see_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivParking"
+        app:srcCompat="@drawable/ic_parking"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginTop="20dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvParking"
+       android:text="Parking"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@id/ivParking"
+        android:textSize="@dimen/text_regular"
+        android:layout_below="@id/tvCinemaName"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

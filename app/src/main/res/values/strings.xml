@@ -29,4 +29,5 @@
     <string name="lbl_send_notification">Send Notification</string>
     <string name="lbl_story_line">Story Line</string>
     <string name="lbl_cast">Cast</string>
+    <string name="lbl_see_details"><u>See Details</u></string>
 </resources>

@@ -17,5 +17,8 @@
     <color name="colorSecondaryText">#aaaaaa</color>
     <color name="colorTimeCard">#d7d7d7</color>
 
-
+    <color name="colorTransparentOverlayPlayBtn">#80000000</color>
+    <color name="colorAvailable">#00FFA3</color>
+    <color name="colorFillingFast">#FF7A00</color>
+    <color name="colorAlmostFull">#FF00B8</color>
 </resources>

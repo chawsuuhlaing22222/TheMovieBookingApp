@@ -34,7 +34,7 @@ class CommingSoonMovieListFragment : Fragment(),MovieListDelegate {
     }
 
     override fun onTapMovie() {
-        startActivity(Intent(context, MovieDetailActivity::class.java))
+        startActivity(MovieDetailActivity.newIntent(context,"comming"))
     }
 
 }
