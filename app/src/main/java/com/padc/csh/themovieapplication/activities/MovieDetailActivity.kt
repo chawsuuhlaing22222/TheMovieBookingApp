@@ -23,7 +23,6 @@ class MovieDetailActivity : AppCompatActivity() {
     lateinit var mMovieCastAdapter: MovieCastAdapter
     lateinit var mMovieGenreAdapter: MovieGenreAdapter
 
-
     companion object{
         const val FROM_ACTIVITY="FROM_ACTIVITY"
         fun newIntent(context: Context?,flag:String):Intent{
@@ -32,6 +31,7 @@ class MovieDetailActivity : AppCompatActivity() {
             return intent
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)

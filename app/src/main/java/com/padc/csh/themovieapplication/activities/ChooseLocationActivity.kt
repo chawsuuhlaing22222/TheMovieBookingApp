@@ -22,10 +22,7 @@ class ChooseLocationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_location)
 
-
         cityList = resources.getStringArray(R.array.cities)
-
-
         setUpSpinnerListener()
         setUpListener()
     }

@@ -10,16 +10,27 @@ import com.padc.csh.themovieapplication.viewholders.MovieCinemaSeatConditionView
 import com.padc.csh.themovieapplication.viewholders.MovieCinemaViewHolder
 
 class MovieCinemaSeatConditionAdapter(var movieCinemaSeatConditionDelegate: MovieCinemaSeatConditionDelegate): RecyclerView.Adapter<MovieCinemaSeatConditionViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCinemaSeatConditionViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.view_holder_cinema_seat_condition,parent,false)
         return MovieCinemaSeatConditionViewHolder(view,movieCinemaSeatConditionDelegate)
     }
 
     override fun getItemCount(): Int {
-        return 7
+        return 5
     }
 
     override fun onBindViewHolder(holder: MovieCinemaSeatConditionViewHolder, position: Int) {
-
+        when(position){
+            1->{
+                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.colorFillingFastTransparent))
+            }
+            2->{
+                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.colorAlmostFullTransparent))
+            }
+            3->{
+                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.colorAvailableTransparent))
+            }
+        }
     }
 }

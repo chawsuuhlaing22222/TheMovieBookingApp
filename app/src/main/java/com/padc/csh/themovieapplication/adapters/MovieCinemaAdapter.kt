@@ -26,16 +26,16 @@ class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatC
 
         holder.itemView.tvSeeDetails.setOnClickListener {
 
-           if(holder.itemView.rvMovieAvailableTime.visibility==View.VISIBLE){
-               holder.itemView.rvMovieAvailableTime.visibility=View.GONE
-           }else{
-               holder.itemView.rvMovieAvailableTime.visibility=View.VISIBLE
-           }
-           if(holder.itemView.ivBookingInfo.visibility==View.VISIBLE){
-               holder.itemView.ivBookingInfo.visibility=View.GONE
-           }else{
-               holder.itemView.ivBookingInfo.visibility=View.VISIBLE
-           }
+//           if(holder.itemView.rvMovieAvailableTime.visibility==View.VISIBLE){
+//               holder.itemView.rvMovieAvailableTime.visibility=View.GONE
+//           }else{
+//               holder.itemView.rvMovieAvailableTime.visibility=View.VISIBLE
+//           }
+//           if(holder.itemView.ivBookingInfo.visibility==View.VISIBLE){
+//               holder.itemView.ivBookingInfo.visibility=View.GONE
+//           }else{
+//               holder.itemView.ivBookingInfo.visibility=View.VISIBLE
+//           }
 
             //call delegate
             cinemaDelegate.onMovieCinema(position)
@@ -45,10 +45,12 @@ class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatC
             position->{
                 holder.itemView.rvMovieAvailableTime.visibility=View.VISIBLE
                 holder.itemView.ivBookingInfo.visibility=View.VISIBLE
+                holder.itemView.tvBookingSeatingInfo.visibility=View.VISIBLE
             }
             else->{
                 holder.itemView.rvMovieAvailableTime.visibility=View.GONE
                 holder.itemView.ivBookingInfo.visibility=View.GONE
+                holder.itemView.tvBookingSeatingInfo.visibility=View.GONE
             }
 
         }
