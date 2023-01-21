@@ -19,6 +19,7 @@
         app:itemIconTint="@color/selected_bottom_nav_item"
         app:itemTextColor="@color/selected_bottom_nav_item"
         android:layout_height="?attr/actionBarSize"
+        app:labelVisibilityMode="labeled"
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
         app:menu="@menu/bottom_nav_menu" />

@@ -23,13 +23,13 @@ class MovieCinemaSeatConditionAdapter(var movieCinemaSeatConditionDelegate: Movi
     override fun onBindViewHolder(holder: MovieCinemaSeatConditionViewHolder, position: Int) {
         when(position){
             1->{
-                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.colorFillingFastTransparent))
+                holder.itemView.setBackgroundResource(R.drawable.bg_fillingfast_cinema_show_time)
             }
             2->{
-                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.colorAlmostFullTransparent))
+                holder.itemView.setBackgroundResource(R.drawable.bg_almostfull_cinema_show_time)
             }
             3->{
-                holder.itemView.setBackgroundColor(holder.itemView.resources.getColor(R.color.colorAvailableTransparent))
+                holder.itemView.setBackgroundResource(R.drawable.bg_available_cinema_show_time)
             }
         }
     }

@@ -86,7 +86,7 @@
 
                     <VideoView
                         android:id="@+id/vvMovie"
-                       android:layout_alignParentEnd="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_alignParentStart="true"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
@@ -414,12 +414,12 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBooking"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bg_booking"
-            android:text="Booking"
+
             android:textAllCaps="false"
             android:textColor="@color/black" />
     </RelativeLayout>

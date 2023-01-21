@@ -10,7 +10,7 @@ import android.widget.BaseAdapter
 import com.padc.csh.themovieapplication.R
 import kotlinx.android.synthetic.main.view_item_custom_spinner_dropdown.view.*
 import java.util.zip.Inflater
-
+//Not use //but useful
 class CitySpinnerCustomAdapter(val context: Context,val cities:Array<String>): BaseAdapter() {
     override fun getCount(): Int {
 

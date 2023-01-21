@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.padc.csh.themovieapplication.R
-import com.padc.csh.themovieapplication.dummy.dateList
 import com.padc.csh.themovieapplication.viewholders.DateViewHolder
 import com.tbuonomo.viewpagerdotsindicator.setBackgroundCompat
 import kotlinx.android.synthetic.main.view_holder_date_item.view.*
@@ -28,7 +27,7 @@ class DateAdapter: RecyclerView.Adapter<DateViewHolder>() {
         when(position){
             0->{
                 holder.itemView.tvDayName.text="Today"
-                holder.itemView.background=holder.itemView.context.getDrawable(R.drawable.calendar)
+                holder.itemView.background=holder.itemView.context.getDrawable(R.drawable.bg_active_calendar)
             }
             1->{
                 holder.itemView.tvDayName.text="Tomorrow"

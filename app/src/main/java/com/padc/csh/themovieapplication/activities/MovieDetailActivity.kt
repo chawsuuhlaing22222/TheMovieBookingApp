@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.MediaController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.MovieGenreAdapter
 import com.padc.csh.themovieapplication.delegates.MovieCastAdapter
@@ -95,15 +96,17 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun setUpDefaultMovie(){
 
         val videoUrl =
-            "https://media.geeksforgeeks.org/wp-content/uploads/20201217192146/Screenrecorder-2020-12-17-19-17-36-828.mp4?_=1"
+           "https://media.geeksforgeeks.org/wp-content/uploads/20201217192146/Screenrecorder-2020-12-17-19-17-36-828.mp4?_=1"
 
-       //val videoUrl="https://www.youtube.com/watch?v=bC6RTYb3QLU"
+       //val videoUrl="https://www.youtube.com/watch?v=IobNcpiwpSc&list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA&index=3"
         val videoUri=Uri.parse(videoUrl)
-        vvMovie.setMediaController(MediaController(this))
+        //vvMovie.setMediaController(MediaController(this))
         vvMovie.setVideoURI(videoUri)
 
         //set up default cover photo
-       // vvMovieCover.setImageURI(videoUri)
+         Glide.with(this)
+             .load(videoUri).centerCrop()
+             .placeholder(R.drawable.placeholder_cast_img).into(vvMovieCover)
     }
 
 
@@ -119,8 +122,5 @@ class MovieDetailActivity : AppCompatActivity() {
         rvMovieGenreDetailScrn.layoutManager=GridLayoutManager(this,3)
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu_toolbar_movie_detail,menu)
-//        return true
-//    }
+
 }
