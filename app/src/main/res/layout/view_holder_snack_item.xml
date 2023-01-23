@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_bg_snack"
+    android:layout_marginLeft="@dimen/margin_medium_2"
+    android:layout_marginTop="@dimen/margin_medium_2"
+    android:layout_width="170dp"
+    android:layout_height="220dp">
+
+    <RelativeLayout
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSnack"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            app:srcCompat="@drawable/cocacola"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSnackName"
+            android:layout_below="@id/ivSnack"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="CocaCola"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSnackPrice"
+            android:layout_below="@id/tvSnackName"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginTop="5dp"
+            android:text="1000ks"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:backgroundTint="@color/colorAccent"
+           android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_below="@id/tvSnackPrice"
+            android:layout_marginTop="5dp"
+            android:text="Add"
+            android:textSize="@dimen/text_regular"
+            android:textColor="@color/black"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

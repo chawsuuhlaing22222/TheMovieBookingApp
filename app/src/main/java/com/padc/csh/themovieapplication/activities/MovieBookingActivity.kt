@@ -1,5 +1,6 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,14 +8,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.DateAdapter
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
+import com.padc.csh.themovieapplication.delegates.DateDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaSeatConditionDelegate
 import kotlinx.android.synthetic.main.activity_movie_booking.*
 import kotlinx.android.synthetic.main.view_holder_cinema_item.*
 
-class MovieBookingActivity : AppCompatActivity(),MovieCinemaDelegate,MovieCinemaSeatConditionDelegate {
+class MovieBookingActivity : AppCompatActivity(),MovieCinemaDelegate,MovieCinemaSeatConditionDelegate,DateDelegate {
 
     lateinit var mMovieCinemaAdapter: MovieCinemaAdapter
+    lateinit var mDateAdapter: DateAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +27,8 @@ class MovieBookingActivity : AppCompatActivity(),MovieCinemaDelegate,MovieCinema
     }
 
     private fun setUpAdapter() {
-        rvDate.adapter = DateAdapter()
+        mDateAdapter=DateAdapter(this,this)
+        rvDate.adapter = mDateAdapter
         rvDate.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         //movie cinema rv
@@ -37,7 +41,12 @@ class MovieBookingActivity : AppCompatActivity(),MovieCinemaDelegate,MovieCinema
        mMovieCinemaAdapter.setSelectedPosition(postition)
     }
 
-    override fun onMovieCinemaSeatToBook() {
-       // Toast.makeText(this, "movie cinema seat", Toast.LENGTH_SHORT).show()
+
+    override fun onDateCardClick(postition: Int) {
+        mDateAdapter.setSelectedDatePosition(postition)
+    }
+
+    override fun onMovieCinemaSeatPlanClick() {
+       startActivity(Intent(this,GetSnackActivity::class.java))
     }
 }

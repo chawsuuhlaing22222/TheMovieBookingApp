@@ -6,4 +6,10 @@ import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaSeatConditionDelegate
 
 class MovieCinemaSeatConditionViewHolder(itemView: View,delegate: MovieCinemaSeatConditionDelegate) :RecyclerView.ViewHolder(itemView) {
+       init {
+           itemView.setOnClickListener {
+               delegate.onMovieCinemaSeatPlanClick()
+           }
+
+       }
 }

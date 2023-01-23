@@ -8,4 +8,4 @@ import java.util.Date
 
 val cityList= listOf<String>("Yangon","Mandalay","NaypyiDaw","Monywa")
 
-//val movieGenreList= listOf<String>("Action","Adventure","Animation","Drama
+val snackList= listOf<String>("All","Combo","Snack","Pop Corn","Beverage")

@@ -1,5 +1,5 @@
 package com.padc.csh.themovieapplication.delegates
 
 interface MovieCinemaSeatConditionDelegate {
-    fun onMovieCinemaSeatToBook()
+    fun onMovieCinemaSeatPlanClick()
 }
