@@ -47,6 +47,7 @@
     <dimen name="height_verify_btn_loginscrn">50dp</dimen>
     <dimen name="width_movie_item">180dp</dimen>
     <dimen name="height_movie_item">260dp</dimen>
+    <dimen name="text_18sp">18sp</dimen>
 
 
 </resources>

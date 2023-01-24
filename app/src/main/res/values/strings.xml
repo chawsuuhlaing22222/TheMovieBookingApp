@@ -36,4 +36,7 @@
     <string name="lbl_booking_info">Long press on show timing to see seat class!</string>
     <string name="lbl_grab_a_bite">Grab a bite!</string>
     <string name="lbl_skip">SKIP</string>
+
+    <string name="lbl_movie_name_checkoutscrn"><b>%$</b>(%$)(%$) </string>
+    <string name="lbl_cinema_name_checkoutscrn"><font color="#00ff6a">%$ : %$</font><font color="#888888">(%$)</font> </string>
 </resources>

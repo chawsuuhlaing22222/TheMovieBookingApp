@@ -31,7 +31,6 @@ lateinit var mSnackListAdapter: SnackListAdapter
 
         val bundle=arguments.takeIf {bundle: Bundle? ->  bundle?.containsKey(IEXTRA_SNACK_NAME) ?: false }
         val snackName=bundle?.getString(IEXTRA_SNACK_NAME) ?: " "
-
         setUpSnackRecyclerView()
     }
 

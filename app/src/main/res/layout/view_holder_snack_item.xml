@@ -43,18 +43,61 @@
             android:textSize="@dimen/text_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAdd"
-            android:backgroundTint="@color/colorAccent"
-           android:layout_marginLeft="@dimen/margin_medium_2"
+
+        <FrameLayout
             android:layout_below="@id/tvSnackPrice"
             android:layout_marginTop="5dp"
-            android:text="Add"
-            android:textSize="@dimen/text_regular"
-            android:textColor="@color/black"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"/>
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            btn add food-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAdd"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Add"
+                android:visibility="visible"
+                android:textSize="@dimen/text_regular"
+                android:textColor="@color/black"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"/>
+
+<!--            layout of additional plus minus food-->
+            <LinearLayout
+                android:id="@+id/llAdditionalPlusMinusFood"
+                android:gravity="end"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnPlusFood"
+                    android:text="+"
+                    android:gravity="center"
+                    android:background="@drawable/bg_plus_minus_food_item"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOrderFoodCount"
+                    android:text="1"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMinusFood"
+                    android:text="-"
+                    android:gravity="center"
+                    android:background="@drawable/bg_plus_minus_food_item"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+            </LinearLayout>
+        </FrameLayout>
+
     </RelativeLayout>
 
 

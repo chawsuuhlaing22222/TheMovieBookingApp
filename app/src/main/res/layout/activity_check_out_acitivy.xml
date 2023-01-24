@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CheckOutAcitivy">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBackCheckOutScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_white_24dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCheckOut"
+                android:text="Checkout"
+                android:textColor="@color/white"
+                android:gravity="center|center_vertical"
+             android:layout_centerInParent="true"
+                android:textSize="@dimen/text_22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:padding="@dimen/margin_medium_2"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<!--            movie name-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieNameCheckoutScrn"
+                android:text="Black White"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!--            cinema name-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCinemaNameCheckoutScrn"
+                android:layout_below="@id/tvMovieNameCheckoutScrn"
+                android:text="Junction City"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <!--calendar date-->
+            <LinearLayout
+                android:id="@+id/llCalendarCheckoutScrn"
+                android:layout_below="@id/tvCinemaNameCheckoutScrn"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!--            calendar icon-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCalendarCheckoutScrn"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_calendar_checkout_scrn"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMovieDateCheckoutScrn"
+                    android:text="Sat,18 June,2022 "
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_below="@id/ivCalendarCheckoutScrn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <!--movie show time-->
+            <LinearLayout
+                android:layout_below="@id/tvCinemaNameCheckoutScrn"
+                android:layout_margin="@dimen/margin_medium_3"
+                android:layout_toEndOf="@+id/llCalendarCheckoutScrn"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <!--            calendar icon-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCalendCheckoutScrn"
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/ic_calendar_checkout_scrn"
+                    android:layout_width="@dimen/margin_30dp"
+                    android:layout_height="@dimen/margin_30dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMovieTimeCheckoutScrn"
+                    android:text="Sat,18 June,2022 "
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_below="@id/ivCalendarCheckoutScrn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
