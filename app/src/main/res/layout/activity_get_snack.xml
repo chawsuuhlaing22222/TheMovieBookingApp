@@ -112,6 +112,7 @@
 
         <!--        food check out layout-->
         <RelativeLayout
+            android:id="@+id/rlFoodCheckOutGetSnackScrn"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_50dp"
             android:layout_below="@id/rvOrderedFoodList"
@@ -131,10 +132,8 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivOnlineFood"
                     android:layout_width="@dimen/margin_30dp"
-
                     android:layout_height="@dimen/margin_30dp"
                     android:layout_gravity="center_vertical"
-
                     app:srcCompat="@drawable/ic_online_food"
                     app:tint="@color/black" />
 

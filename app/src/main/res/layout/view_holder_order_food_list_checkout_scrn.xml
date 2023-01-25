@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--cancel btn-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnCancelFoodOrderedCheckoutScrn"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_baseline_cancel_presentation_24" />
+    <!--    food name-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFoodNameCheckoutScrnVH"
+     android:layout_toEndOf="@id/btnCancelFoodOrderedCheckoutScrn"
+        android:layout_marginLeft="5dp"
+        android:text="Potatoe Chips (Qt. 1)"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorPrimaryLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+    <!--    food price-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFoodPriceOrderedDetailVH"
+        android:layout_alignParentEnd="true"
+        android:text="2000ks"
+        android:textColor="@color/colorPrimaryLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_ticket_cancelation_policy_dialog"
+    android:layout_margin="@dimen/margin_50dp"
+    android:padding="@dimen/margin_medium_2"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitleTicketCancelPolicy"
+        android:text="@string/lbl_ticket_cancelation_policy"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOnlineFoodTicketCancelPolicyCustomDialog"
+        app:srcCompat="@drawable/ic_online_food"
+        app:tint="@color/white"
+        android:layout_below="@id/tvTitleTicketCancelPolicy"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_width="28dp"
+        android:layout_height="23dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRefundFAndB"
+        android:text="@string/lbl_refund_FandB"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_below="@id/tvTitleTicketCancelPolicy"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_toEndOf="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivTicketPolicyCustomDialog"
+        app:srcCompat="@drawable/ic_ticket"
+        app:tint="@color/white"
+        android:layout_below="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_width="28dp"
+        android:layout_height="23dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRefundTicket"
+        android:text="@string/lbl_refund_ticket"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_regular_2x"
+        android:layout_below="@id/tvRefundFAndB"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_toEndOf="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
+        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRefundNotiUnitlHour"
+        android:textColor="@color/colorPrimaryLight"
+        android:layout_below="@id/tvRefundTicket"
+       android:layout_alignStart="@id/tvRefundTicket"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:text="@string/lbl_refund_noti_untilhour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRefundNotiUnitlHourAndMin"
+        android:textColor="@color/colorPrimaryLight"
+        android:layout_below="@id/tvRefundNotiUnitlHour"
+        android:layout_alignStart="@id/tvRefundTicket"
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:text="@string/lbl_50percent_refund"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRefundNotAvailable"
+        android:text="@string/lbl_refund_noti_notavailable"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tvRefundNotiUnitlHourAndMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoCancelation"
+        android:text="@string/lbl_nocancelation_noti"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tvRefundNotAvailable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnCloseTicketCancelationDialog"
+        app:srcCompat="@drawable/btn_close_cancelation_dialog"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:layout_below="@id/tvNoCancelation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+</RelativeLayout>

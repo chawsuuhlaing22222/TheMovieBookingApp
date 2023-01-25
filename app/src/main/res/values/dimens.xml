@@ -48,6 +48,8 @@
     <dimen name="width_movie_item">180dp</dimen>
     <dimen name="height_movie_item">260dp</dimen>
     <dimen name="text_18sp">18sp</dimen>
+    <dimen name="margin_22dp">22dp</dimen>
+    <dimen name="margin_333dp">333dp</dimen>
 
 
 </resources>

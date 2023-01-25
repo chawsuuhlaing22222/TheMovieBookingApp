@@ -30,4 +30,13 @@
    <!-- <style name="mySpinnerItemStyle" parent="Widget.AppCompat.Spinner.Underlined">
         <<item name="android:textColor">@color/colorPrimaryLight</item>>
     </style>-->
+
+
+    <style name="NameTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#00ff6a</item>
+        <item name="boxStrokeErrorColor">#ff0000</item>
+        <item name="errorTextColor">#ff0000</item>
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="hintTextColor">@color/colorAccent</item>
+    </style>
 </resources>

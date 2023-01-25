@@ -37,6 +37,23 @@
     <string name="lbl_grab_a_bite">Grab a bite!</string>
     <string name="lbl_skip">SKIP</string>
 
-    <string name="lbl_movie_name_checkoutscrn"><b>%$</b>(%$)(%$) </string>
-    <string name="lbl_cinema_name_checkoutscrn"><font color="#00ff6a">%$ : %$</font><font color="#888888">(%$)</font> </string>
+    <string name="lbl_movie_name_checkoutscrn"><b>%s</b>(%s)(%s) </string>
+    <string name="lbl_cinema_name_checkoutscrn"><font color="#00ff6a">%s : %s</font><font color="#888888">(%s)</font> </string>
+    <string name="lbl_tickect_count_checkout_scrn"><font color="#AAAAAA">M-Ticket(</font><font color="#00ff6a">%s</font><font color="#AAAAAA">)</font></string>
+
+
+    <string name="lbl_convenience_fee">Convenience Fee</string>
+    <string name="lbl_food_and_beverage">Food and Beverage</string>
+    <string name="lbl_ticket_cancelion_policy">Ticket Cancelion policy</string>
+    <string name="lbl_total">Total</string>
+    <string name="junction_city"><![CDATA[<font color=\"#00ff6a>%s</font><font color=\"#ffffff\"> %s</font>]]></string>
+    <string name="lbl_ticket_cancelation_policy">Ticket Cancelation Policy</string>
+    <string name="lbl_refund_FandB"><![CDATA[100% Refund on F&B]]></string>
+    <string name="lbl_refund_ticket">Up to 75% Refund for Tickets</string>
+    <string name="lbl_refund_noti_untilhour">-75% refund until 2 hours before show\n start time</string>
+    <string name="lbl_50percent_refund">-50% refund between 2 hours and 20 minutes before show start time</string>
+    <string name="lbl_refund_noti_notavailable">1. Refund not available for Convenience fees,Vouchers, Gift Cards, Taxes etc.</string>
+    <string name="lbl_nocancelation_noti">2. No cancelation within 20minute of show start time.</string>
+    <string name="lbl_unlock_offer_applay_promocode">Unlock Offer or Apply Promocode</string>
+    <string name="lbl_choose_your_payment_type">Choose your payment type</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -41,6 +42,10 @@ class GetSnackActivity : AppCompatActivity() {
                 ivDropDownArrow.setImageResource(R.drawable.down_arrow)
             }
 
+        }
+
+        rlFoodCheckOutGetSnackScrn.setOnClickListener {
+            startActivity(Intent(this,CheckOutAcitivy::class.java))
         }
     }
 
