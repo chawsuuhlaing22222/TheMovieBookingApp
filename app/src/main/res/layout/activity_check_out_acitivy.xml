@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvMovieNameCheckoutScrn"
             android:layout_marginTop="@dimen/margin_medium"
-            android:text="@string/junction_city"
+            android:text="Junction City"
             android:textColor="@color/white"
             android:textSize="@dimen/text_18sp" />
 
@@ -127,7 +127,7 @@
                 android:textColor="@color/white" />
         </LinearLayout>
 
-        <!--movie show time-->
+        <!--cinema location-->
         <LinearLayout
             android:id="@+id/llCinemaLocationCheckoutScrn"
             android:layout_width="wrap_content"
@@ -162,7 +162,7 @@
             android:layout_below="@id/llCinemaLocationCheckoutScrn"
             android:layout_marginTop="@dimen/margin_xxlarge"
             android:text="@string/lbl_tickect_count_checkout_scrn"
-            android:textColor="#AAAAAA" />
+        />
         <!--    ticket type-->
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTicketTypeCheckoutScrn"

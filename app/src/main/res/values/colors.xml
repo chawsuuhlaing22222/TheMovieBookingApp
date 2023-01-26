@@ -31,4 +31,11 @@
     <color name="orange">#FF6B00</color>
 
     <color name="mtrl_textinput_default_box_stroke_color">#00ff6a</color>
+
+    <color name="color9898981">#626262</color>
+    <color name="color3838380">#00262626</color>
+
+    <color name="color5151511">#333333</color>
+    <color name="color020202">#020202</color>
+    <color name="color40000000">#BD000000</color>
 </resources>

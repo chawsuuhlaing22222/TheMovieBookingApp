@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    android:drawable="@drawable/gradient_ticket_confirmation_bg"-->
+    <item >
+                <shape>
+
+                    <corners android:radius="8dp"/>
+<!--                    <gradient android:type="linear"-->
+<!--                        android:angle="270"-->
+<!--                        android:startColor="#353535"-->
+<!--                        android:centerColor="#131313"-->
+<!--                        android:endColor="#353535"/>-->
+                    <gradient android:type="linear"
+                        android:angle="270"
+                        android:startColor="#1a1a1a"
+                        android:centerColor="#131313"
+                        android:endColor="#353535"/>
+
+                </shape>
+
+    </item>
+    <item android:gravity="center|left" android:width="20dp" android:height="20dp" android:left="-10dp">
+      <shape android:shape="oval">
+          <solid android:color="@color/black"/>
+      </shape>
+    </item>
+    <item android:gravity="center|right" android:width="20dp" android:height="20dp" android:right="-10dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/black"/>
+        </shape>
+    </item>
+</layer-list>
+

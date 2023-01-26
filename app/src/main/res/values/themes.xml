@@ -39,4 +39,9 @@
         <item name="android:textColorHint">@color/colorAccent</item>
         <item name="hintTextColor">@color/colorAccent</item>
     </style>
+
+    <style name="MyAlertDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowFixedWidthMajor">100%</item>
+        <item name="windowFixedWidthMinor">100%</item>
+    </style>
 </resources>
