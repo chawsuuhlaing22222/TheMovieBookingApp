@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#111111"
+    tools:context=".activities.CinemaSeatPlanActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBarSeatPlanScrn"
+            android:background="#111111"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    
+    <RelativeLayout
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_margin="@dimen/margin_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        rainbow-->
+        <FrameLayout
+            android:id="@+id/flRainbow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRainbowSeatPlanScrn"
+                app:srcCompat="@drawable/ic_rainbow"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvScreen"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:text="SCREEN"
+                android:letterSpacing="0.2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_regular_2x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSeatPlanList"
+            android:layout_below="@id/flRainbow"
+            android:layout_above="@id/rlProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+<!--        progress bar-->
+        <RelativeLayout
+            android:id="@+id/rlProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/tvTicketCountSeatPlanScrn"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+     >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPluslbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:text="+"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="@dimen/text_heading_1x" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/sbZoom"
+                android:layout_width="230dp"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryLight"
+                android:layout_gravity="center|center_vertical"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/tvPluslbl"
+                android:indeterminate="false"
+                android:max="50"
+                android:progress="10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMinuslbl"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="-"
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="@dimen/text_heading_1x" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnBuyTicket"
+           android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:layout_marginRight="@dimen/margin_medium_2"
+            app:srcCompat="@drawable/ic_btn_buyticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTicketCountSeatPlanScrn"
+            android:text="2 Tickets"
+            android:textSize="@dimen/text_regular_2x"
+            android:textColor="@color/white"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@id/tvTicketPrice"
+            android:layout_marginLeft="@dimen/margin_xlarge"
+            app:srcCompat="@drawable/ic_btn_buyticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTicketPrice"
+            android:text="70000Ks"
+            android:textSize="@dimen/text_regular_3x"
+            android:textColor="@color/colorAccent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:layout_marginLeft="@dimen/margin_xlarge"
+            app:srcCompat="@drawable/ic_btn_buyticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
