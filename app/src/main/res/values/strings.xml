@@ -59,4 +59,11 @@
 
     <string name="lbl_ticket_type_confirmation_scrn"><b><font color="#ffffff">%s</font></b><font color="#888888">(%s)</font> </string>
     <string name="lbl_done">DONE</string>
+    <string name="lbl_login_or_sign_up">Login or Sign Up</string>
+    <string name="lbl_purchae_history">Purchae History</string>
+    <string name="lbl_offer">Offer</string>
+    <string name="lbl_gift_card">Gift Card</string>
+    <string name="lbl_location">Location</string>
+    <string name="lbl_payment">Payment</string>
+    <string name="lbl_help_and_support">Help and Support</string>
 </resources>

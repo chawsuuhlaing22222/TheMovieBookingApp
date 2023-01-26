@@ -1,5 +1,6 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -26,6 +27,6 @@ class ChoosePaymentTypeActivity : AppCompatActivity(),PaymentDelegate {
     }
 
     override fun onChoosePayment() {
-        Toast.makeText(this,"Choose Payment",Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this,TicketConfirmationActivity::class.java))
     }
 }

@@ -50,7 +50,8 @@
     <dimen name="text_18sp">18sp</dimen>
     <dimen name="margin_22dp">22dp</dimen>
     <dimen name="margin_333dp">333dp</dimen>
-
+    <dimen name="margin_220dp">220dp</dimen>
+    <dimen name="margin_85dp">85dp</dimen>
 
 
 </resources>
