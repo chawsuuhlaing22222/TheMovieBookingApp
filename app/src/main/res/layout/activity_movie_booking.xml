@@ -76,45 +76,44 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp">
-
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTwoD"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/margin_xlarge"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="5dp"
-                android:text="2D"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/lbl_2d"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvThreeD"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/margin_xlarge"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="5dp"
-                android:text="3D"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/lbl_3d"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvThreeDImax"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/margin_xlarge"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="5dp"
-                android:text="3D IMAX"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/lbl_3d_imax"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv3DDBOX"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/margin_xlarge"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="5dp"
-                android:text="3D DBOX"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/lbl_3d_dbox"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -149,9 +148,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_medium"
-                        android:elevation="4dp"
+                        android:elevation="@dimen/margin_small"
                         android:layout_gravity="center_vertical"
-                        android:text="Availible"
+                        android:text="@string/lbl_availible"
                         android:textColor="@color/colorAvailable"
                         android:textSize="@dimen/text_regular_2x" />
 
@@ -161,7 +160,7 @@
                         android:layout_width="@dimen/margin_10dp"
                         android:layout_height="@dimen/margin_10dp"
                         android:layout_gravity="center_vertical"
-                        android:elevation="4dp"
+                        android:elevation="@dimen/margin_small"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
                         app:tint="@color/colorFillingFast" />
@@ -171,9 +170,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_medium"
-                        android:elevation="4dp"
+                        android:elevation="@dimen/margin_small"
                         android:layout_gravity="center_vertical"
-                        android:text="Filling Fast"
+                        android:text="@string/lbl_filling_fast"
                         android:textColor="@color/colorFillingFast"
                         android:textSize="@dimen/text_regular_2x" />
 
@@ -183,7 +182,7 @@
                         android:layout_width="@dimen/margin_10dp"
                         android:layout_height="@dimen/margin_10dp"
                         android:layout_gravity="center_vertical"
-                        android:elevation="4dp"
+                        android:elevation="@dimen/margin_small"
                         android:scaleType="centerCrop"
                         app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
                         app:tint="@color/colorAlmostFull" />
@@ -193,9 +192,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_medium"
-                        android:elevation="4dp"
+                        android:elevation="@dimen/margin_small"
                         android:layout_gravity="center_vertical"
-                        android:text="Almost Full"
+                        android:text="@string/lbl_almost_full"
                         android:textColor="@color/colorAlmostFull"
                         android:textSize="@dimen/text_regular_2x" />
 

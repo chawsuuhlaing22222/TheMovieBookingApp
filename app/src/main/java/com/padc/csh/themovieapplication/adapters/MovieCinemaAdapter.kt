@@ -25,18 +25,6 @@ class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatC
         holder.itemView.rvMovieAvailableTime.layoutManager=GridLayoutManager(holder.itemView.context,3)
 
         holder.itemView.tvSeeDetails.setOnClickListener {
-
-//           if(holder.itemView.rvMovieAvailableTime.visibility==View.VISIBLE){
-//               holder.itemView.rvMovieAvailableTime.visibility=View.GONE
-//           }else{
-//               holder.itemView.rvMovieAvailableTime.visibility=View.VISIBLE
-//           }
-//           if(holder.itemView.ivBookingInfo.visibility==View.VISIBLE){
-//               holder.itemView.ivBookingInfo.visibility=View.GONE
-//           }else{
-//               holder.itemView.ivBookingInfo.visibility=View.VISIBLE
-//           }
-
             //call delegate
             cinemaDelegate.onMovieCinema(position)
         }

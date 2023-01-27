@@ -33,7 +33,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivCreditCard"
             android:elevation="4dp"
-            app:srcCompat="@drawable/ic_credit_card"
+            app:srcCompat="@drawable/ic_kbz_credit_card"
             android:layout_below="@id/tvOffPriceBannerScrn"
             android:layout_marginTop="@dimen/margin_medium_2"
             android:layout_marginLeft="@dimen/margin_medium_2"

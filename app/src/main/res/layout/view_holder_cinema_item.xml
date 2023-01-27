@@ -55,6 +55,7 @@
         android:layout_marginStart="@dimen/margin_xlarge"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/tvParking"
+        app:tint="@color/colorPrimaryLight"
         app:srcCompat="@drawable/ic_online_food" />
 
     <androidx.appcompat.widget.AppCompatTextView

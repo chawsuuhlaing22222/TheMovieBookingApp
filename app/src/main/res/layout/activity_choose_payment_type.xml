@@ -57,14 +57,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:text="*"
-        android:textColor="#ff0000"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginStart="@dimen/margin_10dp"
-        android:layout_below="@id/toolbarChoosePaymentScrn"
-        android:layout_toEndOf="@id/textInputLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_10dp"
+        android:layout_marginBottom="@dimen/margin_medium_3"
+        android:layout_alignBottom="@id/textInputLayout"
+        android:layout_toEndOf="@id/textInputLayout"
+        android:text="*"
+        android:textColor="#ff0000" />
     
     <LinearLayout
         android:id="@+id/llUnlockPromocode"

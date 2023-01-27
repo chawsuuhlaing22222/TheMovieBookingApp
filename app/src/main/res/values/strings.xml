@@ -69,4 +69,12 @@
     <string name="lbl_your_selection">Your Selection</string>
     <string name="lbl_taken">Taken</string>
     <string name="lbl_availible">Availible</string>
+    <string name="lbl_2d">2D</string>
+    <string name="lbl_3d">3D</string>
+    <string name="lbl_3d_imax">3D IMAX</string>
+    <string name="lbl_3d_dbox">3D DBOX</string>
+    <string name="lbl_filling_fast">Filling Fast</string>
+    <string name="lbl_almost_full">Almost Full</string>
+    <string name="lbl_screen">SCREEN</string>
+    <string name="lbl_add">Add</string>
 </resources>

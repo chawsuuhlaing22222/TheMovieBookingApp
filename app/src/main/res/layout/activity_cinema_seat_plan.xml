@@ -20,7 +20,6 @@
     
     <RelativeLayout
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -40,7 +39,7 @@
                 android:id="@+id/tvScreen"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/margin_10dp"
-                android:text="SCREEN"
+                android:text="@string/lbl_screen"
                 android:letterSpacing="0.2"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular_2x"
@@ -51,7 +50,6 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSeatPlanList"
             android:layout_below="@id/flRainbow"
-            android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -59,8 +57,7 @@
         <LinearLayout
             android:id="@+id/llMovieSeatColorStausSeatPlanScrn"
             android:background="#222222"
-
-            android:layout_above="@id/rlProgressBar"
+            android:layout_below="@id/rvSeatPlanList"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_50dp">
 
@@ -70,7 +67,7 @@
                 android:layout_width="@dimen/margin_10dp"
                 android:layout_height="@dimen/margin_10dp"
                 android:layout_gravity="center_vertical"
-                android:elevation="4dp"
+                android:elevation="@dimen/margin_small"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
                 app:tint="@color/white" />
@@ -80,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium"
-                android:elevation="4dp"
+                android:elevation="@dimen/margin_small"
                 android:layout_gravity="center_vertical"
                 android:text="@string/lbl_availible"
                 android:textColor="@color/colorPrimaryLight"
@@ -92,7 +89,7 @@
                 android:layout_width="@dimen/margin_10dp"
                 android:layout_height="@dimen/margin_10dp"
                 android:layout_gravity="center_vertical"
-                android:elevation="4dp"
+                android:elevation="@dimen/margin_small"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
                 app:tint="@color/colorPrimaryLight" />
@@ -102,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium"
-                android:elevation="4dp"
+                android:elevation="@dimen/margin_small"
                 android:layout_gravity="center_vertical"
                 android:text="@string/lbl_taken"
                 android:textColor="@color/colorPrimaryLight"
@@ -114,7 +111,7 @@
                 android:layout_width="@dimen/margin_10dp"
                 android:layout_height="@dimen/margin_10dp"
                 android:layout_gravity="center_vertical"
-                android:elevation="4dp"
+                android:elevation="@dimen/margin_small"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
                 app:tint="@color/colorAccent" />
@@ -124,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_medium"
-                android:elevation="4dp"
+                android:elevation="@dimen/margin_small"
                 android:layout_gravity="center_vertical"
                 android:text="@string/lbl_your_selection"
                 android:textColor="@color/colorPrimaryLight"
@@ -136,8 +133,8 @@
         <RelativeLayout
             android:id="@+id/rlProgressBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/tvTicketCountSeatPlanScrn"
+            android:layout_height="@dimen/margin_50dp"
+            android:layout_below="@id/llMovieSeatColorStausSeatPlanScrn"
             android:layout_marginStart="@dimen/margin_xlarge"
             android:layout_marginTop="@dimen/margin_xlarge"
             android:layout_marginEnd="@dimen/margin_xlarge"
@@ -147,30 +144,36 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPluslbl"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/margin_large"
                 android:text="+"
                 android:textColor="@color/colorPrimaryLight"
                 android:textSize="@dimen/text_heading_1x" />
 
-            <androidx.appcompat.widget.AppCompatSeekBar
+            <com.google.android.material.slider.Slider
                 android:id="@+id/sbZoom"
+                android:layout_centerVertical="true"
                 android:layout_width="230dp"
-                android:layout_height="1dp"
-                android:background="@color/colorPrimaryLight"
-                android:layout_gravity="center|center_vertical"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_height="match_parent"
                 android:layout_toEndOf="@id/tvPluslbl"
+                app:thumbColor="@color/colorAccent"
+                app:trackColorActive="@color/colorAccent"
+                app:trackColorInactive="@color/colorPrimary"
                 android:indeterminate="false"
-                android:max="50"
-                android:progress="10" />
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:value="10"
+                android:valueTo="50"
+                android:valueFrom="0" />
+
+
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvMinuslbl"
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10dp"
                 android:layout_alignParentEnd="true"
                 android:text="-"
                 android:textColor="@color/colorPrimaryLight"

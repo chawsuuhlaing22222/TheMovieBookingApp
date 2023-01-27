@@ -98,9 +98,8 @@ class MovieDetailActivity : AppCompatActivity() {
         val videoUrl =
            "https://media.geeksforgeeks.org/wp-content/uploads/20201217192146/Screenrecorder-2020-12-17-19-17-36-828.mp4?_=1"
 
-       //val videoUrl="https://www.youtube.com/watch?v=IobNcpiwpSc&list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA&index=3"
         val videoUri=Uri.parse(videoUrl)
-        //vvMovie.setMediaController(MediaController(this))
+        vvMovie.setMediaController(MediaController(this))
         vvMovie.setVideoURI(videoUri)
 
         //set up default cover photo

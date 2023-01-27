@@ -1,8 +1,12 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.SeekBar
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.slider.Slider
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.SeatPlanAdapter
 import com.padc.csh.themovieapplication.delegates.ChildSeatDelegate
@@ -18,6 +22,35 @@ class CinemaSeatPlanActivity : AppCompatActivity(),ChildSeatDelegate,SeatPlanDel
 
         setUpToolbar()
         setUpSeatPlanRecyclerView()
+        setUpActionListener()
+    }
+
+    private fun setUpActionListener() {
+        btnBuyTicket.setOnClickListener {
+            startActivity(Intent(this,GetSnackActivity::class.java))
+        }
+
+        sbZoom.addOnChangeListener(object : Slider.OnChangeListener {
+
+            override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
+                Toast.makeText(this@CinemaSeatPlanActivity, "progress is $value", Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+        tvPluslbl.setOnClickListener {
+            var progress=sbZoom.value
+            if(progress<sbZoom.valueTo){
+                sbZoom.value=progress+10
+            }
+        }
+
+        tvMinuslbl.setOnClickListener {
+            var progress=sbZoom.value
+            if(progress>0){
+                sbZoom.value=progress-10
+            }
+        }
     }
 
     private fun setUpSeatPlanRecyclerView() {

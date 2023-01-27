@@ -76,6 +76,9 @@
                 android:id="@+id/tabLayoutGetSnackScrn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                app:tabMaxWidth="0dp"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
                 android:background="@color/colorPrimaryDark"
                 app:tabIndicatorColor="@color/colorAccent"
                 app:tabTextColor="@color/white" />

@@ -85,6 +85,7 @@
             android:background="@drawable/bg_otp_input_box"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:text="1"
             android:layout_width="@dimen/margin_50dp"
             android:layout_height="@dimen/margin_50dp"/>
 
@@ -95,6 +96,7 @@
             android:background="@drawable/bg_otp_input_box"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:text="1"
             android:layout_width="@dimen/margin_50dp"
             android:layout_height="@dimen/margin_50dp"/>
 
@@ -105,6 +107,7 @@
             android:background="@drawable/bg_otp_input_box"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:text="1"
             android:layout_width="@dimen/margin_50dp"
             android:layout_height="@dimen/margin_50dp"/>
 
@@ -115,6 +118,7 @@
             android:background="@drawable/bg_otp_input_box"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:text="1"
             android:layout_width="@dimen/margin_50dp"
             android:layout_height="@dimen/margin_50dp"/>
 
@@ -125,6 +129,7 @@
             android:background="@drawable/bg_otp_input_box"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:text="1"
             android:layout_width="@dimen/margin_50dp"
             android:layout_height="@dimen/margin_50dp"/>
 
@@ -135,6 +140,7 @@
             android:background="@drawable/bg_otp_input_box"
             android:layout_marginTop="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
+            android:text="1"
             android:layout_width="@dimen/margin_50dp"
             android:layout_height="@dimen/margin_50dp"/>
 

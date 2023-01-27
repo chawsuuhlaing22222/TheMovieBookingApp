@@ -28,10 +28,12 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
         holder.itemView.ivSeatImg.setOnClickListener {
             when(getItemViewType(position)){
                 TYPE_SEAT_ONE->{
+                    holder.itemView.ivSeatImg.setImageDrawable(null)
                     holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_your_selection_single_chair)
                 }
                 TYPE_SEAT_TWO->{
-                    holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_available_couplte_seat)
+                    holder.itemView.ivSeatImg.setImageDrawable(null)
+                    holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_taken_couple_seat)
                 }
             }
 
@@ -59,14 +61,15 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
 
             TYPE_SEAT_ONE->{
                 holder.itemView.ivSeatImg.visibility=View.VISIBLE
-                holder.itemView.setBackgroundResource(R.drawable.ic_seat_one)
+                holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_seat_one)
                 holder.itemView.tvSeatLevel.visibility=View.GONE
                 holder.itemView.viewSpace.visibility=View.GONE
 
             }
             TYPE_SEAT_TWO->{
                 holder.itemView.ivSeatImg.visibility=View.VISIBLE
-                holder.itemView.setBackgroundResource(R.drawable.ic_couple_seat)
+                holder.itemView.ivSeatImg.setImageDrawable(null)
+                holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_available_couplte_seat)
                 holder.itemView.tvSeatLevel.visibility=View.GONE
                 holder.itemView.viewSpace.visibility=View.GONE
 
@@ -92,9 +95,7 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
             "space"->{
                 TYPE_SPACE
             }
-//            "small"->{
-//                TYPE_SMALL
-//            }
+
             else->{
                 TYPE_LABEL
             }

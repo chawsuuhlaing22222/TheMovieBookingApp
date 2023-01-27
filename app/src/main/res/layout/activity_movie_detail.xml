@@ -286,7 +286,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_below="@id/llDuration"
-                android:layout_margin="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:background="@drawable/gradient_noti_movie_release_bg">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -314,7 +317,7 @@
 
                 <FrameLayout
                     android:id="@+id/flSendNoti"
-                    android:layout_width="150dp"
+                    android:layout_width="170dp"
                     android:layout_height="35dp"
                     android:layout_below="@id/tvBookingNoti"
                     android:layout_marginLeft="@dimen/margin_medium_2"
@@ -332,13 +335,11 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvSendNotiLbl"
-
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tvReleaseDateNoti"
-                        android:layout_gravity="end"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="@dimen/margin_10dp"
+                        android:layout_gravity="center|center_vertical"
+                        android:layout_marginStart="@dimen/margin_5dp"
                         android:text="@string/lbl_send_notification"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_regular" />
@@ -347,15 +348,13 @@
                 </FrameLayout>
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="150dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="@dimen/margin_medium_2"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:layout_marginEnd="@dimen/margin_medium_2"
-                    android:layout_marginBottom="@dimen/margin_medium_2"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/ic_man_sending_msg" />
+                    android:layout_margin="@dimen/margin_10dp"
+                    android:layout_marginLeft="@dimen/margin_large"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_human" />
             </RelativeLayout>
 
             <androidx.appcompat.widget.AppCompatTextView

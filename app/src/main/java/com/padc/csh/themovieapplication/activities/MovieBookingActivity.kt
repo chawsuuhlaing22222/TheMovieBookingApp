@@ -47,6 +47,6 @@ class MovieBookingActivity : AppCompatActivity(),MovieCinemaDelegate,MovieCinema
     }
 
     override fun onMovieCinemaSeatPlanClick() {
-       startActivity(Intent(this,GetSnackActivity::class.java))
+       startActivity(Intent(this,CinemaSeatPlanActivity::class.java))
     }
 }

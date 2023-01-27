@@ -30,6 +30,7 @@ class GetSnackActivity : AppCompatActivity() {
     }
 
     private fun setUpListener(){
+
         ivDropDownArrow.setOnClickListener {
 
             if(!openShowFoodOrderedDetail){

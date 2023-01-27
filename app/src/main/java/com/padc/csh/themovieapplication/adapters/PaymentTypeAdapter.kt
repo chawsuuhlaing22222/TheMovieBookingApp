@@ -12,11 +12,11 @@ import kotlinx.android.synthetic.main.view_holder_payment_type.view.*
 class PaymentTypeAdapter(var delegate: PaymentDelegate): RecyclerView.Adapter<PaymentTypeViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PaymentTypeViewHolder {
         var view=LayoutInflater.from(parent.context).inflate(R.layout.view_holder_payment_type,parent,false)
-        return PaymentTypeViewHolder(view)
+        return PaymentTypeViewHolder(view,delegate)
     }
 
     override fun onBindViewHolder(holder: PaymentTypeViewHolder, position: Int) {
-        var typeName= paymentTypeList.get(position)
+           var typeName= paymentTypeList.get(position)
 
 
             if(typeName.contains("upi",true)){

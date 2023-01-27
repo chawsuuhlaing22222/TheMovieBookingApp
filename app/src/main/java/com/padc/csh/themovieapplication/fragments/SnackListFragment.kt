@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.SnackListAdapter
@@ -31,6 +32,7 @@ lateinit var mSnackListAdapter: SnackListAdapter
 
         val bundle=arguments.takeIf {bundle: Bundle? ->  bundle?.containsKey(IEXTRA_SNACK_NAME) ?: false }
         val snackName=bundle?.getString(IEXTRA_SNACK_NAME) ?: " "
+        Toast.makeText(context, "$snackName", Toast.LENGTH_SHORT).show()
         setUpSnackRecyclerView()
     }
 

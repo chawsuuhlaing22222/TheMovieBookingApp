@@ -1,14 +1,18 @@
 package com.padc.csh.themovieapplication.fragments
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.BannerAdapter
 import com.padc.csh.themovieapplication.delegates.BannerDelegate
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_movie.*
+import java.lang.Math.abs
 
 class MovieFragment : Fragment(), BannerDelegate {
     lateinit var mBannerAdapter: BannerAdapter
@@ -54,6 +58,14 @@ class MovieFragment : Fragment(), BannerDelegate {
         mBannerAdapter= BannerAdapter(this)
         viewPagerBanner.adapter=mBannerAdapter
         dotsIndicatorBanner.attachTo(viewPagerBanner)
+
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer((40 * Resources.getSystem().displayMetrics.density).toInt()))
+        compositePageTransformer.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = (0.80f + r * 0.20f)
+        }
+        viewPagerBanner.setPageTransformer(compositePageTransformer)
 
     }
 

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_margin="5dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
@@ -15,15 +13,15 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSeatImg"
-        app:srcCompat="@drawable/ic_chair"
-        android:scaleType="fitXY"
-          android:layout_width="@dimen/margin_30dp"
-        android:layout_height="@dimen/margin_30dp"/>
+        app:srcCompat="@drawable/ic_taken_couple_seat"
+        android:scaleType="centerCrop"
+          android:layout_width="@dimen/margin_large"
+        android:layout_height="@dimen/margin_large"/>
 
     <View
        android:id="@+id/viewSpace"
-        android:layout_width="@dimen/margin_30dp"
-        android:layout_height="@dimen/margin_30dp"/>
+        android:layout_width="@dimen/margin_medium_2"
+        android:layout_height="@dimen/margin_medium_2"/>
 
 
 </FrameLayout>

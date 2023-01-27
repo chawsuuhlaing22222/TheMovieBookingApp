@@ -30,7 +30,7 @@ class TicketConfirmationActivity : AppCompatActivity() {
     }
 
     private fun showCustomdialog() {
-        var countDownTimer=object : CountDownTimer(7000, 1000) {
+        var countDownTimer=object : CountDownTimer(3000, 1000) {
             override fun onTick(p0: Long) {
                 dialog.show()
             }

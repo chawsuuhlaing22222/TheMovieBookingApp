@@ -70,7 +70,7 @@
         android:layout_height="@dimen/margin_50dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_centerInParent="true"
-            app:srcCompat="@drawable/ic_location"
+            app:srcCompat="@drawable/ic_baseline_near_me_24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
