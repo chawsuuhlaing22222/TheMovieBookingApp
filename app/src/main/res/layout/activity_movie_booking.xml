@@ -127,7 +127,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
+<!--                color status-->
                 <LinearLayout
                     android:id="@+id/llMovieSeatStatus"
                     android:layout_width="match_parent"

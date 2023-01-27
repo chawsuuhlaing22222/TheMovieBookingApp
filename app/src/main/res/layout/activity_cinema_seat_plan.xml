@@ -20,7 +20,7 @@
     
     <RelativeLayout
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:layout_margin="@dimen/margin_10dp"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -51,9 +51,86 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSeatPlanList"
             android:layout_below="@id/flRainbow"
-            android:layout_above="@id/rlProgressBar"
+            android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+        <!--                color status-->
+        <LinearLayout
+            android:id="@+id/llMovieSeatColorStausSeatPlanScrn"
+            android:background="#222222"
+
+            android:layout_above="@id/rlProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_50dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDotAvailableSeatPlanScrn"
+                android:layout_marginStart="@dimen/margin_large"
+                android:layout_width="@dimen/margin_10dp"
+                android:layout_height="@dimen/margin_10dp"
+                android:layout_gravity="center_vertical"
+                android:elevation="4dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
+                app:tint="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAvailableSeatPlanScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:elevation="4dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/lbl_availible"
+                android:textColor="@color/colorPrimaryLight"
+               />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDotTakenSeatPlanScrn"
+                android:layout_marginStart="@dimen/margin_xxlarge"
+                android:layout_width="@dimen/margin_10dp"
+                android:layout_height="@dimen/margin_10dp"
+                android:layout_gravity="center_vertical"
+                android:elevation="4dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
+                app:tint="@color/colorPrimaryLight" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTakenSeatPlanScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:elevation="4dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/lbl_taken"
+                android:textColor="@color/colorPrimaryLight"
+              />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDotSelectionSeatPlanScrn"
+                android:layout_marginStart="@dimen/margin_xxlarge"
+                android:layout_width="@dimen/margin_10dp"
+                android:layout_height="@dimen/margin_10dp"
+                android:layout_gravity="center_vertical"
+                android:elevation="4dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
+                app:tint="@color/colorAccent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSelectionSeatPlanScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:elevation="4dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/lbl_your_selection"
+                android:textColor="@color/colorPrimaryLight"
+              />
+
+        </LinearLayout>
 
 <!--        progress bar-->
         <RelativeLayout

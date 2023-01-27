@@ -66,4 +66,7 @@
     <string name="lbl_location">Location</string>
     <string name="lbl_payment">Payment</string>
     <string name="lbl_help_and_support">Help and Support</string>
+    <string name="lbl_your_selection">Your Selection</string>
+    <string name="lbl_taken">Taken</string>
+    <string name="lbl_availible">Availible</string>
 </resources>

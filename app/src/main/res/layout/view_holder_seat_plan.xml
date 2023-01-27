@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_margin="@dimen/margin_medium_2"
+    android:layout_marginTop="@dimen/margin_medium_2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -16,6 +16,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSeatList"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/tvSeatPricelbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
