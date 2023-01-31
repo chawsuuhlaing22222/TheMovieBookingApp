@@ -13,7 +13,7 @@ import com.padc.csh.themovieapplication.delegates.ChildSeatDelegate
 import com.padc.csh.themovieapplication.delegates.SeatPlanDelegate
 import kotlinx.android.synthetic.main.activity_cinema_seat_plan.*
 
-class CinemaSeatPlanActivity : AppCompatActivity(),ChildSeatDelegate,SeatPlanDelegate {
+class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanDelegate {
 
     lateinit var mSeatPlanAdapter: SeatPlanAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,36 +27,41 @@ class CinemaSeatPlanActivity : AppCompatActivity(),ChildSeatDelegate,SeatPlanDel
 
     private fun setUpActionListener() {
         btnBuyTicket.setOnClickListener {
-            startActivity(Intent(this,GetSnackActivity::class.java))
+            startActivity(Intent(this, GetSnackActivity::class.java))
         }
 
         sbZoom.addOnChangeListener(object : Slider.OnChangeListener {
 
             override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
-                Toast.makeText(this@CinemaSeatPlanActivity, "progress is $value", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@CinemaSeatPlanActivity,
+                    "progress is $value",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })
 
         tvPluslbl.setOnClickListener {
-            var progress=sbZoom.value
-            if(progress<sbZoom.valueTo){
-                sbZoom.value=progress+10
+            var progress = sbZoom.value
+            if (progress < sbZoom.valueTo) {
+                sbZoom.value = progress + 10
             }
         }
 
         tvMinuslbl.setOnClickListener {
-            var progress=sbZoom.value
-            if(progress>0){
-                sbZoom.value=progress-10
+            var progress = sbZoom.value
+            if (progress > 0) {
+                sbZoom.value = progress - 10
             }
         }
     }
 
     private fun setUpSeatPlanRecyclerView() {
-        mSeatPlanAdapter= SeatPlanAdapter(this,this,this)
-        rvSeatPlanList.adapter=mSeatPlanAdapter
-        rvSeatPlanList.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        mSeatPlanAdapter = SeatPlanAdapter(this, this, this)
+        rvSeatPlanList.adapter = mSeatPlanAdapter
+        rvSeatPlanList.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     private fun setUpToolbar() {

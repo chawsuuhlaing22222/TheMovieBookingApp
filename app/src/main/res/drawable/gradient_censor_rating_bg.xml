@@ -6,7 +6,7 @@
         android:endColor="#99111111"
         />
 
-    <corners android:radius="@dimen/margin_10dp"/>
+    <corners android:radius="@dimen/dimen_10dp"/>
 
 
 </shape>

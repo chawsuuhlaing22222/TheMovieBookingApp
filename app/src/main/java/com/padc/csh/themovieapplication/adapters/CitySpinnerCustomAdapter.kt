@@ -31,7 +31,7 @@ class CitySpinnerCustomAdapter(val context: Context,val cities:Array<String>): B
             view.tvSpinnerSelectedValue.text=cities.get(position).toString()
         }else{
             view.tvSpinnerSelectedValue.visibility=View.GONE
-            view.viewLineSeparator.visibility=View.GONE
+           // view.viewLineSeparator.visibility=View.GONE
         }
         return view
     }

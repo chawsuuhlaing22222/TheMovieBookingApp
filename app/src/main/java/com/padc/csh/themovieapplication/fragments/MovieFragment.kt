@@ -1,22 +1,31 @@
 package com.padc.csh.themovieapplication.fragments
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.activities.MovieDetailActivity
+import com.padc.csh.themovieapplication.activities.setPreviewBothSide
 import com.padc.csh.themovieapplication.adapters.BannerAdapter
+import com.padc.csh.themovieapplication.adapters.CommingSoonMovieAdapter
+import com.padc.csh.themovieapplication.adapters.NowShowingMovieAdapter
 import com.padc.csh.themovieapplication.delegates.BannerDelegate
+import com.padc.csh.themovieapplication.delegates.MovieListDelegate
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_movie.*
 import java.lang.Math.abs
 
-class MovieFragment : Fragment(), BannerDelegate {
+class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
     lateinit var mBannerAdapter: BannerAdapter
-
+    lateinit var mNowShowingMovieAdapter: NowShowingMovieAdapter
+    lateinit var mCommingSoonMovieAdapter:CommingSoonMovieAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,23 +40,59 @@ class MovieFragment : Fragment(), BannerDelegate {
         super.onViewCreated(view, savedInstanceState)
 
         btnNowShowing.setBackgroundColor(resources.getColor(R.color.colorAccent,null))
-        replaceMovieList(NowShowingMovieListFragment())
+
         setUpBanner()
         setUpListener()
+        setUpRecycler()
+
+    }
+    private fun setUpBannerViewPagerPadding() {
+        viewPagerBanner.apply {
+            clipChildren = false  // No clipping the left and right items
+            clipToPadding = false  // Show the viewpager in full width without clipping the padding
+            offscreenPageLimit = 2  // Render the left and right items
+            (getChildAt(0) as RecyclerView).overScrollMode =
+                RecyclerView.OVER_SCROLL_NEVER // Remove the scroll effect
+        }
+        setUpBannerViewPagerPadding()
+
+        val compositePageTransformer = CompositePageTransformer()
+        compositePageTransformer.addTransformer(MarginPageTransformer((10 * Resources.getSystem().displayMetrics.density).toInt()))
+        compositePageTransformer.addTransformer { page, position ->
+            val r = 1 - abs(position)
+            page.scaleY = (0.80f + r * 0.20f)
+        }
+        viewPagerBanner.setPageTransformer(compositePageTransformer)
+
+
+
+    }
+
+    private fun setUpRecycler() {
+       mNowShowingMovieAdapter= NowShowingMovieAdapter(this)
+        mCommingSoonMovieAdapter= CommingSoonMovieAdapter(this)
+
+        rvNowShowingMovies.adapter=mNowShowingMovieAdapter
+        rvNowShowingMovies.layoutManager=GridLayoutManager(context,2)
+
+        rvCommingSoonMovies.adapter=mCommingSoonMovieAdapter
+        rvCommingSoonMovies.layoutManager=GridLayoutManager(context,2)
 
     }
 
     private fun setUpListener() {
         //now showing movie btn action
         btnNowShowing.setOnClickListener {
-            replaceMovieList(NowShowingMovieListFragment())
+           rvNowShowingMovies.visibility=View.VISIBLE
+            rvCommingSoonMovies.visibility=View.GONE
             btnNowShowing.setBackgroundColor(resources.getColor(R.color.colorAccent,null))
             btnCommingSoon.setBackgroundColor(resources.getColor(com.google.android.material.R.color.mtrl_btn_transparent_bg_color,null))
         }
 
         //comming soon movie btn action
         btnCommingSoon.setOnClickListener {
-           replaceMovieList(CommingSoonMovieListFragment())
+            rvNowShowingMovies.visibility=View.GONE
+            rvCommingSoonMovies.visibility=View.VISIBLE
             btnCommingSoon.setBackgroundColor(resources.getColor(R.color.colorAccent,null))
             btnNowShowing.setBackgroundColor(resources.getColor(com.google.android.material.R.color.mtrl_btn_transparent_bg_color,null))
 
@@ -57,15 +102,11 @@ class MovieFragment : Fragment(), BannerDelegate {
     private fun setUpBanner() {
         mBannerAdapter= BannerAdapter(this)
         viewPagerBanner.adapter=mBannerAdapter
+        viewPagerBanner.setPreviewBothSide(R.dimen.margin_medium_3,R.dimen.margin_medium_3)
         dotsIndicatorBanner.attachTo(viewPagerBanner)
 
-        val compositePageTransformer = CompositePageTransformer()
-        compositePageTransformer.addTransformer(MarginPageTransformer((40 * Resources.getSystem().displayMetrics.density).toInt()))
-        compositePageTransformer.addTransformer { page, position ->
-            val r = 1 - abs(position)
-            page.scaleY = (0.80f + r * 0.20f)
-        }
-        viewPagerBanner.setPageTransformer(compositePageTransformer)
+        viewPagerBanner.currentItem=1
+
 
     }
 
@@ -73,22 +114,18 @@ class MovieFragment : Fragment(), BannerDelegate {
         Toast.makeText(context, "banner", Toast.LENGTH_SHORT).show()
     }
 
-    private fun replaceMovieList(fragment: Fragment){
-        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id
-            .flShowingCommingMovies,fragment)?.commit()
+    override fun onTapNowShowingMovie() {
+       startActivity(MovieDetailActivity.newIntent(context,"now"))
     }
 
-       /* private fun setUpToolBar() {
-        activity?.setActionBar(toolBarMovieScrn)
-        activity?.actionBar?.setDisplayHomeAsUpEnabled(true)
-        activity?.actionBar?.setHomeAsUpIndicator(R.drawable.ic_location_white)
-        activity?.actionBar?.title="Yangon"
-
-
+    override fun onTapCommingSoonMovie() {
+        startActivity(MovieDetailActivity.newIntent(context,"comming"))
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_toolbar_main_scrn,menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }*/
+//    private fun replaceMovieList(fragment: Fragment){
+//        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id
+//            .flShowingCommingMovies,fragment)?.commit()
+//    }
+
+
 }

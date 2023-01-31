@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/color111111"
     tools:context=".activities.MovieDetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:background="@color/color111111"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="370dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -20,30 +21,37 @@
             app:layout_scrollFlags="scroll">
 
             <!--            back button-->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivBackArrowMvDetail"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_white_24dp"
-                android:layout_gravity="start"
-                android:scaleType="center"
-                android:paddingStart="2dp"
-                android:background="@drawable/bg_back_arrow"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_xlarge"
-                android:layout_width="@dimen/margin_large"
-                android:elevation="@dimen/margin_medium"
-                android:layout_height="@dimen/margin_large"/>
+                                <FrameLayout
+                                    android:background="@drawable/bg_back_arrow"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="@dimen/margin_medium_2"
+                                    android:layout_marginTop="@dimen/margin_xlarge"
+                                    android:layout_gravity="start"
+                                    android:elevation="@dimen/margin_medium"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"   >
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivBackArrowMvDetail"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:paddingStart="@dimen/dimen_10dp"
+                                        android:scaleType="centerCrop"
+                                        android:layout_gravity="center|center_horizontal"
+                                        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_white_24dp" />
+                                </FrameLayout>
+
             <!--            share button-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivShareMvDetail"
-                app:srcCompat="@drawable/ic_baseline_share_white_24dp"
-                android:background="@drawable/bg_back_arrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="end"
-                android:padding="5dp"
-                android:elevation="@dimen/margin_small"
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:layout_marginEnd="@dimen/margin_medium_2"
-                android:layout_width="@dimen/margin_large"
-                android:layout_height="@dimen/margin_large"/>
+                android:background="@drawable/bg_back_arrow"
+                android:elevation="@dimen/margin_small"
+                android:padding="@dimen/dimen_5dp"
+                app:srcCompat="@drawable/ic_baseline_share_white_24dp" />
 
 
             <RelativeLayout
@@ -56,49 +64,40 @@
                 <RelativeLayout
                     android:id="@+id/vvMovieFrame"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/vvBackIcon"
-                        android:layout_width="@dimen/margin_50dp"
-                        android:layout_height="@dimen/margin_50dp"
-                        android:layout_alignParentStart="true"
-                       android:scaleType="centerCrop"
-                        android:background="@android:color/transparent"
-                        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_white_24dp" />
+                    android:layout_height="@dimen/dimen_200dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/vvMovieCover"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:visibility="visible"
                         android:background="@android:color/transparent"
                         android:scaleType="centerCrop"
+                        android:visibility="visible"
                         app:srcCompat="@drawable/placeholder_cast_img" />
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/vvMoviePlayIcon"
-                        android:layout_width="@dimen/margin_50dp"
-                        android:layout_height="@dimen/margin_50dp"
+                        android:layout_width="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_50dp"
                         android:layout_centerInParent="true"
                         android:tint="#80000000"
                         app:srcCompat="@drawable/ic_baseline_play_circle_filled_white_24dp" />
 
                     <VideoView
                         android:id="@+id/vvMovie"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentStart="true"
                         android:layout_width="match_parent"
-                        android:layout_height="180dp"
+                        android:layout_height="@dimen/dimen_180dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
                         android:visibility="gone" />
-                    />
+
                 </RelativeLayout>
 
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivVideoCover"
-                    android:layout_width="140dp"
-                    android:layout_height="180dp"
+                    android:layout_width="@dimen/dimen_140dp"
+                    android:layout_height="175dp"
                     android:layout_below="@id/vvMovieFrame"
                     android:layout_marginLeft="@dimen/margin_medium_2"
                     android:layout_marginTop="-30dp"
@@ -120,16 +119,16 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivIBMMovieDetail"
-                    android:layout_width="@dimen/margin_50dp"
-                    android:layout_height="@dimen/margin_30dp"
+                    android:layout_width="@dimen/dimen_50dp"
+                    android:layout_height="@dimen/dimen_30dp"
                     android:layout_below="@id/vvMovieFrame"
                     android:layout_alignBottom="@id/tvMovieNameDetailScrn"
-                    android:layout_marginStart="@dimen/margin_10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/margin_medium_3"
                     android:layout_marginEnd="5dp"
-                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
                     android:layout_toEndOf="@id/tvMovieNameDetailScrn"
-                    android:elevation="4dp"
+                    android:elevation="@dimen/dimen_4dp"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_imdb" />
 
@@ -152,9 +151,9 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvMovieNameDetailScrn"
                     android:layout_alignStart="@id/tvMovieNameDetailScrn"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="@dimen/dimen_15dp"
                     android:layout_toEndOf="@id/ivVideoCover"
-                    android:elevation="4dp"
+                    android:elevation="@dimen/dimen_4dp"
                     android:text="2D, 3D, 3D IMAX"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular" />
@@ -167,12 +166,6 @@
                     android:layout_alignStart="@id/tvMovieViewTypeDetailScrn"
                     android:layout_marginEnd="5dp"
                     android:layout_toEndOf="@id/ivVideoCover" />
-
-                <!--                    tools:listitem="@layout/view_holder_movie_genre"-->
-                <!--                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
-                <!--                    app:spanCount="3"-->
-                <!--                    tools:itemCount="4"-->
-
 
             </RelativeLayout>
 
@@ -192,11 +185,11 @@
             <!--            censor rating-->
             <LinearLayout
                 android:id="@+id/llCensorRating"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
+                android:layout_width="115dp"
+                android:layout_height="@dimen/dimen_60dp"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:background="@drawable/gradient_censor_rating_bg"
-                android:elevation="4dp"
+                android:elevation="@dimen/dimen_4dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -223,10 +216,10 @@
                 android:id="@+id/llReleaseDate"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="@dimen/margin_30dp"
+                android:layout_marginLeft="@dimen/dimen_30dp"
                 android:layout_toEndOf="@id/llCensorRating"
                 android:background="@drawable/gradient_censor_rating_bg"
-                android:elevation="4dp"
+                android:elevation="@dimen/dimen_4dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -251,12 +244,12 @@
             <!--           duration-->
             <LinearLayout
                 android:id="@+id/llDuration"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="@dimen/margin_30dp"
+                android:layout_width="@dimen/dimen_100dp"
+                android:layout_height="@dimen/dimen_60dp"
+                android:layout_marginLeft="@dimen/dimen_30dp"
                 android:layout_toEndOf="@id/llReleaseDate"
                 android:background="@drawable/gradient_censor_rating_bg"
-                android:elevation="4dp"
+                android:elevation="@dimen/dimen_4dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -284,12 +277,11 @@
             <RelativeLayout
                 android:id="@+id/rlNotiCard"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="@dimen/dimen_150dp"
                 android:layout_below="@id/llDuration"
                 android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/dimen_30dp"
                 android:layout_marginEnd="@dimen/margin_medium_2"
-                android:layout_marginBottom="@dimen/margin_medium_2"
                 android:background="@drawable/gradient_noti_movie_release_bg">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -309,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvReleaseDateNoti"
                     android:layout_marginLeft="@dimen/margin_medium_2"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:text="@string/lbl_booing_noti"
                     android:textColor="#c8c8c8"
                     android:textSize="@dimen/text_regular"
@@ -317,8 +309,8 @@
 
                 <FrameLayout
                     android:id="@+id/flSendNoti"
-                    android:layout_width="170dp"
-                    android:layout_height="35dp"
+                    android:layout_width="@dimen/dimen_170dp"
+                    android:layout_height="@dimen/dimen_35dp"
                     android:layout_below="@id/tvBookingNoti"
                     android:layout_marginLeft="@dimen/margin_medium_2"
                     android:layout_marginTop="20dp"
@@ -328,8 +320,8 @@
                         android:id="@+id/ivNoti"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
                         app:srcCompat="@drawable/ic_baseline_notifications_white_24dp"
                         app:tint="@color/black" />
 
@@ -339,7 +331,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/tvReleaseDateNoti"
                         android:layout_gravity="center|center_vertical"
-                        android:layout_marginStart="@dimen/margin_5dp"
+                        android:layout_marginStart="@dimen/dimen_5dp"
                         android:text="@string/lbl_send_notification"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_regular" />
@@ -348,10 +340,10 @@
                 </FrameLayout>
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="120dp"
-                    android:layout_height="150dp"
+                    android:layout_width="@dimen/dimen_120dp"
+                    android:layout_height="@dimen/dimen_150dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_margin="@dimen/margin_10dp"
+                    android:layout_margin="@dimen/dimen_10dp"
                     android:layout_marginLeft="@dimen/margin_large"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/ic_human" />
@@ -363,7 +355,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rlNotiCard"
                 android:layout_marginLeft="@dimen/margin_medium_2"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/dimen_30dp"
                 android:text="@string/lbl_story_line"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular"
@@ -375,7 +367,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvStoryLineLbl"
                 android:layout_marginLeft="@dimen/margin_medium_2"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
                 android:text="In the 1970s, young Gru tries to join a group of supervillains called the Vicious 6 after they oust their leader -- the legendary fighter Wild Knuckles. When the interview turns disastrous, Gru and his Minions go on the run with the Vicious 6 hot on their tails. Luckily, he finds an unlikely source for guidance -- Wild Knuckles himself -- and soon discovers that even bad guys need a little help from their friends."
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular" />
@@ -386,7 +378,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvStoryLine"
                 android:layout_marginLeft="@dimen/margin_medium_2"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:layout_marginBottom="21dp"
                 android:text="@string/lbl_cast"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular" />
@@ -397,7 +390,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvCastLbl"
                 android:layout_marginLeft="@dimen/margin_medium_2"
-                android:layout_marginBottom="@dimen/margin_10dp" />
+                android:layout_marginBottom="@dimen/dimen_10dp"
+               />
+
+            <View
+                android:layout_below="@id/rvCastPersonList"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50dp"/>
 
         </RelativeLayout>
 
@@ -405,20 +404,18 @@
 
     <RelativeLayout
         android:id="@+id/llBooking"
-
-        android:layout_width="match_parent"
+        android:layout_width="414dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@drawable/gradient_movie_item">
+        android:background="@drawable/bg_bokking_btn">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBooking"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_width="238dp"
+            android:layout_height="@dimen/dimen_50dp"
+          android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
             android:background="@drawable/bg_booking"
-
             android:textAllCaps="false"
             android:textColor="@color/black" />
     </RelativeLayout>

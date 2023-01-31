@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="320dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_ticket_cancelation_policy_dialog"
-    android:layout_margin="@dimen/margin_50dp"
     android:padding="@dimen/margin_medium_2"
     android:layout_height="wrap_content">
+
+<!--    android:layout_margin="@dimen/dimen_50dp"-->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitleTicketCancelPolicy"
         android:text="@string/lbl_ticket_cancelation_policy"
@@ -18,8 +19,8 @@
         app:srcCompat="@drawable/ic_online_food"
         app:tint="@color/white"
         android:layout_below="@id/tvTitleTicketCancelPolicy"
-        android:layout_marginTop="@dimen/margin_10dp"
-        android:layout_width="28dp"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:layout_width="27dp"
         android:layout_height="23dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -28,9 +29,9 @@
         android:textColor="@color/white"
         android:textSize="@dimen/text_regular_2x"
         android:layout_below="@id/tvTitleTicketCancelPolicy"
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginTop="24dp"
         android:layout_toEndOf="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
-        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -39,8 +40,8 @@
         app:srcCompat="@drawable/ic_ticket"
         app:tint="@color/white"
         android:layout_below="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
-        android:layout_marginTop="@dimen/margin_10dp"
-        android:layout_width="28dp"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:layout_width="21dp"
         android:layout_height="23dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -49,9 +50,9 @@
         android:textColor="@color/white"
         android:textSize="@dimen/text_regular_2x"
         android:layout_below="@id/tvRefundFAndB"
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/dimen_25dp"
         android:layout_toEndOf="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
-        android:layout_marginLeft="@dimen/margin_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -60,7 +61,7 @@
         android:textColor="@color/colorPrimaryLight"
         android:layout_below="@id/tvRefundTicket"
        android:layout_alignStart="@id/tvRefundTicket"
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/dimen_23dp"
         android:text="@string/lbl_refund_noti_untilhour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -71,7 +72,7 @@
         android:textColor="@color/colorPrimaryLight"
         android:layout_below="@id/tvRefundNotiUnitlHour"
         android:layout_alignStart="@id/tvRefundTicket"
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
         android:text="@string/lbl_50percent_refund"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -79,7 +80,7 @@
         android:id="@+id/tvRefundNotAvailable"
         android:text="@string/lbl_refund_noti_notavailable"
         android:textColor="@color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dimen_40dp"
         android:layout_below="@id/tvRefundNotiUnitlHourAndMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -95,11 +96,13 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btnCloseTicketCancelationDialog"
-        app:srcCompat="@drawable/btn_close_cancelation_dialog"
-        android:layout_margin="@dimen/margin_medium_2"
-        android:layout_below="@id/tvNoCancelation"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvNoCancelation"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        app:srcCompat="@drawable/btn_close_cancelation_dialog" />
 
 
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     app:cardCornerRadius="8dp"
-    android:layout_marginLeft="10dp"
+    android:layout_marginLeft="@dimen/dimen_10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,32 +13,32 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivBanner"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/image_kfc"
+            app:srcCompat="@drawable/ic_banner_chicken"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-        <View
-            android:background="@drawable/gradient_banner"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvOffPriceBannerScrn"
-            android:elevation="4dp"
-            android:layout_marginTop="@dimen/margin_medium_3"
-            android:layout_marginLeft="@dimen/margin_medium_2"
-            android:textColor="@color/white"
-            android:text="@string/lbl_banner_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+<!--        <View-->
+<!--            android:background="@drawable/gradient_banner"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/tvOffPriceBannerScrn"-->
+<!--            android:elevation="4dp"-->
+<!--            android:layout_marginTop="@dimen/margin_medium_3"-->
+<!--            android:layout_marginLeft="@dimen/margin_medium_2"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:text="@string/lbl_banner_price"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivCreditCard"
-            android:elevation="4dp"
-            app:srcCompat="@drawable/ic_kbz_credit_card"
-            android:layout_below="@id/tvOffPriceBannerScrn"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            android:layout_marginLeft="@dimen/margin_medium_2"
-            android:layout_width="100dp"
-            android:layout_height="60dp"/>
+<!--        <androidx.appcompat.widget.AppCompatImageView-->
+<!--            android:id="@+id/ivCreditCard"-->
+<!--            android:elevation="4dp"-->
+<!--            app:srcCompat="@drawable/ic_kbz_credit_card"-->
+<!--            android:layout_below="@id/tvOffPriceBannerScrn"-->
+<!--            android:layout_marginTop="@dimen/margin_medium_2"-->
+<!--            android:layout_marginLeft="@dimen/margin_medium_2"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="60dp"/>-->
 
     </RelativeLayout>
 

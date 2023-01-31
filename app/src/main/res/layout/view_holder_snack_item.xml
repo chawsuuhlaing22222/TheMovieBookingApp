@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="170dp"
-    android:layout_height="220dp"
-    android:layout_marginLeft="@dimen/margin_medium_2"
-    android:layout_marginTop="@dimen/margin_medium_2"
-    android:background="@drawable/gradient_bg_snack">
-
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="170dp"
+        android:layout_height="220dp"
+        android:layout_marginLeft="@dimen/dimen_25dp"
+        android:layout_marginTop="@dimen/dimen_25dp"
+        android:background="@drawable/bg_snack_item">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivSnack"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/margin_medium"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/cocacola" />
+            app:srcCompat="@drawable/ic_food_snack" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvSnackName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ivSnack"
-            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginLeft="11dp"
             android:layout_marginTop="@dimen/margin_medium"
-            android:text="CocaCola"
+            android:text="Potatoe Chips"
             android:textColor="@color/white"
             android:textSize="@dimen/text_small" />
 
@@ -38,32 +33,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvSnackName"
-            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_alignLeft="@id/tvSnackName"
             android:layout_marginTop="5dp"
-            android:text="1000ks"
+            android:text="1000KS"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_small" />
 
         <FrameLayout
-            android:layout_width="match_parent"
+            android:layout_width="@dimen/dimen_150dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvSnackPrice"
-            android:layout_marginLeft="@dimen/margin_medium_2"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="@dimen/margin_medium_2">
+            android:layout_centerHorizontal="true"
+           >
 
             <!--            btn add food-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAdd"
-                android:layout_width="130dp"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="11dp"
                 android:backgroundTint="@color/colorAccent"
-                android:gravity="center|center_horizontal"
                 android:text="@string/lbl_add"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_regular"
                 android:visibility="visible"
-                app:cornerRadius="@dimen/margin_4dp" />
+                app:cornerRadius="@dimen/dimen_4dp" />
 
             <!--            layout of additional plus minus food-->
             <LinearLayout
@@ -76,8 +70,8 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnPlusFood"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:background="@drawable/bg_plus_minus_food_item"
                     android:gravity="center"
                     android:text="+" />
@@ -93,8 +87,8 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnMinusFood"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:background="@drawable/bg_plus_minus_food_item"
                     android:gravity="center"
                     android:text="-" />
@@ -104,4 +98,3 @@
     </RelativeLayout>
 
 
-</com.google.android.material.card.MaterialCardView>

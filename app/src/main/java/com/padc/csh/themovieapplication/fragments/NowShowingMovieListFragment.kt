@@ -35,9 +35,13 @@ class NowShowingMovieListFragment : Fragment(),MovieListDelegate {
         mMovieListViewPod.setUpViewPod(this,"now")
     }
 
-    override fun onTapMovie() {
-        startActivity(MovieDetailActivity.newIntent(context,"now"))
-        //startActivity(Intent(context,VideoPlayActivity::class.java))
+    override fun onTapNowShowingMovie() {
+
     }
+
+    override fun onTapCommingSoonMovie() {
+
+    }
+
 
 }

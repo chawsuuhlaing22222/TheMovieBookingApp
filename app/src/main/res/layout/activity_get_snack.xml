@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/color111111"
     tools:context=".activities.GetSnackActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
+        android:background="@color/color111111"
         android:layout_height="?attr/actionBarSize">
 
         <RelativeLayout
             android:id="@+id/toolBarGetSnackScrn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/color111111"
             android:gravity="center_vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -29,7 +30,7 @@
                 android:id="@+id/tvGetABitlbl"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/margin_50dp"
+                android:layout_marginLeft="@dimen/dimen_50dp"
                 android:layout_toEndOf="@id/ivBackGetSnackScrn"
                 android:gravity="center_vertical"
                 android:text="@string/lbl_grab_a_bite"
@@ -38,18 +39,19 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivSearchGetSnackScrn"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="@dimen/margin_medium_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
                 android:layout_toStartOf="@id/tvSkipGetSnackScrnlbl"
                 app:srcCompat="@drawable/ic_baseline_search_white_24dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSkipGetSnackScrnlbl"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
                 android:layout_marginRight="@dimen/margin_medium_2"
                 android:gravity="center_vertical"
                 android:text="@string/lbl_skip"
@@ -63,24 +65,25 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="@dimen/dimen_100dp"
+        android:background="@color/color111111"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimaryDark">
+            android:background="@color/color111111">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayoutGetSnackScrn"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:tabMaxWidth="0dp"
+                android:layout_height="@dimen/dimen_60dp"
+                android:background="@color/color111111"
                 app:tabGravity="fill"
-                app:tabMode="fixed"
-                android:background="@color/colorPrimaryDark"
                 app:tabIndicatorColor="@color/colorAccent"
+                app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+                app:tabMaxWidth="0dp"
+                app:tabMode="scrollable"
                 app:tabTextColor="@color/white" />
 
 
@@ -88,9 +91,8 @@
                 android:id="@+id/viewPagerGetSnackScrn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-
                 android:layout_below="@id/tabLayoutGetSnackScrn"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@color/color111111" />
 
 
         </RelativeLayout>
@@ -102,14 +104,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:background="@color/color111111">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvOrderedFoodList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:paddingBottom="@dimen/margin_medium_3"
+            android:background="@color/color111111"
             android:visibility="gone"
             tools:itemCount="2" />
 
@@ -117,34 +120,38 @@
         <RelativeLayout
             android:id="@+id/rlFoodCheckOutGetSnackScrn"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_50dp"
+            android:layout_height="@dimen/dimen_50dp"
             android:layout_below="@id/rvOrderedFoodList"
             android:layout_marginLeft="@dimen/margin_medium_2"
             android:layout_marginRight="@dimen/margin_medium_2"
-            android:layout_marginBottom="@dimen/margin_30dp"
+            android:layout_marginBottom="@dimen/dimen_30dp"
             android:background="@drawable/bg_total_amt">
 
             <!--        food icon with noti-->
             <FrameLayout
                 android:id="@+id/flFoodOrder"
-                android:layout_width="35dp"
-                android:layout_height="40dp"
+                android:layout_width="40dp"
+                android:layout_height="@dimen/dimen_40dp"
                 android:layout_gravity="start|center_vertical"
-                android:layout_marginLeft="@dimen/margin_10dp">
+                android:layout_marginLeft="@dimen/dimen_10dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivOnlineFood"
-                    android:layout_width="@dimen/margin_30dp"
-                    android:layout_height="@dimen/margin_30dp"
+                    android:layout_width="@dimen/dimen_30dp"
+                    android:layout_height="@dimen/dimen_30dp"
                     android:layout_gravity="center_vertical"
                     app:srcCompat="@drawable/ic_online_food"
                     app:tint="@color/black" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvNotiFlagText"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
                     android:layout_gravity="right|top"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="8sp"
+                    android:textColor="@color/white"
                     android:background="@drawable/bg_food_order_noti_count_text"
                     android:gravity="center|center_vertical"
                     android:text="1" />
@@ -153,13 +160,13 @@
             <!--btn down arrow-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivDropDownArrow"
-                android:layout_width="@dimen/margin_15dp"
-                android:layout_height="@dimen/margin_15dp"
+                android:layout_width="@dimen/dimen_15dp"
+                android:layout_height="@dimen/dimen_15dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginStart="@dimen/margin_card_medium_2_n"
+                android:layout_marginTop="@dimen/margin_card_medium_2_n"
+                android:layout_marginEnd="@dimen/margin_card_medium_2_n"
+                android:layout_marginBottom="@dimen/margin_card_medium_2_n"
                 android:layout_toEndOf="@id/flFoodOrder"
                 app:srcCompat="@drawable/down_arrow"
                 app:tint="@color/black" />
@@ -167,14 +174,13 @@
             <!--        btn forward arrow-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivForward"
-                android:layout_width="@dimen/margin_15dp"
-                android:layout_height="@dimen/margin_15dp"
+                android:layout_width="@dimen/dimen_15dp"
+                android:layout_height="@dimen/dimen_15dp"
                 android:layout_alignParentEnd="true"
-
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="17dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginStart="@dimen/margin_card_medium_2_n"
+                android:layout_marginTop="@dimen/dimen_17dp"
+                android:layout_marginEnd="@dimen/margin_card_medium_2_n"
+                android:layout_marginBottom="@dimen/margin_card_medium_2_n"
                 app:srcCompat="@drawable/ic_forward" />
 
             <!--        price text-->

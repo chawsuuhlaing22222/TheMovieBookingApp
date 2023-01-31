@@ -97,9 +97,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvParking"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginStart="@dimen/margin_medium_3"
-        android:layout_marginBottom="@dimen/margin_medium_3"
         android:clipToPadding="false"
         android:paddingEnd="@dimen/margin_medium_2" />
 
@@ -128,7 +125,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/tvBookingSeatingInfo"
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
         android:background="@color/colorPrimaryLight" />
 
 

@@ -16,45 +16,14 @@ class GetOtpActivity : AppCompatActivity() {
     }
 
     private fun setUpListener(){
+
+        //pinview
+
         //click at confirm
         btnConfirmOtp.setOnClickListener {
-            var flag=false
-
-            if(edtFirstOtpCode.text.isNullOrBlank()){
-                edtFirstOtpCode.setError(" ")
-                flag=true
-            }
-
-            if(edtSecondOtpCode.text.isNullOrBlank()){
-                edtSecondOtpCode.setError(" ")
-                flag=true
-            }
-
-            if(edtThirdOtpCode.text.isNullOrBlank()){
-                edtThirdOtpCode.setError(" ")
-                flag=true
-            }
-
-            if(edtFourthOtpCode.text.isNullOrBlank()){
-                edtFourthOtpCode.setError(" ")
-                flag=true
-            }
-
-            if(edtFifthOtpCode.text.isNullOrBlank()){
-                edtFifthOtpCode.setError(" ")
-                flag=true
-            }
-
-            if(edtSixOtpCode.text.isNullOrBlank()){
-                edtSixOtpCode.setError(" ")
-                flag=true
-            }
-
-            if(!flag){
-                startActivity(Intent(this,ChooseLocationActivity::class.java))
-            }
-
+          startActivity(Intent(this,ChooseLocationActivity::class.java))
         }
+
 
         //back btn
         ivBackGetOtpScrn.setOnClickListener {

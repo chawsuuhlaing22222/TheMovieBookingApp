@@ -18,9 +18,9 @@ import com.padc.csh.themovieapplication.dummy.orderedFoodList
 import kotlinx.android.synthetic.main.activity_check_out_acitivy.*
 import kotlinx.android.synthetic.main.custom_view_ticket_cancel_policy.view.*
 
-class CheckOutAcitivy : AppCompatActivity(),OrderFoolListChekoutDelegate {
-    lateinit var mOrderFoodAdapter:OrderedFoodDetailCheckOutAdapter
-    private var openOrderFoodDetailFlag=false
+class CheckOutAcitivy : AppCompatActivity(), OrderFoolListChekoutDelegate {
+    lateinit var mOrderFoodAdapter: OrderedFoodDetailCheckOutAdapter
+    private var openOrderFoodDetailFlag = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,19 +28,19 @@ class CheckOutAcitivy : AppCompatActivity(),OrderFoolListChekoutDelegate {
 
         setUpRecyclerFoodList()
         bindData()
-       setUpActionListener()
+        setUpActionListener()
 
     }
 
     private fun setUpActionListener() {
 
         ivDropDownArrowCheckoutScrn.setOnClickListener {
-            if(!openOrderFoodDetailFlag){
-                openOrderFoodDetailFlag=true
-                rvOrderedFoodListCheckoutScrn.visibility= View.VISIBLE
-            }else{
-                openOrderFoodDetailFlag=false
-                rvOrderedFoodListCheckoutScrn.visibility= View.GONE
+            if (!openOrderFoodDetailFlag) {
+                openOrderFoodDetailFlag = true
+                rvOrderedFoodListCheckoutScrn.visibility = View.VISIBLE
+            } else {
+                openOrderFoodDetailFlag = false
+                rvOrderedFoodListCheckoutScrn.visibility = View.GONE
             }
         }
 
@@ -49,14 +49,15 @@ class CheckOutAcitivy : AppCompatActivity(),OrderFoolListChekoutDelegate {
         }
 
         btnContinueCheckoutScrn.setOnClickListener {
-            startActivity(Intent(this,ChoosePaymentTypeActivity::class.java))
+            startActivity(Intent(this, ChoosePaymentTypeActivity::class.java))
         }
 
     }
 
-    private fun createPolicyAlertDialog(){
-        var dialog=AlertDialog.Builder(this).create()
-        var view=LayoutInflater.from(this).inflate(R.layout.custom_view_ticket_cancel_policy,null)
+    private fun createPolicyAlertDialog() {
+        var dialog = AlertDialog.Builder(this).create()
+        var view =
+            LayoutInflater.from(this).inflate(R.layout.custom_view_ticket_cancel_policy, null)
         dialog.setView(view)
         view.btnCloseTicketCancelationDialog.setOnClickListener {
             dialog.dismiss()
@@ -66,16 +67,19 @@ class CheckOutAcitivy : AppCompatActivity(),OrderFoolListChekoutDelegate {
     }
 
     private fun setUpRecyclerFoodList() {
-        mOrderFoodAdapter= OrderedFoodDetailCheckOutAdapter(this)
-        rvOrderedFoodListCheckoutScrn.adapter=mOrderFoodAdapter
-        rvOrderedFoodListCheckoutScrn.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        mOrderFoodAdapter = OrderedFoodDetailCheckOutAdapter(this)
+        rvOrderedFoodListCheckoutScrn.adapter = mOrderFoodAdapter
+        rvOrderedFoodListCheckoutScrn.layoutManager =
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
 
     private fun bindData() {
-       tvMovieNameCheckoutScrn.text=Html.fromHtml("<font color='#ffffff'>Black White </font><font color='#888888'>(3D)(U/A)</font>")
-        tvCinemaNameCheckoutScrn.setText(Html.fromHtml("<font color='#00ff6a'>JCGV</font>: <font color='#00ff6a'> Junction City </font><font color='#888888'>(SCREEN2)</font>"))
-       tvTicketCountCheckoutScrn.text=Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>2</font><font color='#888888'>)</font>")
+        tvMovieNameCheckoutScrn.text =
+            Html.fromHtml("<font color='#ffffff'>Black White </font><font color='#888888'>(3D)(U/A)</font>")
+        tvCinemaNameCheckoutScrn.setText(Html.fromHtml("<font color='#00ff6a'>JCGV : Junction City </font><font color='#aaaaaa'>(SCREEN2)</font>"))
+        tvTicketCountCheckoutScrn.text =
+            Html.fromHtml("<font color='#aaaaaa'>M-Ticket (</font><font color='#00ff6a'>2</font><font color='#888888'>)</font>")
     }
 
     override fun onFoodCancel(position: Int) {

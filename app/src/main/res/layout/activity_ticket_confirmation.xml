@@ -1,226 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#111111"
-    android:padding="@dimen/margin_medium_2"
+    android:background="@color/color111111"
     android:orientation="vertical"
+    android:padding="@dimen/margin_medium_2"
     tools:context=".activities.TicketConfirmationActivity">
 
-<!--    title-->
+    <!--    title-->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTicketConfirmationTitle"
-        android:text="Ticket Confirmation"
-        android:textSize="@dimen/text_regular_3x"
-        android:textColor="@color/white"
-        android:layout_marginTop="@dimen/margin_large"
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="Ticket Confirmation"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_regular_3x" />
 
-<!--    movie info card-->
+    <!--    movie info card-->
 
 
+    <RelativeLayout
+        android:id="@+id/rlMovieInfoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:background="@drawable/bg_ticket_confirmation"
+   >
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewOfMovieImgTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginLeft="@dimen/dimen_17dp"
+            app:cardCornerRadius="@dimen/margin_small">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMovieImgTicketConfirmScrn"
+                android:layout_width="@dimen/dimen_96dp"
+                android:layout_height="@dimen/dimen_120dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/venom" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!--            movie name-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMovieNameTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
+            android:text="Black Widow (3D) (U/A)"
+            android:layout_alignTop="@id/cardViewOfMovieImgTicketConfirmScrn"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_18sp" />
+
+        <!--            cinema name-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCinemaNameTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMovieNameTicketConfirmScrn"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
+            android:layout_marginStart="19dp"
+            android:text="JCGV:Junction City"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/text_regular_2x" />
+
+        <!--            ticket count-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTicketCountTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCinemaNameTicketConfirmScrn"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="@dimen/dimen_17dp"
+            android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
+            android:text="@string/lbl_tickect_count_checkout_scrn" />
+        <!--    ticket type-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTicketTypeTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTicketCountTicketConfirmScrn"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
+            android:text="Gold-G8,G7(SCREEN 2)"
+            android:textSize="@dimen/text_small" />
+        <!--line separator-->
+
+        <!--line separator-->
         <RelativeLayout
-            android:id="@+id/rlMovieInfoCard"
-            android:layout_marginTop="@dimen/margin_xlarge"
-            android:padding="@dimen/margin_large"
-            android:background="@drawable/gradient_movie_infocard_confirmation_scrn"
+            android:id="@+id/viewLineSeparatorTicketConfirmScrn"
             android:layout_width="match_parent"
-            android:layout_height="304dp">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardViewOfMovieImgTicketConfirmScrn"
-                app:cardCornerRadius="@dimen/margin_small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivMovieImgTicketConfirmScrn"
-                    app:srcCompat="@drawable/venom"
-                    android:scaleType="centerCrop"
-                    android:layout_width="96dp"
-                    android:layout_height="120dp"/>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!--            movie name-->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvMovieNameTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_10dp"
-                android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
-                android:text="Black White"
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_18sp" />
-
-            <!--            cinema name-->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvCinemaNameTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
-                android:layout_below="@id/tvMovieNameTicketConfirmScrn"
-                android:layout_marginLeft="@dimen/margin_10dp"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:text="JCGV:Junction City"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/text_18sp" />
-
-            <!--            ticket count-->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvTicketCountTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_10dp"
-                android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
-                android:layout_below="@id/tvCinemaNameTicketConfirmScrn"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:text="@string/lbl_tickect_count_checkout_scrn"
-                />
-            <!--    ticket type-->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvTicketTypeTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_10dp"
-                android:layout_toEndOf="@id/cardViewOfMovieImgTicketConfirmScrn"
-                android:layout_below="@id/tvTicketCountTicketConfirmScrn"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:text="Gold-G8,G7"
-                android:textSize="@dimen/text_regular_2x" />
-            <!--line separator-->
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_card_medium_2"
+            android:layout_below="@id/cardViewOfMovieImgTicketConfirmScrn"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/ivFirstHalfCircle"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="-15dp"
+                android:src="@drawable/ic_first_half_circle_checkout_scrn"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"/>
             <View
-                android:id="@+id/viewLineSeparatorTicketConfirmScrn"
-                android:layout_width="match_parent"
+                android:id="@+id/viewLineSeparatorCheckoutScrn2"
+                android:layout_toEndOf="@id/ivFirstHalfCircle"
+                android:layout_toStartOf="@id/ivSecondHalfCircle"
+                android:layout_width="wrap_content"
                 android:layout_height="2dp"
-                android:layout_below="@id/cardViewOfMovieImgTicketConfirmScrn"
-                android:layout_marginTop="@dimen/margin_22dp"
-                android:background="@drawable/dotted_line_separator" />
-
-            <!--calendar date-->
-            <LinearLayout
-                android:id="@+id/llCalendarTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/viewLineSeparatorTicketConfirmScrn"
-                android:layout_marginTop="@dimen/margin_medium_3"
-                android:orientation="vertical">
-                <!--            calendar icon-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCalendarTicketConfirmScrn"
-                    android:layout_width="@dimen/margin_30dp"
-                    android:layout_height="@dimen/margin_30dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/ic_calendar_checkout_scrn" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvMovieDateTicketConfirmScrn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/ivCalendarTicketConfirmScrn"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:text="Sat,18 June,2022 "
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <!--movie show time-->
-            <LinearLayout
-                android:id="@+id/llMovieShowTimeTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/viewLineSeparatorTicketConfirmScrn"
-                android:layout_margin="@dimen/margin_medium_3"
-                android:layout_toEndOf="@+id/llCalendarTicketConfirmScrn"
-                android:orientation="vertical">
-                <!--            clock icon-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivMovieShowTimeTicketConfirmScrn"
-                    android:layout_width="@dimen/margin_30dp"
-                    android:layout_height="@dimen/margin_30dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/ic_clock" />
-                <!--            time-->
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvMovieShowTimeTicketConfirmScrn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/ivMovieShowTimeTicketConfirmScrn"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:text="3:30PM "
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <!--cinema location-->
-            <LinearLayout
-                android:id="@+id/llCinemaLocationTicketConfirmScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/viewLineSeparatorTicketConfirmScrn"
-                android:layout_marginTop="@dimen/margin_medium_3"
-                android:layout_toEndOf="@+id/llMovieShowTimeTicketConfirmScrn"
-                android:orientation="vertical">
-                <!--            clock icon-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/ivCinemaLocationTicketConfirmScrn"
-                    android:layout_width="@dimen/margin_30dp"
-                    android:layout_height="@dimen/margin_30dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/ic_cinema_location_placeholder" />
-                <!--            time-->
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tvCinemaLocationTicketConfirmScrn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/ivCinemaLocationTicketConfirmScrn"
-                    android:layout_marginTop="@dimen/margin_medium"
-                    android:text="Q5H3+JPP, Corner of, Bogyoke Lann, Yangon "
-                    android:textColor="@color/white" />
-            </LinearLayout>
+                android:layout_marginTop="@dimen/margin_card_medium_2"
+                android:background="@drawable/view_dotted" />
+            <ImageView
+                android:id="@+id/ivSecondHalfCircle"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="-15dp"
+                android:src="@drawable/ic_second_halfcircle_checkout"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"/>
 
         </RelativeLayout>
 
 
+        <!--calendar date-->
+        <LinearLayout
+            android:id="@+id/llCalendarTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_24dp"
+            android:layout_below="@id/viewLineSeparatorTicketConfirmScrn"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:orientation="vertical">
+            <!--            calendar icon-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCalendarTicketConfirmScrn"
+                android:layout_width="@dimen/margin_medium_3"
+                android:layout_height="@dimen/margin_medium_3"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_calendar_checkout_scrn" />
 
-<!--    qr code-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieDateTicketConfirmScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivCalendarTicketConfirmScrn"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="Sat,18 June,2022 "
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!--movie show time-->
+        <LinearLayout
+            android:id="@+id/llMovieShowTimeTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewLineSeparatorTicketConfirmScrn"
+            android:layout_marginStart="@dimen/dimen_30dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_toEndOf="@+id/llCalendarTicketConfirmScrn"
+            android:orientation="vertical">
+            <!--            clock icon-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMovieShowTimeTicketConfirmScrn"
+                android:layout_width="@dimen/margin_medium_3"
+                android:layout_height="@dimen/margin_medium_3"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_clock" />
+            <!--            time-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieShowTimeTicketConfirmScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivMovieShowTimeTicketConfirmScrn"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="3:30PM "
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <!--cinema location-->
+        <LinearLayout
+            android:id="@+id/llCinemaLocationTicketConfirmScrn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewLineSeparatorTicketConfirmScrn"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginStart="@dimen/dimen_30dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="@dimen/dimen_30dp"
+            android:layout_toEndOf="@+id/llMovieShowTimeTicketConfirmScrn"
+            android:orientation="vertical">
+            <!--            clock icon-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCinemaLocationTicketConfirmScrn"
+                android:layout_width="@dimen/margin_medium_3"
+                android:layout_height="@dimen/margin_medium_3"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@drawable/ic_cinema_location_placeholder" />
+            <!--            time-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCinemaLocationTicketConfirmScrn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivCinemaLocationTicketConfirmScrn"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textSize="@dimen/text_small"
+                android:gravity="center"
+                android:text="Q5H3+JPP, Corner of, Bogyoke Lann, Yangon "
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <!--    qr code-->
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivQRCodeConfirmationScrn"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="@dimen/dimen_100dp"
         android:layout_gravity="center_horizontal"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_marginTop="75dp"
+        android:scaleType="centerCrop" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_medium_3"
         android:text="WAG5LP1C"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textSize="@dimen/text_regular_3x" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="TPIN : WKCSL96"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    
+        android:textSize="@dimen/text_regular_3x" />
+
     <com.google.android.material.button.MaterialButton
-        app:cornerRadius="4dp"
-        android:textColor="@color/black"
-        android:text="@string/lbl_done"
-        android:textSize="20sp"
-        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="@dimen/dimen_60dp"
+        android:paddingRight="@dimen/dimen_60dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="77dp"
         android:backgroundTint="@color/colorAccent"
-        android:layout_width="176dp"
-        android:layout_height="50dp"/>
+        android:text="@string/lbl_done"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_regular_3x"
+        app:cornerRadius="@dimen/dimen_4dp" />
 
 
 </LinearLayout>

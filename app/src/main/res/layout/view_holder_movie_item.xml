@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/width_movie_item"
     android:layout_height="280dp"
-    android:layout_marginTop="@dimen/margin_10dp"
-    app:cardCornerRadius="8dp"
+    android:layout_marginTop="21dp"
+    android:layout_marginLeft="21dp"
+    android:elevation="@dimen/dimen_4dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivMovie"
-            app:srcCompat="@drawable/venom"
+            app:srcCompat="@drawable/ic_forestgump"
             android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="240dp" />
+            android:layout_height="212dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivIBM"
@@ -25,7 +26,7 @@
             android:layout_alignBottom="@id/tvMovieName"
             android:elevation="4dp"
             android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_30dp"
+            android:layout_width="@dimen/dimen_30dp"
             android:layout_height="20dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -60,8 +61,8 @@
             android:id="@+id/ivDot"
             android:layout_toEndOf="@id/tvUA"
             android:elevation="4dp"
-            android:layout_marginStart="@dimen/margin_10dp"
-            android:layout_marginEnd="@dimen/margin_10dp"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginEnd="@dimen/dimen_10dp"
             app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
             android:scaleType="centerCrop"
             android:layout_alignParentBottom="true"
@@ -103,7 +104,7 @@
             android:textStyle="bold"
             android:gravity="center"
             android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/margin_10dp"
+            android:layout_margin="@dimen/dimen_10dp"
             android:background="@drawable/bg_comming_date"
             android:layout_width="30dp"
             android:layout_height="30dp"/>
@@ -114,4 +115,3 @@
             android:layout_height="match_parent" />
     </RelativeLayout>
 
-</com.google.android.material.card.MaterialCardView>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/color111111"
     tools:context=".activities.MovieBookingActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -40,7 +40,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/margin_medium_2"
                 android:layout_toStartOf="@id/ivSearchBookingScrn"
-                android:paddingBottom="5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
                 android:text="Yangon"
                 android:textColor="@color/white"
                 android:textStyle="italic" />
@@ -68,52 +68,69 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDate"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="@dimen/dimen_100dp"
             android:clipToPadding="false"
             android:paddingEnd="@dimen/margin_medium_2" />
 
         <!--    movie view type-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="@dimen/dimen_60dp">
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvTwoD"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/margin_xlarge"
+                android:layout_height="@dimen/dimen_30dp"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="@dimen/margin_medium"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingStart="@dimen/dimen_13dp"
+                android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_2d"
+                android:textStyle="bold"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvThreeD"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/margin_xlarge"
+                android:layout_height="@dimen/dimen_30dp"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="@dimen/margin_medium"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingStart="@dimen/dimen_13dp"
+                android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_3d"
+                android:textStyle="bold"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvThreeDImax"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/margin_xlarge"
+                android:layout_height="@dimen/dimen_30dp"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="@dimen/margin_medium"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingStart="@dimen/dimen_13dp"
+                android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_3d_imax"
+                android:textStyle="bold"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv3DDBOX"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/margin_xlarge"
+                android:layout_height="@dimen/dimen_30dp"
                 android:layout_margin="@dimen/margin_medium_2"
                 android:background="@drawable/bg_movie_view_type"
-                android:padding="@dimen/margin_medium"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingStart="@dimen/dimen_13dp"
+                android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_3d_dbox"
+                android:textStyle="bold"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -123,88 +140,91 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-            <RelativeLayout
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--                color status-->
+            <LinearLayout
+                android:id="@+id/llMovieSeatStatus"
+                android:background="@color/color222222"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-<!--                color status-->
-                <LinearLayout
-                    android:id="@+id/llMovieSeatStatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin_50dp">
+                android:layout_height="@dimen/dimen_50dp">
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/ivDot"
-                        android:layout_marginStart="@dimen/margin_medium_2"
-                        android:layout_width="@dimen/margin_10dp"
-                        android:layout_height="@dimen/margin_10dp"
-                        android:layout_gravity="center_vertical"
-                        android:elevation="4dp"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
-                        app:tint="@color/colorAvailable" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDot"
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="@dimen/dimen_10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_medium_2"
+                    android:elevation="@dimen/dimen_4dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
+                    app:tint="@color/colorAvailable" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvUA"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_medium"
-                        android:elevation="@dimen/margin_small"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/lbl_availible"
-                        android:textColor="@color/colorAvailable"
-                        android:textSize="@dimen/text_regular_2x" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:elevation="@dimen/margin_small"
+                    android:text="@string/lbl_availible"
+                    android:textColor="@color/colorAvailable"
+                    android:textSize="@dimen/text_regular_2x" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/ivDotFillinFast"
-                        android:layout_marginStart="@dimen/margin_xxlarge"
-                        android:layout_width="@dimen/margin_10dp"
-                        android:layout_height="@dimen/margin_10dp"
-                        android:layout_gravity="center_vertical"
-                        android:elevation="@dimen/margin_small"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
-                        app:tint="@color/colorFillingFast" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDotFillinFast"
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="@dimen/dimen_10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_xxlarge"
+                    android:elevation="@dimen/margin_small"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
+                    app:tint="@color/colorFillingFast" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvFillingFast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_medium"
-                        android:elevation="@dimen/margin_small"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/lbl_filling_fast"
-                        android:textColor="@color/colorFillingFast"
-                        android:textSize="@dimen/text_regular_2x" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFillingFast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:elevation="@dimen/margin_small"
+                    android:text="@string/lbl_filling_fast"
+                    android:textColor="@color/colorFillingFast"
+                    android:textSize="@dimen/text_regular_2x" />
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/ivDotAlmostFull"
-                        android:layout_marginStart="@dimen/margin_xxlarge"
-                        android:layout_width="@dimen/margin_10dp"
-                        android:layout_height="@dimen/margin_10dp"
-                        android:layout_gravity="center_vertical"
-                        android:elevation="@dimen/margin_small"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
-                        app:tint="@color/colorAlmostFull" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDotAlmostFull"
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="@dimen/dimen_10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_xxlarge"
+                    android:elevation="@dimen/margin_small"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
+                    app:tint="@color/colorAlmostFull" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvAlmostFull"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_medium"
-                        android:elevation="@dimen/margin_small"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/lbl_almost_full"
-                        android:textColor="@color/colorAlmostFull"
-                        android:textSize="@dimen/text_regular_2x" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAlmostFull"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:elevation="@dimen/margin_small"
+                    android:text="@string/lbl_almost_full"
+                    android:textColor="@color/colorAlmostFull"
+                    android:textSize="@dimen/text_regular_2x" />
 
-                </LinearLayout>
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvMovieCinemaList"
-                    android:layout_below="@id/llMovieSeatStatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </RelativeLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMovieCinemaList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llMovieSeatStatus" />
+        </RelativeLayout>
 
 
     </androidx.core.widget.NestedScrollView>

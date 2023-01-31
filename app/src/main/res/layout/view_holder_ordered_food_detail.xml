@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/color111111"
     android:layout_marginTop="@dimen/margin_medium_2"
     android:layout_marginRight="@dimen/margin_medium_2"
     android:layout_marginLeft="@dimen/margin_medium_2"
@@ -35,8 +35,8 @@
             android:id="@+id/tvOrderFoodCountOrderedDetailVH"
             android:text="1"
             android:textColor="@color/colorAccent"
-            android:layout_marginLeft="@dimen/margin_10dp"
-            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -53,7 +53,8 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvFoodPriceOrderedDetailVH"
         android:layout_alignParentEnd="true"
-        android:text="Cocacola"
+        android:text="1200KS"
+        android:textSize="@dimen/text_regular_2x"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

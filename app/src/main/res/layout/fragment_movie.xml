@@ -4,19 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:background="@color/color111111"
     tools:context=".fragments.MovieFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp">
+        android:layout_height="@dimen/dimen_350dp">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/color111111"
             app:layout_scrollFlags="scroll|enterAlways">
 
             <RelativeLayout
+                android:background="@color/color111111"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_collapseMode="parallax"
@@ -30,12 +34,13 @@
 
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPagerBanner"
+                    android:layout_centerHorizontal="true"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="190dp"
                     android:layout_below="@id/viewItemToolbarMovieFrag"
-                    android:layout_gravity="end"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/colorPrimary" />
+
+                  />
+<!--                android:background="@color/color111111"-->
 
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                     android:id="@+id/dotsIndicatorBanner"
@@ -44,7 +49,7 @@
                     android:layout_below="@id/viewPagerBanner"
                     android:layout_centerInParent="true"
                     android:layout_gravity="bottom|center"
-                    android:layout_marginTop="@dimen/margin_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
                     android:layout_marginBottom="@dimen/margin_medium"
                     android:elevation="@dimen/margin_small"
                     app:dotsColor="@android:color/darker_gray"
@@ -62,15 +67,15 @@
                 android:layout_width="370dp"
                 android:layout_height="55dp"
                 android:layout_gravity="bottom"
-                android:layout_marginStart="@dimen/margin_medium_2"
-                android:layout_marginEnd="@dimen/margin_medium_2"
-                android:paddingLeft="5dp"
-                android:paddingEnd="5dp"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:layout_marginEnd="@dimen/dimen_22dp"
                 android:background="@drawable/gradient_showing_comming_movie_bg"
-                android:elevation="5dp"
+                android:elevation="@dimen/dimen_5dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:outlineSpotShadowColor="#80444444"
+                android:paddingLeft="@dimen/dimen_5dp"
+                android:paddingEnd="@dimen/dimen_5dp"
                 android:weightSum="2"
                 app:layout_collapseMode="pin">
 
@@ -78,9 +83,10 @@
                     android:id="@+id/btnNowShowing"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin_50dp"                    android:layout_weight="1"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:layout_weight="1"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingEnd="@dimen/dimen_10dp"
                     android:text="@string/lbl_now_showing"
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimaryLight"
@@ -90,7 +96,7 @@
                     android:id="@+id/btnCommingSoon"
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin_50dp"
+                    android:layout_height="@dimen/dimen_50dp"
                     android:layout_weight="1"
                     android:text="@string/lbl_comming_soon"
                     android:textAllCaps="false"
@@ -110,10 +116,26 @@
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
+
         <FrameLayout
-            android:id="@+id/flShowingCommingMovies"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNowShowingMovies"
+                android:paddingEnd="21dp"
+                android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCommingSoonMovies"
+                android:visibility="gone"
+                android:paddingEnd="21dp"
+                android:clipToPadding="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
 
     </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

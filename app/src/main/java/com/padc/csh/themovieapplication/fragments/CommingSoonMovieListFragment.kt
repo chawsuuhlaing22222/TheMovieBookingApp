@@ -33,8 +33,14 @@ class CommingSoonMovieListFragment : Fragment(),MovieListDelegate {
         mMovieListViewPod.setUpViewPod(this,"comming")
     }
 
-    override fun onTapMovie() {
-        startActivity(MovieDetailActivity.newIntent(context,"comming"))
+
+
+    override fun onTapNowShowingMovie() {
+
+    }
+
+    override fun onTapCommingSoonMovie() {
+
     }
 
 }

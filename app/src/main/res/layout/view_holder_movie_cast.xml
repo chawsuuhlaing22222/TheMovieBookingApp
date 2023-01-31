@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:background="@color/colorPrimary"
+    android:background="@color/color111111"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/margin_10dp"
+    android:layout_marginLeft="@dimen/dimen_10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivCastProfileImage"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="@dimen/dimen_80dp"
+        android:layout_height="@dimen/dimen_80dp"
         android:src="@drawable/placeholder_cast_img"
         android:scaleType="centerCrop"
         app:civ_border_width="2dp"
@@ -21,7 +21,7 @@
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:layout_below="@id/ivCastProfileImage"
-        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

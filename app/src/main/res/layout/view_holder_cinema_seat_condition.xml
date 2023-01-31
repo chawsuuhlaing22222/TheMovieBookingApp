@@ -2,12 +2,12 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/bg_avialable_cinema_seat_condition"
-    android:paddingTop="10dp"
-    android:layout_marginRight="@dimen/margin_10dp"
-    android:layout_marginTop="@dimen/margin_10dp"
-    android:paddingBottom="10dp"
-    android:layout_width="120dp"
-    android:layout_height="wrap_content">
+    android:layout_marginLeft="@dimen/margin_medium_3"
+    android:layout_marginTop="@dimen/margin_medium_3"
+    android:layout_marginRight="@dimen/margin_medium_3"
+    android:paddingTop="@dimen/dimen_10dp"
+    android:layout_width="@dimen/dimen_95dp"
+    android:layout_height="@dimen/dimen_92dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvAvailableTime"
@@ -22,6 +22,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tvAvailableTime"
         android:text="3D"
+        android:textSize="@dimen/text_small"
         android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -31,6 +32,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tvMovieViewType"
         android:text="Screen 1"
+        android:textSize="@dimen/text_small"
         android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -40,6 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tvScreenNo"
         android:text="21 Available"
+        android:textSize="@dimen/text_small"
         android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

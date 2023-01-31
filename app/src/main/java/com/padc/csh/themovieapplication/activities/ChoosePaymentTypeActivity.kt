@@ -10,7 +10,7 @@ import com.padc.csh.themovieapplication.adapters.PaymentTypeAdapter
 import com.padc.csh.themovieapplication.delegates.PaymentDelegate
 import kotlinx.android.synthetic.main.activity_choose_payment_type.*
 
-class ChoosePaymentTypeActivity : AppCompatActivity(),PaymentDelegate {
+class ChoosePaymentTypeActivity : AppCompatActivity(), PaymentDelegate {
     lateinit var mPaymentAdapter: PaymentTypeAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,13 +20,13 @@ class ChoosePaymentTypeActivity : AppCompatActivity(),PaymentDelegate {
     }
 
     private fun setUpPaymentRecyclerView() {
-      mPaymentAdapter=PaymentTypeAdapter(this)
-        rvPaymentType.adapter=mPaymentAdapter
-        rvPaymentType.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        mPaymentAdapter = PaymentTypeAdapter(this)
+        rvPaymentType.adapter = mPaymentAdapter
+        rvPaymentType.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
     }
 
     override fun onChoosePayment() {
-        startActivity(Intent(this,TicketConfirmationActivity::class.java))
+        startActivity(Intent(this, TicketConfirmationActivity::class.java))
     }
 }

@@ -77,4 +77,7 @@
     <string name="lbl_almost_full">Almost Full</string>
     <string name="lbl_screen">SCREEN</string>
     <string name="lbl_add">Add</string>
+    <string name="lbl_cities">Cities</string>
+    <string name="lbl_your_name">Your Name</string>
+    <string name="lbl_enter_your_name">Enter your name</string>
 </resources>

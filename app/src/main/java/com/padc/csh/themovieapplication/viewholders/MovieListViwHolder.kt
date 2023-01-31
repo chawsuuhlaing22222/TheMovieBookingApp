@@ -10,7 +10,7 @@ class MovieListViwHolder(itemView: View,delegate: MovieListDelegate,flag:String)
         init {
             itemView.setOnClickListener {
 
-                delegate.onTapMovie()
+                //delegate.onTapMovie()
             }
 
         }

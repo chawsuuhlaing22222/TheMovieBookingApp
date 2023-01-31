@@ -9,6 +9,7 @@
  <androidx.recyclerview.widget.RecyclerView
      android:id="@+id/rvSnackList"
      android:paddingEnd="@dimen/margin_medium_2"
+     android:background="#161616"
      android:clipToPadding="false"
      android:layout_width="match_parent"
      android:layout_height="match_parent"/>

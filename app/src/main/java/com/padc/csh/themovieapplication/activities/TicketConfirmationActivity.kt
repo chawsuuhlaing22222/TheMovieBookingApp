@@ -44,7 +44,6 @@ class TicketConfirmationActivity : AppCompatActivity() {
 
     private fun generateQRCode() {
         var en= QRGEncoder("mgmg",null,QRGContents.Type.TEXT,300)
-
         ivQRCodeConfirmationScrn.setImageBitmap(en.bitmap)
     }
 

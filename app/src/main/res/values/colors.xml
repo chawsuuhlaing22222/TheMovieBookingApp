@@ -16,7 +16,17 @@
     <color name="colorAccent">#00ff6a</color>
     <color name="colorSecondaryText">#aaaaaa</color>
     <color name="colorTimeCard">#d7d7d7</color>
+    <color name="text_color_for_please_enter_6digits">#888888</color>
+    <color name="text_color_enter_otpcode">#7A7E80</color>
+    <color name="text_color_terms_and_conditions">#4A4A4B</color>
 
+<!--    get otp screen color-->
+    <color name="text_color_pinview">#4A4A4B</color>
+    <color name="border_color_pinview">#ffffff</color>
+    <color name="bg_color_pinview_item">#ffffff</color>
+
+
+<!--    general-->
     <color name="colorTransparentOverlayPlayBtn">#80000000</color>
     <color name="colorAvailable">#00FFA3</color>
     <color name="colorFillingFast">#FF7A00</color>
@@ -38,4 +48,10 @@
     <color name="color5151511">#333333</color>
     <color name="color020202">#020202</color>
     <color name="color40000000">#BD000000</color>
+    <color name="color111111">#111111</color>
+    <color name="color3B3B3B">#3B3B3B</color>
+    <color name="color9E9E9E">#9E9E9E</color>
+
+
+
 </resources>

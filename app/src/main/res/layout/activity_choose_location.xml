@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorPrimary"
+    android:background="@color/color111111"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.ChooseLocationActivity">
@@ -25,15 +25,15 @@
         android:layout_height="wrap_content"/>
 
 
-<!--    search button layout-->
+<!--    search button layout  -->
     <RelativeLayout
         android:id="@+id/rlLocationSearch"
         android:background="@drawable/gradient_city_search_btn"
         android:layout_below="@id/tvPickRegion"
         android:layout_marginStart="@dimen/margin_medium_2"
-        android:layout_marginTop="30dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp">
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_width="@dimen/dimen_300dp"
+        android:layout_height="@dimen/dimen_50dp">
         
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivSearch"
@@ -42,8 +42,8 @@
             app:tint="@color/colorAccent"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_search_white_24dp"
-            android:layout_width="20dp"
-            android:layout_height="20dp"/>
+            android:layout_width="@dimen/margin_medium_3"
+            android:layout_height="@dimen/margin_medium_3"/>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/edtSearchLocation"
@@ -54,9 +54,10 @@
             android:layout_toEndOf="@id/ivSearch"
             android:background="@android:color/transparent"
             android:hint="Search your location"
-            android:minHeight="48dp"
-            android:textColor=" #9E9E9E"
-            android:textColorHint="#9E9E9E" />
+            android:minHeight="@dimen/margin_xxlarge"
+            android:textColor="@color/color9E9E9E"
+            android:textSize="@dimen/text_regular"
+            android:textColorHint="@color/color9E9E9E" />
     </RelativeLayout>
 
 <!--    btn map-->
@@ -66,8 +67,8 @@
         android:layout_toEndOf="@id/rlLocationSearch"
         android:layout_alignBottom="@id/rlLocationSearch"
         android:layout_marginStart="@dimen/margin_medium_2"
-        android:layout_width="@dimen/margin_50dp"
-        android:layout_height="@dimen/margin_50dp">
+        android:layout_width="@dimen/dimen_50dp"
+        android:layout_height="@dimen/dimen_50dp">
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_centerInParent="true"
             app:srcCompat="@drawable/ic_baseline_near_me_24"
@@ -78,14 +79,13 @@
 <!--    building img-->
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivBuilding"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/dimen_91dp"
+        android:layout_height="@dimen/dimen_51dp"
         android:layout_below="@id/rlLocationSearch"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="20dp"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/ic_building" />
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_cities" />
 
     <!--    spinner of cities //also useful-->
 <!--    <FrameLayout-->
@@ -112,13 +112,15 @@
 
             <TextView
                 android:id="@+id/tvSelectedCity"
-                android:text="Cities"
+                android:text="@string/lbl_cities"
+                android:textSize="15sp"
+                android:textColor="#F2F2F2"
                 android:layout_below="@id/ivBuilding"
-                android:paddingLeft="@dimen/margin_medium_2"
+                android:paddingLeft="@dimen/dimen_22dp"
                 android:gravity="center_vertical"
-                android:background="@color/colorPrimaryLight"
+                android:background="#3B3B3B"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/margin_50dp"/>
+                android:layout_height="@dimen/dimen_40dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvSelectedCity"

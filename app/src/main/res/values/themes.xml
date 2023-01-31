@@ -16,7 +16,7 @@
 
     <style name="Theme.TheMovieApplication.StatusBar" parent="Theme.TheMovieApplication">
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/colorPrimary</item>        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>        <!-- Customize your theme here. -->
 
     </style>
 
@@ -43,5 +43,10 @@
     <style name="MyAlertDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
         <item name="windowFixedWidthMajor">100%</item>
         <item name="windowFixedWidthMinor">100%</item>
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">16sp</item>
+        <item name="textAllCaps">false</item>
     </style>
 </resources>
