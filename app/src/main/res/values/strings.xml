@@ -52,8 +52,8 @@
     <string name="lbl_refund_ticket">Up to 75% Refund for Tickets</string>
     <string name="lbl_refund_noti_untilhour">-75% refund until 2 hours before show\n start time</string>
     <string name="lbl_50percent_refund">-50% refund between 2 hours and 20 minutes before show start time</string>
-    <string name="lbl_refund_noti_notavailable">1. Refund not available for Convenience fees,Vouchers, Gift Cards, Taxes etc.</string>
-    <string name="lbl_nocancelation_noti">2. No cancelation within 20minute of show start time.</string>
+    <string name="lbl_refund_noti_notavailable">1. Refund not available for Convenience \nfees,Vouchers, Gift Cards, Taxes etc.</string>
+    <string name="lbl_nocancelation_noti">2. No cancelation within 20minute of show \nstart time.</string>
     <string name="lbl_unlock_offer_applay_promocode">Unlock Offer or Apply Promocode</string>
     <string name="lbl_choose_your_payment_type">Choose your payment type</string>
 
@@ -80,4 +80,22 @@
     <string name="lbl_cities">Cities</string>
     <string name="lbl_your_name">Your Name</string>
     <string name="lbl_enter_your_name">Enter your name</string>
+    <string name="lbl_search_the_movie">search the movie</string>
+    <string name="lbl_genres">Genres</string>
+    <string name="lbl_format">Format</string>
+    <string name="lbl_month">Month</string>
+    <string name="lbl_refund_amout">Refund Amout</string>
+    <string name="lbl_cinema_details">Cinema Details</string>
+    <string name="lbl_facilities">Facilities</string>
+    <string name="lbl_ticket_cancelation">Ticket Cancelation</string>
+    <string name="lbl_safety">Safety</string>
+    <string name="lbl_thermanal_scannig">Thermanal Scannig</string>
+    <string name="lbl_contactless_security_check">Contactless Security Check</string>
+    <string name="slbl_santization_before_every_show">Santization Before Every Show</string>
+    <string name="lbl_disposable_3d_glass">Disposable 3D glass</string>
+    <string name="lbl_contactless_food_serviec">Contactless Food Serviec</string>
+    <string name="lbl_package_food">Package Food</string>
+    <string name="lbl_deep_cleaning_of_rest_room">Deep Cleaning of rest room</string>
+    <string name="lbl_price_range">Price Range</string>
+    <string name="lbl_show_times">Show Times</string>
 </resources>

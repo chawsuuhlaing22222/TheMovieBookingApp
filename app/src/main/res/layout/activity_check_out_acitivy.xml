@@ -31,7 +31,8 @@
                 android:gravity="center|center_vertical"
                 android:text="Checkout"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_22sp" />
+                android:textSize="@dimen/text_22sp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -55,8 +56,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/margin_medium_3"
                 android:background="@drawable/bg_checkout"
-                android:paddingTop="@dimen/margin_medium_3"
-                android:paddingBottom="@dimen/margin_medium_3">
+                android:paddingTop="19dp"
+                android:paddingBottom="@dimen/margin_medium">
 
                 <!--            movie name-->
                 <androidx.appcompat.widget.AppCompatTextView
@@ -78,7 +79,7 @@
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:text="Junction City"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_regular_2x" />
+                    android:textSize="@dimen/text_regular" />
 
                 <!--calendar date-->
                 <LinearLayout
@@ -142,7 +143,7 @@
                     android:id="@+id/llCinemaLocationCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium_3"
+                    android:layout_marginRight="26dp"
                     android:layout_below="@id/tvCinemaNameCheckoutScrn"
                     android:layout_marginTop="@dimen/dimen_30dp"
                     android:layout_toEndOf="@+id/llMovieShowTimeCheckoutScrn"
@@ -172,8 +173,8 @@
                     android:id="@+id/tvTicketCountCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/llCinemaLocationCheckoutScrn"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/margin_medium_3"
                     android:text="@string/lbl_tickect_count_checkout_scrn" />
                 <!--    ticket type-->
@@ -184,6 +185,7 @@
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/tvTicketCountCheckoutScrn"
                     android:layout_marginTop="@dimen/margin_medium"
+                    android:textStyle="bold"
                     android:text="Gold-G8,G7"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
@@ -198,6 +200,7 @@
                     android:layout_marginTop="@dimen/margin_medium"
                     android:layout_marginRight="@dimen/margin_medium_3"
                     android:text="2000Ks"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
                 <!--line separator-->
@@ -218,7 +221,7 @@
                     android:layout_height="@dimen/margin_medium_3"
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn"
-                    android:layout_marginTop="23dp"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     app:srcCompat="@drawable/ic_online_food"
                     app:tint="@color/white" />
                 <!--            text food-->
@@ -228,11 +231,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn"
                     android:layout_marginLeft="@dimen/dimen_5dp"
-                    android:layout_marginTop="@dimen/dimen_22dp"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_toEndOf="@id/ivOrderedFoodCheckoutScrn"
                     android:text="@string/lbl_food_and_beverage"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_18sp"
+                    android:textStyle="bold"
                 />
 
                 <!--btn down arrow-->
@@ -243,7 +247,7 @@
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_card_medium_2_n"
-                    android:layout_marginTop="28dp"
+                    android:layout_marginTop="@dimen/margin_large"
                     android:layout_toEndOf="@id/tvOrderedFoodListCheckoutScrn"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_white_24dp" />
@@ -255,9 +259,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginTop="@dimen/dimen_22dp"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginRight="@dimen/margin_medium_3"
                     android:text="2000Ks"
+                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
                 <!--            order foodlist -->
@@ -265,18 +270,18 @@
                     android:id="@+id/rvOrderedFoodListCheckoutScrn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    tools:itemCount="2"
                     android:layout_marginTop="@dimen/dimen_10dp"
                     android:layout_marginRight="@dimen/margin_medium_3"
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/ivOrderedFoodCheckoutScrn"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <!--line separator-->
                 <RelativeLayout
                     android:id="@+id/llLineSeparatorCheckoutScrn2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:layout_below="@id/rvOrderedFoodListCheckoutScrn"
                     android:orientation="horizontal">
                     <ImageView
@@ -311,7 +316,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/llLineSeparatorCheckoutScrn2"
                     android:layout_marginLeft="@dimen/margin_medium_3"
-                    android:layout_marginTop="@dimen/margin_xlarge"
+                    android:layout_marginTop="@dimen/margin_large"
                     android:text="@string/lbl_convenience_fee"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x"
@@ -339,7 +344,7 @@
                     android:layout_marginRight="@dimen/margin_medium_3"
                     android:layout_below="@id/llLineSeparatorCheckoutScrn2"
                     android:layout_alignParentEnd="true"
-                 android:layout_marginTop="@dimen/margin_xlarge"
+                    android:layout_marginTop="@dimen/margin_large"
                     android:text="2000Ks"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
@@ -347,7 +352,7 @@
                 <!--            ticket policy-->
                 <LinearLayout
                     android:id="@+id/llTicketCancelPolicy"
-                    android:layout_width="200dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvConvenienceFee"
                     android:layout_alignParentStart="true"
@@ -355,7 +360,10 @@
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:background="@drawable/bg_ticket_cancelion_policy"
                     android:gravity="center"
-                    android:padding="@dimen/dimen_5dp">
+                    android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingRight="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_4dp"
+                    android:paddingTop="@dimen/dimen_4dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/ivTicketPolicyInfo"
@@ -382,10 +390,8 @@
                     android:layout_marginStart="@dimen/margin_medium_3"
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/dimen_30dp"
-                    android:layout_marginEnd="@dimen/margin_medium_3"
                     android:layout_marginRight="@dimen/margin_medium_3"
-                    android:layout_marginBottom="@dimen/margin_medium_3"
-                    android:background="@color/colorPrimaryLight" />
+                    android:background="@drawable/separator_line_bg" />
 
                 <!--            lbl total-->
                 <androidx.appcompat.widget.AppCompatTextView
@@ -393,9 +399,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn3"
-                    android:layout_marginTop="@dimen/dimen_22dp"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:text="@string/lbl_total"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_18sp" />
 
@@ -407,11 +414,11 @@
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn3"
                     android:layout_alignParentEnd="true"
                     android:layout_marginStart="@dimen/margin_medium_3"
-                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_3"
-                    android:layout_marginRight="@dimen/margin_medium_3"
                     android:layout_marginBottom="@dimen/margin_medium_3"
                     android:text="22200Ks"
+                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_18sp" />
 
@@ -420,11 +427,47 @@
             <!--    continue btn-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnContinueCheckoutScrn"
+                android:visibility="visible"
                 android:layout_width="@dimen/dimen_240dp"
                 android:layout_height="@dimen/dimen_50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="36dp"
                 app:srcCompat="@drawable/btn_continue" />
+            <RelativeLayout
+                android:id="@+id/rlTicketCancel"
+                android:visibility="gone"
+                android:layout_marginTop="36dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+               <TextView
+                   android:id="@+id/tvRefundAmtlbl"
+                   android:textSize="@dimen/text_regular_2x"
+                   android:textColor="@color/white"
+                   android:text="@string/lbl_refund_amout"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tvRefundAmtValue"
+                    android:layout_below="@id/tvRefundAmtlbl"
+                    android:textSize="@dimen/text_regular_3x"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTicketCancel"
+                    android:text="15000KS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnCancelBooking"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/btn_booking_cancel"
+                    android:layout_width="226dp"
+                    android:layout_height="49dp"/>
+
+
+            </RelativeLayout>
+
         </LinearLayout>
 
 

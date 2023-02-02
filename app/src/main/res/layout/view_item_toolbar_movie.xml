@@ -43,7 +43,8 @@
         android:layout_toStartOf="@id/ivNoti"
         android:layout_marginRight="@dimen/margin_medium_2"
         app:srcCompat="@drawable/ic_baseline_search_white_24dp"
+        android:scaleType="centerCrop"
         android:layout_centerVertical="true"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="@dimen/dimen_22dp"/>
 </RelativeLayout>

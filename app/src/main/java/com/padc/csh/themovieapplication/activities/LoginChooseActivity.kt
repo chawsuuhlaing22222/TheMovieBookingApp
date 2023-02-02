@@ -15,9 +15,7 @@ class LoginChooseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_choose)
 
-
         setUpListener()
-
 
     }
 

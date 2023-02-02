@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CinemaDetailActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+        <RelativeLayout
+            android:id="@+id/rlToolBarCinemaDetail"
+            android:background="@color/color111111"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBackCinemaDetailScrn"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_white_24dp"
+                android:layout_marginLeft="@dimen/dimen_22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_22dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCinemaDetail"
+                android:text="@string/lbl_cinema_details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_22sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStarCinemaDetailScrn"
+                app:srcCompat="@drawable/ic_start"
+                android:layout_marginEnd="@dimen/dimen_22dp"
+                android:layout_width="@dimen/dimen_22dp"
+                android:layout_height="@dimen/dimen_22dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:background="@color/color111111"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/flMovieCinemaDetail"
+                android:background="@color/color111111"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_200dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivVideoCoverCinemaDetail"
+                    app:srcCompat="@drawable/ic_forestgump"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_200dp"/>
+                <VideoView
+                    android:id="@+id/vvCinemaDetail"
+                   android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_200dp"/>
+
+                <View
+                    android:background="@drawable/bg_gradient_cinema_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/btnPlayCinemaDetailScrn"
+                    app:srcCompat="@drawable/ic_play_btn"
+                    android:layout_centerInParent="true"
+                    android:layout_width="@dimen/dimen_50dp"
+                    android:layout_height="@dimen/dimen_50dp"/>
+
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCinemaName"
+                android:layout_below="@id/flMovieCinemaDetail"
+                android:layout_marginLeft="@dimen/dimen_22dp"
+                android:layout_marginTop="@dimen/dimen_26dp"
+                android:text="JCGV : Junction City"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCinemaLocation"
+                android:layout_below="@id/tvCinemaName"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:text="Q5H3+JPP, Corner of, Bogyoke Lann, Yangon "
+                android:textSize="@dimen/text_18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocationCinemaDetailScrn"
+                android:layout_width="@dimen/dimen_25dp"
+                android:layout_height="@dimen/dimen_25dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_below="@id/tvCinemaName"
+                android:layout_alignTop="@id/tvCinemaLocation"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dimen_22dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_near_me_24"
+                app:tint="@color/colorAccent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFacilities"
+                android:text="@string/lbl_facilities"
+                android:textSize="@dimen/text_18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dimen_22dp"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:layout_below="@id/tvCinemaLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivParkingCinemaDetail"
+                app:tint="@color/colorAccent"
+                android:layout_width="@dimen/margin_medium_2_n"
+                android:layout_height="@dimen/margin_medium_2_n"
+                android:layout_below="@id/tvFacilities"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:layout_marginTop="@dimen/margin_medium_3_n"
+                app:srcCompat="@drawable/ic_parking" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvParking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvFacilities"
+                android:layout_marginStart="@dimen/margin_card_medium"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/ivParkingCinemaDetail"
+                android:text="@string/lbl_parking"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_regular" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOnlineFoodCinemaDetail"
+                android:layout_width="@dimen/margin_medium_2_n"
+                android:layout_height="@dimen/margin_medium_2_n"
+                android:layout_below="@id/tvFacilities"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_alignTop="@id/ivParkingCinemaDetail"
+                android:layout_toEndOf="@id/tvParking"
+                app:tint="@color/colorAccent"
+                app:srcCompat="@drawable/ic_online_food" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOnlineFoodCinemaDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvFacilities"
+                android:layout_marginStart="@dimen/margin_card_medium"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/ivOnlineFoodCinemaDetail"
+                android:text="@string/lbl_online_food"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_regular" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivWheelChairCinemaDetail"
+                app:tint="@color/colorAccent"
+                android:layout_width="@dimen/margin_medium_2_n"
+                android:layout_height="@dimen/margin_medium_2_n"
+                android:layout_below="@id/tvFacilities"
+                android:layout_marginStart="@dimen/dimen_15dp"
+                android:layout_alignTop="@id/ivParkingCinemaDetail"
+                android:layout_toEndOf="@id/tvOnlineFoodCinemaDetail"
+                app:srcCompat="@drawable/ic_wheel_chair" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWheelChiarCinemaDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvFacilities"
+                android:layout_marginStart="@dimen/margin_card_medium"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_toEndOf="@id/ivWheelChairCinemaDetail"
+                android:text="@string/lbl_wheel_chiar"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_regular" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTicketCancelCinemaDetail"
+                app:tint="@color/colorAccent"
+                android:layout_marginTop="@dimen/margin_medium_2_n"
+                android:layout_width="@dimen/margin_medium_2_n"
+                android:layout_height="@dimen/margin_medium_2_n"
+                android:layout_below="@id/ivParkingCinemaDetail"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                app:srcCompat="@drawable/ic_ticket_cancelation" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTicketCancelation"
+                android:layout_marginStart="@dimen/margin_card_medium"
+                android:layout_below="@id/ivParkingCinemaDetail"
+                android:layout_toEndOf="@id/ivTicketCancelCinemaDetail"
+                android:layout_alignTop="@id/ivTicketCancelCinemaDetail"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_regular"
+                android:text="@string/lbl_ticket_cancelation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSafety"
+                android:text="@string/lbl_safety"
+                android:textSize="@dimen/text_18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/dimen_22dp"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:layout_below="@id/ivTicketCancelCinemaDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvThermanalScannig"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_below="@id/tvSafety"
+                android:layout_marginTop="@dimen/dimen_21dp"
+                android:text="@string/lbl_thermanal_scannig"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvContactlessSecurityCheck"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_below="@id/tvSafety"
+                android:layout_toEndOf="@id/tvThermanalScannig"
+                android:layout_marginTop="@dimen/dimen_21dp"
+                android:text="@string/lbl_contactless_security_check"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSantization"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_marginStart="@dimen/margin_medium_3"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_below="@id/tvThermanalScannig"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/slbl_santization_before_every_show"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDisposable"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_alignTop="@id/tvSantization"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:layout_toEndOf="@id/tvSantization"
+                android:layout_below="@id/tvThermanalScannig"
+                android:text="@string/lbl_disposable_3d_glass"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvContactless"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_below="@id/tvSantization"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/lbl_contactless_food_serviec"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPackageFood"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_alignTop="@id/tvContactless"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_marginStart="@dimen/dimen_5dp"
+                android:layout_toEndOf="@id/tvContactless"
+                android:layout_below="@id/tvSantization"
+                android:text="@string/lbl_package_food"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDeepCleaning"
+                android:background="@drawable/bg_safety_type_cinema_detail"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingTop="@dimen/dimen_2dp"
+                android:paddingBottom="@dimen/dimen_2dp"
+                android:layout_below="@id/tvContactless"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/lbl_deep_cleaning_of_rest_room"
+                android:textColor="@color/color111111"
+                android:textSize="@dimen/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+      
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

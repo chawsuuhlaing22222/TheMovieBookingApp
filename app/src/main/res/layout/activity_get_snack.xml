@@ -87,8 +87,10 @@
                 app:tabTextColor="@color/white" />
 
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPagerGetSnackScrn"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAllSnackListGetSnackScrn"
+                android:clipToPadding="false"
+                android:paddingEnd="@dimen/margin_medium_3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/tabLayoutGetSnackScrn"

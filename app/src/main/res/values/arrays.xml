@@ -11,4 +11,31 @@
         <item>Mandalay</item>
         <item>NayPyiDaw</item>
     </string-array>
+
+    <string-array name="genres">
+        <item>Action</item>
+        <item>Drama</item>
+        <item>Science</item>
+    </string-array>
+
+    <string-array name="formats">
+        <item>MP4</item>
+        <item>MP3</item>
+    </string-array>
+
+    <string-array name="showMonths">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+    </string-array>
+
+    <string-array name="priceRanges">
+        <item>3500</item>
+        <item>9000</item>
+    </string-array>
+
+    <string-array name="timeRange">
+        <item>8</item>
+        <item>12</item>
+    </string-array>
 </resources>

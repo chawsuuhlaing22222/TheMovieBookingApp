@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="320dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_ticket_cancelation_policy_dialog"
-    android:padding="@dimen/margin_medium_2"
+    android:background="@color/color111111"
     android:layout_height="wrap_content">
-
-<!--    android:layout_margin="@dimen/dimen_50dp"-->
+<RelativeLayout
+    android:padding="@dimen/margin_medium_2"
+    android:background="@drawable/bg_ticket_cancelation_policy_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--    android:layout_margin="@dimen/dimen_50dp"-->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitleTicketCancelPolicy"
         android:text="@string/lbl_ticket_cancelation_policy"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivOnlineFoodTicketCancelPolicyCustomDialog"
         app:srcCompat="@drawable/ic_online_food"
@@ -27,6 +30,7 @@
         android:id="@+id/tvRefundFAndB"
         android:text="@string/lbl_refund_FandB"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="@dimen/text_regular_2x"
         android:layout_below="@id/tvTitleTicketCancelPolicy"
         android:layout_marginTop="24dp"
@@ -49,6 +53,7 @@
         android:text="@string/lbl_refund_ticket"
         android:textColor="@color/white"
         android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"
         android:layout_below="@id/tvRefundFAndB"
         android:layout_marginTop="@dimen/dimen_25dp"
         android:layout_toEndOf="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
@@ -60,7 +65,7 @@
         android:id="@+id/tvRefundNotiUnitlHour"
         android:textColor="@color/colorPrimaryLight"
         android:layout_below="@id/tvRefundTicket"
-       android:layout_alignStart="@id/tvRefundTicket"
+        android:layout_alignStart="@id/tvRefundTicket"
         android:layout_marginTop="@dimen/dimen_23dp"
         android:text="@string/lbl_refund_noti_untilhour"
         android:layout_width="wrap_content"
@@ -81,6 +86,8 @@
         android:text="@string/lbl_refund_noti_notavailable"
         android:textColor="@color/white"
         android:layout_marginTop="@dimen/dimen_40dp"
+        android:textStyle="bold"
+        android:gravity="center|left"
         android:layout_below="@id/tvRefundNotiUnitlHourAndMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -90,6 +97,8 @@
         android:text="@string/lbl_nocancelation_noti"
         android:textColor="@color/white"
         android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:gravity="center|left"
         android:layout_below="@id/tvRefundNotAvailable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -107,6 +116,8 @@
 
 
 
-
-
 </RelativeLayout>
+
+
+
+</LinearLayout>

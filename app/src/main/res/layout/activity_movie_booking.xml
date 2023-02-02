@@ -20,7 +20,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivBackBookingScrn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/dimen_22dp"
+                android:scaleType="centerCrop"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_baseline_arrow_back_ios_white_24dp" />
 
@@ -148,6 +149,7 @@
             <LinearLayout
                 android:id="@+id/llMovieSeatStatus"
                 android:background="@color/color222222"
+                android:layout_marginBottom="@dimen/dimen_15dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_50dp">
 

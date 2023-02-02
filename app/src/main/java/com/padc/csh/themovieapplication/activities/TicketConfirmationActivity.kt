@@ -14,6 +14,7 @@ import com.padc.csh.themovieapplication.dummy.QRGEncoder
 import kotlinx.android.synthetic.main.activity_check_out_acitivy.*
 import kotlinx.android.synthetic.main.activity_ticket_confirmation.*
 import kotlinx.android.synthetic.main.custom_view_ticket_cancel_policy.view.*
+import kotlinx.android.synthetic.main.view_holder_ticket_item.view.*
 import kotlinx.android.synthetic.main.view_item_toolbar_movie.*
 
 class TicketConfirmationActivity : AppCompatActivity() {
@@ -48,9 +49,9 @@ class TicketConfirmationActivity : AppCompatActivity() {
     }
 
     private fun bindData() {
-        tvMovieNameTicketConfirmScrn.text= Html.fromHtml("<font color='#ffffff'>Black White </font><font color='#888888'>(3D)(U/A)</font>")
-        tvTicketTypeTicketConfirmScrn.setText(Html.fromHtml("<font color='#ffffff'><b>Gold-G8,G7</b></font><font color='#888888'>(SCREEN2)</font>"))
-        tvTicketCountTicketConfirmScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>2</font><font color='#888888'>)</font>")
+        layoutMovieTicket.tvMovieNameTicketScrn.text= Html.fromHtml("<font color='#ffffff'><b>Black White</b> </font><font color='#888888'>(3D)(U/A)</font>")
+        layoutMovieTicket.tvTicketTypeTicketScrn.setText(Html.fromHtml("<font color='#ffffff'><b>Gold-G8,G7</b></font><font color='#888888'>(SCREEN2)</font>"))
+        layoutMovieTicket.tvTicketCountTicketScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>2</font><font color='#888888'>)</font>")
     }
 
     private fun createPolicyAlertDialog(){

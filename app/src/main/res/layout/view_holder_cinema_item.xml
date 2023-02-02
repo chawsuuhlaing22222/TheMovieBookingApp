@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/colorPrimaryDark"
-    android:paddingTop="@dimen/margin_medium_3"
-    android:paddingBottom="@dimen/margin_medium_3">
+    android:background="@color/color111111"
+    android:layout_marginTop="@dimen/dimen_15dp"
+  >
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCinemaName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medium_3"
+        android:textStyle="bold"
         android:text="JCGV : Junction City"
         android:textColor="@color/white"
         android:textSize="@dimen/text_regular_2x" />
@@ -28,11 +29,11 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivParking"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="@dimen/margin_medium_2_n"
+        android:layout_height="@dimen/margin_medium_2_n"
         android:layout_below="@id/tvCinemaName"
         android:layout_marginStart="@dimen/margin_medium_3"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dimen_22dp"
         app:srcCompat="@drawable/ic_parking" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -40,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCinemaName"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/margin_card_medium_n"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/ivParking"
         android:text="@string/lbl_parking"
@@ -49,10 +50,10 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivOnlineFood"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="@dimen/margin_medium_2_n"
+        android:layout_height="@dimen/margin_medium_2_n"
         android:layout_below="@id/tvCinemaName"
-        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginStart="@dimen/dimen_15dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/tvParking"
         app:tint="@color/colorPrimaryLight"
@@ -63,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCinemaName"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/margin_card_medium_n"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/ivOnlineFood"
         android:text="@string/lbl_online_food"
@@ -72,10 +73,10 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivWheelChair"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
+        android:layout_width="@dimen/margin_medium_2_n"
+        android:layout_height="@dimen/margin_medium_2_n"
         android:layout_below="@id/tvCinemaName"
-        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginStart="@dimen/dimen_15dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/tvOnlineFood"
         app:srcCompat="@drawable/ic_wheel_chair" />
@@ -85,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCinemaName"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="@dimen/margin_card_medium_n"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/ivWheelChair"
         android:text="@string/lbl_wheel_chiar"
@@ -116,6 +117,7 @@
         android:layout_below="@id/rvMovieAvailableTime"
         android:layout_marginStart="10dp"
         android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginBottom="@dimen/dimen_15dp"
         android:layout_toEndOf="@id/ivBookingInfo"
         android:text="@string/lbl_booking_info"
         android:textColor="@color/colorSecondaryText"
@@ -124,8 +126,8 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dimen_15dp"
         android:layout_below="@id/tvBookingSeatingInfo"
-        android:layout_marginTop="@dimen/dimen_10dp"
         android:background="@color/colorPrimaryLight" />
 
 

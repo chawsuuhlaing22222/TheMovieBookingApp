@@ -51,7 +51,7 @@
     <color name="color111111">#111111</color>
     <color name="color3B3B3B">#3B3B3B</color>
     <color name="color9E9E9E">#9E9E9E</color>
-
+    <color name="colorTicketCancel">#FF2E00</color>
 
 
 </resources>

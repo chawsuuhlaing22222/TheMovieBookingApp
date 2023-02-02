@@ -15,6 +15,10 @@ var orderedFoodList= mutableListOf<String>("Combo","Snack","Pop Corn","Beverage"
 var paymentTypeList= mutableListOf<String>("UPI","Gift Voucher","Quick Pay","Credit Card / Debit Card","Redeem Point",
 "Mobile Wallet","Net Banking")
 
+var movieGenreList= mutableListOf<String>("Action","Drama","Science")
+var movieFormats= mutableListOf<String>("MP4","MP3","MVC")
+var movieShowMonths= mutableListOf<String>("Jan","Feb","Mar","Apri")
+
 var seatPlanlist= listOf<SeatPlan>(
     SeatPlan(
     "Normal (4500ks)",

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/color111111"
     tools:context=".activities.MainActivity">
 
     <FrameLayout
@@ -21,7 +21,7 @@
         android:layout_height="?attr/actionBarSize"
         app:labelVisibilityMode="labeled"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/color111111"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

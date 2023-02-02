@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MovieSearchActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/color111111">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/toolBarMovieSearch"
+                layout="@layout/view_item_search_toolbar"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color111111"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color111111">
+
+            <LinearLayout
+                android:id="@+id/llChooseMovieType"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginLeft="@dimen/dimen_22dp"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:id="@+id/rlMovieGenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:background="@drawable/bg_movie_genre_spinner"
+                    android:layout_below="@id/tvCountryCodeLbl"
+
+                  >
+
+
+
+                    <TextView
+                        android:id="@+id/tvSelectedMovieGenre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:textSize="14sp"
+                        android:textColor="@color/color111111"
+                        android:text="@string/lbl_genres" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_medium_3"
+                       android:layout_toEndOf="@id/tvSelectedMovieGenre"
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_white_24dp"
+                        app:tint="@color/color111111" />
+
+                    <Spinner
+                        android:id="@+id/spinnerMovieGenre"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentBottom="true"
+                        style="@style/mySpinnerItemStyle"
+                        android:background="@color/white"
+                        android:overlapAnchor="false" >
+                    </Spinner>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlMovieFormat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:background="@drawable/bg_movie_genre_spinner"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    >
+
+
+
+                    <TextView
+                        android:id="@+id/tvSelectedMovieFormat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:textSize="14sp"
+                        android:textColor="@color/color111111"
+                        android:text="@string/lbl_format" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_medium_3"
+                        android:layout_toEndOf="@id/tvSelectedMovieFormat"
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_white_24dp"
+                        app:tint="@color/color111111" />
+
+                    <Spinner
+                        android:id="@+id/spinnerMovieFormat"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        style="@style/mySpinnerItemStyle"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/white"
+                        android:overlapAnchor="false" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlMovieMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/dimen_10dp"
+                    android:paddingStart="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_5dp"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:background="@drawable/bg_movie_genre_spinner"
+                    android:layout_below="@id/tvCountryCodeLbl"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    >
+
+
+
+                    <TextView
+                        android:id="@+id/tvSelectedShowMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:textSize="14sp"
+                        android:textColor="@color/color111111"
+                        android:text="@string/lbl_month" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/margin_medium_3"
+                        android:layout_toEndOf="@id/tvSelectedShowMonth"
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_white_24dp"
+                        app:tint="@color/color111111" />
+
+                    <Spinner
+                        android:id="@+id/spinnerMovieShowMonth"
+                        android:layout_width="0dp"
+                        android:layout_alignParentBottom="true"
+                        style="@style/mySpinnerItemStyle"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        android:overlapAnchor="false" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/flSearchResultMovies"
+                android:visibility="gone"
+                android:layout_below="@id/llChooseMovieType"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNowShowingMoviesSearchResult"
+                    android:paddingEnd="@dimen/dimen_22dp"
+                    android:clipToPadding="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCommingSoonMoviesSearchResult"
+                    android:visibility="gone"
+                    android:paddingEnd="@dimen/dimen_22dp"
+                    android:clipToPadding="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

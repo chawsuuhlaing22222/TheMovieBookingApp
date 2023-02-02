@@ -28,7 +28,7 @@ class OrderedFoodDetailCheckOutAdapter(var delegate: OrderFoolListChekoutDelegat
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return 2
     }
 
 }
