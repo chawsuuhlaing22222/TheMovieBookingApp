@@ -49,36 +49,6 @@ class ChooseLocationActivity : AppCompatActivity(), CityDelegate {
         startActivity(Intent(this, MainActivity::class.java))
     }
 
-//    private fun setUpSpinnerListener() {
-//
-//        /*thisis ok also
-//                var customAdapter= ArrayAdapter(this,
-//            R.layout.view_item_custom_spinner_dropdown,R.id.tvSpinnerSelectedValue,resources.getStringArray(R.array.cities))
-//        spinnerTest.adapter=customAdapter*/
-//
-//        var customAdapter = CitySpinnerCustomAdapter(this, resources.getStringArray(R.array.cities))
-//        spinnerTest.adapter = customAdapter
-//
-//        spinnerTest.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(
-//                parent: AdapterView<*>?,
-//                p1: View?,
-//                position: Int,
-//                p3: Long
-//            ) {
-//                spinnerFlag = spinnerFlag + 1
-//                if (spinnerFlag == 1) { //prevent first auto select
-//                    tvSelectedCity.text = "Cities"
-//                } else {
-//                    tvSelectedCity.text = cityList.get(position)
-//                }
-//
-//            }
-//
-//            override fun onNothingSelected(p0: AdapterView<*>?) {
-//            }
-//        }
-//    }
 
 
 }

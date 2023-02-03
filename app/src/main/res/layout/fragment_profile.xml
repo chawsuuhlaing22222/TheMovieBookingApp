@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@color/color111111"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ProfileFragment">
 
@@ -23,7 +23,8 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivProfile"
             android:scaleType="centerCrop"
-            android:layout_gravity="center"
+            android:layout_marginTop="38dp"
+            android:layout_gravity="center|top"
             app:srcCompat="@drawable/ic_profile_circle"
             android:layout_width="@dimen/dimen_85dp"
             android:layout_height="@dimen/dimen_85dp"/>
@@ -31,27 +32,29 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
             android:backgroundTint="#1a00ff6a"
-            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/dimen_40dp"
+            android:paddingRight="@dimen/dimen_40dp"
+            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingBottom="@dimen/dimen_10dp"
             app:strokeWidth="1dp"
             app:strokeColor="@color/colorAccent"
             app:cornerRadius="4dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:text="@string/lbl_login_or_sign_up"
             android:textAllCaps="false"
-            android:gravity="center"
             android:textSize="@dimen/text_regular_2x"
             android:layout_gravity="bottom|center"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/dimen_30dp"
             android:textColor="@color/colorAccent"
-            android:layout_width="200dp"
-            android:layout_height="45dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         
     </FrameLayout>
 
 <!--    purchase history-->
     <RelativeLayout
         android:id="@+id/rlPurchaseHistoryProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/dimen_50dp"
         android:layout_marginLeft="@dimen/margin_medium_2"
         android:layout_marginRight="@dimen/margin_medium_2"
         android:layout_width="match_parent"
@@ -61,15 +64,15 @@
             android:id="@+id/ivHistory"
             app:srcCompat="@drawable/ic_history"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
-            android:layout_height="25dp"/>
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/dimen_25dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPurchaeHistory"
             android:layout_toEndOf="@id/ivHistory"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_purchae_history"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -81,7 +84,7 @@
            android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View
@@ -107,15 +110,15 @@
             android:id="@+id/ivOffer"
             app:srcCompat="@drawable/ic_offer"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
-            android:layout_height="25dp"/>
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/dimen_25dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvOffer"
             android:layout_toEndOf="@id/ivOffer"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_offer"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -127,7 +130,7 @@
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View
@@ -154,15 +157,15 @@
             app:srcCompat="@drawable/ic_giftvoucher"
             app:tint="@color/white"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
-            android:layout_height="25dp"/>
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/dimen_25dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvGiftCard"
             android:layout_toEndOf="@id/ivGiftCard"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_gift_card"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -170,11 +173,11 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivGiftCardForwardDetail"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="@dimen/dimen_25dp"
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View
@@ -200,7 +203,7 @@
             app:srcCompat="@drawable/ic_location"
             app:tint="@color/white"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
+            android:layout_width="@dimen/margin_large"
             android:layout_height="@dimen/dimen_30dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -208,7 +211,7 @@
             android:layout_toEndOf="@id/ivLocation"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_location"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -220,7 +223,7 @@
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View
@@ -244,18 +247,18 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivPayment"
-            app:srcCompat="@drawable/ic_giftvoucher"
+            app:srcCompat="@drawable/ic_payment"
             app:tint="@color/white"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
-            android:layout_height="25dp"/>
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/dimen_25dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvPayment"
             android:layout_toEndOf="@id/ivPayment"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_payment"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -267,7 +270,7 @@
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View
@@ -294,15 +297,15 @@
             app:srcCompat="@drawable/ic_helpand_support"
             app:tint="@color/white"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
-            android:layout_height="25dp"/>
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/dimen_25dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvHelp"
             android:layout_toEndOf="@id/ivHelp"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_help_and_support"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -314,7 +317,7 @@
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View
@@ -342,15 +345,15 @@
             app:srcCompat="@drawable/ic_logout"
             app:tint="@color/white"
             android:scaleType="centerCrop"
-            android:layout_width="24dp"
-            android:layout_height="25dp"/>
+            android:layout_width="@dimen/margin_large"
+            android:layout_height="@dimen/dimen_25dp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvLogout"
             android:layout_toEndOf="@id/ivLogout"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="Logout"
-            android:textSize="@dimen/text_18sp"
+            android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -362,7 +365,7 @@
             android:layout_alignParentEnd="true"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="#1affffff" />
+            app:tint="@color/color444444" />
 
         <!--line separator-->
         <View

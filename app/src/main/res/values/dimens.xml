@@ -111,6 +111,8 @@
     <dimen name="dimen_24dp">24dp</dimen>
     <dimen name="dimen_26dp">26dp</dimen>
     <dimen name="dimen_21dp">21dp</dimen>
+    <dimen name="text_17sp">17sp</dimen>
+    <dimen name="dimen_18dp">18dp</dimen>
 
 
 </resources>

@@ -3,12 +3,14 @@ package com.padc.csh.themovieapplication.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.delegates.ChildSeatDelegate
 import com.padc.csh.themovieapplication.dummy.ChildSeat
 import com.padc.csh.themovieapplication.viewholders.ChildSeatViewHolder
 import kotlinx.android.synthetic.main.view_holder_seat.view.*
+
 
 class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<ChildSeatViewHolder>() {
 
@@ -28,12 +30,14 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
         holder.itemView.ivSeatImg.setOnClickListener {
             when(getItemViewType(position)){
                 TYPE_SEAT_ONE->{
-                    holder.itemView.ivSeatImg.setImageDrawable(null)
-                    holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_your_selection_single_chair)
+                    holder.itemView.ivSeatImg.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.colorAccent), android.graphics.PorterDuff.Mode.MULTIPLY);
+                    //holder.itemView.ivSeatImg.setImageDrawable(null)
+                    //holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_your_selection_single_chair)
                 }
                 TYPE_SEAT_TWO->{
-                    holder.itemView.ivSeatImg.setImageDrawable(null)
-                    holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_taken_couple_seat)
+                    holder.itemView.ivSeatImg.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.colorAccent), android.graphics.PorterDuff.Mode.MULTIPLY);
+                    //holder.itemView.ivSeatImg.setImageDrawable(null)
+                   // holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_taken_couple_seat)
                 }
             }
 

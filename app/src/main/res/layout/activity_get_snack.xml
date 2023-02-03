@@ -39,12 +39,13 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivSearchGetSnackScrn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/dimen_22dp"
+                android:layout_height="@dimen/dimen_22dp"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
+                android:scaleType="center"
                 android:layout_toStartOf="@id/tvSkipGetSnackScrnlbl"
-                app:srcCompat="@drawable/ic_baseline_search_white_24dp" />
+                app:srcCompat="@drawable/ic_search_getsnack_scrn" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSkipGetSnackScrnlbl"

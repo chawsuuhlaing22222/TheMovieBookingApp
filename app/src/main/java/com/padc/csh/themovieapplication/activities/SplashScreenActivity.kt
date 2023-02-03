@@ -19,6 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     }
 
+
     private fun countDown(){
         countDownTimer=object :CountDownTimer(4000, 1000) {
             //40000 milli seconds is total time, 1000 milli seconds is time interval

@@ -17,6 +17,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSeatList"
         android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/dimen_5dp"
         android:layout_below="@id/tvSeatPricelbl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

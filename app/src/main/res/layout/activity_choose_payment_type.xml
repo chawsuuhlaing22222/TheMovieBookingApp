@@ -30,7 +30,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center|center_vertical"
-                android:text="Payment"
+                android:textStyle="bold"
+                android:text="@string/lbl_payment"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_22sp" />
         </RelativeLayout>
@@ -67,8 +68,11 @@
 
     <LinearLayout
         android:id="@+id/llUnlockPromocode"
-        android:layout_width="@dimen/dimen_333dp"
-        android:layout_height="45dp"
+        android:layout_width="@dimen/dimen_330dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dimen_40dp"
+        android:paddingTop="@dimen/dimen_10dp"
+        android:paddingBottom="@dimen/dimen_10dp"
         android:layout_below="@id/textInputLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_xlarge"
@@ -79,13 +83,13 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="@dimen/margin_medium_3"
             android:layout_height="@dimen/margin_medium_3"
-            android:layout_marginLeft="@dimen/margin_xxlarge"
             app:srcCompat="@drawable/ic_unlocak_promote_code" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_medium"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/margin_card_medium_2"
             android:text="@string/lbl_unlock_offer_applay_promocode"
             android:textColor="@color/color111111" />
     </LinearLayout>
@@ -95,13 +99,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/llUnlockPromocode"
-        android:layout_marginTop="@dimen/margin_xlarge"
+        android:layout_marginTop="38dp"
         android:text="@string/lbl_choose_your_payment_type"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPaymentType"
+        android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvChoosePaymentType"

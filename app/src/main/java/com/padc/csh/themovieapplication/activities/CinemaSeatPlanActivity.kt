@@ -68,6 +68,8 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
         setSupportActionBar(toolBarSeatPlanScrn)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_ios_white_24dp)
+
+        supportActionBar?.title=""
     }
 
     override fun onClickChildSeat() {

@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.padc.csh.themovieapplication.R
 import kotlinx.android.synthetic.main.activity_login_choose.*
+import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class LoginChooseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,10 @@ class LoginChooseActivity : AppCompatActivity() {
 
         setUpListener()
 
+    }
+
+    override fun onBackPressed() {
+        finishAffinity()
     }
 
     private fun setUpListener(){

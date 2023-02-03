@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_payment_type"
-    android:padding="@dimen/margin_medium"
+    android:background="@drawable/bg_payment_type_item"
     android:layout_marginTop="@dimen/dimen_10dp"
+    android:gravity="center_vertical"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dimen_50dp">
 
@@ -11,6 +11,7 @@
         android:id="@+id/ivPaymentTypeIcon"
         app:srcCompat="@drawable/ic_upi"
         android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_centerVertical="true"
         android:layout_width="@dimen/dimen_30dp"
         android:layout_height="@dimen/dimen_30dp"/>
 
@@ -18,20 +19,21 @@
         android:id="@+id/tvPaymentTypeName"
         android:layout_centerVertical="true"
         android:text="UPI"
+        android:gravity="center_vertical"
         android:textColor="@color/white"
         android:layout_toEndOf="@id/ivPaymentTypeIcon"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivForwardIconPaymentType"
         app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
         app:tint="@color/white"
-        android:layout_marginRight="18dp"
+        android:layout_marginRight="@dimen/dimen_18dp"
         android:scaleType="centerCrop"
         android:layout_centerVertical="true"
        android:layout_alignParentEnd="true"
-        android:layout_width="8dp"
-        android:layout_height="13dp"/>
+        android:layout_width="@dimen/margin_medium"
+        android:layout_height="@dimen/dimen_13dp"/>
 </RelativeLayout>
