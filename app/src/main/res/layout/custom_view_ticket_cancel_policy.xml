@@ -12,6 +12,7 @@
     <!--    android:layout_margin="@dimen/dimen_50dp"-->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitleTicketCancelPolicy"
+        android:fontFamily="@font/inter_semibold"
         android:text="@string/lbl_ticket_cancelation_policy"
         android:textColor="@color/white"
         android:layout_width="wrap_content"
@@ -30,7 +31,7 @@
         android:id="@+id/tvRefundFAndB"
         android:text="@string/lbl_refund_FandB"
         android:textColor="@color/white"
-        android:textStyle="bold"
+        android:fontFamily="@font/inter_semibold"
         android:textSize="@dimen/text_regular_2x"
         android:layout_below="@id/tvTitleTicketCancelPolicy"
         android:layout_marginTop="24dp"
@@ -53,7 +54,7 @@
         android:text="@string/lbl_refund_ticket"
         android:textColor="@color/white"
         android:textSize="@dimen/text_regular_2x"
-        android:textStyle="bold"
+        android:fontFamily="@font/inter_semibold"
         android:layout_below="@id/tvRefundFAndB"
         android:layout_marginTop="@dimen/dimen_25dp"
         android:layout_toEndOf="@id/ivOnlineFoodTicketCancelPolicyCustomDialog"
@@ -67,6 +68,7 @@
         android:layout_below="@id/tvRefundTicket"
         android:layout_alignStart="@id/tvRefundTicket"
         android:layout_marginTop="@dimen/dimen_23dp"
+        android:fontFamily="@font/inter_semibold"
         android:text="@string/lbl_refund_noti_untilhour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -78,6 +80,7 @@
         android:layout_below="@id/tvRefundNotiUnitlHour"
         android:layout_alignStart="@id/tvRefundTicket"
         android:layout_marginTop="@dimen/dimen_10dp"
+        android:fontFamily="@font/inter_semibold"
         android:text="@string/lbl_50percent_refund"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -88,6 +91,7 @@
         android:layout_marginTop="@dimen/dimen_40dp"
         android:textStyle="bold"
         android:gravity="center|left"
+        android:fontFamily="@font/inter_semibold"
         android:layout_below="@id/tvRefundNotiUnitlHourAndMin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -99,6 +103,7 @@
         android:layout_marginTop="20dp"
         android:textStyle="bold"
         android:gravity="center|left"
+        android:fontFamily="@font/inter_semibold"
         android:layout_below="@id/tvRefundNotAvailable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -109,6 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/tvNoCancelation"
+        android:fontFamily="@font/inter_semibold"
         android:layout_marginTop="@dimen/margin_xlarge"
         android:layout_marginBottom="@dimen/margin_xlarge"
         app:srcCompat="@drawable/btn_close_cancelation_dialog" />

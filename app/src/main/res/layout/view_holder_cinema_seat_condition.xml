@@ -12,6 +12,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvAvailableTime"
         android:text="9:30Am"
+        android:fontFamily="@font/inter_semibold"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
@@ -19,13 +20,14 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvMovieViewType"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/tvAvailableTime"
-        android:text="3D"
-        android:textSize="@dimen/text_small"
-        android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAvailableTime"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/inter_semibold"
+        android:text="3D"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_small" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvScreenNo"
@@ -33,6 +35,7 @@
         android:layout_below="@id/tvMovieViewType"
         android:text="Screen 1"
         android:textSize="@dimen/text_small"
+        android:fontFamily="@font/inter_semibold"
         android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -43,6 +46,7 @@
         android:layout_below="@id/tvScreenNo"
         android:text="21 Available"
         android:textSize="@dimen/text_small"
+        android:fontFamily="@font/inter_semibold"
         android:textColor="@color/colorSecondaryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

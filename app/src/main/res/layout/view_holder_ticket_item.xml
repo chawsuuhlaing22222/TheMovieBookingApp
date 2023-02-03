@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="19dp"
+            android:fontFamily="@font/dm_sans_bold"
             android:layout_toEndOf="@id/cardViewOfMovieImgTicketScrn"
             android:text="Black Widow (3D) (U/A)"
             android:layout_alignTop="@id/cardViewOfMovieImgTicketScrn"
@@ -51,6 +52,7 @@
             android:layout_marginTop="@dimen/dimen_10dp"
             android:layout_toEndOf="@id/cardViewOfMovieImgTicketScrn"
             android:layout_marginStart="19dp"
+            android:fontFamily="@font/dm_sans"
             android:text="JCGV:Junction City"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_regular_2x" />
@@ -63,6 +65,7 @@
             android:layout_below="@id/tvCinemaNameTicketScrn"
             android:layout_marginStart="19dp"
             android:layout_marginTop="@dimen/dimen_17dp"
+            android:fontFamily="@font/dm_sans_bold"
             android:layout_toEndOf="@id/cardViewOfMovieImgTicketScrn"
             android:text="@string/lbl_tickect_count_checkout_scrn" />
         <!--    ticket type-->
@@ -73,6 +76,7 @@
             android:layout_below="@id/tvTicketCountTicketScrn"
             android:layout_marginStart="19dp"
             android:layout_marginTop="@dimen/dimen_10dp"
+            android:fontFamily="@font/dm_sans_bold"
             android:layout_toEndOf="@id/cardViewOfMovieImgTicketScrn"
             android:text="Gold-G8,G7(SCREEN 2)"
             android:textSize="@dimen/text_regular_2x" />
@@ -136,6 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ivCalendarTicketScrn"
                 android:layout_marginTop="@dimen/dimen_10dp"
+                android:fontFamily="@font/dm_sans"
                 android:text="Sat,18 June,2022 "
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -166,6 +171,7 @@
                 android:layout_below="@id/ivMovieShowTimeTicketScrn"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:text="3:30PM "
+                android:fontFamily="@font/dm_sans"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -197,6 +203,7 @@
                 android:layout_below="@id/ivCinemaLocationTicketScrn"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:textSize="@dimen/text_small"
+                android:fontFamily="@font/inter"
                 android:gravity="center"
                 android:text="Q5H3+JPP, Corner of, Bogyoke Lann, Yangon "
                 android:textColor="@color/white" />

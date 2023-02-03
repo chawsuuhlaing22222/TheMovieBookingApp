@@ -22,6 +22,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvVerifylbl"
+        android:fontFamily="@font/dm_sans_medium"
         android:text="@string/lbl_verify_your_phone_number"
         android:textColor="@color/white"
         android:textSize="@dimen/text_22sp"
@@ -33,6 +34,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvVerifyInfo"
+        android:fontFamily="@font/dm_sans"
         android:text="@string/lbl_verify_info"
         android:textColor="@color/colorPrimaryLight"
         android:layout_below="@id/tvVerifylbl"
@@ -116,8 +118,10 @@
         android:layout_below="@id/flSpinnerCountryCode"
         android:layout_marginTop="@dimen/dimen_50dp"
         app:cornerRadius="@dimen/margin_medium"
+        android:paddingTop="@dimen/dimen_15dp"
+        android:paddingBottom="@dimen/dimen_15dp"
         android:layout_width="@dimen/width_verify_btn"
-        android:layout_height="@dimen/height_verify_btn_loginscrn"/>
+        android:layout_height="wrap_content"/>
 
 <!--    line spearator-->
     <LinearLayout
@@ -152,11 +156,13 @@
     <RelativeLayout
         android:id="@+id/btnGoogleSignIn"
         android:layout_below="@id/llSpearater"
+        android:paddingTop="@dimen/dimen_13dp"
+        android:paddingBottom="@dimen/dimen_13dp"
         android:background="@drawable/bg_google_singin"
         android:layout_marginStart="@dimen/margin_medium_3"
         android:layout_marginTop="@dimen/margin_medium_3"
         android:layout_width="@dimen/width_verify_btn"
-        android:layout_height="@dimen/dimen_40dp">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivGoogle"
@@ -184,6 +190,7 @@
         android:textSize="@dimen/text_small"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:fontFamily="@font/dm_sans"
         android:text="@string/lbl_privacy_plolicy"
         android:layout_marginBottom="@dimen/dimen_30dp"
         android:layout_width="wrap_content"

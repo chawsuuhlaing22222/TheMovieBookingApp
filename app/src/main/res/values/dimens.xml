@@ -113,6 +113,8 @@
     <dimen name="dimen_21dp">21dp</dimen>
     <dimen name="text_17sp">17sp</dimen>
     <dimen name="dimen_18dp">18dp</dimen>
+    <dimen name="dimen_370dp">370dp</dimen>
+    <dimen name="dimen_55dp">55dp</dimen>
 
 
 </resources>

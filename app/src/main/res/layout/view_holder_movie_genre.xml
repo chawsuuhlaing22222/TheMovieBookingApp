@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_comming_date"
-    android:layout_marginRight="5dp"
     android:layout_marginTop="@dimen/dimen_10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginRight="5dp"
+    android:background="@drawable/bg_comming_date">
 
-                    <TextView
-                        android:id="@+id/btnAction"
-                        android:text="Adventure"
-                        android:padding="5dp"
-                        android:textSize="@dimen/text_small"
-                        android:textStyle="bold"
-                        android:textColor="#111111"
-                        android:backgroundTint="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/btnAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:fontFamily="@font/inter_medium"
+        android:padding="5dp"
+        android:text="Drama"
+        android:textColor="@color/color111111"
+        android:textSize="@dimen/text_small" />
 </RelativeLayout>

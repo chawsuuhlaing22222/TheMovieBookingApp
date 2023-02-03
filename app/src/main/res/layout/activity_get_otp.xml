@@ -34,6 +34,7 @@
         android:layout_below="@id/ivLogoSplashScreen"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_top_from_sent_otpcode_to_logo"
+        android:fontFamily="@font/dm_sans_medium"
         android:text="@string/lbl_sent_otp_code"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_wehave_sent_otpcode" />
@@ -45,6 +46,7 @@
         android:layout_below="@id/tvSendOtpAlert"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_top_from_please_enter_6digit_tosent_otpcode"
+        android:fontFamily="@font/dm_sans"
         android:text="@string/lbl_please_enter_otp_code"
         android:textSize="@dimen/text_size_for_please_enter_6digits"
         android:textColor="@color/text_color_for_please_enter_6digits" />
@@ -53,6 +55,7 @@
         android:id="@+id/tvEnterOtpCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/dm_sans"
         android:layout_below="@id/tvVerifyInfoOtpScrn"
         android:layout_marginLeft="@dimen/margin_xlarge"
         android:layout_marginTop="@dimen/margin_top_enter_otpcode"
@@ -72,6 +75,7 @@
         android:gravity="center"
         android:inputType="number"
         android:itemBackground="@color/bg_color_pinview_item"
+        android:fontFamily="@font/dm_sans_medium"
         android:text="123456"
         android:textColor="@color/text_color_pinview"
         android:textSize="@dimen/text_size_pinview"
@@ -115,7 +119,9 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnConfirmOtp"
         android:layout_width="@dimen/width_btn_confirm_otp"
-        android:layout_height="@dimen/height_btn_confirm_otp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dimen_15dp"
+        android:paddingTop="@dimen/dimen_15dp"
         android:layout_below="@id/llResendOtpCode"
         android:layout_marginLeft="@dimen/margin_xlarge"
         android:layout_marginTop="@dimen/margin_top_from_confirm_otp"
@@ -134,6 +140,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dimen_30dp"
+        android:fontFamily="@font/dm_sans"
         android:text="@string/lbl_privacy_plolicy"
         android:textColor="@color/text_color_terms_and_conditions"
         android:textSize="@dimen/text_small" />

@@ -28,11 +28,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:fontFamily="@font/dm_sans_bold"
                 android:gravity="center|center_vertical"
-                android:text="Checkout"
+                android:text="@string/lbl_checkout"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_22sp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/text_22sp" />
         </RelativeLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -64,8 +64,9 @@
                     android:id="@+id/tvMovieNameCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Black White"
                     android:layout_marginLeft="@dimen/margin_medium_3"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Black White"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_18sp" />
 
@@ -75,8 +76,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvMovieNameCheckoutScrn"
-                    android:layout_marginTop="@dimen/margin_medium"
                     android:layout_marginLeft="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:fontFamily="@font/dm_sans"
                     android:text="Junction City"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular" />
@@ -84,12 +86,12 @@
                 <!--calendar date-->
                 <LinearLayout
                     android:id="@+id/llCalendarCheckoutScrn"
-                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dimen_30dp"
                     android:layout_below="@id/tvCinemaNameCheckoutScrn"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/dimen_30dp"
+                    android:layout_marginRight="@dimen/dimen_30dp"
                     android:orientation="vertical">
                     <!--            calendar icon-->
                     <androidx.appcompat.widget.AppCompatImageView
@@ -105,6 +107,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/ivCalendarCheckoutScrn"
                         android:layout_marginTop="@dimen/dimen_10dp"
+                        android:fontFamily="@font/dm_sans"
                         android:text="Sat,18 June,2022 "
                         android:textColor="@color/white" />
                 </LinearLayout>
@@ -114,10 +117,10 @@
                     android:id="@+id/llMovieShowTimeCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dimen_30dp"
                     android:layout_below="@id/tvCinemaNameCheckoutScrn"
-                    android:layout_toEndOf="@+id/llCalendarCheckoutScrn"
                     android:layout_marginTop="@dimen/dimen_30dp"
+                    android:layout_marginRight="@dimen/dimen_30dp"
+                    android:layout_toEndOf="@+id/llCalendarCheckoutScrn"
                     android:orientation="vertical">
                     <!--            calendar icon-->
                     <androidx.appcompat.widget.AppCompatImageView
@@ -133,6 +136,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/ivCalendarCheckoutScrn"
                         android:layout_marginTop="@dimen/dimen_10dp"
+                        android:fontFamily="@font/dm_sans"
                         android:text="3:30PM "
                         android:textColor="@color/white" />
                 </LinearLayout>
@@ -143,9 +147,9 @@
                     android:id="@+id/llCinemaLocationCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="26dp"
                     android:layout_below="@id/tvCinemaNameCheckoutScrn"
                     android:layout_marginTop="@dimen/dimen_30dp"
+                    android:layout_marginRight="26dp"
                     android:layout_toEndOf="@+id/llMovieShowTimeCheckoutScrn"
                     android:orientation="vertical">
                     <!--            clock icon-->
@@ -160,12 +164,13 @@
                         android:id="@+id/tvCinemaLocationCheckoutScrn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:layout_below="@id/ivCalendarCheckoutScrn"
                         android:layout_marginTop="@dimen/dimen_10dp"
-                        android:textSize="@dimen/text_small"
+                        android:fontFamily="@font/dm_sans"
+                        android:gravity="center"
                         android:text="Q5H3+JPP, Corner of, Bogyoke Lann, Yangon "
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_small" />
                 </LinearLayout>
 
                 <!--            ticket count-->
@@ -176,16 +181,17 @@
                     android:layout_below="@id/llCinemaLocationCheckoutScrn"
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/margin_medium_3"
+                    android:fontFamily="@font/dm_sans_bold"
                     android:text="@string/lbl_tickect_count_checkout_scrn" />
                 <!--    ticket type-->
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvTicketTypeCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/tvTicketCountCheckoutScrn"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/margin_medium"
-                    android:textStyle="bold"
+                    android:fontFamily="@font/dm_sans_bold"
                     android:text="Gold-G8,G7"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
@@ -199,8 +205,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:layout_marginRight="@dimen/margin_medium_3"
+                    android:fontFamily="@font/dm_sans_bold"
                     android:text="2000Ks"
-                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
                 <!--line separator-->
@@ -208,10 +214,10 @@
                     android:id="@+id/viewLineSeparatorCheckoutScrn"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1dp"
-                    android:layout_marginRight="@dimen/margin_medium_3"
-                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/tvTicketTypeCheckoutScrn"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_medium_3"
                     android:background="@color/colorPrimaryLight" />
 
                 <!--            icon food-->
@@ -219,8 +225,8 @@
                     android:id="@+id/ivOrderedFoodCheckoutScrn"
                     android:layout_width="@dimen/margin_medium_3"
                     android:layout_height="@dimen/margin_medium_3"
-                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     app:srcCompat="@drawable/ic_online_food"
                     app:tint="@color/white" />
@@ -233,11 +239,10 @@
                     android:layout_marginLeft="@dimen/dimen_5dp"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_toEndOf="@id/ivOrderedFoodCheckoutScrn"
+                    android:fontFamily="@font/dm_sans_bold"
                     android:text="@string/lbl_food_and_beverage"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_18sp"
-                    android:textStyle="bold"
-                />
+                    android:textSize="@dimen/text_18sp" />
 
                 <!--btn down arrow-->
                 <androidx.appcompat.widget.AppCompatImageView
@@ -261,8 +266,8 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginRight="@dimen/margin_medium_3"
+                    android:fontFamily="@font/dm_sans_bold"
                     android:text="2000Ks"
-                    android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
                 <!--            order foodlist -->
@@ -270,12 +275,12 @@
                     android:id="@+id/rvOrderedFoodListCheckoutScrn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:itemCount="2"
+                    android:layout_below="@id/ivOrderedFoodCheckoutScrn"
+                    android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/dimen_10dp"
                     android:layout_marginRight="@dimen/margin_medium_3"
-                    android:layout_marginLeft="@dimen/margin_medium_3"
-                    android:layout_below="@id/ivOrderedFoodCheckoutScrn"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    tools:itemCount="2" />
 
                 <!--line separator-->
                 <RelativeLayout
@@ -284,31 +289,34 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/rvOrderedFoodListCheckoutScrn"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:id="@+id/ivFirstHalfCircle"
+                        android:layout_width="@dimen/dimen_40dp"
+                        android:layout_height="@dimen/dimen_40dp"
                         android:layout_alignParentStart="true"
                         android:layout_marginLeft="-15dp"
-                        android:src="@drawable/ic_first_half_circle_checkout_scrn"
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"/>
+                        android:src="@drawable/ic_first_half_circle_checkout_scrn" />
+
                     <View
                         android:id="@+id/viewLineSeparatorCheckoutScrn2"
-                        android:layout_toEndOf="@id/ivFirstHalfCircle"
-                        android:layout_toStartOf="@id/ivSecondHalfCircle"
                         android:layout_width="wrap_content"
                         android:layout_height="2dp"
                         android:layout_marginTop="@dimen/dimen_22dp"
+                        android:layout_toStartOf="@id/ivSecondHalfCircle"
+                        android:layout_toEndOf="@id/ivFirstHalfCircle"
                         android:background="@drawable/view_dotted" />
+
                     <ImageView
                         android:id="@+id/ivSecondHalfCircle"
-                        android:layout_alignParentEnd="true"
-                       android:layout_marginRight="-15dp"
-                        android:src="@drawable/ic_second_halfcircle_checkout"
                         android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"/>
+                        android:layout_height="@dimen/dimen_40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="-15dp"
+                        android:src="@drawable/ic_second_halfcircle_checkout" />
 
                 </RelativeLayout>
-                
+
                 <!--            text convenience fee-->
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvConvenienceFee"
@@ -317,10 +325,10 @@
                     android:layout_below="@id/llLineSeparatorCheckoutScrn2"
                     android:layout_marginLeft="@dimen/margin_medium_3"
                     android:layout_marginTop="@dimen/margin_large"
+                    android:fontFamily="@font/dm_sans_medium"
                     android:text="@string/lbl_convenience_fee"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_regular_2x"
-               />
+                    android:textSize="@dimen/text_regular_2x" />
 
                 <!--btn down arrow-->
                 <androidx.appcompat.widget.AppCompatImageView
@@ -328,10 +336,10 @@
                     android:layout_width="@dimen/dimen_15dp"
                     android:layout_height="@dimen/dimen_15dp"
                     android:layout_below="@id/llLineSeparatorCheckoutScrn2"
+                    android:layout_alignTop="@id/tvConvenienceFee"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="@dimen/dimen_5dp"
-                   android:layout_alignTop="@id/tvConvenienceFee"
                     android:layout_toEndOf="@id/tvConvenienceFee"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_baseline_keyboard_arrow_down_white_24dp" />
@@ -341,10 +349,11 @@
                     android:id="@+id/tvConvenienceFeePriceCheckoutScrn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_medium_3"
                     android:layout_below="@id/llLineSeparatorCheckoutScrn2"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/margin_large"
+                    android:layout_marginRight="@dimen/margin_medium_3"
+                    android:fontFamily="@font/dm_sans_medium"
                     android:text="2000Ks"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
@@ -356,14 +365,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvConvenienceFee"
                     android:layout_alignParentStart="true"
-                    android:layout_marginTop="@dimen/dimen_22dp"
                     android:layout_marginLeft="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/dimen_22dp"
                     android:background="@drawable/bg_ticket_cancelion_policy"
                     android:gravity="center"
                     android:paddingLeft="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_4dp"
                     android:paddingRight="@dimen/dimen_10dp"
-                    android:paddingBottom="@dimen/dimen_4dp"
-                    android:paddingTop="@dimen/dimen_4dp">
+                    android:paddingBottom="@dimen/dimen_4dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/ivTicketPolicyInfo"
@@ -376,6 +385,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:fontFamily="@font/dm_sans_medium"
                         android:text="@string/lbl_ticket_cancelion_policy"
                         android:textColor="@color/white" />
 
@@ -399,10 +409,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/viewLineSeparatorCheckoutScrn3"
-                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginLeft="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/margin_medium_2"
+                    android:fontFamily="@font/inter_bold"
                     android:text="@string/lbl_total"
-                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_18sp" />
 
@@ -417,8 +427,8 @@
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginEnd="@dimen/margin_medium_3"
                     android:layout_marginBottom="@dimen/margin_medium_3"
+                    android:fontFamily="@font/inter_bold"
                     android:text="22200Ks"
-                    android:textStyle="bold"
                     android:textColor="@color/colorAccent"
                     android:textSize="@dimen/text_18sp" />
 
@@ -427,43 +437,47 @@
             <!--    continue btn-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/btnContinueCheckoutScrn"
-                android:visibility="visible"
                 android:layout_width="@dimen/dimen_240dp"
                 android:layout_height="@dimen/dimen_50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="36dp"
+                android:visibility="visible"
                 app:srcCompat="@drawable/btn_continue" />
+
             <RelativeLayout
                 android:id="@+id/rlTicketCancel"
-                android:visibility="gone"
-                android:layout_marginTop="36dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:visibility="gone">
 
-               <TextView
-                   android:id="@+id/tvRefundAmtlbl"
-                   android:textSize="@dimen/text_regular_2x"
-                   android:textColor="@color/white"
-                   android:text="@string/lbl_refund_amout"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/tvRefundAmtlbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_refund_amout"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_regular_2x" />
+
                 <TextView
                     android:id="@+id/tvRefundAmtValue"
-                    android:layout_below="@id/tvRefundAmtlbl"
-                    android:textSize="@dimen/text_regular_3x"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorTicketCancel"
-                    android:text="15000KS"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvRefundAmtlbl"
+                    android:text="15000KS"
+                    android:fontFamily="@font/inter_bold"
+                    android:textColor="@color/colorTicketCancel"
+                    android:textSize="@dimen/text_regular_3x"
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/btnCancelBooking"
-                    android:scaleType="centerCrop"
-                    android:layout_alignParentEnd="true"
-                    app:srcCompat="@drawable/btn_booking_cancel"
                     android:layout_width="226dp"
-                    android:layout_height="49dp"/>
+                    android:layout_height="49dp"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/btn_booking_cancel" />
 
 
             </RelativeLayout>

@@ -117,6 +117,7 @@
                 android:layout_below="@id/rlCinemaFacilities"
                 android:layout_marginTop="@dimen/dimen_30dp"
                 android:textSize="@dimen/text_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:textColor="@color/white"
                 android:text="@string/lbl_price_range"
                 android:layout_width="wrap_content"
@@ -124,14 +125,15 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvStartPrice"
-                android:layout_marginStart="@dimen/dimen_22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/tvPriceRange"
                 android:layout_marginTop="@dimen/margin_medium_3"
-                android:textSize="@dimen/text_regular"
-                android:textColor="@color/colorPrimaryLight"
+                android:fontFamily="@font/inter_medium"
+                android:layout_marginStart="@dimen/dimen_22dp"
                 android:text="3500Ks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textColor="@color/colorPrimaryLight"
+                android:textSize="@dimen/text_regular" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvEndPrice"
@@ -140,6 +142,7 @@
                 android:layout_marginTop="@dimen/margin_medium_3"
                 android:layout_alignParentEnd="true"
                 android:textSize="@dimen/text_regular"
+                android:fontFamily="@font/inter_medium"
                 android:textColor="@color/colorPrimaryLight"
                 android:text="29500Ks"
                 android:layout_width="wrap_content"
@@ -167,6 +170,7 @@
                 android:layout_below="@id/sbPriceRange"
                 android:layout_marginTop="@dimen/margin_medium_3"
                 android:textSize="@dimen/text_regular"
+                android:fontFamily="@font/inter_semibold"
                 android:textColor="@color/white"
                 android:text="@string/lbl_show_times"
                 android:layout_width="wrap_content"
@@ -177,6 +181,7 @@
                 android:layout_below="@id/tvShowTime"
                 android:layout_marginTop="@dimen/margin_medium_3"
                 android:textSize="@dimen/text_regular"
+                android:fontFamily="@font/inter_medium"
                 android:textColor="@color/colorPrimaryLight"
                 android:text="8am"
                 android:layout_width="wrap_content"
@@ -189,6 +194,7 @@
                 android:layout_marginTop="@dimen/margin_medium_3"
                 android:layout_alignParentEnd="true"
                 android:textSize="@dimen/text_regular"
+                android:fontFamily="@font/inter_medium"
                 android:textColor="@color/colorPrimaryLight"
                 android:text="12pm"
                 android:layout_width="wrap_content"

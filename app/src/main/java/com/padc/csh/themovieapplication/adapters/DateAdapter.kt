@@ -33,6 +33,7 @@ var selectedPosition=0
             }
             1->{
                 holder.itemView.tvDayName.text="Tomorrow"
+                holder.itemView.tvDayName.setTextSize(12.0f)
             }
             else->{
                 holder.itemView.tvDayName.text=date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.forLanguageTag("en"))

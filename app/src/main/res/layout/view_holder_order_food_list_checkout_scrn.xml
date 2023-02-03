@@ -18,6 +18,7 @@
         android:id="@+id/tvFoodNameCheckoutScrnVH"
      android:layout_toEndOf="@id/btnCancelFoodOrderedCheckoutScrn"
         android:layout_marginLeft="5dp"
+        android:fontFamily="@font/dm_sans_bold"
         android:text="Potatoe Chips (Qt. 1)"
         android:gravity="center_vertical"
         android:textColor="@color/colorPrimaryLight"
@@ -31,6 +32,7 @@
         android:id="@+id/tvFoodPriceOrderedDetailVH"
         android:layout_alignParentEnd="true"
         android:text="2000ks"
+        android:fontFamily="@font/dm_sans_bold"
         android:textColor="@color/colorPrimaryLight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

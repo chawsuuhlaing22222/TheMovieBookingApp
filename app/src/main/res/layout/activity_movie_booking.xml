@@ -43,6 +43,7 @@
                 android:layout_toStartOf="@id/ivSearchBookingScrn"
                 android:paddingBottom="@dimen/dimen_5dp"
                 android:text="Yangon"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white"
                 android:textStyle="italic" />
 
@@ -89,7 +90,7 @@
                 android:paddingStart="@dimen/dimen_13dp"
                 android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_2d"
-                android:textStyle="bold"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -103,7 +104,7 @@
                 android:paddingStart="@dimen/dimen_13dp"
                 android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_3d"
-                android:textStyle="bold"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -117,7 +118,7 @@
                 android:paddingStart="@dimen/dimen_13dp"
                 android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_3d_imax"
-                android:textStyle="bold"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -131,7 +132,7 @@
                 android:paddingStart="@dimen/dimen_13dp"
                 android:paddingEnd="@dimen/dimen_13dp"
                 android:text="@string/lbl_3d_dbox"
-                android:textStyle="bold"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white" />
         </LinearLayout>
 
@@ -171,6 +172,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/margin_medium"
                     android:elevation="@dimen/margin_small"
+                    android:fontFamily="@font/inter_medium"
                     android:text="@string/lbl_availible"
                     android:textColor="@color/colorAvailable"
                     android:textSize="@dimen/text_regular_2x" />
@@ -180,7 +182,7 @@
                     android:layout_width="@dimen/dimen_10dp"
                     android:layout_height="@dimen/dimen_10dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/margin_xxlarge"
+                    android:layout_marginStart="@dimen/margin_xlarge"
                     android:elevation="@dimen/margin_small"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
@@ -194,6 +196,7 @@
                     android:layout_marginStart="@dimen/margin_medium"
                     android:elevation="@dimen/margin_small"
                     android:text="@string/lbl_filling_fast"
+                    android:fontFamily="@font/inter_medium"
                     android:textColor="@color/colorFillingFast"
                     android:textSize="@dimen/text_regular_2x" />
 
@@ -202,7 +205,7 @@
                     android:layout_width="@dimen/dimen_10dp"
                     android:layout_height="@dimen/dimen_10dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/margin_xxlarge"
+                    android:layout_marginStart="@dimen/margin_xlarge"
                     android:elevation="@dimen/margin_small"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_baseline_circle_white_24dp"
@@ -216,6 +219,7 @@
                     android:layout_marginStart="@dimen/margin_medium"
                     android:elevation="@dimen/margin_small"
                     android:text="@string/lbl_almost_full"
+                    android:fontFamily="@font/inter_medium"
                     android:textColor="@color/colorAlmostFull"
                     android:textSize="@dimen/text_regular_2x" />
 

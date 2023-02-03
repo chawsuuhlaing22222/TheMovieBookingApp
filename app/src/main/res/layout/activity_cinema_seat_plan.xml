@@ -43,6 +43,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/dimen_10dp"
                 android:letterSpacing="0.2"
+                android:fontFamily="@font/dm_sans"
                 android:text="@string/lbl_screen"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular_2x" />
@@ -80,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/margin_medium"
+                android:fontFamily="@font/inter_semibold"
                 android:elevation="@dimen/margin_small"
                 android:text="@string/lbl_availible"
                 android:textColor="@color/colorPrimaryLight" />
@@ -102,6 +104,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:elevation="@dimen/margin_small"
+                android:fontFamily="@font/inter_semibold"
                 android:text="@string/lbl_taken"
                 android:textColor="@color/colorPrimaryLight" />
 
@@ -123,6 +126,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/margin_medium"
                 android:elevation="@dimen/margin_small"
+                android:fontFamily="@font/inter_semibold"
                 android:text="@string/lbl_your_selection"
                 android:textColor="@color/colorPrimaryLight" />
 
@@ -195,6 +199,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="28dp"
             android:text="2 Tickets"
+            android:fontFamily="@font/inter_bold"
             android:textColor="@color/white"
             android:textSize="@dimen/text_18sp"
             app:srcCompat="@drawable/ic_btn_buyticket" />
@@ -208,6 +213,7 @@
             android:layout_marginLeft="28dp"
             android:layout_marginBottom="@dimen/margin_xlarge"
             android:text="70000Ks"
+            android:fontFamily="@font/inter_bold"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_regular_3x"
             app:srcCompat="@drawable/ic_btn_buyticket" />

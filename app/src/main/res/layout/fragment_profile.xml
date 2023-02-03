@@ -41,6 +41,7 @@
             app:cornerRadius="4dp"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:text="@string/lbl_login_or_sign_up"
+            android:fontFamily="@font/inter_semibold"
             android:textAllCaps="false"
             android:textSize="@dimen/text_regular_2x"
             android:layout_gravity="bottom|center"
@@ -71,6 +72,7 @@
             android:id="@+id/tvPurchaeHistory"
             android:layout_toEndOf="@id/ivHistory"
             android:layout_marginLeft="@dimen/dimen_10dp"
+            android:fontFamily="@font/inter_semibold"
             android:text="@string/lbl_purchae_history"
             android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
@@ -119,6 +121,7 @@
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_offer"
             android:textSize="@dimen/text_17sp"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -166,6 +169,7 @@
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_gift_card"
             android:textSize="@dimen/text_17sp"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -211,6 +215,7 @@
             android:layout_toEndOf="@id/ivLocation"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_location"
+            android:fontFamily="@font/inter_semibold"
             android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -258,6 +263,7 @@
             android:layout_toEndOf="@id/ivPayment"
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_payment"
+            android:fontFamily="@font/inter_semibold"
             android:textSize="@dimen/text_17sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -306,6 +312,7 @@
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="@string/lbl_help_and_support"
             android:textSize="@dimen/text_17sp"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -354,6 +361,7 @@
             android:layout_marginLeft="@dimen/dimen_10dp"
             android:text="Logout"
             android:textSize="@dimen/text_17sp"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

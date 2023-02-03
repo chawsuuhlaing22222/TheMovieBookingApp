@@ -116,7 +116,7 @@
                     android:text="Black Widow"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_bold" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/ivIBMMovieDetail"
@@ -142,6 +142,7 @@
                     android:layout_toEndOf="@id/ivIBMMovieDetail"
                     android:elevation="4dp"
                     android:text="9.0"
+                    android:fontFamily="@font/inter_bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x"
                     android:textStyle="bold|italic" />
@@ -156,6 +157,7 @@
                     android:layout_toEndOf="@id/ivVideoCover"
                     android:elevation="@dimen/dimen_4dp"
                     android:text="2D, 3D, 3D IMAX"
+                    android:fontFamily="@font/inter_bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular" />
 
@@ -180,6 +182,7 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <RelativeLayout
+            android:layout_marginTop="@dimen/margin_medium_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -187,13 +190,13 @@
             <LinearLayout
                 android:id="@+id/llCensorRating"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen_60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:background="@drawable/gradient_censor_rating_bg"
                 android:elevation="@dimen/dimen_4dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="@dimen/dimen_10dp">
+              >
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCensorRatinglbl"
@@ -202,13 +205,14 @@
                     android:text="@string/lbl_censor_rating"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_small"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_bold" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvCensorRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="U/A"
+                    android:fontFamily="@font/inter_bold"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
 
@@ -217,23 +221,24 @@
             <LinearLayout
                 android:id="@+id/llReleaseDate"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_30dp"
                 android:layout_toEndOf="@id/llCensorRating"
                 android:background="@drawable/gradient_censor_rating_bg"
                 android:elevation="@dimen/dimen_4dp"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:padding="@dimen/dimen_10dp">
+              >
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvReleaseDatelbl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/lbl_release_date"
+                    android:fontFamily="@font/inter_bold"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_small"
-                    android:textStyle="bold" />
+                    />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvReleaseDate"
@@ -241,15 +246,14 @@
                     android:layout_height="wrap_content"
                     android:text="May 8th,2022"
                     android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_bold"/>
 
             </LinearLayout>
             <!--           duration-->
             <LinearLayout
                 android:id="@+id/llDuration"
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/dimen_60dp"
-                android:padding="@dimen/dimen_10dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_30dp"
                 android:layout_toEndOf="@id/llReleaseDate"
                 android:background="@drawable/gradient_censor_rating_bg"
@@ -264,7 +268,7 @@
                     android:text="@string/lbl_duration"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_small"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_bold" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvDuration"
@@ -272,7 +276,7 @@
                     android:layout_height="wrap_content"
                     android:text="2hr 23min"
                     android:textColor="@color/white"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_bold" />
 
             </LinearLayout>
 
@@ -281,7 +285,7 @@
             <RelativeLayout
                 android:id="@+id/rlNotiCard"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_150dp"
+                android:layout_height="154dp"
                 android:layout_below="@id/llDuration"
                 android:layout_marginStart="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/dimen_30dp"
@@ -294,10 +298,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_medium_2"
                     android:layout_marginTop="18dp"
+                    android:fontFamily="@font/inter_bold"
                     android:text="Releasing in 5days"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x"
-                    android:textStyle="bold" />
+                 />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvBookingNoti"
@@ -309,23 +314,26 @@
                     android:text="@string/lbl_booing_noti"
                     android:textColor="#c8c8c8"
                     android:textSize="@dimen/text_regular"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inter_semibold" />
 
-                <FrameLayout
+                <RelativeLayout
                     android:id="@+id/flSendNoti"
-                    android:layout_width="@dimen/dimen_170dp"
-                    android:layout_height="@dimen/dimen_35dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/tvBookingNoti"
                     android:layout_marginLeft="@dimen/margin_medium_2"
-                    android:layout_marginTop="20dp"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:paddingRight="@dimen/margin_medium"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/margin_medium_3"
                     android:background="@drawable/bg_send_noti_btn">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/ivNoti"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dimen_5dp"
-                        android:layout_marginTop="@dimen/dimen_5dp"
                         app:srcCompat="@drawable/ic_baseline_notifications_white_24dp"
                         app:tint="@color/black" />
 
@@ -333,15 +341,16 @@
                         android:id="@+id/tvSendNotiLbl"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/tvReleaseDateNoti"
+                       android:layout_toEndOf="@id/ivNoti"
                         android:layout_gravity="center|center_vertical"
-                        android:layout_marginStart="@dimen/dimen_5dp"
+                        android:layout_marginLeft="@dimen/margin_medium"
+                        android:fontFamily="@font/inter_medium"
                         android:text="@string/lbl_send_notification"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_regular" />
 
 
-                </FrameLayout>
+                </RelativeLayout>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="@dimen/dimen_120dp"
@@ -363,7 +372,7 @@
                 android:text="@string/lbl_story_line"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular"
-                android:textStyle="bold" />
+                android:fontFamily="@font/inter_semibold" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvStoryLine"
@@ -372,6 +381,7 @@
                 android:layout_below="@id/tvStoryLineLbl"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/dimen_10dp"
+                android:fontFamily="@font/inter_medium"
                 android:text="In the 1970s, young Gru tries to join a group of supervillains called the Vicious 6 after they oust their leader -- the legendary fighter Wild Knuckles. When the interview turns disastrous, Gru and his Minions go on the run with the Vicious 6 hot on their tails. Luckily, he finds an unlikely source for guidance -- Wild Knuckles himself -- and soon discovers that even bad guys need a little help from their friends."
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular" />
@@ -385,6 +395,7 @@
                 android:layout_marginTop="@dimen/dimen_30dp"
                 android:layout_marginBottom="21dp"
                 android:text="@string/lbl_cast"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_regular" />
 

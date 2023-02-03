@@ -13,6 +13,7 @@
         android:layout_marginLeft="@dimen/dimen_23dp"
         android:gravity="center_vertical"
         android:text="Yng"
+        android:fontFamily="@font/inter_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/text_18sp" />
     <View

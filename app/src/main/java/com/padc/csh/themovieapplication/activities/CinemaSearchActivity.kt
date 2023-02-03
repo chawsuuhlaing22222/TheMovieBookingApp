@@ -32,6 +32,7 @@ class CinemaSearchActivity : AppCompatActivity(),MovieCinemaDelegate,MovieCinema
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cinema_search)
 
+        toolBarCinemaSearch.tvSearchMovieName.setHint("Search the cinema")
         setUpRecycler()
         setUpSpinner()
         setUpActionListener()

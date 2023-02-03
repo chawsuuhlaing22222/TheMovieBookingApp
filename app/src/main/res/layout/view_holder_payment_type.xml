@@ -19,6 +19,7 @@
         android:id="@+id/tvPaymentTypeName"
         android:layout_centerVertical="true"
         android:text="UPI"
+        android:fontFamily="@font/dm_sans_bold"
         android:gravity="center_vertical"
         android:textColor="@color/white"
         android:layout_toEndOf="@id/ivPaymentTypeIcon"

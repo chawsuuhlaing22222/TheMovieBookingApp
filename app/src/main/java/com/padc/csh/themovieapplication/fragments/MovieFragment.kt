@@ -47,6 +47,7 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
         setUpListener()
         setUpRecycler()
 
+
     }
     private fun setUpBannerViewPagerPadding() {
         viewPagerBanner.apply {
@@ -64,7 +65,6 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
             page.scaleY = (0.80f + r * 0.20f)
         }
         viewPagerBanner.setPageTransformer(compositePageTransformer)
-
 
 
     }
@@ -107,11 +107,11 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
     }
 
     private fun setUpBanner() {
+
         mBannerAdapter= BannerAdapter(this)
         viewPagerBanner.adapter=mBannerAdapter
         dotsIndicatorBanner.attachTo(viewPagerBanner)
         viewPagerBanner.setPreviewBothSide(R.dimen.margin_large,R.dimen.margin_large)
-
         viewPagerBanner.currentItem=1
 
 

@@ -15,6 +15,7 @@
         android:id="@+id/tvSelectedCity"
         android:textColor="@color/white"
         android:text="Yangon"
+        android:fontFamily="@font/inter_bold"
         android:layout_marginLeft="10dp"
         android:layout_centerVertical="true"
         android:layout_toEndOf="@id/ivLocation"

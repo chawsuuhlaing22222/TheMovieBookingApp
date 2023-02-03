@@ -63,7 +63,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:gravity="center_vertical"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/inter"
+                        android:textSize="@dimen/text_regular"
                         android:textColor="@color/color111111"
                         android:text="@string/lbl_genres" />
 
@@ -106,7 +107,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:gravity="center_vertical"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/inter"
+                        android:textSize="@dimen/text_regular"
                         android:textColor="@color/color111111"
                         android:text="@string/lbl_format" />
 
@@ -149,7 +151,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:gravity="center_vertical"
-                        android:textSize="14sp"
+                        android:fontFamily="@font/inter"
+                        android:textSize="@dimen/text_regular"
                         android:textColor="@color/color111111"
                         android:text="@string/lbl_month" />
 

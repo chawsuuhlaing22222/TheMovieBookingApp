@@ -98,4 +98,5 @@
     <string name="lbl_deep_cleaning_of_rest_room">Deep Cleaning of rest room</string>
     <string name="lbl_price_range">Price Range</string>
     <string name="lbl_show_times">Show Times</string>
+    <string name="lbl_checkout">Checkout</string>
 </resources>

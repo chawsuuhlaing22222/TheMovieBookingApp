@@ -18,7 +18,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCinemaSplashScrn"
-        android:textStyle="bold"
+        android:fontFamily="@font/inter_semibold"
         android:textSize="@dimen/text_regular_3x"
         android:text="@string/lbl_c_cinema_splashscrn"
         android:layout_marginTop="@dimen/dimen_15dp"

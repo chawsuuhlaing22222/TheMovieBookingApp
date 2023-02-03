@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medium_3"
-        android:textStyle="bold"
+        android:fontFamily="@font/inter_semibold"
         android:text="JCGV : Junction City"
         android:textColor="@color/white"
         android:textSize="@dimen/text_regular_2x" />
@@ -24,6 +24,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/margin_medium_2"
         android:text="@string/lbl_see_details"
+        android:fontFamily="@font/inter_medium"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_regular_2x" />
 
@@ -44,6 +45,7 @@
         android:layout_marginStart="@dimen/margin_card_medium_n"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/ivParking"
+        android:fontFamily="@font/inter_medium"
         android:text="@string/lbl_parking"
         android:textColor="@color/colorSecondaryText"
         android:textSize="@dimen/text_regular" />
@@ -67,6 +69,7 @@
         android:layout_marginStart="@dimen/margin_card_medium_n"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/ivOnlineFood"
+        android:fontFamily="@font/inter_medium"
         android:text="@string/lbl_online_food"
         android:textColor="@color/colorSecondaryText"
         android:textSize="@dimen/text_regular" />
@@ -86,6 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvCinemaName"
+        android:fontFamily="@font/inter_medium"
         android:layout_marginStart="@dimen/margin_card_medium_n"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/ivWheelChair"
@@ -119,6 +123,7 @@
         android:layout_marginTop="@dimen/margin_medium_3"
         android:layout_marginBottom="@dimen/dimen_15dp"
         android:layout_toEndOf="@id/ivBookingInfo"
+        android:fontFamily="@font/inter_semibold"
         android:text="@string/lbl_booking_info"
         android:textColor="@color/colorSecondaryText"
         android:textSize="@dimen/text_regular" />
