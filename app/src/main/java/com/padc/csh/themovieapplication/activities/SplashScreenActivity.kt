@@ -40,7 +40,9 @@ class SplashScreenActivity : AppCompatActivity() {
                 }
             }
             override fun onFinish() {
-                startActivity(Intent(applicationContext,LoginChooseActivity::class.java))
+                var intent=Intent(this@SplashScreenActivity,LoginChooseActivity::class.java)
+                intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
             }
         }.start()
     }

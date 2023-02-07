@@ -5,11 +5,16 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.webkit.WebSettings.ZoomDensity
 import android.widget.MediaController
 import com.bumptech.glide.Glide
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipDrawable
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.dummy.safeTypeList
 import kotlinx.android.synthetic.main.activity_cinema_detail.*
 import kotlinx.android.synthetic.main.activity_movie_detail.*
+
 
 class CinemaDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +23,24 @@ class CinemaDetailActivity : AppCompatActivity() {
 
         setUpDefaultMovie()
         setUpActionListener()
+        addChipGroup()
     }
+
+    private fun addChipGroup() {
+        safeTypeList.forEach{
+            var chip=Chip(this)
+            chip.text=it
+            chip.setTextColor(resources.getColor(R.color.color111111,null))
+            chip.setPadding(10,5,10,5)
+            chip.setChipBackgroundColorResource(R.color.colorAccent)
+            chip.chipCornerRadius = 4f
+            //val drawable = ChipDrawable.createFromAttributes(this, null, 0, R.style.safeChipAppearance)
+            //chip.setChipDrawable(drawable)
+            chip.setTextAppearanceResource(R.style.safeChipTextAppearance)
+            chipGroupSafeTypeCinemaDetail.addView(chip)
+        }
+    }
+
     private fun setUpActionListener(){
         btnPlayCinemaDetailScrn.setOnClickListener {
 

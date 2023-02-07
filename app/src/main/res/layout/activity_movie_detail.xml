@@ -135,10 +135,10 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvPointMovieDetailScrn"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/vvMovieFrame"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_toEndOf="@id/ivIBMMovieDetail"
                     android:elevation="4dp"
                     android:text="9.0"
@@ -161,14 +161,23 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvMovieGenreDetailScrn"
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupMovieGenre"
                     android:layout_width="wrap_content"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="@dimen/margin_medium"
                     android:layout_below="@id/tvMovieViewTypeDetailScrn"
                     android:layout_alignStart="@id/tvMovieViewTypeDetailScrn"
                     android:layout_marginEnd="5dp"
                     android:layout_toEndOf="@id/ivVideoCover" />
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/rvMovieGenreDetailScrn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="150dp"-->
+<!--                    android:layout_below="@id/tvMovieViewTypeDetailScrn"-->
+<!--                    android:layout_alignStart="@id/tvMovieViewTypeDetailScrn"-->
+<!--                    android:layout_marginEnd="5dp"-->
+<!--                    android:layout_toEndOf="@id/ivVideoCover" />-->
 
             </RelativeLayout>
 

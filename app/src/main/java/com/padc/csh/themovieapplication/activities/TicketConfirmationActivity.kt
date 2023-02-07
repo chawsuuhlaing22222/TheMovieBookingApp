@@ -1,6 +1,7 @@
 package com.padc.csh.themovieapplication.activities
 
 import android.app.Dialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -28,6 +29,7 @@ class TicketConfirmationActivity : AppCompatActivity() {
         bindData()
         createPolicyAlertDialog()
         showCustomdialog()
+        setUpActionListener()
     }
 
     private fun showCustomdialog() {
@@ -61,5 +63,13 @@ class TicketConfirmationActivity : AppCompatActivity() {
         dialog.getWindow()?.setBackgroundDrawableResource(R.drawable.bg_custom_alert_overlay)
         dialog.setCanceledOnTouchOutside(false)
 
+    }
+
+    private fun setUpActionListener(){
+        btnDone.setOnClickListener {
+            var intent=Intent(this,MainActivity::class.java)
+            intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
     }
 }

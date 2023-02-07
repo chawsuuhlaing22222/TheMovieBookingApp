@@ -12,9 +12,11 @@ import android.widget.MediaController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
+import com.google.android.material.chip.Chip
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.MovieGenreAdapter
 import com.padc.csh.themovieapplication.delegates.MovieCastAdapter
+import com.padc.csh.themovieapplication.dummy.movieGenreList
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import kotlinx.android.synthetic.main.activity_movie_detail.vvMovie
 import kotlinx.android.synthetic.main.activity_video_play.*
@@ -22,7 +24,7 @@ import kotlinx.android.synthetic.main.activity_video_play.*
 class MovieDetailActivity : AppCompatActivity() {
 
     lateinit var mMovieCastAdapter: MovieCastAdapter
-    lateinit var mMovieGenreAdapter: MovieGenreAdapter
+    //lateinit var mMovieGenreAdapter: MovieGenreAdapter
 
     companion object {
         const val FROM_ACTIVITY = "FROM_ACTIVITY"
@@ -53,6 +55,19 @@ class MovieDetailActivity : AppCompatActivity() {
         setUpRecycler()
         setUpActionListener()
         setUpDefaultMovie()
+        setUpMovieGenreChip()
+    }
+
+    private fun setUpMovieGenreChip() {
+        movieGenreList.forEach {
+
+            var chip=Chip(this)
+            chip.text=it
+            chip.setChipBackgroundColorResource(R.color.colorAccent)
+            chip.setPadding(8,5,8,5)
+            chip.setTextAppearance(R.style.movieGenreChipTextAppearance)
+            chipGroupMovieGenre.addView(chip)
+        }
     }
 
     private fun setUpActionListener() {
@@ -115,9 +130,9 @@ class MovieDetailActivity : AppCompatActivity() {
         rvCastPersonList.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        mMovieGenreAdapter = MovieGenreAdapter()
-        rvMovieGenreDetailScrn.adapter = mMovieGenreAdapter
-        rvMovieGenreDetailScrn.layoutManager = GridLayoutManager(this, 3)
+        //mMovieGenreAdapter = MovieGenreAdapter()
+        //rvMovieGenreDetailScrn.adapter = mMovieGenreAdapter
+        //rvMovieGenreDetailScrn.layoutManager = GridLayoutManager(this, 3)
     }
 
 

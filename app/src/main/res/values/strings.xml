@@ -99,4 +99,7 @@
     <string name="lbl_price_range">Price Range</string>
     <string name="lbl_show_times">Show Times</string>
     <string name="lbl_checkout">Checkout</string>
+    <string name="lbl_are_you_sure_to_logout">Are You Sure to Logout?</string>
+    <string name="btn_yes">Yes</string>
+    <string name="lbl_no">No</string>
 </resources>

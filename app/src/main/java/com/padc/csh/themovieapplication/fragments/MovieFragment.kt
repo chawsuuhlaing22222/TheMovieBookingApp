@@ -13,12 +13,12 @@ import androidx.viewpager2.widget.MarginPageTransformer
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.activities.MovieDetailActivity
 import com.padc.csh.themovieapplication.activities.MovieSearchActivity
-import com.padc.csh.themovieapplication.activities.setPreviewBothSide
 import com.padc.csh.themovieapplication.adapters.BannerAdapter
 import com.padc.csh.themovieapplication.adapters.CommingSoonMovieAdapter
 import com.padc.csh.themovieapplication.adapters.NowShowingMovieAdapter
 import com.padc.csh.themovieapplication.delegates.BannerDelegate
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
+import com.padc.csh.themovieapplication.dummy.setPreviewBothSide
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.view_item_toolbar_movie.view.*

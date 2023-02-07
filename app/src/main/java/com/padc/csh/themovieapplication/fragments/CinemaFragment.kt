@@ -46,7 +46,7 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
         //movie cinema rv
         mMovieCinemaListAdapter=MovieCinemaAdapter(this,this)
         rvCinemaList.adapter=mMovieCinemaListAdapter
-        rvCinemaList.layoutManager= LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL,false)
+        rvCinemaList.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
 
     }
 

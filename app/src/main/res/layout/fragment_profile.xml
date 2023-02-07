@@ -1,389 +1,394 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/color111111"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.ProfileFragment">
-
-    <!-- profile cover -->
-    <FrameLayout
-        android:id="@+id/flProfileCover"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivProfileCoverProfileScrn"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_bg_profilecover"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/color111111"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.ProfileFragment">
+
+        <!-- profile cover -->
+        <FrameLayout
+            android:id="@+id/flProfileCover"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_220dp"
-            android:text="@string/hello_blank_fragment" />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivProfile"
-            android:scaleType="centerCrop"
-            android:layout_marginTop="38dp"
-            android:layout_gravity="center|top"
-            app:srcCompat="@drawable/ic_profile_circle"
-            android:layout_width="@dimen/dimen_85dp"
-            android:layout_height="@dimen/dimen_85dp"/>
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfileCoverProfileScrn"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_bg_profilecover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_220dp"
+                android:text="@string/hello_blank_fragment" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProfile"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="38dp"
+                android:layout_gravity="center|top"
+                app:srcCompat="@drawable/ic_profile_circle"
+                android:layout_width="@dimen/dimen_85dp"
+                android:layout_height="@dimen/dimen_85dp"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogin"
-            android:backgroundTint="#1a00ff6a"
-            android:paddingLeft="@dimen/dimen_40dp"
-            android:paddingRight="@dimen/dimen_40dp"
-            android:paddingTop="@dimen/dimen_10dp"
-            android:paddingBottom="@dimen/dimen_10dp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/colorAccent"
-            app:cornerRadius="4dp"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:text="@string/lbl_login_or_sign_up"
-            android:fontFamily="@font/inter_semibold"
-            android:textAllCaps="false"
-            android:textSize="@dimen/text_regular_2x"
-            android:layout_gravity="bottom|center"
-            android:layout_marginBottom="@dimen/dimen_30dp"
-            android:textColor="@color/colorAccent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        
-    </FrameLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:backgroundTint="#1a00ff6a"
+                android:paddingLeft="@dimen/dimen_40dp"
+                android:paddingRight="@dimen/dimen_40dp"
+                android:paddingTop="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/colorAccent"
+                app:cornerRadius="4dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:text="@string/lbl_login_or_sign_up"
+                android:fontFamily="@font/inter_semibold"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_regular_2x"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="@dimen/dimen_30dp"
+                android:textColor="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-<!--    purchase history-->
-    <RelativeLayout
-        android:id="@+id/rlPurchaseHistoryProfileScrn"
-        android:layout_marginTop="@dimen/dimen_50dp"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivHistory"
-            app:srcCompat="@drawable/ic_history"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_25dp"/>
+        </FrameLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPurchaeHistory"
-            android:layout_toEndOf="@id/ivHistory"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:fontFamily="@font/inter_semibold"
-            android:text="@string/lbl_purchae_history"
-            android:textSize="@dimen/text_17sp"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivHistoryForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-           android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn"
+        <!--    purchase history-->
+        <RelativeLayout
+            android:id="@+id/rlPurchaseHistoryProfileScrn"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivHistory"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHistory"
+                app:srcCompat="@drawable/ic_history"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_25dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPurchaeHistory"
+                android:layout_toEndOf="@id/ivHistory"
+                android:layout_marginLeft="@dimen/margin_card_medium_2"
+                android:fontFamily="@font/inter_semibold"
+                android:text="@string/lbl_purchae_history"
+                android:textSize="@dimen/text_17sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHistoryForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivHistory"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+
+        <!--    offer history-->
+        <RelativeLayout
+            android:id="@+id/rlOfferProfileScrn"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
-
-    </RelativeLayout>
-
-    <!--    offer history-->
-    <RelativeLayout
-    android:id="@+id/rlOfferProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivOffer"
-            app:srcCompat="@drawable/ic_offer"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_25dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvOffer"
-            android:layout_toEndOf="@id/ivOffer"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="@string/lbl_offer"
-            android:textSize="@dimen/text_17sp"
-            android:fontFamily="@font/inter_semibold"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivOfferForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn2"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivOffer"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOffer"
+                app:srcCompat="@drawable/ic_offer"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_25dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOffer"
+                android:layout_toEndOf="@id/ivOffer"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="@string/lbl_offer"
+                android:textSize="@dimen/text_17sp"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOfferForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivOffer"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+
+        <!--    gift card-->
+        <RelativeLayout
+            android:id="@+id/rlGifCardProfileScrn"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
-
-    </RelativeLayout>
-
-    <!--    gift card-->
-    <RelativeLayout
-        android:id="@+id/rlGifCardProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivGiftCard"
-            app:srcCompat="@drawable/ic_giftvoucher"
-            app:tint="@color/white"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_25dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvGiftCard"
-            android:layout_toEndOf="@id/ivGiftCard"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="@string/lbl_gift_card"
-            android:textSize="@dimen/text_17sp"
-            android:fontFamily="@font/inter_semibold"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivGiftCardForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/dimen_25dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn3"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivGiftCard"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivGiftCard"
+                app:srcCompat="@drawable/ic_giftvoucher"
+                app:tint="@color/white"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_25dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGiftCard"
+                android:layout_toEndOf="@id/ivGiftCard"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="@string/lbl_gift_card"
+                android:textSize="@dimen/text_17sp"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivGiftCardForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivGiftCard"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+        <!--    location history-->
+        <RelativeLayout
+            android:id="@+id/rlLocationProfileScrn"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
-
-    </RelativeLayout>
-    <!--    location history-->
-    <RelativeLayout
-        android:id="@+id/rlLocationProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivLocation"
-            app:srcCompat="@drawable/ic_location"
-            app:tint="@color/white"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_30dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLocation"
-            android:layout_toEndOf="@id/ivLocation"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="@string/lbl_location"
-            android:fontFamily="@font/inter_semibold"
-            android:textSize="@dimen/text_17sp"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivLocationForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn4"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivLocation"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocation"
+                app:srcCompat="@drawable/ic_location"
+                app:tint="@color/white"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_30dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLocation"
+                android:layout_toEndOf="@id/ivLocation"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="@string/lbl_location"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="@dimen/text_17sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocationForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivLocation"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+
+        <!--    Payment-->
+        <RelativeLayout
+            android:id="@+id/rlPaymentProfileScrn"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
-
-    </RelativeLayout>
-
-    <!--    Payment-->
-    <RelativeLayout
-        android:id="@+id/rlPaymentProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPayment"
-            app:srcCompat="@drawable/ic_payment"
-            app:tint="@color/white"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_25dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPayment"
-            android:layout_toEndOf="@id/ivPayment"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="@string/lbl_payment"
-            android:fontFamily="@font/inter_semibold"
-            android:textSize="@dimen/text_17sp"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivPaymentForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn5"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivPayment"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPayment"
+                app:srcCompat="@drawable/ic_payment"
+                app:tint="@color/white"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_25dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPayment"
+                android:layout_toEndOf="@id/ivPayment"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="@string/lbl_payment"
+                android:fontFamily="@font/inter_semibold"
+                android:textSize="@dimen/text_17sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPaymentForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivPayment"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+
+        <!--    help and support-->
+        <RelativeLayout
+            android:id="@+id/rlHelpProfileScrn"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
-
-    </RelativeLayout>
-
-    <!--    help and support-->
-    <RelativeLayout
-        android:id="@+id/rlHelpProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivHelp"
-            app:srcCompat="@drawable/ic_helpand_support"
-            app:tint="@color/white"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_25dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvHelp"
-            android:layout_toEndOf="@id/ivHelp"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="@string/lbl_help_and_support"
-            android:textSize="@dimen/text_17sp"
-            android:fontFamily="@font/inter_semibold"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivHelpForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn6"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivHelp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHelp"
+                app:srcCompat="@drawable/ic_helpand_support"
+                app:tint="@color/white"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_25dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHelp"
+                android:layout_toEndOf="@id/ivHelp"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="@string/lbl_help_and_support"
+                android:textSize="@dimen/text_17sp"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivHelpForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivHelp"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+
+
+        <!--   Logout-->
+        <RelativeLayout
+            android:id="@+id/rlLogoutProfileScrn"
             android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
-
-    </RelativeLayout>
-
-
-    <!--   Logout-->
-    <RelativeLayout
-        android:id="@+id/rlLogoutProfileScrn"
-        android:layout_marginTop="@dimen/margin_medium_3"
-        android:layout_marginLeft="@dimen/margin_medium_2"
-        android:layout_marginRight="@dimen/margin_medium_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivLogout"
-            app:srcCompat="@drawable/ic_logout"
-            app:tint="@color/white"
-            android:scaleType="centerCrop"
-            android:layout_width="@dimen/margin_large"
-            android:layout_height="@dimen/dimen_25dp"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvLogout"
-            android:layout_toEndOf="@id/ivLogout"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:text="Logout"
-            android:textSize="@dimen/text_17sp"
-            android:fontFamily="@font/inter_semibold"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivLogoutForwardDetail"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
-            app:tint="@color/color444444" />
-
-        <!--line separator-->
-        <View
-            android:id="@+id/viewLineSeparatorProfileScrn7"
+            android:layout_marginLeft="@dimen/margin_medium_2"
+            android:layout_marginRight="@dimen/margin_medium_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_below="@id/ivLogout"
-            android:layout_marginTop="@dimen/margin_medium_3"
-            android:background="#1affffff" />
+            android:layout_height="wrap_content">
 
-    </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLogout"
+                app:srcCompat="@drawable/ic_logout"
+                app:tint="@color/white"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/margin_large"
+                android:layout_height="@dimen/dimen_25dp"/>
 
-</LinearLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLogout"
+                android:layout_toEndOf="@id/ivLogout"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="Logout"
+                android:textSize="@dimen/text_17sp"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLogoutForwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:tint="@color/color444444" />
+
+            <!--line separator-->
+            <View
+                android:id="@+id/viewLineSeparatorProfileScrn7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/ivLogout"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="#1affffff" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

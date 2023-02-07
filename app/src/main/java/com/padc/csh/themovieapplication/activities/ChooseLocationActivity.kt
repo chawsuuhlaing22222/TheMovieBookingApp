@@ -41,6 +41,7 @@ class ChooseLocationActivity : AppCompatActivity(), CityDelegate {
 
     private fun setUpListener() {
         btnMapChooseLocationScrn.setOnClickListener {
+            //var intent=
             startActivity(Intent(this, MainActivity::class.java))
         }
     }

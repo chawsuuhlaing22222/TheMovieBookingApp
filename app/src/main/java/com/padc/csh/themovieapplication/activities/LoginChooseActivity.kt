@@ -20,9 +20,9 @@ class LoginChooseActivity : AppCompatActivity() {
 
     }
 
-    override fun onBackPressed() {
-        finishAffinity()
-    }
+//    override fun onBackPressed() {
+//        finishAffinity()
+//    }
 
     private fun setUpListener(){
 

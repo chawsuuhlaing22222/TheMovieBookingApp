@@ -250,127 +250,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvThermanalScannig"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_marginLeft="@dimen/margin_medium_2"
-                android:paddingRight="@dimen/dimen_10dp"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:layout_below="@id/tvSafety"
-                android:layout_marginTop="@dimen/dimen_21dp"
-                android:text="@string/lbl_thermanal_scannig"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:fontFamily="@font/inter_medium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvContactlessSecurityCheck"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_marginStart="@dimen/dimen_5dp"
-                android:paddingRight="@dimen/dimen_10dp"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:fontFamily="@font/inter_medium"
-                android:layout_below="@id/tvSafety"
-                android:layout_toEndOf="@id/tvThermanalScannig"
-                android:layout_marginTop="@dimen/dimen_21dp"
-                android:text="@string/lbl_contactless_security_check"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvSantization"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_marginLeft="@dimen/margin_medium_2"
-                android:paddingRight="@dimen/dimen_10dp"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:fontFamily="@font/inter_medium"
-                android:layout_below="@id/tvThermanalScannig"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:text="@string/slbl_santization_before_every_show"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvDisposable"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_alignTop="@id/tvSantization"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:fontFamily="@font/inter_medium"
-                android:layout_marginStart="@dimen/dimen_5dp"
-                android:layout_toEndOf="@id/tvSantization"
-                android:layout_below="@id/tvThermanalScannig"
-                android:text="@string/lbl_disposable_3d_glass"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvContactless"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_marginLeft="@dimen/margin_medium_2"
-                android:paddingRight="@dimen/dimen_10dp"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:fontFamily="@font/inter_medium"
-                android:layout_below="@id/tvSantization"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:text="@string/lbl_contactless_food_serviec"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvPackageFood"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_alignTop="@id/tvContactless"
-                android:paddingRight="@dimen/dimen_10dp"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:layout_marginStart="@dimen/dimen_5dp"
-                android:fontFamily="@font/inter_medium"
-                android:layout_toEndOf="@id/tvContactless"
-                android:layout_below="@id/tvSantization"
-                android:text="@string/lbl_package_food"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tvDeepCleaning"
-                android:background="@drawable/bg_safety_type_cinema_detail"
-                android:layout_marginLeft="@dimen/margin_medium_2"
-                android:paddingRight="@dimen/dimen_10dp"
-                android:paddingLeft="@dimen/dimen_10dp"
-                android:paddingTop="@dimen/dimen_2dp"
-                android:paddingBottom="@dimen/dimen_2dp"
-                android:fontFamily="@font/inter_medium"
-                android:layout_below="@id/tvContactless"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:text="@string/lbl_deep_cleaning_of_rest_room"
-                android:textColor="@color/color111111"
-                android:textSize="@dimen/text_regular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+          <com.google.android.material.chip.ChipGroup
+              android:id="@+id/chipGroupSafeTypeCinemaDetail"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/tvSafety"
+              app:chipSpacingHorizontal="@dimen/dimen_5dp"
+              android:layout_marginTop="@dimen/dimen_21dp"
+              android:layout_marginLeft="@dimen/margin_medium_2">
+          </com.google.android.material.chip.ChipGroup>
 
         </RelativeLayout>
       
