@@ -35,11 +35,11 @@ class CommingSoonMovieListFragment : Fragment(),MovieListDelegate {
 
 
 
-    override fun onTapNowShowingMovie() {
+    override fun onTapNowShowingMovie(movieId:String) {
 
     }
 
-    override fun onTapCommingSoonMovie() {
+    override fun onTapCommingSoonMovie(movieId: String) {
 
     }
 

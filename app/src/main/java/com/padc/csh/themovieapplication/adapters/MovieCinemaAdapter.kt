@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.data.vos.CinemaVO
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaSeatConditionDelegate
 import com.padc.csh.themovieapplication.viewholders.MovieCinemaViewHolder
@@ -14,6 +15,7 @@ import kotlinx.android.synthetic.main.view_holder_cinema_item.view.*
 class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatConditionDelegate: MovieCinemaSeatConditionDelegate): RecyclerView.Adapter<MovieCinemaViewHolder>() {
 
     private var selectedPosition=-1
+    private var cinemaList:List<CinemaVO> = listOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieCinemaViewHolder {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.view_holder_cinema_item,parent,false)
         return MovieCinemaViewHolder(view,cinemaDelegate)
@@ -21,7 +23,12 @@ class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatC
 
     override fun onBindViewHolder(holder: MovieCinemaViewHolder, position: Int) {
 
-        holder.itemView.rvMovieAvailableTime.adapter=MovieCinemaSeatConditionAdapter(cinemaSeatConditionDelegate)
+        var timeSlotAdater=MovieCinemaSeatConditionAdapter(cinemaSeatConditionDelegate)
+        if(cinemaList.isNotEmpty()){
+            holder.bindData(cinemaList.get(position))
+            timeSlotAdater.setNewData(cinemaList.get(position).timeslots)
+        }
+        holder.itemView.rvMovieAvailableTime.adapter=timeSlotAdater
         holder.itemView.rvMovieAvailableTime.layoutManager=GridLayoutManager(holder.itemView.context,3)
 
         holder.itemView.tvSeeDetails.setOnClickListener {
@@ -50,6 +57,11 @@ class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatC
     }
 
     override fun getItemCount(): Int {
-       return 5
+       return cinemaList.size
+    }
+
+    fun setNewData(it: List<CinemaVO>) {
+        cinemaList=it
+        notifyDataSetChanged()
     }
 }

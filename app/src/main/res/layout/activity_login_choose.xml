@@ -193,10 +193,12 @@
             android:id="@+id/tvTermsAndPolicy"
             android:textColor="@color/colorPrimaryLight"
             android:textSize="@dimen/text_small"
+            android:layout_below="@id/btnGoogleSignIn"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:fontFamily="@font/dm_sans"
             android:text="@string/lbl_privacy_plolicy"
+            android:layout_marginTop="@dimen/dimen_50dp"
             android:layout_marginBottom="@dimen/dimen_30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

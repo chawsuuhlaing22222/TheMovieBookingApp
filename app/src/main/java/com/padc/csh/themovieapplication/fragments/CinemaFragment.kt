@@ -12,6 +12,7 @@ import com.padc.csh.themovieapplication.activities.CinemaDetailActivity
 import com.padc.csh.themovieapplication.activities.CinemaSearchActivity
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
 import com.padc.csh.themovieapplication.adapters.MovieCinemaSeatConditionAdapter
+import com.padc.csh.themovieapplication.data.vos.CinemaTimeSlotVO
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaSeatConditionDelegate
 import kotlinx.android.synthetic.main.activity_movie_booking.*
@@ -54,7 +55,7 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
         mMovieCinemaListAdapter.setSelectedPosition(position)
     }
 
-    override fun onMovieCinemaSeatPlanClick() {
+    override fun onMovieCinemaSeatPlanClick(timeSlotVO: CinemaTimeSlotVO) {
         startActivity(Intent(requireContext(),CinemaDetailActivity::class.java))
     }
 

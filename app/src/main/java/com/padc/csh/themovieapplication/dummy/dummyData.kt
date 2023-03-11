@@ -21,7 +21,7 @@ var movieShowMonths= mutableListOf<String>("Jan","Feb","Mar","Apri")
 
 var safeTypeList= mutableListOf<String>("Thermanal Scannig","Contactless Security Check",
     "Santization Before Every Show", "Disposable 3D glass",
-"Contactless Food Serviec","Package Food","Deep Cleaning of rest room")
+"Contactless Food Service","Package Food","Deep Cleaning of rest room")
 
 
 

@@ -2,8 +2,8 @@
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="170dp"
-        android:layout_height="220dp"
+        android:layout_width="@dimen/dimen_170dp"
+        android:layout_height="@dimen/dimen_220dp"
         android:layout_marginLeft="@dimen/margin_medium_3"
         android:layout_marginTop="@dimen/dimen_25dp"
         android:background="@drawable/bg_snack_item">
@@ -11,7 +11,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivSnack"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="@dimen/dimen_130dp"
             android:layout_centerHorizontal="true"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_food_snack" />
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvSnackName"
             android:layout_alignLeft="@id/tvSnackName"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
             android:text="1000KS"
             android:fontFamily="@font/inter_semibold"
             android:textColor="@color/colorAccent"
@@ -51,9 +51,9 @@
             <!--            btn add food-->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAdd"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="11dp"
+                android:layout_width="@dimen/dimen_150dp"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_marginBottom="@dimen/dimen_11dp"
                 android:backgroundTint="@color/colorAccent"
                 android:text="@string/lbl_add"
                 android:fontFamily="@font/inter_semibold"
@@ -83,8 +83,8 @@
                     android:id="@+id/tvOrderFoodCount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="@dimen/margin_card_medium_2"
+                    android:layout_marginRight="@dimen/margin_card_medium_2"
                     android:text="1"
                     android:textColor="@color/colorAccent" />
 

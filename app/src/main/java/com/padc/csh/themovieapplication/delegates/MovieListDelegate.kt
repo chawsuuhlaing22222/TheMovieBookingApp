@@ -1,6 +1,6 @@
 package com.padc.csh.themovieapplication.delegates
 
 interface MovieListDelegate {
-    fun onTapNowShowingMovie()
-    fun onTapCommingSoonMovie()
+    fun onTapNowShowingMovie(movieId:String)
+    fun onTapCommingSoonMovie(movieId: String)
 }

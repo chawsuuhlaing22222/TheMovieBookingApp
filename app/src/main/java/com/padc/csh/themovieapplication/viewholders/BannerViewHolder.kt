@@ -6,9 +6,9 @@ import com.padc.csh.themovieapplication.delegates.BannerDelegate
 
 class BannerViewHolder(itemView: View,delegate: BannerDelegate) :RecyclerView.ViewHolder(itemView) {
 
-    init {
-        itemView.setOnClickListener {
-            delegate.onTapBanner()
-        }
-    }
+//    init {
+//        itemView.setOnClickListener {
+//            delegate.onTapBanner()
+//        }
+//    }
 }

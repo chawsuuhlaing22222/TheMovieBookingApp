@@ -257,9 +257,12 @@
               android:layout_height="wrap_content"
               android:layout_below="@id/tvSafety"
               app:chipSpacingHorizontal="@dimen/dimen_5dp"
+              app:chipSpacingVertical="0dp"
+              android:layout_marginBottom="@dimen/margin_medium_3"
               android:layout_marginTop="@dimen/dimen_21dp"
               android:layout_marginLeft="@dimen/margin_medium_2">
           </com.google.android.material.chip.ChipGroup>
+
 
         </RelativeLayout>
       

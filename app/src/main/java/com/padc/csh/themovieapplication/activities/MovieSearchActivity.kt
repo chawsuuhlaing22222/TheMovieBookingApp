@@ -25,28 +25,29 @@ import kotlinx.android.synthetic.main.view_item_search_toolbar.view.*
 
 class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
 
-    private var searchFlag=0
-    private var fromAction="now"
-    private var spinnerGenreFlag=0
-    private var spinnerFormatFlag=0
-    private var spinnerMonthFlag=0
+    private var searchFlag = 0
+    private var fromAction = "now"
+    private var spinnerGenreFlag = 0
+    private var spinnerFormatFlag = 0
+    private var spinnerMonthFlag = 0
 
     lateinit var mNowShowingMovieAdapter: NowShowingMovieAdapter
     lateinit var mCommingSoonMovieAdapter: CommingSoonMovieAdapter
 
-    companion object{
-        var IEXTRA_FROMACTION="FROM ACTIVITY"
-        fun newIntent(context: Context,fromAction:String):Intent{
-            val intent=Intent(context,MovieSearchActivity::class.java)
-            intent.putExtra(IEXTRA_FROMACTION,fromAction)
+    companion object {
+        var IEXTRA_FROMACTION = "FROM ACTIVITY"
+        fun newIntent(context: Context, fromAction: String): Intent {
+            val intent = Intent(context, MovieSearchActivity::class.java)
+            intent.putExtra(IEXTRA_FROMACTION, fromAction)
             return intent
         }
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_search)
         //get extra data
-         fromAction = intent.getStringExtra(IEXTRA_FROMACTION).toString()
+        fromAction = intent.getStringExtra(IEXTRA_FROMACTION).toString()
 
         setUpRecycler()
         setUpActionListener()
@@ -102,14 +103,15 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
                 position: Int,
                 p3: Long
             ) {
-                spinnerGenreFlag=spinnerGenreFlag+1
-                if(spinnerGenreFlag==1){
-                    tvSelectedMovieGenre.text ="Genres"
-                }else{
+                spinnerGenreFlag = spinnerGenreFlag + 1
+                if (spinnerGenreFlag == 1) {
+                    tvSelectedMovieGenre.text = "Genres"
+                } else {
                     tvSelectedMovieGenre.text = movieGenreList.get(position)
                 }
 
             }
+
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
@@ -127,14 +129,15 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
                 position: Int,
                 p3: Long
             ) {
-                spinnerFormatFlag+=1
-                if(spinnerFormatFlag==1){
-                    tvSelectedMovieFormat.text ="Format"
-                }else{
+                spinnerFormatFlag += 1
+                if (spinnerFormatFlag == 1) {
+                    tvSelectedMovieFormat.text = "Format"
+                } else {
                     tvSelectedMovieFormat.text = movieFormats.get(position)
                 }
 
             }
+
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
@@ -152,14 +155,15 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
                 position: Int,
                 p3: Long
             ) {
-                spinnerMonthFlag+=1
-                if(spinnerMonthFlag==1){
-                    tvSelectedShowMonth.text ="Month"
-                }else{
+                spinnerMonthFlag += 1
+                if (spinnerMonthFlag == 1) {
+                    tvSelectedShowMonth.text = "Month"
+                } else {
                     tvSelectedShowMonth.text = movieShowMonths.get(position)
                 }
 
             }
+
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
@@ -179,13 +183,13 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
         when (fromAction) {
             "now" -> {
                 rlMovieMonth.visibility = View.GONE
-                rvNowShowingMoviesSearchResult.visibility=View.VISIBLE
-                rvCommingSoonMoviesSearchResult.visibility=View.GONE
+                rvNowShowingMoviesSearchResult.visibility = View.VISIBLE
+                rvCommingSoonMoviesSearchResult.visibility = View.GONE
             }
             "comming" -> {
                 rlMovieMonth.visibility = View.VISIBLE
-                rvNowShowingMoviesSearchResult.visibility=View.GONE
-                rvCommingSoonMoviesSearchResult.visibility=View.VISIBLE
+                rvNowShowingMoviesSearchResult.visibility = View.GONE
+                rvCommingSoonMoviesSearchResult.visibility = View.VISIBLE
             }
             else -> {
                 rlMovieMonth.visibility = View.GONE
@@ -193,22 +197,24 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
         }
 
     }
+
     private fun setUpRecycler() {
-        mNowShowingMovieAdapter= NowShowingMovieAdapter(this)
-        mCommingSoonMovieAdapter= CommingSoonMovieAdapter(this)
+        mNowShowingMovieAdapter = NowShowingMovieAdapter(this)
+        mCommingSoonMovieAdapter = CommingSoonMovieAdapter(this)
 
-        rvNowShowingMoviesSearchResult.adapter=mNowShowingMovieAdapter
-        rvNowShowingMoviesSearchResult.layoutManager= GridLayoutManager(this,2)
+        rvNowShowingMoviesSearchResult.adapter = mNowShowingMovieAdapter
+        rvNowShowingMoviesSearchResult.layoutManager = GridLayoutManager(this, 2)
 
-        rvCommingSoonMoviesSearchResult.adapter=mCommingSoonMovieAdapter
-        rvCommingSoonMoviesSearchResult.layoutManager= GridLayoutManager(this,2)
+        rvCommingSoonMoviesSearchResult.adapter = mCommingSoonMovieAdapter
+        rvCommingSoonMoviesSearchResult.layoutManager = GridLayoutManager(this, 2)
 
     }
-    override fun onTapNowShowingMovie() {
-        startActivity(MovieDetailActivity.newIntent(this,"now"))
+
+    override fun onTapNowShowingMovie(movieId: String) {
+        startActivity(MovieDetailActivity.newIntent(this, "now", movieId))
     }
 
-    override fun onTapCommingSoonMovie() {
-        startActivity(MovieDetailActivity.newIntent(this,"comming"))
+    override fun onTapCommingSoonMovie(movieId: String) {
+        startActivity(MovieDetailActivity.newIntent(this, "comming", movieId))
     }
 }

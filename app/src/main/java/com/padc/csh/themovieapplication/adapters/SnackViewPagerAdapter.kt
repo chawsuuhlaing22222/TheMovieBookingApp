@@ -16,7 +16,7 @@ class SnackViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAd
     }
 
     override fun createFragment(position: Int): Fragment {
-        val fragment=SnackListFragment()
+        val fragment= SnackListFragment()
         var bundle=Bundle()
         bundle.putString(IEXTRA_SNACK_NAME, snackList.get(position))
         fragment.arguments=bundle

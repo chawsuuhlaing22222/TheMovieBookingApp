@@ -64,6 +64,7 @@
     <style name="safeChipTextAppearance" parent="@style/Widget.AppCompat.TextView">
         <item name="fontFamily"> @font/inter_medium </item>
         <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/color111111  </item>
     </style>
 

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewOtpScreen"
+    android:background="@color/color111111"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color111111"
@@ -76,11 +83,13 @@
         android:inputType="number"
         android:itemBackground="@color/bg_color_pinview_item"
         android:fontFamily="@font/dm_sans_medium"
-        android:text="123456"
+        tools:text="123456"
         android:textColor="@color/text_color_pinview"
         android:textSize="@dimen/text_size_pinview"
         app:cursorColor="@color/text_color_pinview"
         app:cursorWidth="2dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         app:itemCount="6"
         app:itemHeight="@dimen/height_item_pinview"
         app:itemRadius="@dimen/radius_pinview"
@@ -137,8 +146,10 @@
         android:id="@+id/tvTermsAndPolicyGetOtpScrn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+       android:layout_below="@id/btnConfirmOtp"
+        android:layout_marginTop="@dimen/dimen_60dp"
         android:layout_marginBottom="@dimen/dimen_30dp"
         android:fontFamily="@font/dm_sans"
         android:text="@string/lbl_privacy_plolicy"
@@ -147,3 +158,4 @@
 
 
 </RelativeLayout>
+</ScrollView>

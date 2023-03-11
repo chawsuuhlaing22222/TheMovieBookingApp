@@ -1,6 +1,5 @@
 package com.padc.csh.themovieapplication.fragments
 
-import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.*
@@ -10,15 +9,23 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
+import com.google.android.material.snackbar.Snackbar
+import com.padc.csh.themovieapp.data.vos.COMMING_SOON
+import com.padc.csh.themovieapp.data.vos.NOW_PLAYING
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.activities.MainActivity.Companion.CITY_PARAM
 import com.padc.csh.themovieapplication.activities.MovieDetailActivity
 import com.padc.csh.themovieapplication.activities.MovieSearchActivity
 import com.padc.csh.themovieapplication.adapters.BannerAdapter
 import com.padc.csh.themovieapplication.adapters.CommingSoonMovieAdapter
 import com.padc.csh.themovieapplication.adapters.NowShowingMovieAdapter
+import com.padc.csh.themovieapplication.data.models.MovieBookingModel
+import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
+import com.padc.csh.themovieapplication.data.vos.BannerVO
 import com.padc.csh.themovieapplication.delegates.BannerDelegate
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
 import com.padc.csh.themovieapplication.dummy.setPreviewBothSide
+import com.padc.csh.themovieapplication.utils.showErrorMsg
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_movie.*
 import kotlinx.android.synthetic.main.view_item_toolbar_movie.view.*
@@ -28,7 +35,15 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
     lateinit var mBannerAdapter: BannerAdapter
     lateinit var mNowShowingMovieAdapter: NowShowingMovieAdapter
     lateinit var mCommingSoonMovieAdapter:CommingSoonMovieAdapter
+
+    //model
+    private val mMovieModel:MovieBookingModel=MovieBookingModelImpl
     private var movieType="now"
+
+    companion object{
+     const val SELECTED_CITY="SELECTED_CITY"
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,14 +56,49 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //get arguments
+        var bundel=arguments.takeIf { bundle ->  bundle?.containsKey(SELECTED_CITY) ?: false}
+        var selectedCity=bundel?.getString(SELECTED_CITY) ?: ""
+        viewItemToolbarMovieFrag.tvSelectedCity.text=selectedCity
+
         btnNowShowing.setBackgroundColor(resources.getColor(R.color.colorAccent,null))
 
         setUpBanner()
         setUpListener()
         setUpRecycler()
+        requestData()
+
+    }
+
+    private fun requestData() {
+        mMovieModel.getBanners(
+            {
+                mBannerAdapter.setNewData(it)
+            },{
+
+            }
+        )
+        mMovieModel.getMovieList(
+            NOW_PLAYING,
+            {
+                mNowShowingMovieAdapter.setNewData(it)
+            },{
+                showErrorMsg(it,movieFrag)
+            }
+        )
+
+        mMovieModel.getMovieList(
+            COMMING_SOON,
+            {
+                mCommingSoonMovieAdapter.setNewData(it)
+            },{
+                showErrorMsg(it,movieFrag)
+            }
+        )
 
 
     }
+
     private fun setUpBannerViewPagerPadding() {
         viewPagerBanner.apply {
             clipChildren = false  // No clipping the left and right items
@@ -82,6 +132,7 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
     }
 
     private fun setUpListener() {
+
         //now showing movie btn action
         btnNowShowing.setOnClickListener {
            rvNowShowingMovies.visibility=View.VISIBLE
@@ -117,22 +168,20 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
 
     }
 
-    override fun onTapBanner() {
-        Toast.makeText(context, "banner", Toast.LENGTH_SHORT).show()
+    override fun onTapBanner(movie:BannerVO) {
+        //Toast.makeText(context, "banner", Toast.LENGTH_SHORT).show()
     }
 
-    override fun onTapNowShowingMovie() {
-       startActivity(MovieDetailActivity.newIntent(context,"now"))
+    override fun onTapNowShowingMovie(movieId:String) {
+        var id=movieId
+       startActivity(MovieDetailActivity.newIntent(context,"now",movieId))
     }
 
-    override fun onTapCommingSoonMovie() {
-        startActivity(MovieDetailActivity.newIntent(context,"comming"))
+    override fun onTapCommingSoonMovie(movieId:String) {
+        startActivity(MovieDetailActivity.newIntent(context,"comming",movieId))
     }
 
-//    private fun replaceMovieList(fragment: Fragment){
-//        activity?.supportFragmentManager?.beginTransaction()?.replace(R.id
-//            .flShowingCommingMovies,fragment)?.commit()
-//    }
+
 
 
 }

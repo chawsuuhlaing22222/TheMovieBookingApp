@@ -35,11 +35,11 @@ class NowShowingMovieListFragment : Fragment(),MovieListDelegate {
         mMovieListViewPod.setUpViewPod(this,"now")
     }
 
-    override fun onTapNowShowingMovie() {
+    override fun onTapNowShowingMovie(movieId:String) {
 
     }
 
-    override fun onTapCommingSoonMovie() {
+    override fun onTapCommingSoonMovie(movieId: String) {
 
     }
 

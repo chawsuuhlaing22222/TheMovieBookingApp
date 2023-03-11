@@ -15,7 +15,7 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSeatImg"
-        app:srcCompat="@drawable/ic_taken_couple_seat"
+        app:srcCompat="@drawable/ic_seat_one"
         android:scaleType="centerCrop"
           android:layout_width="@dimen/margin_large"
         android:layout_height="@dimen/margin_large"/>

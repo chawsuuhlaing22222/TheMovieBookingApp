@@ -25,7 +25,7 @@ class SeatPlanAdapter(var context: Context,var delegate: SeatPlanDelegate,var ch
         var mChildSeatAdapter=ChildSeatAdapter(childDelegate)
         holder.itemView.tvSeatPricelbl.text = seatPlanlist.get(position).price
         holder.itemView.rvSeatList.adapter=mChildSeatAdapter
-        mChildSeatAdapter.setUpData(seatPlanlist.get(position).childSeat)
+       // mChildSeatAdapter.setUpData(seatPlanlist.get(position).childSeat)
 
         if(position== seatPlanlist.size-1){
             holder.itemView.rvSeatList.layoutManager=GridLayoutManager(context,11)

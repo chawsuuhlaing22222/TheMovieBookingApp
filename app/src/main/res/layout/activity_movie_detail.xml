@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movieDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color111111"
@@ -9,7 +10,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_10dp"
         android:background="@color/color111111">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -22,8 +24,8 @@
 
             <!--            back button-->
             <FrameLayout
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
                 android:layout_alignParentStart="true"
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/margin_medium_2"
@@ -44,8 +46,8 @@
             <!--            share button-->
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivShareMvDetail"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="@dimen/dimen_30dp"
+                android:layout_height="@dimen/dimen_30dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:layout_marginEnd="@dimen/margin_medium_2"
@@ -113,6 +115,7 @@
                     android:layout_marginStart="@dimen/margin_medium_2"
                     android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_toEndOf="@id/ivVideoCover"
+                    android:layout_toStartOf="@id/ivIBMMovieDetail"
                     android:text="Black Widow"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x"
@@ -123,23 +126,22 @@
                     android:layout_width="@dimen/dimen_50dp"
                     android:layout_height="@dimen/dimen_30dp"
                     android:layout_below="@id/vvMovieFrame"
-                    android:layout_alignBottom="@id/tvMovieNameDetailScrn"
                     android:layout_marginStart="@dimen/dimen_10dp"
-                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:layout_marginTop="@dimen/margin_medium_2"
                     android:layout_marginEnd="5dp"
                     android:layout_marginRight="@dimen/dimen_10dp"
-                    android:layout_toEndOf="@id/tvMovieNameDetailScrn"
+                    android:layout_toStartOf="@id/tvPointMovieDetailScrn"
                     android:elevation="@dimen/dimen_4dp"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/ic_imdb" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvPointMovieDetailScrn"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/vvMovieFrame"
-                    android:layout_marginTop="@dimen/margin_medium_2"
-                    android:layout_toEndOf="@id/ivIBMMovieDetail"
+                    android:layout_marginTop="@dimen/margin_medium_3"
+                    android:layout_alignParentEnd="true"
                     android:elevation="4dp"
                     android:text="9.0"
                     android:fontFamily="@font/inter_bold"
@@ -308,7 +310,7 @@
                     android:layout_marginLeft="@dimen/margin_medium_2"
                     android:layout_marginTop="18dp"
                     android:fontFamily="@font/inter_bold"
-                    android:text="Releasing in 5days"
+                    android:text="@string/releasing_in_5days"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x"
                  />

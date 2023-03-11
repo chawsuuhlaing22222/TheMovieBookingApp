@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
 }
-
+apply plugin: 'kotlin-kapt'
 android {
     namespace 'com.padc.csh.themovieapplication'
     compileSdk 33
@@ -70,4 +70,22 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.0'
 
     implementation 'com.github.sparrow007:carouselrecyclerview:1.2.6'
+
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    implementation("com.squareup.retrofit2:converter-gson:2.7.1")
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:2.5.0")
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.5.0")
+    implementation("androidx.room:room-common:2.5.0")
+
+
 }

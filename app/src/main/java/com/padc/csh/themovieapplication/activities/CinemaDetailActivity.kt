@@ -27,13 +27,17 @@ class CinemaDetailActivity : AppCompatActivity() {
     }
 
     private fun addChipGroup() {
-        safeTypeList.forEach{
-            var chip=Chip(this)
-            chip.text=it
-            chip.setTextColor(resources.getColor(R.color.color111111,null))
-            chip.setPadding(10,5,10,5)
+        safeTypeList.forEach {
+            var chip = Chip(this)
+            chip.text = it
+            chip.setTextColor(resources.getColor(R.color.color111111, null))
+            chip.width = 198
+            chip.height = 21
+
+            //chip.setPadding(10,0,10,0)
+            // chip.backgroundDrawable=resources.getDrawable(R.drawable.bg_safety_type_cinema_detail,null)
             chip.setChipBackgroundColorResource(R.color.colorAccent)
-            chip.chipCornerRadius = 4f
+            chip.chipCornerRadius = 8f
             //val drawable = ChipDrawable.createFromAttributes(this, null, 0, R.style.safeChipAppearance)
             //chip.setChipDrawable(drawable)
             chip.setTextAppearanceResource(R.style.safeChipTextAppearance)
@@ -41,7 +45,7 @@ class CinemaDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpActionListener(){
+    private fun setUpActionListener() {
         btnPlayCinemaDetailScrn.setOnClickListener {
 
             //visibilty
@@ -60,6 +64,7 @@ class CinemaDetailActivity : AppCompatActivity() {
 
         }
     }
+
     private fun setUpDefaultMovie() {
 
         val videoUrl =

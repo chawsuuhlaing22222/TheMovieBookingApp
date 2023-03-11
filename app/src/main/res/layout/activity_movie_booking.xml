@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color111111"
-    tools:context=".activities.MovieBookingActivity">
+    tools:context=".activities.CinemaTimeSlotActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
