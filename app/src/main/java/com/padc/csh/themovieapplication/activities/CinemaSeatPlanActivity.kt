@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.slider.Slider
+import com.google.gson.Gson
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.ChildSeatAdapter
 import com.padc.csh.themovieapplication.adapters.SeatPlanAdapter
@@ -28,6 +29,8 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
 
     //lateinit var mSeatPlanAdapter: SeatPlanAdapter
     lateinit var mSeatPlanAdapter: ChildSeatAdapter
+
+    private var selectedSeatList:MutableList<SeatVO> = mutableListOf()
 
     companion object {
         const val IEXTRA_TIMESLOT_ID = "ID"
@@ -72,7 +75,8 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
     private fun setUpActionListener() {
 
         btnBuyTicket.setOnClickListener {
-            startActivity(Intent(this, GetSnackActivity::class.java))
+            var seatList=Gson().toJson(selectedSeatList)
+            startActivity(GetSnackActivity.newIntent(this,seatList))
         }
 
         sbZoom.addOnChangeListener(object : Slider.OnChangeListener {
@@ -117,9 +121,6 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
         supportActionBar?.title = ""
     }
 
-    override fun onClickChildSeat() {
-
-    }
 
     private fun addSpaceSeat(seatListParam:List<List<SeatVO>>):List<List<SeatVO>>{
         var spaceVO=SeatVO(0,"space","","",0,isSelected = false)
@@ -132,5 +133,17 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
         }
         var  seatList=mutalbeSeatList as List<List<SeatVO>>
         return seatList
+    }
+
+    override fun onSelectdSeat(seatVO: SeatVO) {
+        selectedSeatList.add(seatVO)
+        tvTicketCountSeatPlanScrn.text=getString(R.string.ticketCountLabel,selectedSeatList.count().toString())
+        tvTicketPrice.text=selectedSeatList.count().times(4500).toString()
+    }
+
+    override fun onUnSelectdSeat(seatVO: SeatVO) {
+       selectedSeatList.remove(seatVO)
+        tvTicketCountSeatPlanScrn.text=getString(R.string.ticketCountLabel,selectedSeatList.count().toString())
+        tvTicketPrice.text=selectedSeatList.count().times(4500).toString()
     }
 }

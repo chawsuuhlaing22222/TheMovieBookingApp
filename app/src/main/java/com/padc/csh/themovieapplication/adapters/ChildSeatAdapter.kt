@@ -39,13 +39,18 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
             when(getItemViewType(position)){
                 TYPE_SEAT_AVALIABLE->{
                     seat?.type="selection"
+                    if (seat != null) {
+                        delegate.onSelectdSeat(seat)
+                    }
                     notifyDataSetChanged()
-
 
                 }
 
                 TYPE_SEAT_SELECTION->{
                     seat?.type="available"
+                    if (seat != null) {
+                        delegate.onUnSelectdSeat(seat)
+                    }
                     notifyDataSetChanged()
 
                 }
@@ -72,6 +77,7 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
 
             TYPE_SEAT_AVALIABLE->{
                 holder.itemView.ivSeatImg.visibility=View.VISIBLE
+                holder.itemView.tvSeatLevel.visibility=View.GONE
                 holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_white_chair)
                 holder.itemView.tvSeatLevel.visibility=View.GONE
                 holder.itemView.viewSpace.visibility=View.GONE
@@ -79,6 +85,7 @@ class ChildSeatAdapter(var delegate: ChildSeatDelegate):RecyclerView.Adapter<Chi
             }
             TYPE_SEAT_SELECTION->{
                 holder.itemView.ivSeatImg.visibility=View.VISIBLE
+                holder.itemView.tvSeatLevel.visibility=View.GONE
                 holder.itemView.ivSeatImg.setImageResource(R.drawable.ic_white_chair)
                 holder.itemView.ivSeatImg.setColorFilter(ContextCompat.getColor(holder.itemView.context, R.color.colorAccent), android.graphics.PorterDuff.Mode.MULTIPLY)
                 holder.itemView.tvSeatLevel.visibility=View.GONE

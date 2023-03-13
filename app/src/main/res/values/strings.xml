@@ -103,4 +103,5 @@
     <string name="btn_yes">Yes</string>
     <string name="lbl_no">No</string>
     <string name="releasing_in_5days">Releasing in %s days</string>
+    <string name="ticketCountLabel">%s Tickets</string>
 </resources>

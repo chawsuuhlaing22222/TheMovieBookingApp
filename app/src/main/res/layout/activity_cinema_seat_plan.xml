@@ -50,12 +50,23 @@
                 android:textSize="@dimen/text_regular_2x" />
         </FrameLayout>
 
+        <TextView
+            android:id="@+id/tvSeatPricelbl"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/dm_sans"
+            android:text="Normal (4500ks)"
+            android:layout_below="@id/flRainbow"
+            android:textSize="@dimen/text_regular_2x"
+            android:textColor="@color/colorPrimaryLight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSeatPlanList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
-            android:layout_below="@id/flRainbow" />
+            android:layout_below="@id/tvSeatPricelbl" />
 
         <!--                color status-->
         <LinearLayout
@@ -199,7 +210,7 @@
             android:layout_above="@id/tvTicketPrice"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="28dp"
-            android:text="2 Tickets"
+            android:text="@string/ticketCountLabel"
             android:fontFamily="@font/inter_bold"
             android:textColor="@color/white"
             android:textSize="@dimen/text_18sp"

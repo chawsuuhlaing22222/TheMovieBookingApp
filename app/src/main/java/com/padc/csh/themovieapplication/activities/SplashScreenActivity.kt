@@ -1,5 +1,6 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -21,6 +22,8 @@ class SplashScreenActivity : AppCompatActivity() {
     private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
     private var token:String=""
     lateinit var countDownTimer: CountDownTimer
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
@@ -92,10 +95,10 @@ class SplashScreenActivity : AppCompatActivity() {
 
             override fun onFinish() {
 
-                var intent = Intent(this@SplashScreenActivity, LoginChooseActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                // checkLoginUser()
+//                var intent = Intent(this@SplashScreenActivity, LoginChooseActivity::class.java)
+//                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+//                startActivity(intent)
+                 checkLoginUser()
 
             }
         }.start()

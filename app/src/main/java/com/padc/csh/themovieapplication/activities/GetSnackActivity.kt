@@ -1,5 +1,6 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ import com.padc.csh.themovieapplication.adapters.SnackViewPagerAdapter
 import com.padc.csh.themovieapplication.data.models.MovieBookingModel
 import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
 import com.padc.csh.themovieapplication.data.vos.SnackCategoryVO
+import com.padc.csh.themovieapplication.data.vos.SnackVO
 import com.padc.csh.themovieapplication.delegates.OrderedFoodDetailAdapter
 import com.padc.csh.themovieapplication.delegates.SnackItemDelegate
 import com.padc.csh.themovieapplication.dummy.snackList
@@ -28,8 +30,17 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
 
     //model
     private var mTheMovieBookingModel:MovieBookingModel=MovieBookingModelImpl
-
+    private var snackList:List<SnackVO> = listOf()
     private var token:String=""
+
+    companion object{
+        const val SEAT_LIST="seat list"
+        fun newIntent(context: Context, seatList:String):Intent{
+            var intent=Intent(context,GetSnackActivity::class.java)
+            intent.putExtra(SEAT_LIST,seatList)
+            return intent
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_snack)
@@ -42,7 +53,7 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
 
     private fun requestToken() {
         mTheMovieBookingModel.getProfile {
-            token= it.token.toString()
+            token="Bearer "+ it.token.toString()
         }
     }
 
@@ -56,7 +67,8 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
         })
 
         mTheMovieBookingModel.getSnackAll(token,{
-            mSnackListAdapter.setNewData(it)
+            snackList=it
+            mSnackListAdapter.setNewData(snackList)
         },{
             showErrorMsg(it,snackView)
         })
@@ -96,7 +108,18 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
         tabLayoutGetSnackScrn.addOnTabSelectedListener(object :TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 var position=tab?.position ?: 0
-                Toast.makeText(this@GetSnackActivity, "${snackList.get(position)}", Toast.LENGTH_SHORT).show()
+                if(position !=0){
+                    getSnackByCategoryId(snackList[position-1].categoryId?.toInt() ?: 0)
+                    Toast.makeText(this@GetSnackActivity, "${snackList.get(position).categoryId} ${
+                        snackList.get(
+                            position
+                        ).name
+                    }", Toast.LENGTH_SHORT).show()
+                }else{
+                    mSnackListAdapter.setNewData(snackList)
+                }
+
+
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -127,6 +150,14 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
         }
     }
 
+    private fun getSnackByCategoryId(categoryId: Int) {
+        mTheMovieBookingModel.getSnackByCategoryId(token,categoryId,{
+            mSnackListAdapter.setNewData(it)
+        },{
+            showErrorMsg(it,snackView)
+        })
+    }
+
 
     private fun setUpViewPager() {
 
@@ -140,7 +171,17 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
 //        }.attach()
     }
 
-    override fun onAddSnackItem() {
 
+
+    override fun updateSnack(snackVO: SnackVO) {
+        snackList.forEach {
+            if(snackVO.name.equals(it.name,true) && snackVO.categoryId?.equals(it.categoryId) == true){
+                it.count=snackVO.count
+                return
+            }
+        }
+        mSnackListAdapter.setNewData(snackList)
     }
+
+
 }

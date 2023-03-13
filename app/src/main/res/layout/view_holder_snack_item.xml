@@ -10,8 +10,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivSnack"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_130dp"
+            android:layout_width="@dimen/dimen_120dp"
+            android:layout_height="@dimen/dimen_120dp"
             android:layout_centerHorizontal="true"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/ic_food_snack" />

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.SnackListAdapter
+import com.padc.csh.themovieapplication.data.vos.SnackVO
 import com.padc.csh.themovieapplication.delegates.SnackItemDelegate
 import kotlinx.android.synthetic.main.fragment_snack_list.*
 
@@ -42,8 +43,10 @@ lateinit var mSnackListAdapter: SnackListAdapter
         rvSnackList.layoutManager=GridLayoutManager(context,2)
     }
 
-    override fun onAddSnackItem() {
 
+
+    override fun updateSnack(snackVO: SnackVO) {
+        TODO("Not yet implemented")
     }
 
 }

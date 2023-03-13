@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="9dp"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="9dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvSeatLevel"
-        android:text="A"
-        android:gravity="center"
-        android:textColor="@color/colorPrimaryLight"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="A"
+        android:visibility="gone"
+        android:textColor="@color/colorPrimaryLight" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSeatImg"
-        app:srcCompat="@drawable/ic_seat_one"
+        android:layout_width="@dimen/margin_medium_2"
+        android:layout_height="@dimen/margin_medium_2"
+        android:layout_marginStart="@dimen/dimen_5dp"
         android:scaleType="centerCrop"
-          android:layout_width="@dimen/margin_large"
-        android:layout_height="@dimen/margin_large"/>
+        app:srcCompat="@drawable/ic_seat_one" />
 
     <View
-       android:id="@+id/viewSpace"
+        android:id="@+id/viewSpace"
         android:layout_width="@dimen/margin_medium_2"
-        android:layout_height="@dimen/margin_medium_2"/>
+        android:layout_height="@dimen/margin_medium_2" />
 
 
 </FrameLayout>
