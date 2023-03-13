@@ -16,9 +16,10 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/ivSeatImg"
-        android:layout_width="@dimen/margin_medium_2"
-        android:layout_height="@dimen/margin_medium_2"
+        android:layout_width="@dimen/margin_medium_3"
+        android:layout_height="@dimen/margin_medium_3"
         android:layout_marginStart="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/dimen_5dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/ic_seat_one" />
 

@@ -31,6 +31,7 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
     //model
     private var mTheMovieBookingModel:MovieBookingModel=MovieBookingModelImpl
     private var snackList:List<SnackVO> = listOf()
+    private var snackCategoryList:List<SnackCategoryVO> = listOf()
     private var token:String=""
 
     companion object{
@@ -60,6 +61,7 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
     private fun requestData() {
 
         mTheMovieBookingModel.getSnackCategory(token,{
+            snackCategoryList=it
             setUpTabLayout(it)
         },{
 
@@ -68,7 +70,7 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
 
         mTheMovieBookingModel.getSnackAll(token,{
             snackList=it
-            mSnackListAdapter.setNewData(snackList)
+            mSnackListAdapter.setNewData(it)
         },{
             showErrorMsg(it,snackView)
         })
@@ -109,11 +111,9 @@ class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 var position=tab?.position ?: 0
                 if(position !=0){
-                    getSnackByCategoryId(snackList[position-1].categoryId?.toInt() ?: 0)
-                    Toast.makeText(this@GetSnackActivity, "${snackList.get(position).categoryId} ${
-                        snackList.get(
-                            position
-                        ).name
+                    getSnackByCategoryId(snackCategoryList[position-1].id?.toInt() ?: 0)
+                    Toast.makeText(this@GetSnackActivity, "${snackCategoryList.get(position-1).id} ${
+                        snackCategoryList.get(position-1).title
                     }", Toast.LENGTH_SHORT).show()
                 }else{
                     mSnackListAdapter.setNewData(snackList)

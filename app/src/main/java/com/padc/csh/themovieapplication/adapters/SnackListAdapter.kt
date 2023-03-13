@@ -45,24 +45,16 @@ class SnackListAdapter(var delegate: SnackItemDelegate) :
         }
 
         holder.itemView.btnPlusFood.setOnClickListener {
-
-
-            if(snackVO.count==null){
-                snackVO.count=1
-            }else{
-               // var currentCount = holder.itemView.tvOrderFoodCount.text.toString().toInt()
-                snackVO.count= snackVO.count?.toInt()?.plus(1)
-                holder.itemView.tvOrderFoodCount.text = snackVO.count.toString()
-            }
-
+            snackVO.count= snackVO.count.plus(1)
+            holder.itemView.tvOrderFoodCount.text = snackVO.count.toString()
             delegate.updateSnack(snackVO)
         }
 
         holder.itemView.btnMinusFood.setOnClickListener {
             //var currentCount = holder.itemView.tvOrderFoodCount.text.toString().toInt()
-            snackVO.count=snackVO.count?.minus(1)
+            snackVO.count=snackVO.count.minus(1)
             holder.itemView.tvOrderFoodCount.text = snackVO.count.toString()
-            if (holder.itemView.tvOrderFoodCount.text.toString().toInt() == 0) {
+            if (snackVO.count == 0) {
                 holder.itemView.llAdditionalPlusMinusFood.visibility = View.GONE
                 holder.itemView.btnAdd.visibility = View.VISIBLE
             }
