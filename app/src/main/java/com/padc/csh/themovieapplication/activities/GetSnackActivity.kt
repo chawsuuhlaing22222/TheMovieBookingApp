@@ -12,28 +12,68 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.SnackListAdapter
 import com.padc.csh.themovieapplication.adapters.SnackViewPagerAdapter
+import com.padc.csh.themovieapplication.data.models.MovieBookingModel
+import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
+import com.padc.csh.themovieapplication.data.vos.SnackCategoryVO
 import com.padc.csh.themovieapplication.delegates.OrderedFoodDetailAdapter
 import com.padc.csh.themovieapplication.delegates.SnackItemDelegate
 import com.padc.csh.themovieapplication.dummy.snackList
+import com.padc.csh.themovieapplication.utils.showErrorMsg
 import kotlinx.android.synthetic.main.activity_get_snack.*
 import kotlinx.android.synthetic.main.fragment_snack_list.*
 
 class GetSnackActivity : AppCompatActivity(), SnackItemDelegate {
     private var openShowFoodOrderedDetail = false
     lateinit var mSnackListAdapter: SnackListAdapter
+
+    //model
+    private var mTheMovieBookingModel:MovieBookingModel=MovieBookingModelImpl
+
+    private var token:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_get_snack)
 
-        setUpTabLayout()
+        requestToken()
         setUpListener()
         setUpRecycerView()
+        requestData()
     }
 
-    private fun setUpTabLayout(){
+    private fun requestToken() {
+        mTheMovieBookingModel.getProfile {
+            token= it.token.toString()
+        }
+    }
+
+    private fun requestData() {
+
+        mTheMovieBookingModel.getSnackCategory(token,{
+            setUpTabLayout(it)
+        },{
+
+            showErrorMsg(it,snackView)
+        })
+
+        mTheMovieBookingModel.getSnackAll(token,{
+            mSnackListAdapter.setNewData(it)
+        },{
+            showErrorMsg(it,snackView)
+        })
+
+
+    }
+
+    private fun setUpTabLayout(snackList:List<SnackCategoryVO>){
+
+        tabLayoutGetSnackScrn.newTab().apply {
+            this.text="All"
+            tabLayoutGetSnackScrn.addTab(this)
+        }
+
         snackList.forEach {
             tabLayoutGetSnackScrn.newTab().apply {
-                this.text=it
+                this.text=it.title
                 tabLayoutGetSnackScrn.addTab(this)
             }
         }

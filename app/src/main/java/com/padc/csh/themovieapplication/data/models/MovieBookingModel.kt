@@ -7,7 +7,10 @@ import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 
 interface MovieBookingModel {
 
+fun getProfile(
+    onSuccess:(ProfileVO)-> Unit,
 
+)
 
     fun getMovieDetail(
         movieId:String,
@@ -73,6 +76,23 @@ interface MovieBookingModel {
         onSuccess:(List<List<SeatVO>>)-> Unit,
         onFailure:(String)->Unit
     )
+    fun getSnackCategory(
+        token:String?,
+        onSuccess:(List<SnackCategoryVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
 
+    fun getSnackAll(
+        token:String?,
+        onSuccess:(List<SnackVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    fun getSnackByCategoryId(
+        token:String?,
+        categoryId:Int?,
+        onSuccess:(List<SnackVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
 
 }

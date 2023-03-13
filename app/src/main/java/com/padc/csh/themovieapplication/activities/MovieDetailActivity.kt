@@ -200,7 +200,8 @@ class MovieDetailActivity : AppCompatActivity() {
         val myString = DateFormat.getMediumDateFormat(this).format(date)
 
         // diff date
-        var period = Period.between(LocalDate.of(date.year, date.month, date.day), LocalDate.now())
+        var movieDate=LocalDate.of(date.year, (date.month), date.day)
+        var period = Period.between(movieDate, LocalDate.now())
         tvReleaseDateNoti.text =
             getString(R.string.releasing_in_5days, "${period.months}m,${period.days}")
 

@@ -61,4 +61,23 @@ interface MovieBookingDataAgent {
         onSuccess:(List<List<SeatVO>>)-> Unit,
         onFailure:(String)->Unit
     )
+
+    fun getSnackCategory(
+        token:String?,
+        onSuccess:(List<SnackCategoryVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    fun getSnackAll(
+        token:String?,
+        onSuccess:(List<SnackVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    fun getSnackByCategoryId(
+        token:String?,
+        categoryId:Int?,
+        onSuccess:(List<SnackVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
 }

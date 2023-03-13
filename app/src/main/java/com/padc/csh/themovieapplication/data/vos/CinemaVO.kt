@@ -11,6 +11,8 @@ data class CinemaVO (
     val name :String?,
 
     @SerializedName("timeslots")
-    val timeslots :List<CinemaTimeSlotVO>?
+    val timeslots :List<CinemaTimeSlotVO>?,
+
+    var isSelected:Boolean?
 
         )

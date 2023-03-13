@@ -49,5 +49,8 @@ interface TheMovieBookingDao {
     @Query("SELECT * FROM timeslot")
     fun getTimeSlotColor():List<TimeSlotColorVO>
 
+    @Query("SELECT * FROM profile")
+    fun getProfileVO():ProfileVO
+
 
 }

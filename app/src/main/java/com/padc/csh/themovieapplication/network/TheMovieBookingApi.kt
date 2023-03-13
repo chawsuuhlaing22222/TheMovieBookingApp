@@ -58,6 +58,24 @@ interface TheMovieBookingApi {
         @Query("booking_date") bookingDate: String?
     ):Call<SeatListResponse>
 
+    @GET("$API_GET_SNACK_CATEGORIES")
+    fun getSnackCategoryList(
+        @Header("Authorization") authorization: String?,
+    ):Call<SnackCategoryResponse>
+
+    @GET("$API_GET_SNACK_ALL")
+    fun getSnackAll(
+        @Header("Authorization") authorization: String?,
+    ):Call<SnackResponse>
+
+    @GET("$API_GET_SNACK_ALL")
+    fun getSnackByCategoryId(
+        @Header("Authorization") authorization: String?,
+        @Query("category_id") categoryId:Int?
+    ):Call<SnackResponse>
+
+
+
 
 
 

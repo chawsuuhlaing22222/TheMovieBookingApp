@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     //model
     private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
-
+    private var token:String=""
     lateinit var countDownTimer: CountDownTimer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun checkLoginUser() {
-        if (ConfigUtils.getInstance().getToken().isNotBlank()) {
+        if (token.isNotBlank()) {
             var city = ConfigUtils.getInstance().getCity()
             if (city.isNotBlank()) {
                 startActivity(MainActivity.newIntent(context = this, city))
@@ -63,6 +63,10 @@ class SplashScreenActivity : AppCompatActivity() {
             var view = rlSplash
             showErrorMsg(it, view)
         })
+
+        mTheMovieBookingModel.getProfile {
+            token= it.token.toString()
+        }
     }
 
 

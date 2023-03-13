@@ -57,8 +57,8 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
 
     private fun requestData(token: String, timeSlotIdd: String, bookingDate: String) {
         var newToken = "Bearer $token"
-        mTheMovieModel.getCinemaSeatPlan(newToken, timeSlotIdd, bookingDate, {
 
+        mTheMovieModel.getCinemaSeatPlan(newToken, timeSlotIdd, bookingDate, {
             //var seatList = it
             var seatList=addSpaceSeat(it)
             mSeatPlanAdapter.setUpData(seatList)
@@ -122,7 +122,7 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
     }
 
     private fun addSpaceSeat(seatListParam:List<List<SeatVO>>):List<List<SeatVO>>{
-        var spaceVO=SeatVO(0,"space","","",0)
+        var spaceVO=SeatVO(0,"space","","",0,isSelected = false)
         var mutalbeSeatList=seatListParam as MutableList<MutableList<SeatVO>>
         mutalbeSeatList.forEach {
             it.add(5, spaceVO)

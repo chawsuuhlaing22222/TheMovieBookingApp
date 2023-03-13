@@ -32,6 +32,8 @@ data class ProfileVO(
     val profileImage:String?,
 
     @ColumnInfo("token")
-    var token:String?
+    var token:String?,
+
+
 
 )

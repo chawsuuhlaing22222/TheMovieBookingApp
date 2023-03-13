@@ -75,7 +75,7 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
     }
 
     override fun onMovieCinema(postition: Int) {
-        mMovieCinemaAdapter.setSelectedPosition(postition)
+       // mMovieCinemaAdapter.setSelectedPosition(postition)
     }
 
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.data.vos.SnackVO
 import com.padc.csh.themovieapplication.delegates.SnackItemDelegate
 import com.padc.csh.themovieapplication.viewholders.SnackItemViewHolder
 
@@ -20,5 +21,9 @@ class SnackListAdapter(var delegate: SnackItemDelegate): RecyclerView.Adapter<Sn
 
     override fun getItemCount(): Int {
         return 10
+    }
+
+    fun setNewData(it: List<SnackVO>) {
+
     }
 }

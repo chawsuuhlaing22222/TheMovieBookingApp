@@ -201,6 +201,7 @@ object MovieBookingDataAgentImpl:MovieBookingDataAgent {
                 ) {
                     if(response.isSuccessful){
                         response.body()?.data?.let {
+                            it.first().isSelected=true
                             onSuccess(it)
                         }
                     }else{
@@ -266,6 +267,95 @@ object MovieBookingDataAgentImpl:MovieBookingDataAgent {
                 }
 
                 override fun onFailure(call: Call<SeatListResponse>, t: Throwable) {
+                    onFailure(t.message ?: "")
+                }
+
+            }
+        )
+    }
+
+    override fun getSnackCategory(
+        token: String?,
+        onSuccess: (List<SnackCategoryVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+       mTheMovieBookingApi?.getSnackCategoryList(token)?.enqueue(
+           object :Callback<SnackCategoryResponse>{
+               override fun onResponse(
+                   call: Call<SnackCategoryResponse>,
+                   response: Response<SnackCategoryResponse>
+               ) {
+                   if(response.isSuccessful){
+
+                       response.body()?.data?.let {
+                           onSuccess(it)
+                       }
+                   }else{
+                       onFailure(response.message())
+                   }
+               }
+
+               override fun onFailure(call: Call<SnackCategoryResponse>, t: Throwable) {
+                    onFailure(t.message ?: "")
+               }
+
+           }
+       )
+    }
+
+    override fun getSnackAll(
+        token: String?,
+        onSuccess: (List<SnackVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+
+        mTheMovieBookingApi?.getSnackAll(token)?.enqueue(
+            object :Callback<SnackResponse>{
+                override fun onResponse(
+                    call: Call<SnackResponse>,
+                    response: Response<SnackResponse>
+                ) {
+                    if(response.isSuccessful){
+
+                        response.body()?.data?.let {
+                            onSuccess(it)
+                        }
+                    }else{
+                        onFailure(response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<SnackResponse>, t: Throwable) {
+                    onFailure(t.message ?: "")
+                }
+
+            }
+        )
+    }
+
+    override fun getSnackByCategoryId(
+        token: String?,
+        categoryId: Int?,
+        onSuccess: (List<SnackVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingApi?.getSnackByCategoryId(token,categoryId)?.enqueue(
+            object :Callback<SnackResponse>{
+                override fun onResponse(
+                    call: Call<SnackResponse>,
+                    response: Response<SnackResponse>
+                ) {
+                    if(response.isSuccessful){
+
+                        response.body()?.data?.let {
+                            onSuccess(it)
+                        }
+                    }else{
+                        onFailure(response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<SnackResponse>, t: Throwable) {
                     onFailure(t.message ?: "")
                 }
 

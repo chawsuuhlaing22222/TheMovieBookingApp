@@ -19,7 +19,9 @@ object MovieBookingModelImpl:MovieBookingModel {
         mTheMovieBookingDatabase=TheMovieBookingDatabase.getTheMovieBookingDbInstance(context)
     }
 
-
+    override fun getProfile(onSuccess: (ProfileVO) -> Unit) {
+        mTheMovieBookingDatabase?.movieBookingDao()?.getProfileVO()?.let { onSuccess(it) }
+    }
 
 
     override fun getMovieDetail(
@@ -134,6 +136,31 @@ object MovieBookingModelImpl:MovieBookingModel {
     ) {
         mTheMovieBookingDataAgent.getCinemaSeatPlan(token,timeSlotId, date,
           onSuccess,onFailure )
+    }
+
+    override fun getSnackCategory(
+        token: String?,
+        onSuccess: (List<SnackCategoryVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingDataAgent.getSnackCategory(token, onSuccess, onFailure)
+    }
+
+    override fun getSnackAll(
+        token: String?,
+        onSuccess: (List<SnackVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingDataAgent.getSnackAll(token, onSuccess, onFailure)
+    }
+
+    override fun getSnackByCategoryId(
+        token: String?,
+        categoryId: Int?,
+        onSuccess: (List<SnackVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingDataAgent.getSnackByCategoryId(token,categoryId, onSuccess, onFailure)
     }
 }
 

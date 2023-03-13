@@ -78,7 +78,7 @@ class GetOtpActivity : AppCompatActivity() {
             {
                 if (it.isSuccessful()) {
                     hideLoading()
-                    ConfigUtils.getInstance().saveToken(it.token.toString())
+                   // ConfigUtils.getInstance().saveToken(it.token.toString())
                     startActivity(Intent(this, ChooseLocationActivity::class.java))
                 } else {
                     hideLoading()

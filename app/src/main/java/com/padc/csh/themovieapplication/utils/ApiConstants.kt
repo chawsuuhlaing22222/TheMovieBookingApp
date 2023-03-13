@@ -9,6 +9,10 @@ const val API_GET_CITIES="/api/v2/cities"
 const val API_GET_BANNERS="/api/v2/banners"
 const val API_GET_MOVIES="/api/v2/movies"
 const val API_GET_SEAT_PLAN="/api/v2/seat-plan"
+const val API_GET_SNACK_CATEGORIES="/api/v2/snack-categories"
+const val API_GET_SNACK_ALL="/api/v2/snacks"
+
+
 
 const val API_GET_CINEMALIST="/api/v2/cinema-day-timeslots"
 const val API_GET_CINEMA_TIMESLOT_COLORLIST="/api/v2/configurations"

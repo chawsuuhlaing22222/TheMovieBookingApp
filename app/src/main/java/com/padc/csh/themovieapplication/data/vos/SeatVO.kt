@@ -18,6 +18,9 @@ val seatName:String?,
 val symbol:String?,
 
 @SerializedName("price")
-val price:Int?
+val price:Int?,
+
+var isSelected:Boolean?
+
 
         )
