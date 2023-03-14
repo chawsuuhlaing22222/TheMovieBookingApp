@@ -1,5 +1,7 @@
 package com.padc.csh.themovieapplication.delegates
 
+import com.padc.csh.themovieapplication.data.vos.CinemaVO
+
 interface MovieCinemaDelegate{
-    fun onMovieCinema(position:Int)
+    fun onMovieCinema(cinemaVO: CinemaVO)
 }

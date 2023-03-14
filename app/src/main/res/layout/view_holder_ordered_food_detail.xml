@@ -36,8 +36,8 @@
             android:id="@+id/tvOrderFoodCountOrderedDetailVH"
             android:text="1"
             android:textColor="@color/colorAccent"
-            android:layout_marginLeft="@dimen/dimen_10dp"
-            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_marginLeft="@dimen/margin_card_medium_2"
+            android:layout_marginRight="@dimen/margin_card_medium_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -54,7 +54,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvFoodPriceOrderedDetailVH"
         android:layout_alignParentEnd="true"
-        android:text="1200KS"
+        android:text="@string/order_snack_price"
         android:fontFamily="@font/inter_bold"
         android:textSize="@dimen/text_regular_2x"
         android:textColor="@color/white"

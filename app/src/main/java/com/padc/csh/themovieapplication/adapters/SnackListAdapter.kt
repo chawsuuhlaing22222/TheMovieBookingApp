@@ -42,6 +42,8 @@ class SnackListAdapter(var delegate: SnackItemDelegate) :
         holder.itemView.btnAdd.setOnClickListener {
             holder.itemView.btnAdd.visibility = View.GONE
             holder.itemView.llAdditionalPlusMinusFood.visibility = View.VISIBLE
+            snackVO.count= snackVO.count.plus(1)
+            delegate.updateSnack(snackVO)
         }
 
         holder.itemView.btnPlusFood.setOnClickListener {

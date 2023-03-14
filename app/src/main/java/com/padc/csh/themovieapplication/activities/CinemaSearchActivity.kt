@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
 import com.padc.csh.themovieapplication.data.vos.CinemaTimeSlotVO
+import com.padc.csh.themovieapplication.data.vos.CinemaVO
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaSeatConditionDelegate
 import com.padc.csh.themovieapplication.dummy.movieFormats
@@ -136,8 +137,8 @@ class CinemaSearchActivity : AppCompatActivity(), MovieCinemaDelegate,
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
-    override fun onMovieCinema(position: Int) {
-        mCinemaAdapter.setSelectedPosition(position)
+    override fun onMovieCinema(cinemaVO: CinemaVO) {
+      //  mCinemaAdapter.setSelectedPosition(position)
     }
 
     override fun onMovieCinemaSeatPlanClick(timeSlotVO: CinemaTimeSlotVO) {

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
 import com.padc.csh.themovieapp.data.vos.ActorVO
 import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.R
@@ -36,6 +37,7 @@ class MovieDetailActivity : AppCompatActivity() {
     //lateinit var mMovieGenreAdapter: MovieGenreAdapter
     //model
     private val movieModel: MovieBookingModel = MovieBookingModelImpl
+    private var selectedMovieVO :MovieVO?=null
 
     companion object {
         const val FROM_ACTIVITY = "FROM_ACTIVITY"
@@ -79,6 +81,7 @@ class MovieDetailActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun requestData(movieId: String) {
         movieModel.getMovieDetail(movieId, {
+           selectedMovieVO=it
             bindData(it)
 
         }, {
@@ -150,7 +153,8 @@ class MovieDetailActivity : AppCompatActivity() {
 
         //item listener
         btnBooking.setOnClickListener {
-            startActivity(Intent(this, CinemaTimeSlotActivity::class.java))
+            var movie=Gson().toJson(selectedMovieVO)
+            startActivity(CinemaTimeSlotActivity.newIntent(this,movie))
         }
 
 

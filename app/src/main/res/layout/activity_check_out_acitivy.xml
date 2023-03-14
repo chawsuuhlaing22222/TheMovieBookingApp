@@ -354,7 +354,7 @@
                     android:layout_marginTop="@dimen/margin_large"
                     android:layout_marginRight="@dimen/margin_medium_3"
                     android:fontFamily="@font/dm_sans_medium"
-                    android:text="2000Ks"
+                    android:text="500Ks"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_regular_2x" />
 

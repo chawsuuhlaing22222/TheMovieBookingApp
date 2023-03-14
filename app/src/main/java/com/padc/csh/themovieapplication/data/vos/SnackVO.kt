@@ -1,7 +1,10 @@
 package com.padc.csh.themovieapplication.data.vos
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class SnackVO (
     @SerializedName("id")
     val id:Int?,
@@ -13,7 +16,7 @@ data class SnackVO (
     val description:String?,
 
     @SerializedName("price")
-    val price:Int?,
+    val price:Int,
 
     @SerializedName("category_id")
     val categoryId:Int?,
@@ -23,4 +26,4 @@ data class SnackVO (
 
     var count:Int
 
-        )
+        ):Parcelable

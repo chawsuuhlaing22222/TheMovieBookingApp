@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.slider.Slider
+import com.google.common.reflect.TypeToken
 import com.google.gson.Gson
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.ChildSeatAdapter
@@ -33,12 +34,17 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
     private var selectedSeatList:MutableList<SeatVO> = mutableListOf()
 
     companion object {
+        const val MOVIE="MOVIE"
+        const val CINEMA="CINEMA"
         const val IEXTRA_TIMESLOT_ID = "ID"
         const val BOOKING_DATE = "BOOKING DATE"
-        fun newIntent(context: Context, timeSlotIdd: String, bookingDate: String): Intent {
+
+        fun newIntent(context: Context, timeSlotIdd: String, bookingDate: String,movie:String,cinema:String): Intent {
             var intent = Intent(context, CinemaSeatPlanActivity::class.java)
             intent.putExtra(IEXTRA_TIMESLOT_ID, timeSlotIdd)
             intent.putExtra(BOOKING_DATE, bookingDate)
+            intent.putExtra(MOVIE,movie)
+            intent.putExtra(CINEMA,cinema)
             return intent
         }
     }
@@ -73,10 +79,15 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
     }
 
     private fun setUpActionListener() {
+        var movieVo=intent.getStringExtra(MOVIE) ?: ""
+        var selectedcinema=intent.getStringExtra(CINEMA) ?: ""
+        var selectedDate=intent.getStringExtra(BOOKING_DATE) ?: ""
+        var timeSlotId=intent.getStringExtra(IEXTRA_TIMESLOT_ID) ?: ""
 
         btnBuyTicket.setOnClickListener {
-            var seatList=Gson().toJson(selectedSeatList)
-            startActivity(GetSnackActivity.newIntent(this,seatList))
+            var type=object :TypeToken<List<SeatVO>>(){}.type
+            var seatList=Gson().toJson(selectedSeatList,type)
+            startActivity(GetSnackActivity.newIntent(this,timeSlotId,selectedDate,movieVo,selectedcinema,seatList))
         }
 
         sbZoom.addOnChangeListener(object : Slider.OnChangeListener {
@@ -138,12 +149,12 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
     override fun onSelectdSeat(seatVO: SeatVO) {
         selectedSeatList.add(seatVO)
         tvTicketCountSeatPlanScrn.text=getString(R.string.ticketCountLabel,selectedSeatList.count().toString())
-        tvTicketPrice.text=selectedSeatList.count().times(4500).toString()
+        tvTicketPrice.text=selectedSeatList.count().times(seatVO.price).toString()
     }
 
     override fun onUnSelectdSeat(seatVO: SeatVO) {
        selectedSeatList.remove(seatVO)
         tvTicketCountSeatPlanScrn.text=getString(R.string.ticketCountLabel,selectedSeatList.count().toString())
-        tvTicketPrice.text=selectedSeatList.count().times(4500).toString()
+        tvTicketPrice.text=selectedSeatList.count().times(seatVO.price).toString()
     }
 }

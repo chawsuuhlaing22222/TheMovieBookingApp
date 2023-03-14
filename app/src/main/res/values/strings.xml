@@ -104,4 +104,5 @@
     <string name="lbl_no">No</string>
     <string name="releasing_in_5days">Releasing in %s days</string>
     <string name="ticketCountLabel">%s Tickets</string>
+    <string name="order_snack_price">%s KS</string>
 </resources>

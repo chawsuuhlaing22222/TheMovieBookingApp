@@ -157,6 +157,7 @@
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="5dp"
                     android:textSize="8sp"
+                    android:visibility="gone"
                     android:textColor="@color/white"
                     android:background="@drawable/bg_food_order_noti_count_text"
                     android:gravity="center|center_vertical"
@@ -196,7 +197,7 @@
                 android:layout_height="match_parent"
                 android:layout_toStartOf="@id/ivForward"
                 android:gravity="center_vertical"
-                android:text="2000Ks"
+                tools:text="2000Ks"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_regular_2x"
                 android:fontFamily="@font/inter_bold" />

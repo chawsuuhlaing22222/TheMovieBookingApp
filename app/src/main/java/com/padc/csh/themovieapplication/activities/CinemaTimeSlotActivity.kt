@@ -1,17 +1,21 @@
 package com.padc.csh.themovieapplication.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
+import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.DateAdapter
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
 import com.padc.csh.themovieapplication.data.models.MovieBookingModel
 import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
 import com.padc.csh.themovieapplication.data.vos.CinemaTimeSlotVO
+import com.padc.csh.themovieapplication.data.vos.CinemaVO
 import com.padc.csh.themovieapplication.data.vos.TimeSlotColorVO
 import com.padc.csh.themovieapplication.delegates.DateDelegate
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
@@ -31,9 +35,17 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
     //model
     private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
     private var selectedDate = "2023-03-11"
+    private var selectedCinemaVO:CinemaVO ?=null
 
     companion object {
+
         var timeSlotList: List<TimeSlotColorVO> = listOf()
+        const val MOVIE="MOVIE"
+        fun newIntent(context: Context,movieVO: String):Intent{
+            var intent=Intent(context,CinemaTimeSlotActivity::class.java)
+            intent.putExtra(MOVIE,movieVO)
+            return intent
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -52,6 +64,7 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
         selectedDate = getDate(postition)
 
         mTheMovieBookingModel.getCinemaList(token, selectedDate, {
+            selectedCinemaVO=it.get(0)
             mMovieCinemaAdapter.setNewData(it)
         }, {
 
@@ -74,8 +87,8 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
-    override fun onMovieCinema(postition: Int) {
-       // mMovieCinemaAdapter.setSelectedPosition(postition)
+    override fun onMovieCinema(cinemaVO: CinemaVO) {
+      selectedCinemaVO=cinemaVO
     }
 
 
@@ -86,11 +99,13 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
     }
 
     override fun onMovieCinemaSeatPlanClick(timeSlotVO: CinemaTimeSlotVO) {
+          var movieVo=intent.getStringExtra(MOVIE) ?: ""
+          var selectedcinema=Gson().toJson(selectedCinemaVO)
         startActivity(
             CinemaSeatPlanActivity.newIntent(
                 this,
                 timeSlotVO.id.toString(),
-                selectedDate
+                selectedDate,movieVo,selectedcinema
             )
         )
     }

@@ -44,16 +44,21 @@ class MovieCinemaAdapter(var cinemaDelegate: MovieCinemaDelegate,var cinemaSeatC
     }
 
     public fun setSelectedPosition(position: Int){
+      var selectedCinemaVO:CinemaVO?=null
        for(i in cinemaList.indices){
            when(i){
                position->{
                    cinemaList[i].isSelected=true
+                   selectedCinemaVO=cinemaList[i]
                }
                else->{
                    cinemaList[i].isSelected=false
                }
            }
        }
+        if (selectedCinemaVO != null) {
+            cinemaDelegate.onMovieCinema(selectedCinemaVO)
+        }
         notifyDataSetChanged()
     }
 
