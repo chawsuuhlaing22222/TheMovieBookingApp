@@ -162,6 +162,23 @@ object MovieBookingModelImpl:MovieBookingModel {
     ) {
         mTheMovieBookingDataAgent.getSnackByCategoryId(token,categoryId, onSuccess, onFailure)
     }
+
+    override fun getPaymentTypes(
+        token: String?,
+        onSuccess: (List<PaymentTypeVO>?) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingDataAgent.getPaymentTypes(token, onSuccess, onFailure)
+    }
+
+    override fun postCheckOut(
+        token: String?,
+        requestBody: CheckOutRequestVO,
+        onSuccess: (CheckOutResponseVO?) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingDataAgent.postCheckOut(token, requestBody, onSuccess, onFailure)
+    }
 }
 
 

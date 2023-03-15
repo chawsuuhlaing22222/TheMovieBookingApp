@@ -6,9 +6,9 @@ import com.padc.csh.themovieapplication.delegates.PaymentDelegate
 
 class PaymentTypeViewHolder(itemView: View,delegate: PaymentDelegate) :RecyclerView.ViewHolder(itemView) {
 
-    init {
-        itemView.setOnClickListener {
-            delegate.onChoosePayment()
-        }
-    }
+//    init {
+//        itemView.setOnClickListener {
+//            delegate.onChoosePayment()
+//        }
+//    }
 }

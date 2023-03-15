@@ -1,6 +1,7 @@
 package com.padc.csh.themovieapplication.activities
 
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,28 +9,67 @@ import android.os.CountDownTimer
 import android.text.Html
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
+import com.bumptech.glide.Glide
+import com.google.gson.Gson
+import com.padc.csh.themovieapp.data.vos.MovieVO
 
 import com.padc.csh.themovieapplication.R
+import com.padc.csh.themovieapplication.data.vos.CheckOutResponseVO
+import com.padc.csh.themovieapplication.data.vos.CinemaVO
+import com.padc.csh.themovieapplication.data.vos.SeatVO
+import com.padc.csh.themovieapplication.data.vos.SnackVO
 import com.padc.csh.themovieapplication.dummy.QRGContents
 import com.padc.csh.themovieapplication.dummy.QRGEncoder
+import com.padc.csh.themovieapplication.utils.BASE_URL
+import com.padc.csh.themovieapplication.utils.IMAGE_BASE_URL
+import com.padc.csh.themovieapplication.utils.changeStringToMedimnDateFormat
 import kotlinx.android.synthetic.main.activity_check_out_acitivy.*
 import kotlinx.android.synthetic.main.activity_ticket_confirmation.*
 import kotlinx.android.synthetic.main.custom_view_ticket_cancel_policy.view.*
 import kotlinx.android.synthetic.main.view_holder_ticket_item.view.*
 import kotlinx.android.synthetic.main.view_item_toolbar_movie.*
+import okhttp3.internal.wait
 
 class TicketConfirmationActivity : AppCompatActivity() {
 
     lateinit var dialog:Dialog
+    lateinit var movieVO: MovieVO
+    lateinit var cinemaVO: CinemaVO
+    lateinit var checkOutResponseVO: CheckOutResponseVO
+
+    companion object{
+
+        const val MOVIE="MOVIE"
+        const val CINEMA="CINEMA"
+        const val CHECKOUT_RESPONSE="checkout response"
+        fun newIntent(context: Context,
+                     movie:String,
+                      cinema:String, checkOutResponse:String): Intent
+        {
+            var intent = Intent(context, TicketConfirmationActivity::class.java)
+            intent.putExtra(MOVIE,movie)
+            intent.putExtra(CINEMA,cinema)
+            intent.putExtra(CHECKOUT_RESPONSE,checkOutResponse)
+            return intent
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ticket_confirmation)
 
-        generateQRCode()
-        bindData()
+        getParma()
+        //generateQRCode()
         createPolicyAlertDialog()
         showCustomdialog()
         setUpActionListener()
+        bindData()
+    }
+
+    private fun getParma() {
+        movieVO=Gson().fromJson(intent.getStringExtra(MOVIE),MovieVO::class.java)
+        cinemaVO=Gson().fromJson(intent.getStringExtra(CINEMA),CinemaVO::class.java)
+        checkOutResponseVO=Gson().fromJson(intent.getStringExtra(CHECKOUT_RESPONSE),CheckOutResponseVO::class.java)
+
     }
 
     private fun showCustomdialog() {
@@ -51,9 +91,18 @@ class TicketConfirmationActivity : AppCompatActivity() {
     }
 
     private fun bindData() {
-        layoutMovieTicket.tvMovieNameTicketScrn.text= Html.fromHtml("<font color='#ffffff'><b>Black White</b> </font><font color='#888888'>(3D)(U/A)</font>")
-        layoutMovieTicket.tvTicketTypeTicketScrn.setText(Html.fromHtml("<font color='#ffffff'><b>Gold-G8,G7</b></font><font color='#888888'>(SCREEN2)</font>"))
-        layoutMovieTicket.tvTicketCountTicketScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>2</font><font color='#888888'>)</font>")
+        if(checkOutResponseVO.movieId==movieVO.id){
+            layoutMovieTicket.tvMovieNameTicketScrn.text= Html.fromHtml("<font color='#ffffff'><b>${movieVO.originalTtitle}</b> </font><font color='#888888'>(3D)(U/A)</font>")
+        }
+        if(cinemaVO.id==checkOutResponseVO.cinemaId){
+            layoutMovieTicket.tvCinemaNameTicketScrn.text=cinemaVO.name
+        }
+        layoutMovieTicket.tvMovieShowTimeTicketScrn.text=checkOutResponseVO.timeslot?.start_time.toString()
+        layoutMovieTicket.tvMovieDateTicketScrn.text= changeStringToMedimnDateFormat(this,checkOutResponseVO.bookingDate.toString())
+        layoutMovieTicket.tvTicketTypeTicketScrn.setText(Html.fromHtml("<font color='#ffffff'><b>${checkOutResponseVO.seat}</b></font><font color='#888888'>(SCREEN2)</font>"))
+        layoutMovieTicket.tvTicketCountTicketScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>${checkOutResponseVO.totalSeat}</font><font color='#888888'>)</font>")
+        Glide.with(this).load("$BASE_URL/${checkOutResponseVO.qrCode}").into(ivQRCodeConfirmationScrn)
+
     }
 
     private fun createPolicyAlertDialog(){

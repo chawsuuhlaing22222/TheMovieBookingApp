@@ -6,6 +6,7 @@ import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 import com.padc.csh.themovieapplication.network.response.MovieDetailResponse
 
 interface MovieBookingDataAgent {
+
     fun getMovieDetail(
         movieId:String,
         onSuccess:(MovieVO)-> Unit,
@@ -78,6 +79,19 @@ interface MovieBookingDataAgent {
         token:String?,
         categoryId:Int?,
         onSuccess:(List<SnackVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    fun getPaymentTypes(
+        token:String?,
+        onSuccess:(List<PaymentTypeVO>?)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    fun postCheckOut(
+        token: String?,
+        requestBody:CheckOutRequestVO,
+        onSuccess:(CheckOutResponseVO?)-> Unit,
         onFailure:(String)->Unit
     )
 }

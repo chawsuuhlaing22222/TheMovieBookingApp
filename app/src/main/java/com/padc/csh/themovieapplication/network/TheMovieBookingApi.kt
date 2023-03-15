@@ -1,5 +1,6 @@
 package com.padc.csh.themovieapplication.network
 
+import com.padc.csh.themovieapplication.data.vos.CheckOutRequestVO
 import com.padc.csh.themovieapplication.data.vos.OtpVO
 import com.padc.csh.themovieapplication.data.vos.SeatListVO
 import com.padc.csh.themovieapplication.network.response.*
@@ -75,6 +76,16 @@ interface TheMovieBookingApi {
     ):Call<SnackResponse>
 
 
+    @GET("$API_GET_PAYMENT_TYPE")
+    fun getPaymentTypes(
+        @Header("Authorization") authorization: String?
+    ):Call<PaymentTypeRsponse>
+
+    @POST("$API_GET_CHECKOUT")
+    fun postCheckOut(
+        @Header("Authorization") authorization: String?,
+        @Body checkoutRequest :CheckOutRequestVO
+    ):Call<CheckOutResponse>
 
 
 

@@ -2,12 +2,15 @@ package com.padc.csh.themovieapplication.utils
 
 import android.app.Dialog
 import android.content.Context
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ProgressBar
 import com.google.android.material.snackbar.Snackbar
 import com.padc.csh.themovieapplication.R
 import kotlinx.android.synthetic.main.fragment_movie.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 var loadingDialog:Dialog?=null
 var isLoading=false
@@ -28,4 +31,11 @@ fun hideLoading(){
     if(isLoading && loadingDialog!=null){
         loadingDialog?.hide()
     }
+}
+
+fun changeStringToMedimnDateFormat(context: Context,date:String):String{
+    val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+    val date = formattedDate.parse(date)
+    val dateString = DateFormat.getMediumDateFormat(context).format(date)
+    return dateString
 }

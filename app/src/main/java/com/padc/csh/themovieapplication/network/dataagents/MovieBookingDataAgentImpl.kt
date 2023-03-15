@@ -363,4 +363,61 @@ object MovieBookingDataAgentImpl:MovieBookingDataAgent {
         )
     }
 
+    override fun getPaymentTypes(
+        token: String?,
+        onSuccess: (List<PaymentTypeVO>?) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingApi?.getPaymentTypes(token)?.enqueue(
+            object :Callback<PaymentTypeRsponse>{
+                override fun onResponse(
+                    call: Call<PaymentTypeRsponse>,
+                    response: Response<PaymentTypeRsponse>
+                ) {
+                    if(response.isSuccessful){
+                        response.body()?.data?.let {
+                            onSuccess(it)
+                        }
+                    }else{
+                        onFailure(response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<PaymentTypeRsponse>, t: Throwable) {
+                    onFailure(t.message ?: "")
+                }
+
+            }
+        )
+    }
+
+    override fun postCheckOut(
+        token: String?,
+        requestBody: CheckOutRequestVO,
+        onSuccess: (CheckOutResponseVO?) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingApi?.postCheckOut(token,requestBody)?.enqueue(
+            object :Callback<CheckOutResponse>{
+                override fun onResponse(
+                    call: Call<CheckOutResponse>,
+                    response: Response<CheckOutResponse>
+                ) {
+                    if(response.isSuccessful){
+                        response.body()?.data?.let{
+                            onSuccess(it)
+                        }
+                    }else{
+                        onFailure(response.message())
+                    }
+                }
+
+                override fun onFailure(call: Call<CheckOutResponse>, t: Throwable) {
+                    onFailure(t.message ?: "")
+                }
+
+            }
+        )
+    }
+
 }

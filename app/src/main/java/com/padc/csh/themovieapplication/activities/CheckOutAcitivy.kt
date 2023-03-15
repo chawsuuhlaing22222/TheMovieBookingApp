@@ -23,6 +23,7 @@ import com.padc.csh.themovieapplication.data.vos.SeatVO
 import com.padc.csh.themovieapplication.data.vos.SnackVO
 import com.padc.csh.themovieapplication.delegates.OrderFoolListChekoutDelegate
 import com.padc.csh.themovieapplication.dummy.orderedFoodList
+import com.padc.csh.themovieapplication.utils.changeStringToMedimnDateFormat
 import kotlinx.android.synthetic.main.activity_check_out_acitivy.*
 import kotlinx.android.synthetic.main.custom_view_ticket_cancel_policy.view.*
 import java.text.SimpleDateFormat
@@ -35,6 +36,12 @@ class CheckOutAcitivy : AppCompatActivity(), OrderFoolListChekoutDelegate {
     var totalPrice=0
     var totalPriceForSeat=0
     var totalPriceForSnack=0
+    var jsonMovie:String=""
+    var jsonCinema:String=""
+    var jsonBookingDate:String=""
+    var jsonTimeSlotId:String=""
+    var jsonSeatList:String=""
+    var jsonSnackList:String=""
     companion object{
         const val IEXTRA_DATA="from which activity"
         const val SEAT_LIST = "seat list"
@@ -109,7 +116,8 @@ class CheckOutAcitivy : AppCompatActivity(), OrderFoolListChekoutDelegate {
         }
 
         btnContinueCheckoutScrn.setOnClickListener {
-            startActivity(Intent(this, ChoosePaymentTypeActivity::class.java))
+            startActivity(ChoosePaymentTypeActivity.newIntent(this,jsonTimeSlotId,jsonBookingDate,jsonMovie,
+            jsonCinema,jsonSeatList,jsonSnackList))
         }
 
     }
@@ -135,20 +143,34 @@ class CheckOutAcitivy : AppCompatActivity(), OrderFoolListChekoutDelegate {
 
 
     private fun bindData() {
-        var movie=Gson().fromJson(intent.getStringExtra(MOVIE),MovieVO::class.java)
-        var cinema=Gson().fromJson(intent.getStringExtra(CINEMA),CinemaVO::class.java)
+        jsonMovie= intent.getStringExtra(MOVIE).toString()
+        var movie=Gson().fromJson(jsonMovie,MovieVO::class.java)
+
+        jsonCinema= intent.getStringExtra(CINEMA).toString()
+        var cinema=Gson().fromJson(jsonCinema,CinemaVO::class.java)
+
+
         var bookingDate=intent.getStringExtra(BOOKING_DATE)
+        if (bookingDate != null) {
+            jsonBookingDate=bookingDate
+        }
+
         var timeSlotIdd=intent.getStringExtra(IEXTRA_TIMESLOT_ID)
+        if (timeSlotIdd != null) {
+            jsonTimeSlotId=timeSlotIdd
+        }
 
         var seatType=object :TypeToken<List<SeatVO>>(){}.type
         var snackType=object :TypeToken<List<SnackVO>>(){}.type
-        var seatList=Gson().fromJson<List<SeatVO>>(intent.getStringExtra(SEAT_LIST),seatType)
-        var snackList=Gson().fromJson<List<SnackVO>>(intent.getStringExtra(SNACK_LIST),snackType)
 
-        val formattedDate = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-        val date = formattedDate.parse(bookingDate)
-        val dateString = DateFormat.getMediumDateFormat(this).format(date)
-        tvMovieDateCheckoutScrn.text=dateString
+        jsonSeatList=intent.getStringExtra(SEAT_LIST).toString()
+        var seatList=Gson().fromJson<List<SeatVO>>(jsonSeatList,seatType)
+
+        jsonSnackList=intent.getStringExtra(SNACK_LIST).toString()
+        var snackList=Gson().fromJson<List<SnackVO>>(jsonSnackList,snackType)
+
+
+        tvMovieDateCheckoutScrn.text= bookingDate?.let { changeStringToMedimnDateFormat(this, it) }
 
         orderedSnackList=snackList.toMutableList()
         mOrderFoodAdapter.setNewData(snackList)

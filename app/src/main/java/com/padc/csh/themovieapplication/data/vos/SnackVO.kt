@@ -24,6 +24,17 @@ data class SnackVO (
     @SerializedName("image")
     val image:String?,
 
-    var count:Int
+    var count:Int,
+
+    @SerializedName("unit_price")
+    val unitPrice:Int?,
+
+    @SerializedName("quantity")
+    val quantity:Int?,
+
+    @SerializedName("total_price")
+    val totalPrice:Int?,
+
+
 
         ):Parcelable

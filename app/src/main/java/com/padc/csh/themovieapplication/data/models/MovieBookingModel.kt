@@ -94,5 +94,16 @@ fun getProfile(
         onSuccess:(List<SnackVO>)-> Unit,
         onFailure:(String)->Unit
     )
+    fun getPaymentTypes(
+        token:String?,
+        onSuccess:(List<PaymentTypeVO>?)-> Unit,
+        onFailure:(String)->Unit
+    )
 
+    fun postCheckOut(
+        token: String?,
+        requestBody:CheckOutRequestVO,
+        onSuccess:(CheckOutResponseVO?)-> Unit,
+        onFailure:(String)->Unit
+    )
 }

@@ -11,6 +11,8 @@ const val API_GET_MOVIES="/api/v2/movies"
 const val API_GET_SEAT_PLAN="/api/v2/seat-plan"
 const val API_GET_SNACK_CATEGORIES="/api/v2/snack-categories"
 const val API_GET_SNACK_ALL="/api/v2/snacks"
+const val API_GET_PAYMENT_TYPE="/api/v2/payment-types"
+const val API_GET_CHECKOUT="/api/v2/checkout"
 
 
 
