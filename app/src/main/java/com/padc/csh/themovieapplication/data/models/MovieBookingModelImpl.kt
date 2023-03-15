@@ -179,6 +179,14 @@ object MovieBookingModelImpl:MovieBookingModel {
     ) {
         mTheMovieBookingDataAgent.postCheckOut(token, requestBody, onSuccess, onFailure)
     }
+
+    override fun insertTicket(ticketVO: TicketVO) {
+        mTheMovieBookingDatabase?.movieBookingDao()?.insertTicket(ticketVO)
+    }
+
+    override fun deleteProfile() {
+        mTheMovieBookingDatabase?.movieBookingDao()?.deleteProfile()
+    }
 }
 
 

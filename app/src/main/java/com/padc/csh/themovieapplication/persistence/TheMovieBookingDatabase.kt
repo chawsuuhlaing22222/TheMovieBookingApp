@@ -7,12 +7,13 @@ import androidx.room.RoomDatabase
 import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.data.vos.CityVO
 import com.padc.csh.themovieapplication.data.vos.ProfileVO
+import com.padc.csh.themovieapplication.data.vos.TicketVO
 import com.padc.csh.themovieapplication.data.vos.TimeSlotColorVO
 import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 import com.padc.csh.themovieapplication.network.response.CityResponse
 import com.padc.csh.themovieapplication.persistence.daos.TheMovieBookingDao
 
-@Database(entities = [MovieVO::class, CityVO::class, ProfileVO::class, TimeSlotColorVO::class], version = 6, exportSchema = false)
+@Database(entities = [MovieVO::class, CityVO::class, ProfileVO::class, TimeSlotColorVO::class,TicketVO::class], version = 7, exportSchema = false)
 abstract class TheMovieBookingDatabase: RoomDatabase() {
 
     companion object{

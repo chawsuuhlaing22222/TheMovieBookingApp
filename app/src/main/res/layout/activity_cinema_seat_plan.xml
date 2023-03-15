@@ -60,13 +60,40 @@
             android:textColor="@color/colorPrimaryLight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+<com.otaliastudios.zoom.ZoomLayout
+    android:id="@+id/zoom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical|horizontal"
+    app:transformation="centerInside"
+    app:transformationGravity="auto"
+    app:alignment="center"
+    app:overScrollHorizontal="true"
+    app:overScrollVertical="true"
+    app:overPinchable="true"
+    app:horizontalPanEnabled="true"
+    app:verticalPanEnabled="true"
+    app:zoomEnabled="true"
+    app:flingEnabled="true"
+    app:scrollEnabled="true"
+    app:oneFingerScrollEnabled="true"
+    app:twoFingersScrollEnabled="true"
+    app:threeFingersScrollEnabled="true"
+    app:minZoom="1.0"
+    app:minZoomType="zoom"
+    app:maxZoom="2.5"
+    app:maxZoomType="zoom"
+    app:animationDuration="200"
+    app:hasClickableChildren="false"
+    android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
+    android:layout_below="@id/tvSeatPricelbl" >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSeatPlanList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      />
+</com.otaliastudios.zoom.ZoomLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSeatPlanList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
-            android:layout_below="@id/tvSeatPricelbl" />
 
         <!--                color status-->
         <LinearLayout
@@ -172,9 +199,9 @@
                 android:layout_centerVertical="true"
                 android:layout_toEndOf="@id/tvPluslbl"
                 android:indeterminate="false"
-                android:value="10"
+                android:value="1"
                 android:valueFrom="0"
-                android:valueTo="50"
+                android:valueTo="2.5"
                 app:thumbColor="@color/colorAccent"
                 app:trackColorActive="@color/colorAccent"
                 app:trackColorInactive="@color/colorPrimary" />

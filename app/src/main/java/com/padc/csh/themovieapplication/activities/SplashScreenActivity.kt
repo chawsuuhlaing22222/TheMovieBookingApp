@@ -69,6 +69,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         mTheMovieBookingModel.getProfile {
             token= it.token.toString()
+            ConfigUtils.getInstance().saveToken(token)
         }
     }
 

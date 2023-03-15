@@ -14,10 +14,9 @@ import com.google.gson.Gson
 import com.padc.csh.themovieapp.data.vos.MovieVO
 
 import com.padc.csh.themovieapplication.R
-import com.padc.csh.themovieapplication.data.vos.CheckOutResponseVO
-import com.padc.csh.themovieapplication.data.vos.CinemaVO
-import com.padc.csh.themovieapplication.data.vos.SeatVO
-import com.padc.csh.themovieapplication.data.vos.SnackVO
+import com.padc.csh.themovieapplication.data.models.MovieBookingModel
+import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
+import com.padc.csh.themovieapplication.data.vos.*
 import com.padc.csh.themovieapplication.dummy.QRGContents
 import com.padc.csh.themovieapplication.dummy.QRGEncoder
 import com.padc.csh.themovieapplication.utils.BASE_URL
@@ -37,6 +36,8 @@ class TicketConfirmationActivity : AppCompatActivity() {
     lateinit var cinemaVO: CinemaVO
     lateinit var checkOutResponseVO: CheckOutResponseVO
 
+    //model
+    private var mTheBookingModel:MovieBookingModel=MovieBookingModelImpl
     companion object{
 
         const val MOVIE="MOVIE"
@@ -91,18 +92,35 @@ class TicketConfirmationActivity : AppCompatActivity() {
     }
 
     private fun bindData() {
+      var movieId=""
+        var movieName=""
+        var cinemaId=""
+        var cinemaName=""
+
         if(checkOutResponseVO.movieId==movieVO.id){
             layoutMovieTicket.tvMovieNameTicketScrn.text= Html.fromHtml("<font color='#ffffff'><b>${movieVO.originalTtitle}</b> </font><font color='#888888'>(3D)(U/A)</font>")
+            movieId=movieVO.id.toString()
+            movieName=movieVO.originalTtitle.toString()
+
         }
         if(cinemaVO.id==checkOutResponseVO.cinemaId){
             layoutMovieTicket.tvCinemaNameTicketScrn.text=cinemaVO.name
+            cinemaId=cinemaVO.id.toString()
+            cinemaName=cinemaVO.name.toString()
+
         }
+
         layoutMovieTicket.tvMovieShowTimeTicketScrn.text=checkOutResponseVO.timeslot?.start_time.toString()
         layoutMovieTicket.tvMovieDateTicketScrn.text= changeStringToMedimnDateFormat(this,checkOutResponseVO.bookingDate.toString())
         layoutMovieTicket.tvTicketTypeTicketScrn.setText(Html.fromHtml("<font color='#ffffff'><b>${checkOutResponseVO.seat}</b></font><font color='#888888'>(SCREEN2)</font>"))
         layoutMovieTicket.tvTicketCountTicketScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>${checkOutResponseVO.totalSeat}</font><font color='#888888'>)</font>")
         Glide.with(this).load("$BASE_URL/${checkOutResponseVO.qrCode}").into(ivQRCodeConfirmationScrn)
 
+        var ticketVO= TicketVO(id = 0, movieId = movieId.toInt(), movieName = movieName, cinemaId = cinemaId.toInt(), cinemaName = cinemaName,
+        startTime = checkOutResponseVO.timeslot?.start_time.toString(), bookingDate =checkOutResponseVO.bookingDate.toString(), seatNameList =checkOutResponseVO.seat,
+        seatCount = checkOutResponseVO.totalSeat.toString(), qrCode =checkOutResponseVO.qrCode)
+
+        mTheBookingModel.insertTicket(ticketVO)
     }
 
     private fun createPolicyAlertDialog(){

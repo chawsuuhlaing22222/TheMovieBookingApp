@@ -93,11 +93,12 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
         sbZoom.addOnChangeListener(object : Slider.OnChangeListener {
 
             override fun onValueChange(slider: Slider, value: Float, fromUser: Boolean) {
-                Toast.makeText(
-                    this@CinemaSeatPlanActivity,
-                    "progress is $value",
-                    Toast.LENGTH_SHORT
-                ).show()
+                zoom.zoomTo(value,true)
+//                Toast.makeText(
+//                    this@CinemaSeatPlanActivity,
+//                    "progress is $value",
+//                    Toast.LENGTH_SHORT
+//                ).show()
             }
 
         })
@@ -105,14 +106,14 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
         tvPluslbl.setOnClickListener {
             var progress = sbZoom.value
             if (progress < sbZoom.valueTo) {
-                sbZoom.value = progress + 10
+                sbZoom.value = (progress + 0.1).toFloat()
             }
         }
 
         tvMinuslbl.setOnClickListener {
             var progress = sbZoom.value
             if (progress > 0) {
-                sbZoom.value = progress - 10
+                sbZoom.value = (progress - 0.1).toFloat()
             }
         }
     }
