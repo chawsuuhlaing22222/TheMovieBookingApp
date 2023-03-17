@@ -1,7 +1,9 @@
 package com.padc.csh.themovieapplication.utils
 
 const val BASE_URL="https://tmba.padc.com.mm"
+const val BASE_URL_MOVIE_DB="https://api.themoviedb.org"
 const val IMAGE_BASE_URL=  "https://image.tmdb.org/t/p/w400"
+const val API_KEY="d862c9b2ab825cc933e612a576adad70"
 
 const val API_GET_OTP="/api/v2/get-otp"
 const val API_CHECK_OTP="/api/v2/check-otp"
@@ -20,7 +22,7 @@ const val API_GET_CINEMALIST="/api/v2/cinema-day-timeslots"
 const val API_GET_CINEMA_TIMESLOT_COLORLIST="/api/v2/configurations"
 
 const val API_GET_MOVIE_DETAIL="/api/v1/movies/{movie_id}"
-
+const val API_GET_MOVIE_VIDEO="/3/movie/{movie_id}/videos"
 
 
 //Parmas

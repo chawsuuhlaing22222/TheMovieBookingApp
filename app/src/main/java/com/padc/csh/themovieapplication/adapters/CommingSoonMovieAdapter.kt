@@ -1,6 +1,7 @@
 package com.padc.csh.themovieapplication.adapters
 
 import android.annotation.SuppressLint
+import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
 import com.padc.csh.themovieapplication.viewholders.CommingSoonMovieViewHolder
 import kotlinx.android.synthetic.main.view_holder_movie_item.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CommingSoonMovieAdapter(var delegate: MovieListDelegate) :
     RecyclerView.Adapter<CommingSoonMovieViewHolder>() {
@@ -23,10 +26,13 @@ class CommingSoonMovieAdapter(var delegate: MovieListDelegate) :
     }
 
     override fun onBindViewHolder(holder: CommingSoonMovieViewHolder, position: Int) {
+
+
         holder.itemView.tvCommingShowDate.visibility = View.VISIBLE
         var movieVO:MovieVO?=null
         if(movieList.isNotEmpty()){
             movieVO=movieList.get(position)
+
             holder.bindData(movieVO)
         }
 

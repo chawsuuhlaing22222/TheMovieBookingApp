@@ -7,7 +7,10 @@ import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.format.DateFormat
+import android.util.Log
 import android.view.View
 import android.widget.MediaController
 import androidx.annotation.RequiresApi
@@ -22,9 +25,16 @@ import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.data.models.MovieBookingModel
 import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
+import com.padc.csh.themovieapplication.data.vos.MovieVideoVO
 import com.padc.csh.themovieapplication.delegates.MovieCastAdapter
 import com.padc.csh.themovieapplication.utils.IMAGE_BASE_URL
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import kotlinx.android.synthetic.main.activity_movie_detail.*
+import kotlinx.android.synthetic.main.activity_movie_detail.vvMovie
+import kotlinx.android.synthetic.main.activity_movie_detail.vvMoviePlayIcon
+import kotlinx.android.synthetic.main.activity_movie_detail.youTubePlayerView
+import kotlinx.android.synthetic.main.activity_video_play.*
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.Period
@@ -37,7 +47,8 @@ class MovieDetailActivity : AppCompatActivity() {
     //lateinit var mMovieGenreAdapter: MovieGenreAdapter
     //model
     private val movieModel: MovieBookingModel = MovieBookingModelImpl
-    private var selectedMovieVO :MovieVO?=null
+    private var selectedMovieVO: MovieVO? = null
+    private var youtbueVideoId = ""
 
     companion object {
         const val FROM_ACTIVITY = "FROM_ACTIVITY"
@@ -68,27 +79,49 @@ class MovieDetailActivity : AppCompatActivity() {
                 rlNotiCard.visibility = View.GONE
             }
         }
+        //youtube
+        lifecycle.addObserver(youTubePlayerView)
 
         setUpRecycler()
-        setUpActionListener()
-        setUpDefaultMovie()
+        //setUpDefaultMovie()
         //setUpMovieGenreChip()
         movieId?.let {
             requestData(movieId)
         }
+        setUpActionListener()
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun requestData(movieId: String) {
         movieModel.getMovieDetail(movieId, {
-           selectedMovieVO=it
+            selectedMovieVO = it
             bindData(it)
 
         }, {
             showErrorMsg(it)
         })
 
+//        Handler(Looper.getMainLooper()).postDelayed(object : Runnable {
+//            override fun run() {
+//                getMovieVideoDetail(movieId.toInt())
+//            }
+//        },1000)
 
+        movieModel.getMovieVideo(movieId.toInt(),{
+            bindMovieVideo(it)
+        }, {
+            showErrorMsg(it)
+        })
+
+    }
+
+     private fun bindMovieVideo(it: List<MovieVideoVO>) {
+        it.forEach { movie ->
+            //if (movie.official == true) {
+             youtbueVideoId=movie.key.toString()
+                Log.i("mKey", movie.key ?: "")
+           // }
+        }
     }
 
     private fun bindActorData(it: List<ActorVO>) {
@@ -131,18 +164,27 @@ class MovieDetailActivity : AppCompatActivity() {
         vvMoviePlayIcon.setOnClickListener {
 
             //visibilty
-            vvMovie.visibility = View.VISIBLE
+//            vvMovie.visibility = View.VISIBLE
+//            vvMovie.requestFocus()
+//            vvMovie.setOnPreparedListener(object : MediaPlayer.OnPreparedListener {
+//                override fun onPrepared(p0: MediaPlayer?) {
+//                    vvMovie.start()
+//                }
+//
+//            })
+//            ///visibilty gone
+//            vvMovieCover.visibility = View.GONE
+//            vvMoviePlayIcon.visibility = View.GONE
 
-            vvMovie.requestFocus()
-            vvMovie.setOnPreparedListener(object : MediaPlayer.OnPreparedListener {
-                override fun onPrepared(p0: MediaPlayer?) {
-                    vvMovie.start()
-                }
-
-            })
-            ///visibilty gone
-            vvMovieCover.visibility = View.GONE
+            youTubePlayerView.visibility= View.VISIBLE
+            vvMovieCover.visibility=View.GONE
             vvMoviePlayIcon.visibility = View.GONE
+            youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+                override fun onReady(youTubePlayer: YouTubePlayer) {
+
+                    youTubePlayer.loadVideo(youtbueVideoId, 0f)
+                }
+            })
 
         }
 
@@ -153,8 +195,8 @@ class MovieDetailActivity : AppCompatActivity() {
 
         //item listener
         btnBooking.setOnClickListener {
-            var movie=Gson().toJson(selectedMovieVO)
-            startActivity(CinemaTimeSlotActivity.newIntent(this,movie))
+            var movie = Gson().toJson(selectedMovieVO)
+            startActivity(CinemaTimeSlotActivity.newIntent(this, movie))
         }
 
 
@@ -204,7 +246,8 @@ class MovieDetailActivity : AppCompatActivity() {
         val myString = DateFormat.getMediumDateFormat(this).format(date)
 
         // diff date
-        var movieDate=LocalDate.of(date.year, (date.month), date.day)
+        var m=date.month
+        var movieDate = LocalDate.of(date.year, (date.month+1), date.day)
         var period = Period.between(movieDate, LocalDate.now())
         tvReleaseDateNoti.text =
             getString(R.string.releasing_in_5days, "${period.months}m,${period.days}")

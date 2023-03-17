@@ -5,6 +5,8 @@ import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.data.vos.*
 import com.padc.csh.themovieapplication.network.dataagents.MovieBookingDataAgent
 import com.padc.csh.themovieapplication.network.dataagents.MovieBookingDataAgentImpl
+import com.padc.csh.themovieapplication.network.dataagents.MovieDBDataAgent
+import com.padc.csh.themovieapplication.network.dataagents.MovieDBDataAgentImpl
 import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 import com.padc.csh.themovieapplication.persistence.TheMovieBookingDatabase
 
@@ -13,8 +15,12 @@ object MovieBookingModelImpl:MovieBookingModel {
     //dataagent
     private val mTheMovieBookingDataAgent:MovieBookingDataAgent = MovieBookingDataAgentImpl
 
+    //dataagent
+    private val mTheMovieDBDataAgent :MovieDBDataAgent = MovieDBDataAgentImpl
+
     //database
     private var mTheMovieBookingDatabase:TheMovieBookingDatabase?=null
+
     fun initMovieBookingDB(context: Context){
         mTheMovieBookingDatabase=TheMovieBookingDatabase.getTheMovieBookingDbInstance(context)
     }
@@ -182,6 +188,14 @@ object MovieBookingModelImpl:MovieBookingModel {
 
     override fun insertTicket(ticketVO: TicketVO) {
         mTheMovieBookingDatabase?.movieBookingDao()?.insertTicket(ticketVO)
+    }
+
+    override fun getMovieVideo(
+        movieId: Int,
+        onSuccess: (List<MovieVideoVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieDBDataAgent.getMovieVideo(movieId,onSuccess, onFailure)
     }
 
     override fun deleteProfile() {

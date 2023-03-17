@@ -17,4 +17,27 @@
     android:layout_width="100dp"
     android:layout_height="@dimen/dimen_50dp"/>
 
+    <FrameLayout
+        android:layout_below="@id/btnStat"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_300dp">
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youTubePlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_300dp"
+        app:autoPlay="false"
+
+        />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vvMoviePlayIcon"
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+           android:layout_gravity="center"
+            android:tint="#80000000"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_baseline_play_circle_filled_white_24dp" />
+
+
+    </FrameLayout>
 </RelativeLayout>

@@ -1,6 +1,5 @@
 package com.padc.csh.themovieapplication.data.models
 
-import com.padc.csh.themovieapp.data.vos.ActorVO
 import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.data.vos.*
 import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
@@ -114,4 +113,10 @@ interface MovieBookingModel {
     )
 
     fun insertTicket(ticketVO: TicketVO)
+
+    fun getMovieVideo(
+        movieId: Int,
+        onSuccess:(List<MovieVideoVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
 }
