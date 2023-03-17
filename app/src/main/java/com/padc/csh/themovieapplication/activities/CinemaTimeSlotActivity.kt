@@ -14,6 +14,7 @@ import com.padc.csh.themovieapplication.adapters.DateAdapter
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
 import com.padc.csh.themovieapplication.data.models.MovieBookingModel
 import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
+import com.padc.csh.themovieapplication.data.vos.AllCinemaVO
 import com.padc.csh.themovieapplication.data.vos.CinemaTimeSlotVO
 import com.padc.csh.themovieapplication.data.vos.CinemaVO
 import com.padc.csh.themovieapplication.data.vos.TimeSlotColorVO
@@ -89,6 +90,10 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
 
     override fun onMovieCinema(cinemaVO: CinemaVO) {
       selectedCinemaVO=cinemaVO
+    }
+
+    override fun onMovieCinemaAtFrag(cinemaVO: AllCinemaVO) {
+
     }
 
 

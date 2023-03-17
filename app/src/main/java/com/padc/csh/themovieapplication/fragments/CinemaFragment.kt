@@ -12,10 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.activities.CinemaDetailActivity
 import com.padc.csh.themovieapplication.activities.CinemaSearchActivity
+import com.padc.csh.themovieapplication.adapters.AllCinemaListAdapter
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
 import com.padc.csh.themovieapplication.adapters.MovieCinemaSeatConditionAdapter
 import com.padc.csh.themovieapplication.data.models.MovieBookingModel
 import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
+import com.padc.csh.themovieapplication.data.vos.AllCinemaVO
 import com.padc.csh.themovieapplication.data.vos.CinemaTimeSlotVO
 import com.padc.csh.themovieapplication.data.vos.CinemaVO
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
@@ -31,7 +33,7 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
 
     //model
     private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
-    lateinit var mMovieCinemaListAdapter:MovieCinemaAdapter
+    lateinit var mMovieCinemaListAdapter:AllCinemaListAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,12 +54,9 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
     private fun requestData() {
         var token = "Bearer ${ConfigUtils.getInstance().getToken()}"
         var selectedDate= LocalDate.now()
-        mTheMovieBookingModel.getCinemaList(token, selectedDate.toString(), {
-
+        mTheMovieBookingModel.getAllCinemaFromDB {
             mMovieCinemaListAdapter.setNewData(it)
-        }, {
-
-        })
+        }
     }
 
     private fun setUpActionListener() {
@@ -68,7 +67,7 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
 
     private fun setUpRecycler(){
         //movie cinema rv
-        mMovieCinemaListAdapter=MovieCinemaAdapter(this,this)
+        mMovieCinemaListAdapter= AllCinemaListAdapter(this)
         rvCinemaList.adapter=mMovieCinemaListAdapter
         rvCinemaList.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
 
@@ -76,6 +75,10 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
 
     override fun onMovieCinema(cinemaVO: CinemaVO) {
        // mMovieCinemaListAdapter.setSelectedPosition(position)
+    }
+
+    override fun onMovieCinemaAtFrag(cinemaVO: AllCinemaVO) {
+        startActivity(Intent(requireContext(),CinemaDetailActivity::class.java))
     }
 
     override fun onMovieCinemaSeatPlanClick(timeSlotVO: CinemaTimeSlotVO) {

@@ -87,6 +87,13 @@ interface TheMovieBookingApi {
         @Body checkoutRequest :CheckOutRequestVO
     ):Call<CheckOutResponse>
 
+    //for cinema fragment
+    @GET("$API_GET_ALL_CINEMA")
+    fun getAllCinemaList(
+
+    ):Call<AllCinemaResponse>
+
+
 
 
 

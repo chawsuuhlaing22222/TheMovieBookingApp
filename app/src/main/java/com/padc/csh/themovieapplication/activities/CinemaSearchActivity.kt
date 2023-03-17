@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.MovieCinemaAdapter
+import com.padc.csh.themovieapplication.data.vos.AllCinemaVO
 import com.padc.csh.themovieapplication.data.vos.CinemaTimeSlotVO
 import com.padc.csh.themovieapplication.data.vos.CinemaVO
 import com.padc.csh.themovieapplication.delegates.MovieCinemaDelegate
@@ -139,6 +140,10 @@ class CinemaSearchActivity : AppCompatActivity(), MovieCinemaDelegate,
 
     override fun onMovieCinema(cinemaVO: CinemaVO) {
       //  mCinemaAdapter.setSelectedPosition(position)
+    }
+
+    override fun onMovieCinemaAtFrag(cinemaVO: AllCinemaVO) {
+
     }
 
     override fun onMovieCinemaSeatPlanClick(timeSlotVO: CinemaTimeSlotVO) {

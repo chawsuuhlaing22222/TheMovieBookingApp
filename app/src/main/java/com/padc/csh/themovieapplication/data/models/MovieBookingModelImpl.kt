@@ -198,6 +198,24 @@ object MovieBookingModelImpl:MovieBookingModel {
         mTheMovieDBDataAgent.getMovieVideo(movieId,onSuccess, onFailure)
     }
 
+    override fun getAllCinemaFromNewtwork(
+        onSuccess: (List<AllCinemaVO>) -> Unit,
+        onFailure: (String) -> Unit
+    ) {
+        mTheMovieBookingDataAgent.getAllCinema(
+            {
+                if (it != null) {
+                    mTheMovieBookingDatabase?.movieBookingDao()?.insertAllCinemaList(it)
+                }
+                onSuccess(it)
+            }
+            , onFailure)
+    }
+
+    override fun getAllCinemaFromDB(onSuccess: (List<AllCinemaVO>) -> Unit) {
+           onSuccess(mTheMovieBookingDatabase?.movieBookingDao()?.getAllCinemaList() ?: listOf())
+    }
+
     override fun deleteProfile() {
         mTheMovieBookingDatabase?.movieBookingDao()?.deleteProfile()
     }

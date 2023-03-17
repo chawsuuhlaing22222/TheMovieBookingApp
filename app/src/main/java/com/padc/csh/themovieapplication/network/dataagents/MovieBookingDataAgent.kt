@@ -2,6 +2,7 @@ package com.padc.csh.themovieapplication.network.dataagents
 
 import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.data.vos.*
+import com.padc.csh.themovieapplication.network.response.AllCinemaResponse
 import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 import com.padc.csh.themovieapplication.network.response.MovieDetailResponse
 
@@ -92,6 +93,12 @@ interface MovieBookingDataAgent {
         token: String?,
         requestBody:CheckOutRequestVO,
         onSuccess:(CheckOutResponseVO?)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    //for cinema fragment
+    fun getAllCinema(
+        onSuccess:(List<AllCinemaVO>)-> Unit,
         onFailure:(String)->Unit
     )
 

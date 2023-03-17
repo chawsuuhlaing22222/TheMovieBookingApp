@@ -16,6 +16,9 @@ const val API_GET_SNACK_ALL="/api/v2/snacks"
 const val API_GET_PAYMENT_TYPE="/api/v2/payment-types"
 const val API_GET_CHECKOUT="/api/v2/checkout"
 
+//FOR cinema fragment
+const val API_GET_ALL_CINEMA="/api/v2/cinemas"
+
 
 
 const val API_GET_CINEMALIST="/api/v2/cinema-day-timeslots"

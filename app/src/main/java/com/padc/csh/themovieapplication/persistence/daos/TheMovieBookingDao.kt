@@ -5,10 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.padc.csh.themovieapp.data.vos.MovieVO
-import com.padc.csh.themovieapplication.data.vos.CityVO
-import com.padc.csh.themovieapplication.data.vos.ProfileVO
-import com.padc.csh.themovieapplication.data.vos.TicketVO
-import com.padc.csh.themovieapplication.data.vos.TimeSlotColorVO
+import com.padc.csh.themovieapplication.data.vos.*
 import com.padc.csh.themovieapplication.network.response.CityResponse
 
 @Dao
@@ -59,4 +56,9 @@ interface TheMovieBookingDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTicket(ticketVO: TicketVO)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAllCinemaList(cinemaList:List<AllCinemaVO>)
+
+    @Query("SELECT * FROM cinemas")
+    fun getAllCinemaList():List<AllCinemaVO>
 }

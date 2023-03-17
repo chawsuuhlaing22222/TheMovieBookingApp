@@ -119,4 +119,14 @@ interface MovieBookingModel {
         onSuccess:(List<MovieVideoVO>)-> Unit,
         onFailure:(String)->Unit
     )
+
+    //for cinema fragment
+    fun getAllCinemaFromNewtwork(
+        onSuccess:(List<AllCinemaVO>)-> Unit,
+        onFailure:(String)->Unit
+    )
+
+    fun getAllCinemaFromDB(
+        onSuccess:(List<AllCinemaVO>)-> Unit,
+    )
 }

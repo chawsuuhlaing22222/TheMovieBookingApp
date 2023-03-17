@@ -71,6 +71,14 @@ class SplashScreenActivity : AppCompatActivity() {
             token= it.token.toString()
             ConfigUtils.getInstance().saveToken(token)
         }
+
+        mTheMovieBookingModel.getAllCinemaFromNewtwork(
+            {
+
+            },{
+
+            }
+        )
     }
 
 
