@@ -2,13 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/color111111"
     android:layout_marginTop="@dimen/dimen_15dp">
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvCinemaNameAtFrag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginBottom="@dimen/margin_card_medium"
         android:fontFamily="@font/inter_semibold"
         android:text="JCGV : Junction City"
         android:textColor="@color/white"
@@ -21,7 +24,77 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="@dimen/margin_medium_2"
         android:text="@string/lbl_see_details"
+        android:layout_marginBottom="@dimen/margin_card_medium"
         android:fontFamily="@font/inter_medium"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_regular_2x" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivParking"
+        android:layout_width="@dimen/margin_medium_2_n"
+        android:layout_height="@dimen/margin_medium_2_n"
+       android:layout_below="@id/tvCinemaNameAtFrag"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/dimen_22dp"
+        app:srcCompat="@drawable/ic_parking" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvParking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCinemaNameAtFrag"
+        android:layout_marginStart="@dimen/margin_card_medium_n"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/ivParking"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/lbl_parking"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOnlineFood"
+        android:layout_width="@dimen/margin_medium_2_n"
+        android:layout_height="@dimen/margin_medium_2_n"
+        android:layout_below="@id/tvCinemaNameAtFrag"
+        android:layout_marginStart="@dimen/dimen_15dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/tvParking"
+        app:tint="@color/colorPrimaryLight"
+        app:srcCompat="@drawable/ic_online_food" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOnlineFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCinemaNameAtFrag"
+        android:layout_marginStart="@dimen/margin_card_medium_n"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/ivOnlineFood"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/lbl_online_food"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivWheelChair"
+        android:layout_width="@dimen/margin_medium_2_n"
+        android:layout_height="@dimen/margin_medium_2_n"
+        android:layout_below="@id/tvCinemaNameAtFrag"
+        android:layout_marginStart="@dimen/dimen_15dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/tvOnlineFood"
+        app:srcCompat="@drawable/ic_wheel_chair" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvWheelChiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCinemaNameAtFrag"
+        android:fontFamily="@font/inter_medium"
+        android:layout_marginStart="@dimen/margin_card_medium_n"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/ivWheelChair"
+        android:text="@string/lbl_wheel_chiar"
+        android:textColor="@color/colorSecondaryText"
+        android:textSize="@dimen/text_regular" />
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.activities.CinemaDetailActivity
 import com.padc.csh.themovieapplication.activities.CinemaSearchActivity
@@ -78,7 +79,8 @@ class CinemaFragment : Fragment(),MovieCinemaDelegate,MovieCinemaSeatConditionDe
     }
 
     override fun onMovieCinemaAtFrag(cinemaVO: AllCinemaVO) {
-        startActivity(Intent(requireContext(),CinemaDetailActivity::class.java))
+        var cinema=Gson().toJson(cinemaVO)
+        startActivity(context?.let { CinemaDetailActivity.newIntent(it,cinema) })
     }
 
     override fun onMovieCinemaSeatPlanClick(timeSlotVO: CinemaTimeSlotVO) {

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.CinemaDetailActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
@@ -66,14 +67,14 @@
                     android:id="@+id/ivVideoCoverCinemaDetail"
                     app:srcCompat="@drawable/ic_forestgump"
                     android:scaleType="centerCrop"
-                    android:visibility="visible"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_200dp"/>
                 <VideoView
                     android:id="@+id/vvCinemaDetail"
                    android:layout_alignParentEnd="true"
                     android:layout_alignParentStart="true"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_200dp"/>
 
@@ -142,12 +143,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/flowLayout"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_below="@id/tvFacilities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivParkingCinemaDetail"
                 app:tint="@color/colorAccent"
                 android:layout_width="@dimen/margin_medium_2_n"
                 android:layout_height="@dimen/margin_medium_2_n"
                 android:layout_below="@id/tvFacilities"
+                android:visibility="gone"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_3_n"
                 app:srcCompat="@drawable/ic_parking" />
@@ -162,12 +171,14 @@
                 android:layout_toEndOf="@id/ivParkingCinemaDetail"
                 android:fontFamily="@font/inter_medium"
                 android:text="@string/lbl_parking"
+                android:visibility="gone"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/text_regular" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivOnlineFoodCinemaDetail"
                 android:layout_width="@dimen/margin_medium_2_n"
+                android:visibility="gone"
                 android:layout_height="@dimen/margin_medium_2_n"
                 android:layout_below="@id/tvFacilities"
                 android:layout_marginStart="@dimen/dimen_15dp"
@@ -179,6 +190,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvOnlineFoodCinemaDetail"
                 android:layout_width="wrap_content"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvFacilities"
                 android:layout_marginStart="@dimen/margin_card_medium"
@@ -195,6 +207,7 @@
                 android:layout_width="@dimen/margin_medium_2_n"
                 android:layout_height="@dimen/margin_medium_2_n"
                 android:layout_below="@id/tvFacilities"
+                android:visibility="gone"
                 android:layout_marginStart="@dimen/dimen_15dp"
                 android:layout_alignTop="@id/ivParkingCinemaDetail"
                 android:layout_toEndOf="@id/tvOnlineFoodCinemaDetail"
@@ -206,6 +219,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvFacilities"
                 android:layout_marginStart="@dimen/margin_card_medium"
+                android:visibility="gone"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:layout_toEndOf="@id/ivWheelChairCinemaDetail"
                 android:text="@string/lbl_wheel_chiar"
@@ -219,6 +233,7 @@
                 android:layout_marginTop="@dimen/margin_medium_2_n"
                 android:layout_width="@dimen/margin_medium_2_n"
                 android:layout_height="@dimen/margin_medium_2_n"
+                android:visibility="gone"
                 android:layout_below="@id/ivParkingCinemaDetail"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 app:srcCompat="@drawable/ic_ticket_cancelation" />
@@ -233,8 +248,10 @@
                 android:textSize="@dimen/text_regular"
                 android:fontFamily="@font/inter_medium"
                 android:text="@string/lbl_ticket_cancelation"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -246,7 +263,7 @@
                 android:fontFamily="@font/inter_semibold"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/dimen_40dp"
-                android:layout_below="@id/ivTicketCancelCinemaDetail"
+                android:layout_below="@id/flowLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -262,6 +279,8 @@
               android:layout_marginTop="@dimen/dimen_21dp"
               android:layout_marginLeft="@dimen/margin_medium_2">
           </com.google.android.material.chip.ChipGroup>
+
+
 
 
         </RelativeLayout>

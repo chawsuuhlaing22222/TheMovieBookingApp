@@ -87,7 +87,13 @@ class CinemaSeatPlanActivity : AppCompatActivity(), ChildSeatDelegate, SeatPlanD
         btnBuyTicket.setOnClickListener {
             var type=object :TypeToken<List<SeatVO>>(){}.type
             var seatList=Gson().toJson(selectedSeatList,type)
-            startActivity(GetSnackActivity.newIntent(this,timeSlotId,selectedDate,movieVo,selectedcinema,seatList))
+
+            if(selectedSeatList.isNullOrEmpty() || selectedSeatList.size==0){
+                Toast.makeText(this, "Please select a seat", Toast.LENGTH_SHORT).show()
+            }else{
+                startActivity(GetSnackActivity.newIntent(this,timeSlotId,selectedDate,movieVo,selectedcinema,seatList))
+            }
+
         }
 
         sbZoom.addOnChangeListener(object : Slider.OnChangeListener {
