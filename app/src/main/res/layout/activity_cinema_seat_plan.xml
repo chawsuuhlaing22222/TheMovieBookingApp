@@ -84,21 +84,23 @@
     app:maxZoom="2.5"
     app:maxZoomType="zoom"
     app:animationDuration="200"
-    app:hasClickableChildren="false"
+    app:hasClickableChildren="true"
+    android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
+    android:layout_below="@id/tvSeatPricelbl"
   >
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rvSeatPlanList"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--      />-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSeatPlanList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      />
 </com.otaliastudios.zoom.ZoomLayout>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSeatPlanList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"
-            android:layout_below="@id/tvSeatPricelbl"
-            />
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/rvSeatPlanList"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_above="@id/llMovieSeatColorStausSeatPlanScrn"-->
+<!--            android:layout_below="@id/tvSeatPricelbl"-->
+<!--            />-->
 
         <!--                color status-->
         <LinearLayout

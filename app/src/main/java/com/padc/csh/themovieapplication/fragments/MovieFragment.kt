@@ -165,7 +165,6 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
         viewPagerBanner.setPreviewBothSide(R.dimen.margin_large,R.dimen.margin_large)
         viewPagerBanner.currentItem=1
 
-
     }
 
     override fun onTapBanner(movie:BannerVO) {

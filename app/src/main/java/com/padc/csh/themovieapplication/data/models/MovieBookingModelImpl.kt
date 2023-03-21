@@ -1,6 +1,8 @@
 package com.padc.csh.themovieapplication.data.models
 
 import android.content.Context
+import com.google.gson.Gson
+import com.google.gson.internal.LinkedTreeMap
 import com.padc.csh.themovieapp.data.vos.MovieVO
 import com.padc.csh.themovieapplication.data.vos.*
 import com.padc.csh.themovieapplication.network.dataagents.MovieBookingDataAgent
@@ -9,6 +11,7 @@ import com.padc.csh.themovieapplication.network.dataagents.MovieDBDataAgent
 import com.padc.csh.themovieapplication.network.dataagents.MovieDBDataAgentImpl
 import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 import com.padc.csh.themovieapplication.persistence.TheMovieBookingDatabase
+import java.util.LinkedList
 
 object MovieBookingModelImpl:MovieBookingModel {
 
@@ -28,7 +31,6 @@ object MovieBookingModelImpl:MovieBookingModel {
     override fun getProfile(onSuccess: (ProfileVO) -> Unit) {
         mTheMovieBookingDatabase?.movieBookingDao()?.getProfileVO()?.let { onSuccess(it) }
     }
-
 
     override fun getMovieDetail(
         movieId: String,
@@ -119,8 +121,21 @@ object MovieBookingModelImpl:MovieBookingModel {
         onFailure: (String) -> Unit
     ) {
         mTheMovieBookingDataAgent.getCinemaTimeSlotColorList({
-            var v=it.value
-     //       mTheMovieBookingDatabase?.movieBookingDao()?.insertTimeSlotColor(it.value as List<TimeSlotColorVO>)
+            var cinemaAnyColorList=it.value as ArrayList<*>
+            //var cinemaColorList=cinemaAnyColorList.get(2) as ArrayList<*>
+            var newConfigTimeSlotColor =  mutableListOf<TimeSlotColorVO>()
+
+            for(anyConfig in cinemaAnyColorList) {
+                val gson = Gson()
+                val linkedTreeMap: LinkedTreeMap<*, *> = anyConfig as LinkedTreeMap<*, *>
+                val timeslotColorVO: TimeSlotColorVO = gson.fromJson(gson.toJsonTree(linkedTreeMap), TimeSlotColorVO::class.java)
+                newConfigTimeSlotColor.add(timeslotColorVO)
+            }
+
+            newConfigTimeSlotColor.removeAt(0)
+
+           mTheMovieBookingDatabase?.movieBookingDao()?.insertTimeSlotColor( newConfigTimeSlotColor)
+         //   mTheMovieBookingDatabase?.movieBookingDao()?.insertCinemaTimeSlotColorList(it.value)
             onSuccess(it)
         }
           , onFailure)

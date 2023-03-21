@@ -61,4 +61,8 @@ interface TheMovieBookingDao {
 
     @Query("SELECT * FROM cinemas")
     fun getAllCinemaList():List<AllCinemaVO>
+
+
+   // @Insert(onConflict = OnConflictStrategy.REPLACE)
+    //fun insertCinemaTimeSlotColorList(timeslotcolorList:Any?)
 }

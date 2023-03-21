@@ -21,5 +21,4 @@ data class TimeSlotColorVO (
     @ColumnInfo("color")
     val color:String?
 
-
         )
