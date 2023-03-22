@@ -116,7 +116,7 @@ class TicketConfirmationActivity : AppCompatActivity() {
         layoutMovieTicket.tvTicketCountTicketScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>${checkOutResponseVO.totalSeat}</font><font color='#888888'>)</font>")
         Glide.with(this).load("$BASE_URL/${checkOutResponseVO.qrCode}").into(ivQRCodeConfirmationScrn)
 
-        var ticketVO= TicketVO(id = 0, movieId = movieId.toInt(), movieName = movieName, cinemaId = cinemaId.toInt(), cinemaName = cinemaName,
+        var ticketVO= TicketVO(id = null, movieId = movieId.toInt(), movieName = movieName, cinemaId = cinemaId.toInt(), cinemaName = cinemaName,
         startTime = checkOutResponseVO.timeslot?.start_time.toString(), bookingDate =checkOutResponseVO.bookingDate.toString(), seatNameList =checkOutResponseVO.seat,
         seatCount = checkOutResponseVO.totalSeat.toString(), qrCode =checkOutResponseVO.qrCode)
 

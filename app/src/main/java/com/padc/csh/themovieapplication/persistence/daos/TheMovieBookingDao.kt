@@ -61,6 +61,9 @@ interface TheMovieBookingDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTicket(ticketVO: TicketVO)
 
+    @Query("SELECT * FROM ticket")
+    fun getAllTicket():List<TicketVO>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAllCinemaList(cinemaList:List<AllCinemaVO>)
 

@@ -102,6 +102,7 @@ class ChoosePaymentTypeActivity : AppCompatActivity(), PaymentDelegate {
 
         var seatList=Gson().fromJson<List<SeatVO>>(jsonSeatList,seatType)
         var snackList=Gson().fromJson<List<SnackVO>>(jsonSnackList,snackType)
+
         cinema.timeslots?.forEach {
             if(it.id==jsonTimeSlotId?.toInt()){
                 //tvMovieShowTimeCheckoutScrn.text=it.start_time

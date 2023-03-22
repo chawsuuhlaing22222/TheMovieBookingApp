@@ -10,12 +10,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.activities.CheckOutAcitivy
 import com.padc.csh.themovieapplication.adapters.TicketItemAdapter
+import com.padc.csh.themovieapplication.data.models.MovieBookingModel
+import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
 import com.padc.csh.themovieapplication.delegates.TicketItemDelegate
 import kotlinx.android.synthetic.main.fragment_ticket.*
 
 
 class TicketFragment : Fragment(),TicketItemDelegate {
 lateinit var mTicketAdapter:TicketItemAdapter
+
+private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +32,13 @@ lateinit var mTicketAdapter:TicketItemAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         setUpRecycler()
+        requestData()
+    }
+
+    private fun requestData() {
+        mTheMovieBookingModel.getAllTickets {
+            mTicketAdapter.setNewData(it)
+        }
     }
 
     private fun setUpRecycler() {

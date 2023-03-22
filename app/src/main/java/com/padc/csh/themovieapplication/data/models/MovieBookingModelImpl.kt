@@ -222,6 +222,11 @@ object MovieBookingModelImpl:MovieBookingModel {
         mTheMovieBookingDatabase?.movieBookingDao()?.insertTicket(ticketVO)
     }
 
+    override fun getAllTickets(onSuccess: (List<TicketVO>) -> Unit) {
+
+        onSuccess(mTheMovieBookingDatabase?.movieBookingDao()?.getAllTicket() ?: listOf())
+    }
+
     override fun getMovieVideo(
         movieId: Int,
         onSuccess: (List<MovieVideoVO>) -> Unit,

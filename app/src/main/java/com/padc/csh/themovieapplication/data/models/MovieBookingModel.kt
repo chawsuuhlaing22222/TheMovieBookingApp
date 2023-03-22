@@ -120,6 +120,8 @@ interface MovieBookingModel {
 
     fun insertTicket(ticketVO: TicketVO)
 
+    fun getAllTickets(onSuccess:(List<TicketVO>)-> Unit)
+
     fun getMovieVideo(
         movieId: Int,
         onSuccess:(List<MovieVideoVO>)-> Unit,
