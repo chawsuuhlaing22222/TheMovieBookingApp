@@ -38,7 +38,7 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
 
     //model
     private val mMovieModel:MovieBookingModel=MovieBookingModelImpl
-    private var movieType="now"
+    private var movieType= NOW_PLAYING
 
     companion object{
      const val SELECTED_CITY="SELECTED_CITY"
@@ -78,23 +78,9 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
 
             }
         )
-        mMovieModel.getMovieList(
-            NOW_PLAYING,
-            {
-                mNowShowingMovieAdapter.setNewData(it)
-            },{
-                showErrorMsg(it,movieFrag)
-            }
-        )
 
-        mMovieModel.getMovieList(
-            COMMING_SOON,
-            {
-                mCommingSoonMovieAdapter.setNewData(it)
-            },{
-                showErrorMsg(it,movieFrag)
-            }
-        )
+        getCommingSoonMovies()
+        getNowPlayingMovies()
 
 
     }
@@ -139,7 +125,8 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
             rvCommingSoonMovies.visibility=View.GONE
             btnNowShowing.setBackgroundColor(resources.getColor(R.color.colorAccent,null))
             btnCommingSoon.setBackgroundColor(resources.getColor(com.google.android.material.R.color.mtrl_btn_transparent_bg_color,null))
-            movieType="now"
+            movieType= NOW_PLAYING
+            getNowPlayingMovies()
         }
 
         //comming soon movie btn action
@@ -148,7 +135,8 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
             rvCommingSoonMovies.visibility=View.VISIBLE
             btnCommingSoon.setBackgroundColor(resources.getColor(R.color.colorAccent,null))
             btnNowShowing.setBackgroundColor(resources.getColor(com.google.android.material.R.color.mtrl_btn_transparent_bg_color,null))
-            movieType="comming"
+            movieType= COMMING_SOON
+            getCommingSoonMovies()
         }
 
         //search
@@ -173,12 +161,35 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
 
     override fun onTapNowShowingMovie(movieId:String) {
         var id=movieId
-       startActivity(MovieDetailActivity.newIntent(context,"now",movieId))
+       startActivity(MovieDetailActivity.newIntent(context, NOW_PLAYING,movieId))
     }
 
     override fun onTapCommingSoonMovie(movieId:String) {
-        startActivity(MovieDetailActivity.newIntent(context,"comming",movieId))
+        startActivity(MovieDetailActivity.newIntent(context, COMMING_SOON,movieId))
     }
+
+    fun getCommingSoonMovies(){
+        mMovieModel.getMovieList(
+            COMMING_SOON,
+            {
+                mCommingSoonMovieAdapter.setNewData(it)
+            },{
+                showErrorMsg(it,movieFrag)
+            }
+        )
+    }
+
+    fun getNowPlayingMovies(){
+        mMovieModel.getMovieList(
+            NOW_PLAYING,
+            {
+                mNowShowingMovieAdapter.setNewData(it)
+            },{
+                showErrorMsg(it,movieFrag)
+            }
+        )
+    }
+
 
 
 

@@ -21,6 +21,12 @@ interface MovieBookingModel {
         onFailure: (String) -> Unit
     )
 
+    fun searchMoviesByTypeAndName(
+        type:String,
+        movieName:String,
+        onSuccess: (List<MovieVO>) -> Unit,
+    )
+
 
     //start for movie booking app
     fun getOtp(
@@ -129,4 +135,6 @@ interface MovieBookingModel {
     fun getAllCinemaFromDB(
         onSuccess:(List<AllCinemaVO>)-> Unit,
     )
+
+    fun getTimeSlotColor(status:Int,onSuccess:(TimeSlotColorVO)-> Unit)
 }

@@ -59,7 +59,6 @@ data class MovieVO(
 
 ) {
 
-
     fun getGenresAsCommaSeparatedString(): String {
         var v = genres?.joinToString(",") ?: ""
         return v

@@ -20,6 +20,8 @@ interface TheMovieBookingDao {
     @Query("SELECT * FROM movies WHERE type= :type")
     fun getMovieListByType(type:String):List<MovieVO>?
 
+    @Query("SELECT * FROM movies WHERE type= :type AND original_title LIKE  '%' || :name || '%'")
+    fun searchMovieListByTypeAndName(type:String,name:String):List<MovieVO>?
 
     @Query(value = "SELECT * FROM movies")
     fun getAllMovies():List<MovieVO>
@@ -46,6 +48,9 @@ interface TheMovieBookingDao {
 
     @Query("SELECT * FROM timeslot")
     fun getTimeSlotColor():List<TimeSlotColorVO>
+
+    @Query("SELECT * FROM timeslot WHERE id= :status")
+    fun getTimeSlotColorForStatus(status:Int):TimeSlotColorVO?
 
     @Query("SELECT * FROM profile")
     fun getProfileVO():ProfileVO

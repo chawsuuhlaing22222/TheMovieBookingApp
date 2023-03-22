@@ -34,7 +34,7 @@
 
             <LinearLayout
                 android:id="@+id/llChooseMovieType"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10dp"
@@ -98,8 +98,6 @@
                     android:background="@drawable/bg_movie_genre_spinner"
                     android:layout_marginLeft="@dimen/dimen_10dp"
                     >
-
-
 
                     <TextView
                         android:id="@+id/tvSelectedMovieFormat"
@@ -179,7 +177,7 @@
 
             <FrameLayout
                 android:id="@+id/flSearchResultMovies"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_below="@id/llChooseMovieType"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

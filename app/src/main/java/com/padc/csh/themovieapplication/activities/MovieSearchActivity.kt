@@ -3,6 +3,8 @@ package com.padc.csh.themovieapplication.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -10,10 +12,15 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView.OnEditorActionListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.GridLayoutManager
+import com.padc.csh.themovieapp.data.vos.COMMING_SOON
+import com.padc.csh.themovieapp.data.vos.NOW_PLAYING
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.adapters.CommingSoonMovieAdapter
 import com.padc.csh.themovieapplication.adapters.NowShowingMovieAdapter
+import com.padc.csh.themovieapplication.data.models.MovieBookingModel
+import com.padc.csh.themovieapplication.data.models.MovieBookingModelImpl
 import com.padc.csh.themovieapplication.delegates.MovieListDelegate
 import com.padc.csh.themovieapplication.dummy.movieFormats
 import com.padc.csh.themovieapplication.dummy.movieGenreList
@@ -26,11 +33,12 @@ import kotlinx.android.synthetic.main.view_item_search_toolbar.view.*
 class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
 
     private var searchFlag = 0
-    private var fromAction = "now"
+    private var fromAction = NOW_PLAYING
     private var spinnerGenreFlag = 0
     private var spinnerFormatFlag = 0
     private var spinnerMonthFlag = 0
 
+    private var mTheMovieBookingModel :MovieBookingModel =MovieBookingModelImpl
     lateinit var mNowShowingMovieAdapter: NowShowingMovieAdapter
     lateinit var mCommingSoonMovieAdapter: CommingSoonMovieAdapter
 
@@ -50,8 +58,9 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
         fromAction = intent.getStringExtra(IEXTRA_FROMACTION).toString()
 
         setUpRecycler()
-        setUpActionListener()
+        setUpViewVisibility()
         setUpSpinner()
+        setUpActionListener()
     }
 
     private fun setUpSpinner() {
@@ -88,11 +97,37 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
             if (actionId == EditorInfo.IME_ACTION_DONE || event.getAction() == KeyEvent.ACTION_DOWN) {
                 searchFlag = searchFlag + 1
                 if (searchFlag == 1) {
-                    setUpViewVisibility()
+                    //setUpViewVisibility()
                 }
                 return@OnEditorActionListener true
             }
             return@OnEditorActionListener false
+        })
+
+        toolBarMovieSearch.tvSearchMovieName.addTextChangedListener(object :TextWatcher{
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(search: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+                mTheMovieBookingModel?.searchMoviesByTypeAndName(fromAction,search.toString()) {
+                    when (fromAction) {
+                        NOW_PLAYING -> {
+                            mNowShowingMovieAdapter.setNewData(it)
+                        }
+                        else -> {
+                            mCommingSoonMovieAdapter.setNewData(it)
+                        }
+                    }
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+
         })
 
         //spinnermovie genre
@@ -181,12 +216,12 @@ class MovieSearchActivity : AppCompatActivity(), MovieListDelegate {
         flSearchResultMovies.visibility = View.VISIBLE
 
         when (fromAction) {
-            "now" -> {
+             NOW_PLAYING-> {
                 rlMovieMonth.visibility = View.GONE
                 rvNowShowingMoviesSearchResult.visibility = View.VISIBLE
                 rvCommingSoonMoviesSearchResult.visibility = View.GONE
             }
-            "comming" -> {
+            COMMING_SOON -> {
                 rlMovieMonth.visibility = View.VISIBLE
                 rvNowShowingMoviesSearchResult.visibility = View.GONE
                 rvCommingSoonMoviesSearchResult.visibility = View.VISIBLE

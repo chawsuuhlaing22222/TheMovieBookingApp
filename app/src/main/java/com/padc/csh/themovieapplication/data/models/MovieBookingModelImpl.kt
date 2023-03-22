@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.internal.LinkedTreeMap
 import com.padc.csh.themovieapp.data.vos.MovieVO
+import com.padc.csh.themovieapp.data.vos.NOW_PLAYING
 import com.padc.csh.themovieapplication.data.vos.*
 import com.padc.csh.themovieapplication.network.dataagents.MovieBookingDataAgent
 import com.padc.csh.themovieapplication.network.dataagents.MovieBookingDataAgentImpl
@@ -38,18 +39,28 @@ object MovieBookingModelImpl:MovieBookingModel {
         onFailure: (String) -> Unit
     ) {
         //from db
-//        val movie=mTheMovieBookingDatabase?.movieBookingDao()?.getSingleMovie(movieId.toInt())
-//        movie?.let {
-//            onSuccess(it)
-//        }
+        val movie=mTheMovieBookingDatabase?.movieBookingDao()?.getSingleMovie(movieId.toInt())
+        movie?.let {
+            onSuccess(it)
+        }
 
         mTheMovieBookingDataAgent.getMovieDetail(movieId,{
-
+            it.type=movie?.type
+            mTheMovieBookingDatabase?.movieBookingDao()?.insertSingleMovie(it)
             onSuccess(it)
         },{
             onFailure(it)
         })
 
+    }
+
+    override fun searchMoviesByTypeAndName(
+        type: String,
+        movieName: String,
+        onSuccess: (List<MovieVO>) -> Unit,
+
+    ) {
+        onSuccess(mTheMovieBookingDatabase?.movieBookingDao()?.searchMovieListByTypeAndName(type,movieName) ?: listOf())
     }
 
 
@@ -104,7 +115,15 @@ object MovieBookingModelImpl:MovieBookingModel {
         onSuccess: (List<MovieVO>) -> Unit,
         onFailure: (String) -> Unit
     ) {
-        mTheMovieBookingDataAgent.getMovieList(status, onSuccess, onFailure)
+
+        onSuccess( mTheMovieBookingDatabase?.movieBookingDao()?.getMovieListByType(status) ?: listOf())
+
+        mTheMovieBookingDataAgent.getMovieList(status,{
+
+            it.forEach { movie -> movie.type = status }
+            mTheMovieBookingDatabase?.movieBookingDao()?.insertMovieList(it)
+            onSuccess(it)
+        } , onFailure)
     }
 
     override fun getCinemaList(
@@ -131,8 +150,6 @@ object MovieBookingModelImpl:MovieBookingModel {
                 val timeslotColorVO: TimeSlotColorVO = gson.fromJson(gson.toJsonTree(linkedTreeMap), TimeSlotColorVO::class.java)
                 newConfigTimeSlotColor.add(timeslotColorVO)
             }
-
-            newConfigTimeSlotColor.removeAt(0)
 
            mTheMovieBookingDatabase?.movieBookingDao()?.insertTimeSlotColor( newConfigTimeSlotColor)
          //   mTheMovieBookingDatabase?.movieBookingDao()?.insertCinemaTimeSlotColorList(it.value)
@@ -229,6 +246,12 @@ object MovieBookingModelImpl:MovieBookingModel {
 
     override fun getAllCinemaFromDB(onSuccess: (List<AllCinemaVO>) -> Unit) {
            onSuccess(mTheMovieBookingDatabase?.movieBookingDao()?.getAllCinemaList() ?: listOf())
+    }
+
+    override fun getTimeSlotColor(status: Int, onSuccess: (TimeSlotColorVO) -> Unit) {
+
+        mTheMovieBookingDatabase?.movieBookingDao()?.getTimeSlotColorForStatus(status)
+            ?.let { onSuccess(it) }
     }
 
     override fun deleteProfile() {

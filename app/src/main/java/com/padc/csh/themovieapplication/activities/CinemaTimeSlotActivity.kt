@@ -41,6 +41,7 @@ class CinemaTimeSlotActivity : AppCompatActivity(), MovieCinemaDelegate,
     companion object {
 
         var timeSlotList: List<TimeSlotColorVO> = listOf()
+
         const val MOVIE="MOVIE"
         fun newIntent(context: Context,movieVO: String):Intent{
             var intent=Intent(context,CinemaTimeSlotActivity::class.java)

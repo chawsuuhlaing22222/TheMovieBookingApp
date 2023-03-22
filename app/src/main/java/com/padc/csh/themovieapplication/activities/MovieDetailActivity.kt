@@ -93,21 +93,15 @@ class MovieDetailActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun requestData(movieId: String) {
+
         movieModel.getMovieDetail(movieId, {
             selectedMovieVO = it
             bindData(it)
-
         }, {
             showErrorMsg(it)
         })
 
-//        Handler(Looper.getMainLooper()).postDelayed(object : Runnable {
-//            override fun run() {
-//                getMovieVideoDetail(movieId.toInt())
-//            }
-//        },1000)
-
-        movieModel.getMovieVideo(movieId.toInt(),{
+        movieModel.getMovieVideo(movieId.toInt(), {
             bindMovieVideo(it)
         }, {
             showErrorMsg(it)
@@ -115,12 +109,12 @@ class MovieDetailActivity : AppCompatActivity() {
 
     }
 
-     private fun bindMovieVideo(it: List<MovieVideoVO>) {
+    private fun bindMovieVideo(it: List<MovieVideoVO>) {
         it.forEach { movie ->
-            //if (movie.official == true) {
-             youtbueVideoId=movie.key.toString()
-                Log.i("mKey", movie.key ?: "")
-           // }
+
+            youtbueVideoId = movie.key.toString()
+            Log.i("mKey", movie.key ?: "")
+
         }
     }
 
@@ -176,8 +170,8 @@ class MovieDetailActivity : AppCompatActivity() {
 //            vvMovieCover.visibility = View.GONE
 //            vvMoviePlayIcon.visibility = View.GONE
 
-            youTubePlayerView.visibility= View.VISIBLE
-            vvMovieCover.visibility=View.GONE
+            youTubePlayerView.visibility = View.VISIBLE
+            vvMovieCover.visibility = View.GONE
             vvMoviePlayIcon.visibility = View.GONE
             youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
                 override fun onReady(youTubePlayer: YouTubePlayer) {
@@ -246,8 +240,8 @@ class MovieDetailActivity : AppCompatActivity() {
         val myString = DateFormat.getMediumDateFormat(this).format(date)
 
         // diff date
-        var m=date.month
-        var movieDate = LocalDate.of(date.year, (date.month+1), date.day)
+        var m = date.month
+        var movieDate = LocalDate.of(date.year, (date.month + 1), date.day)
         var period = Period.between(movieDate, LocalDate.now())
         tvReleaseDateNoti.text =
             getString(R.string.releasing_in_5days, "${period.months}m,${period.days}")
