@@ -15,6 +15,12 @@ interface MovieBookingModel {
 
     )
 
+    fun deleteTicket(
+
+    )
+
+
+
     fun getMovieDetail(
         movieId: String,
         onSuccess: (MovieVO) -> Unit,

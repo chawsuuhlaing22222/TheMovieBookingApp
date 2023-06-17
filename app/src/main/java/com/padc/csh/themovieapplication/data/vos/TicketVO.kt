@@ -42,4 +42,7 @@ data class TicketVO (
     @ColumnInfo("img")
     var image:String?,
 
+    @ColumnInfo("time")
+    var createTicket:String?=null,
+
         )

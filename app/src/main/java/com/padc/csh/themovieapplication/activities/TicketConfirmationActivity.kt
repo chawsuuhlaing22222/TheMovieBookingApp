@@ -120,7 +120,7 @@ class TicketConfirmationActivity : AppCompatActivity() {
 
         var ticketVO= TicketVO(id = null, movieId = movieId.toInt(), movieName = movieName, cinemaId = cinemaId.toInt(), cinemaName = cinemaName,
         startTime = checkOutResponseVO.timeslot?.start_time.toString(), bookingDate =checkOutResponseVO.bookingDate.toString(), seatNameList =checkOutResponseVO.seat,
-        seatCount = checkOutResponseVO.totalSeat.toString(), qrCode =checkOutResponseVO.qrCode,movieVO.posterPath)
+        seatCount = checkOutResponseVO.totalSeat.toString(), qrCode =checkOutResponseVO.qrCode,movieVO.posterPath,System.currentTimeMillis().toString())
 
         mTheBookingModel.insertTicket(ticketVO)
     }

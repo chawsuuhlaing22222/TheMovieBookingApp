@@ -37,7 +37,7 @@ private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
 
     private fun requestData() {
         mTheMovieBookingModel.getAllTickets {
-            mTicketAdapter.setNewData(it)
+            mTicketAdapter.setNewData(it.sortedByDescending { ticket->ticket.createTicket?.toLong() })
         }
     }
 

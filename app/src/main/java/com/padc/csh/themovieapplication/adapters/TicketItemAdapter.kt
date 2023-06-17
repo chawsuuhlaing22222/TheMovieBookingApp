@@ -34,6 +34,7 @@ class TicketItemAdapter(var context: Context,var delegate: TicketItemDelegate):R
 
         holder.itemView.tvMovieDateTicketScrn.text=ticketVO.bookingDate
         holder.itemView.tvMovieShowTimeTicketScrn.text=ticketVO.startTime
+        holder.itemView.tvCinemaNameTicketScrn.text=ticketVO.cinemaName
 
         Glide.with(context).load("$IMAGE_BASE_URL/${ticketVO.image}").into( holder.itemView.ivMovieImgTicketScrn)
 

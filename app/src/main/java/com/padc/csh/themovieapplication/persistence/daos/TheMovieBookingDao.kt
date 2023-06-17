@@ -70,7 +70,10 @@ interface TheMovieBookingDao {
     @Query("SELECT * FROM cinemas")
     fun getAllCinemaList():List<AllCinemaVO>
 
+    @Query("DELETE FROM ticket")
+    fun deleteTickets()
 
-   // @Insert(onConflict = OnConflictStrategy.REPLACE)
+
+    // @Insert(onConflict = OnConflictStrategy.REPLACE)
     //fun insertCinemaTimeSlotColorList(timeslotcolorList:Any?)
 }

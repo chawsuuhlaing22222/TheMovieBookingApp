@@ -262,6 +262,10 @@ object MovieBookingModelImpl:MovieBookingModel {
     override fun deleteProfile() {
         mTheMovieBookingDatabase?.movieBookingDao()?.deleteProfile()
     }
+
+    override fun deleteTicket() {
+        mTheMovieBookingDatabase?.movieBookingDao()?.deleteTickets()
+    }
 }
 
 
