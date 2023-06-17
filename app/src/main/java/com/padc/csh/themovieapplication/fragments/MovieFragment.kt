@@ -32,6 +32,7 @@ import kotlinx.android.synthetic.main.view_item_toolbar_movie.view.*
 import java.lang.Math.abs
 
 class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
+
     lateinit var mBannerAdapter: BannerAdapter
     lateinit var mNowShowingMovieAdapter: NowShowingMovieAdapter
     lateinit var mCommingSoonMovieAdapter:CommingSoonMovieAdapter
@@ -174,7 +175,7 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
             {
                 mCommingSoonMovieAdapter.setNewData(it)
             },{
-                showErrorMsg(it,movieFrag)
+                //showErrorMsg(it,movieFrag)
             }
         )
     }
@@ -185,7 +186,7 @@ class MovieFragment : Fragment(), BannerDelegate,MovieListDelegate {
             {
                 mNowShowingMovieAdapter.setNewData(it)
             },{
-                showErrorMsg(it,movieFrag)
+                //showErrorMsg(it,movieFrag)
             }
         )
     }

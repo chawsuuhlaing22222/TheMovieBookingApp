@@ -11,9 +11,9 @@
         android:layout_height="@dimen/dimen_60dp"
         android:layout_centerInParent="true"
         android:layout_marginLeft="@dimen/dimen_23dp"
+        android:fontFamily="@font/inter_medium"
         android:gravity="center_vertical"
         android:text="Yng"
-        android:fontFamily="@font/inter_medium"
         android:textColor="@color/white"
         android:textSize="@dimen/text_18sp" />
     <View

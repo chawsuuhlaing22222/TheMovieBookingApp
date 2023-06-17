@@ -10,7 +10,7 @@ import com.padc.csh.themovieapplication.network.response.CheckOTPResponse
 import com.padc.csh.themovieapplication.network.response.CityResponse
 import com.padc.csh.themovieapplication.persistence.daos.TheMovieBookingDao
 
-@Database(entities = [MovieVO::class, CityVO::class, ProfileVO::class, TimeSlotColorVO::class,TicketVO::class,AllCinemaVO::class], version = 8, exportSchema = false)
+@Database(entities = [MovieVO::class, CityVO::class, ProfileVO::class, TimeSlotColorVO::class,TicketVO::class,AllCinemaVO::class], version = 9, exportSchema = false)
 abstract class TheMovieBookingDatabase: RoomDatabase() {
 
     companion object{

@@ -52,9 +52,9 @@ class MovieCinemaSeatConditionAdapter(var movieCinemaSeatConditionDelegate: Movi
             newShape.setColor( Color.parseColor(ColorTransparentUtils.transparentColor(Color.parseColor(color),10)))
             holder.itemView.background = newShape
 
-                    holder.itemView.setOnClickListener {
-                        movieCinemaSeatConditionDelegate.onMovieCinemaSeatPlanClick(timeslot)
-                    }
+            holder.itemView.setOnClickListener {
+                movieCinemaSeatConditionDelegate.onMovieCinemaSeatPlanClick(timeslot)
+            }
 //            when(timeslot.status){
 //                1->{
 //                    holder.itemView.setBackgroundResource(R.drawable.bg_available_cinema_show_time)
@@ -86,15 +86,6 @@ class MovieCinemaSeatConditionAdapter(var movieCinemaSeatConditionDelegate: Movi
             // Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
         }
         return color
-//        var color = ""
-//        if (CinemaTimeSlotActivity?.timeSlotList?.size != 0) {
-//            for (timeslot in CinemaTimeSlotActivity?.timeSlotList ?: listOf()) {
-//                if (timeslot.id?.equals(status) == true) {
-//                    color = timeslot.color.toString()
-//
-//                }
-//            }
-//        }
-//        return color
+
     }
 }

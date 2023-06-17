@@ -25,6 +25,7 @@ import com.padc.csh.themovieapplication.utils.changeStringToMedimnDateFormat
 import kotlinx.android.synthetic.main.activity_check_out_acitivy.*
 import kotlinx.android.synthetic.main.activity_ticket_confirmation.*
 import kotlinx.android.synthetic.main.custom_view_ticket_cancel_policy.view.*
+import kotlinx.android.synthetic.main.view_holder_ticket_item.*
 import kotlinx.android.synthetic.main.view_holder_ticket_item.view.*
 import kotlinx.android.synthetic.main.view_item_toolbar_movie.*
 import okhttp3.internal.wait
@@ -115,10 +116,11 @@ class TicketConfirmationActivity : AppCompatActivity() {
         layoutMovieTicket.tvTicketTypeTicketScrn.setText(Html.fromHtml("<font color='#ffffff'><b>${checkOutResponseVO.seat}</b></font><font color='#888888'>(SCREEN2)</font>"))
         layoutMovieTicket.tvTicketCountTicketScrn.text= Html.fromHtml("<font color='#888888'>M-Ticket (</font><font color='#00ff6a'>${checkOutResponseVO.totalSeat}</font><font color='#888888'>)</font>")
         Glide.with(this).load("$BASE_URL/${checkOutResponseVO.qrCode}").into(ivQRCodeConfirmationScrn)
+        Glide.with(this).load("$IMAGE_BASE_URL/${movieVO.posterPath}").into(ivMovieImgTicketScrn)
 
         var ticketVO= TicketVO(id = null, movieId = movieId.toInt(), movieName = movieName, cinemaId = cinemaId.toInt(), cinemaName = cinemaName,
         startTime = checkOutResponseVO.timeslot?.start_time.toString(), bookingDate =checkOutResponseVO.bookingDate.toString(), seatNameList =checkOutResponseVO.seat,
-        seatCount = checkOutResponseVO.totalSeat.toString(), qrCode =checkOutResponseVO.qrCode)
+        seatCount = checkOutResponseVO.totalSeat.toString(), qrCode =checkOutResponseVO.qrCode,movieVO.posterPath)
 
         mTheBookingModel.insertTicket(ticketVO)
     }

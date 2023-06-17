@@ -219,7 +219,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvCinemaSearchResults"
                 android:layout_marginTop="@dimen/dimen_40dp"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:background="@color/color111111"
                 android:layout_below="@id/sbTimeRange"
                 android:layout_width="match_parent"

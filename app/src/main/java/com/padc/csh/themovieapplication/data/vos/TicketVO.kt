@@ -39,4 +39,7 @@ data class TicketVO (
     @ColumnInfo("qrCode")
     var qrCode:String?,
 
+    @ColumnInfo("img")
+    var image:String?,
+
         )

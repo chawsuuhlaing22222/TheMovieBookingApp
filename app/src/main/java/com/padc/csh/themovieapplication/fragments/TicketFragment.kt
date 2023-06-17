@@ -48,7 +48,7 @@ private var mTheMovieBookingModel: MovieBookingModel = MovieBookingModelImpl
     }
 
     override fun onTapTicketItem() {
-        startActivity(Intent(CheckOutAcitivy.newIntent(requireContext(),"ticket")))
+    //    startActivity(Intent(CheckOutAcitivy.newIntent(requireContext(),"ticket")))
     }
 
 

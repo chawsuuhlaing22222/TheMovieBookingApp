@@ -54,7 +54,7 @@
             android:id="@+id/tvSeatPricelbl"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/dm_sans"
-            android:text="Normal (4500ks)"
+            android:text="Normal"
             android:layout_below="@id/flRainbow"
             android:textSize="@dimen/text_regular_2x"
             android:textColor="@color/colorPrimaryLight"

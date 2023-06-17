@@ -32,6 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:layout_marginLeft="@dimen/margin_medium"
         android:layout_toStartOf="@id/ivFilterMovieSearchScrn"
         android:layout_toEndOf="@id/ivSearchMovieSearchScrn"

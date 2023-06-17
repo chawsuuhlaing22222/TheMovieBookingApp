@@ -52,7 +52,7 @@ class SplashScreenActivity : AppCompatActivity() {
         mTheMovieBookingModel.getCities(
             {
                 var view = rlSplash
-                showErrorMsg("Successful", view)
+               // showErrorMsg("Successful", view)
             }, {
                 var view = rlSplash
                 showErrorMsg(it, view)
@@ -60,7 +60,7 @@ class SplashScreenActivity : AppCompatActivity() {
         )
 
         mTheMovieBookingModel.getCinemaTimeSlotList({
-            Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+          //  Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
 
         }, {
             var view = rlSplash

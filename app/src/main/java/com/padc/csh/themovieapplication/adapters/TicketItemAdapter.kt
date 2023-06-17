@@ -5,11 +5,15 @@ import android.text.Html
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.padc.csh.themovieapplication.R
 import com.padc.csh.themovieapplication.data.vos.TicketVO
 import com.padc.csh.themovieapplication.delegates.TicketItemDelegate
+import com.padc.csh.themovieapplication.utils.BASE_URL
+import com.padc.csh.themovieapplication.utils.IMAGE_BASE_URL
 import com.padc.csh.themovieapplication.viewholders.TicketItemViewHolder
 import kotlinx.android.synthetic.main.activity_ticket_confirmation.*
+import kotlinx.android.synthetic.main.view_holder_ticket_item.*
 import kotlinx.android.synthetic.main.view_holder_ticket_item.view.*
 
 class TicketItemAdapter(var context: Context,var delegate: TicketItemDelegate):RecyclerView.Adapter<TicketItemViewHolder>() {
@@ -30,6 +34,8 @@ class TicketItemAdapter(var context: Context,var delegate: TicketItemDelegate):R
 
         holder.itemView.tvMovieDateTicketScrn.text=ticketVO.bookingDate
         holder.itemView.tvMovieShowTimeTicketScrn.text=ticketVO.startTime
+
+        Glide.with(context).load("$IMAGE_BASE_URL/${ticketVO.image}").into( holder.itemView.ivMovieImgTicketScrn)
 
         holder.itemView.setOnClickListener {
             delegate.onTapTicketItem()

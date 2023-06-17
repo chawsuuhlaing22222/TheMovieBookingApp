@@ -228,7 +228,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
     fun showErrorMsg(error: String) {
         var view = movieDetail
-        Snackbar.make(view, "$error", Snackbar.LENGTH_SHORT).show()
+        //Snackbar.make(view, "$error", Snackbar.LENGTH_SHORT).show()
     }
 
 
